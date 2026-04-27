@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
@@ -7,13 +8,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <Link href="/" className="navbar__logo">
-              <svg className="navbar__logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <path d="M10 38 L30 10 L38 10 L18 38 Z" fill="#49a739" />
-                <path d="M20 38 L38 14 L38 26 L28 38 Z" fill="#a8e296" />
-              </svg>
-              <span className="navbar__logo-text">
-                ECOPRORE<span>NOVE</span>
-              </span>
+              <Logo size={38} variant="footer" />
             </Link>
             <p className="footer__tagline">
               Rénovation énergétique pour les bâtiments tertiaires, résidentiels et

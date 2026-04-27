@@ -407,6 +407,25 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
 .navbar__logo-text { font-size: 1.05rem; }
 .navbar__logo-text span { color: var(--green); }
 
+/* New <Logo /> component */
+.logo {
+  display: inline-flex; align-items: center; gap: 11px;
+  font-weight: 900; letter-spacing: -.015em;
+  line-height: 1;
+}
+.logo__mark { flex-shrink: 0; }
+.logo__text {
+  font-size: 1.04rem;
+  font-weight: 900;
+  letter-spacing: .005em;
+  display: inline-flex; gap: 0;
+}
+.logo__text-strong { color: inherit; }
+.logo__text-accent { color: var(--green); font-weight: 900; }
+@media (max-width: 480px) {
+  .logo__text { font-size: .96rem; }
+}
+
 .navbar__nav { display: flex; align-items: center; gap: 4px; }
 .nav-item { position: relative; }
 .nav-link {

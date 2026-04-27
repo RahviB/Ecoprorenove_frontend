@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import Logo from "./Logo";
 
 type Menu = "secteurs" | "solutions" | null;
 
@@ -59,19 +60,7 @@ export default function Navbar() {
         <div className="container container--wide">
           <div className="navbar__inner">
             <Link href="/" className="navbar__logo" aria-label="ECOPRORENOVE — accueil">
-              <svg
-                className="navbar__logo-mark"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path d="M10 38 L30 10 L38 10 L18 38 Z" fill="#2a5f20" />
-                <path d="M20 38 L38 14 L38 26 L28 38 Z" fill="#49a739" />
-              </svg>
-              <span className="navbar__logo-text">
-                ECOPRORE<span>NOVE</span>
-              </span>
+              <Logo size={38} variant="navbar" />
             </Link>
 
             <div className="navbar__nav">
@@ -296,13 +285,7 @@ export default function Navbar() {
         <div className="mobile-drawer__panel">
           <div className="mobile-drawer__head">
             <Link href="/" className="navbar__logo" onClick={() => setDrawerOpen(false)}>
-              <svg className="navbar__logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <path d="M10 38 L30 10 L38 10 L18 38 Z" fill="#2a5f20" />
-                <path d="M20 38 L38 14 L38 26 L28 38 Z" fill="#49a739" />
-              </svg>
-              <span className="navbar__logo-text">
-                ECOPRORE<span>NOVE</span>
-              </span>
+              <Logo size={36} variant="navbar" />
             </Link>
             <button className="mobile-drawer__close" aria-label="Fermer" onClick={() => setDrawerOpen(false)}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111a10" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
