@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import { ViewTransition } from "react";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -13,6 +13,13 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -75,7 +82,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={inter.variable} data-scroll-behavior="smooth">
+    <html lang="fr" className={`${inter.variable} ${montserrat.variable}`} data-scroll-behavior="smooth">
       <body>
         <a href="#main" className="skip-link">
           Aller au contenu

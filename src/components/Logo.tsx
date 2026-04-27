@@ -6,13 +6,13 @@ type LogoProps = {
 };
 
 export default function Logo({
-  size = 38,
+  size = 42,
   variant = "navbar",
   withWordmark = true,
   className,
 }: LogoProps) {
-  const wordmarkColor = variant === "footer" ? "#fff" : "var(--ink, #111a10)";
-  const accentColor = "var(--green, #49a739)";
+  const dark = variant === "footer" ? "#ffffff" : "#0d1410";
+  const green = "#49a739";
 
   return (
     <span className={`logo ${className ?? ""}`} aria-label="ECOPRORENOVE">
@@ -20,49 +20,59 @@ export default function Logo({
         className="logo__mark"
         width={size}
         height={size}
-        viewBox="0 0 48 48"
+        viewBox="0 0 64 64"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        {/* Rounded brand frame */}
-        <rect x="2" y="2" width="44" height="44" rx="12" fill="#1f4a18" />
-
-        {/* Subtle inner highlight stroke */}
-        <rect
-          x="3" y="3"
-          width="42" height="42"
-          rx="11"
-          stroke="rgba(168, 226, 150, 0.18)"
-          strokeWidth="1"
-          fill="none"
-        />
-
-        {/* Lower chevron — main brand green */}
+        {/* House silhouette: pentagon with rounded corners */}
         <path
-          d="M10 33 L24 21 L38 33"
-          stroke="#49a739"
-          strokeWidth="3.5"
-          strokeLinecap="round"
+          d="M32 4 L56 22 Q57 23 57 25 L57 56 Q57 58 55 58 L9 58 Q7 58 7 56 L7 25 Q7 23 8 22 Z"
+          stroke={dark}
+          strokeWidth="3.6"
           strokeLinejoin="round"
           fill="none"
         />
 
-        {/* Upper chevron — accent light green (smaller, sits inside) */}
-        <path
-          d="M14 24 L24 15 L34 24"
-          stroke="#a8e296"
-          strokeWidth="3"
+        {/* E spine — vertical bar (left) */}
+        <line
+          x1="22" y1="28" x2="22" y2="50"
+          stroke={dark}
+          strokeWidth="3.4"
+          strokeLinecap="square"
+        />
+
+        {/* E top bar — black */}
+        <line
+          x1="21.5" y1="28" x2="44" y2="28"
+          stroke={dark}
+          strokeWidth="3.4"
+          strokeLinecap="square"
+        />
+
+        {/* E middle bar — green */}
+        <line
+          x1="22.5" y1="39" x2="38" y2="39"
+          stroke={green}
+          strokeWidth="3.4"
           strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
+        />
+
+        {/* Green dot at the end of middle bar */}
+        <circle cx="44" cy="39" r="2.6" fill={green} />
+
+        {/* E bottom bar — black */}
+        <line
+          x1="21.5" y1="50" x2="46" y2="50"
+          stroke={dark}
+          strokeWidth="3.4"
+          strokeLinecap="square"
         />
       </svg>
 
       {withWordmark && (
-        <span className="logo__text" style={{ color: wordmarkColor }}>
-          <span className="logo__text-strong">ECOPRO</span>
-          <span className="logo__text-accent" style={{ color: accentColor }}>RENOVE</span>
+        <span className="logo__text" style={{ color: dark }}>
+          ECOPRORENOVE
         </span>
       )}
     </span>
