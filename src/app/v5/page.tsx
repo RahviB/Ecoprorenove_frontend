@@ -47,8 +47,6 @@ const SOLUTIONS = [
 export default function HomePageV5() {
   return (
     <div className={`page-home-v5 ${fraunces.variable}`}>
-      <span className="vbadge" aria-hidden="true">v5 · Editorial</span>
-
       <ChapterRail chapters={CHAPTERS} />
 
       <main className="ed">

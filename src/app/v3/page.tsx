@@ -161,7 +161,6 @@ const PARCOURS_STEPS = [
 export default function HomePageV3() {
   return (
     <div className="page-home-v3">
-      <span className="vbadge" aria-hidden="true">v3 · Medium</span>
       <HeroAnimations />
 
       {/* =================  1. HERO+ (numbers as inline chips) ================= */}

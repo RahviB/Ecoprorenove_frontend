@@ -36,7 +36,6 @@ const SECTOR_TAGS = {
 export default function HomePageV2() {
   return (
     <div className="page-home-v2">
-      <span className="vbadge" aria-hidden="true">v2 · Light</span>
       <HeroAnimations />
 
       {/* =================  HERO  ================= */}

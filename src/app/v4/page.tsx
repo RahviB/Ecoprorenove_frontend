@@ -45,7 +45,6 @@ const ENGAGEMENTS = [
 export default function HomePageV4() {
   return (
     <div className="page-home-v4">
-      <span className="vbadge" aria-hidden="true">v4 · Aggressive</span>
       <HeroAnimations />
       <HorizontalScrolly targetSelector=".page-home-v4 .scrolly" />
 
