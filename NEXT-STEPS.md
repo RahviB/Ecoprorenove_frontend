@@ -1,6 +1,25 @@
 # EcoProRenove — Next Steps
 
-Snapshot from session ending **2026-04-27** *(updated end of session 6 — extracteur + accompagnement)*. Pick up here in the next session.
+Snapshot from session ending **2026-04-27** *(updated end of session 6 — extracteur + accompagnement + GitHub push)*. Pick up here in the next session.
+
+---
+
+## 🚀 Deployment status (2026-04-27)
+
+- GitHub remote: `https://github.com/RahviB/Ecoprorenove_frontend.git` (branch `main`)
+- Hosting: **Coolify self-hosted** (not Vercel)
+- Staging URL: `https://stag.ecoprorenove.fr`
+- Production URL (eventual): `https://ecoprorenove.fr`
+
+**Site is NOT live yet** — Coolify steps below still pending. When picking up:
+
+1. In Coolify's app config, set env var: `NEXT_PUBLIC_SITE_URL=https://stag.ecoprorenove.fr`
+2. Confirm build command `npm run build`, start command `npm start`, port `3000`, Node ≥ 20
+3. Trigger a build (`NEXT_PUBLIC_*` vars are baked at build time, so a restart alone won't pick up the env var)
+4. Verify staging at `https://stag.ecoprorenove.fr` — sitemap.xml, robots.txt, JSON-LD all read from the env var
+5. When prod domain is ready: swap env var to `https://ecoprorenove.fr`, rebuild
+
+Code-side: no changes needed. The same build serves both staging and prod once the env var flips.
 
 ---
 
