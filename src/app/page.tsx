@@ -77,7 +77,7 @@ const SOLUTIONS = [
     href: "/destratificateur-air",
     title: "Destratificateur d'air",
     desc: "Redistribuer la chaleur en hauteur pour réduire les consommations de chauffage.",
-    sectors: ["tertiaire", "agricole"] as const,
+    sectors: ["tertiaire"] as const,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="3" />
