@@ -11,6 +11,7 @@ export type ContactState = {
 };
 
 const SOURCE_LABEL: Record<string, string> = {
+  "home": "Page d'accueil",
   "isolation-combles": "Isolation des combles",
   "isolation-toiture-rampants": "Isolation toiture (thermoréflectif)",
   "destratificateur-air": "Destratificateur d'air",
@@ -26,9 +27,12 @@ const FIELD_LABEL: Record<string, string> = {
   societe: "Société",
   telephone: "Téléphone",
   email: "Email",
+  secteur: "Secteur",
   type_batiment: "Type de bâtiment",
   type_combles: "Type de combles",
   type_couverture: "Type de couverture",
+  finition: "Finition bardage",
+  profil: "Profil de pose",
   surface: "Surface (m²)",
   hauteur: "Hauteur sous toiture",
   message: "Message / projet",

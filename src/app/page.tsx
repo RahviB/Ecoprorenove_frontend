@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
 import HeroAnimations from "@/components/HeroAnimations";
@@ -300,21 +301,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* =================  3. PARCOURS UNIFIÉ (CEE + Method merged) ================= */}
+      {/* =================  3. NOTRE PROCESSUS ================= */}
       <section className="parcours-unifie" id="parcours">
         <div className="container">
           <div className="parcours-unifie__header fade-in">
             <span className="tag tag--white" style={{ marginBottom: 16 }}>
-              Dispositif CEE + MaPrimeRénov&apos;
+              Notre méthode
             </span>
             <h2 className="section-title section-title--white">
-              De la première conversation à la <em className="acc" style={{ color: "#ff9570" }}>clôture administrative</em>
+              Notre <em className="acc" style={{ color: "#ff9570" }}>processus</em>
             </h2>
             <div className="divider divider--white divider--center"></div>
             <p className="section-intro section-intro--white">
-              Les CEE peuvent financer une part significative d&apos;une opération éligible —
-              à condition de lancer les démarches <strong style={{ color: "#fff" }}>avant le début des travaux</strong>.
-              Notre parcours en six étapes garantit la conformité et le versement.
+              De la première conversation à la livraison de votre projet.
             </p>
           </div>
 
@@ -339,9 +338,19 @@ export default function HomePage() {
                 <CountUp end={500} prefix="+" duration={1200} /> <span>dossiers accompagnés</span>
               </div>
             </div>
-            <div className="parcours-unifie__cta">
-              <Link href="/financement-cee" className="btn btn--accent btn--lg">
-                Comprendre le dispositif CEE
+          </div>
+
+          <div className="aides-card fade-in">
+            <div className="aides-card__head">
+              <p className="aides-card__eyebrow">Comprendre les aides</p>
+              <h3 className="aides-card__title">Quel dispositif pour votre projet&nbsp;?</h3>
+            </div>
+            <div className="aides-card__actions">
+              <Link href="/prime-cee" className="btn btn--accent btn--lg">
+                Prime CEE
+              </Link>
+              <Link href="/ma-prime-renov" className="btn btn--secondary btn--lg">
+                MaPrimeRénov&apos;
               </Link>
             </div>
           </div>
@@ -498,19 +507,61 @@ export default function HomePage() {
               Échangeons sur votre bâtiment, vos objectifs, vos contraintes — sans engagement.
             </p>
 
+            <div className="form-card fade-in delay-2">
+              <ContactForm source="home">
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="h-prenom">Prénom *</label>
+                    <input className="form-input" type="text" id="h-prenom" name="prenom" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="h-nom">Nom *</label>
+                    <input className="form-input" type="text" id="h-nom" name="nom" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="h-email">Email *</label>
+                    <input className="form-input" type="email" id="h-email" name="email" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="h-tel">Téléphone *</label>
+                    <input className="form-input" type="tel" id="h-tel" name="telephone" required />
+                  </div>
+                  <div className="form-group form-group--full">
+                    <label className="form-label" htmlFor="h-secteur">Secteur</label>
+                    <select className="form-select" id="h-secteur" name="secteur" defaultValue="">
+                      <option value="" disabled>Sélectionnez</option>
+                      <option value="tertiaire">Tertiaire (bureaux, commerces, ERP)</option>
+                      <option value="residentiel">Résidentiel (maison, copropriété)</option>
+                      <option value="agricole">Agricole (exploitation, hangar)</option>
+                      <option value="autre">Autre</option>
+                    </select>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <label className="form-label" htmlFor="h-message">Décrivez votre projet</label>
+                    <textarea className="form-textarea" id="h-message" name="message" placeholder="Type de bâtiment, surface, objectifs, contraintes…" rows={4}></textarea>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <div className="form-consent">
+                      <input type="checkbox" id="h-rgpd" name="rgpd" required />
+                      <label htmlFor="h-rgpd">J&apos;accepte que mes données soient utilisées par ECOPRORENOVE pour l&apos;étude de mon projet. Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données personnelles.</label>
+                    </div>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <button type="submit" className="btn btn--primary btn--lg form-submit">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                      Demander une étude
+                    </button>
+                  </div>
+                </div>
+              </ContactForm>
+            </div>
+
             <div className="cta-final__actions">
-              <a href="mailto:contact@ecoprorenove.fr?subject=Demande%20d'%C3%A9tude%20-%20ECOPRORENOVE" className="btn btn--primary btn--lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-                Demander une étude
-              </a>
               <a href="tel:+33619798391" className="btn btn--secondary btn--lg">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                Nous appeler
+                Ou nous appeler directement
               </a>
             </div>
           </div>

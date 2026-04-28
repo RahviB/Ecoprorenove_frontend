@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
 
@@ -395,24 +396,18 @@ export default function BardageClient() {
 
               {/* Actions */}
               <div className="panel__actions">
-                <a href={`#contact?finition=${effectiveActive.ref}`} className="btn btn--primary">
+                <a href="#contact" className="btn btn--primary">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
                   Étudier mon projet avec cette finition
                 </a>
-                <button type="button" className="btn btn--outline-dark">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                  </svg>
-                  Recevoir un échantillon physique
-                </button>
               </div>
 
               <p className="panel__footnote">
                 * Finitions susceptibles de varier légèrement à l&apos;œil selon la lumière. Un
-                échantillon physique reste la référence avant commande.
+                échantillon physique peut être transmis sur demande lors de l&apos;étude.
               </p>
             </aside>
           </div>
@@ -890,7 +885,7 @@ export default function BardageClient() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
+      {/* CTA FINAL — inline form with finition prefill */}
       <section className="cta-final" id="contact">
         <div className="container">
           <div className="cta-final__inner fade-in">
@@ -906,19 +901,85 @@ export default function BardageClient() {
               l&apos;aide MaPrimeRénov&apos; mobilisable (jusqu&apos;à 75€/m²*).
             </p>
 
+            <div className="form-card form-card--bardage fade-in delay-2">
+              <ContactForm source="bardage">
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="b-prenom">Prénom *</label>
+                    <input className="form-input" type="text" id="b-prenom" name="prenom" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="b-nom">Nom *</label>
+                    <input className="form-input" type="text" id="b-nom" name="nom" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="b-email">Email *</label>
+                    <input className="form-input" type="email" id="b-email" name="email" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="b-tel">Téléphone *</label>
+                    <input className="form-input" type="tel" id="b-tel" name="telephone" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="b-finition">Finition pressentie</label>
+                    <select
+                      key={effectiveActive.ref}
+                      className="form-select"
+                      id="b-finition"
+                      name="finition"
+                      defaultValue={effectiveActive.name}
+                    >
+                      {FINISHES.map((f) => (
+                        <option key={f.ref} value={f.name}>
+                          {f.name} — {profileLabel(f.profile)}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="b-profil">Profil de pose</label>
+                    <select
+                      key={`profil-${effectiveActive.ref}`}
+                      className="form-select"
+                      id="b-profil"
+                      name="profil"
+                      defaultValue={profileLabel(effectiveActive.profile)}
+                    >
+                      <option value="Emboîtement">Emboîtement</option>
+                      <option value="Superposé">Superposé</option>
+                      <option value="À déterminer">À déterminer</option>
+                    </select>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <label className="form-label" htmlFor="b-surface">Surface façade approximative (m²)</label>
+                    <input className="form-input" type="text" id="b-surface" name="surface" placeholder="Ex. 120 m²" />
+                  </div>
+                  <div className="form-group form-group--full">
+                    <label className="form-label" htmlFor="b-message">Décrivez votre projet</label>
+                    <textarea className="form-textarea" id="b-message" name="message" placeholder="Type de bâtiment, contexte, contraintes urbanisme/ABF, calendrier souhaité…" rows={4}></textarea>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <div className="form-consent">
+                      <input type="checkbox" id="b-rgpd" name="rgpd" required />
+                      <label htmlFor="b-rgpd">J&apos;accepte que mes données soient utilisées par ECOPRORENOVE pour l&apos;étude de mon projet. Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données personnelles.</label>
+                    </div>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <button type="submit" className="btn btn--primary btn--lg form-submit">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                      Étudier mon projet
+                    </button>
+                  </div>
+                </div>
+              </ContactForm>
+            </div>
+
             <div className="cta-final__actions">
-              <a href="mailto:contact@ecoprorenove.fr?subject=Bardage%20-%20Demande%20d'%C3%A9tude" className="btn btn--primary btn--lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-                Étudier mon projet gratuitement
-              </a>
               <a href="tel:+33619798391" className="btn btn--secondary btn--lg">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                Nous appeler directement
+                Ou nous appeler directement
               </a>
             </div>
 

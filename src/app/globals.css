@@ -3273,6 +3273,32 @@ body:has(.page-home-v5) .vsw__toggle { background: rgba(20,32,26,.95); }
   .soltabs__grid { grid-template-columns: 1fr; }
 }
 
+/* Transverse row — Financement card pinned below sector grid */
+.soltabs__transverse {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px dashed rgba(53, 122, 40, .25);
+}
+.soltabs__transverse-label {
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--accent);
+  margin: 0 0 16px;
+}
+.soltabs__transverse-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 540px);
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  .soltabs__transverse-grid { grid-template-columns: 1fr; }
+}
+
 /* Parcours unifié — dark band, horizontal timeline */
 .parcours-unifie {
   position: relative; overflow: hidden;
@@ -3340,6 +3366,48 @@ body:has(.page-home-v5) .vsw__toggle { background: rgba(20,32,26,.95); }
   .parcours-step:nth-child(3n) { border-right: none; }
   .parcours-step:nth-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,.08); }
   .parcours-unifie__cta { margin-left: 0; flex-basis: 100%; text-align: center; }
+}
+
+/* Aides card — 2-button card under timeline */
+.aides-card {
+  margin-top: 36px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.aides-card__head { flex: 1 1 280px; }
+.aides-card__eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: rgba(255, 255, 255, .65);
+  margin: 0 0 6px;
+}
+.aides-card__title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+.aides-card__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .aides-card { padding: 22px; flex-direction: column; align-items: stretch; text-align: center; }
+  .aides-card__actions { justify-content: center; }
+  .aides-card__actions .btn { flex: 1 1 auto; }
 }
 @media (max-width: 640px) {
   .parcours-unifie__timeline { grid-template-columns: 1fr; }
@@ -5345,4 +5413,90 @@ body:has(.page-home-v6) main { background: var(--white); }
   .about-contact__grid { grid-template-columns: 1fr; }
 }
 
+/* =================  Page: isolation-toiture-rampants  ================= */
+/* Hero title in uppercase per client direction */
+.page-toiture .hero__title {
+  text-transform: uppercase;
+  letter-spacing: -.005em;
+}
+.page-toiture .hero__title em {
+  text-transform: none;
+}
+
+/* Smooth scroll offset for #airflex */
+.page-toiture #airflex { scroll-margin-top: 96px; }
+
+/* Polished Résultats concrets cards */
+.page-toiture .benefits {
+  background: linear-gradient(180deg, var(--green-pale) 0%, #fff 100%);
+}
+.page-toiture .benefits__grid {
+  gap: 22px;
+}
+.page-toiture .benefit-card {
+  padding: 32px 26px 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(53, 122, 40, .12);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+}
+.page-toiture .benefit-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green) 0%, #95d987 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+.page-toiture .benefit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(53, 122, 40, .12);
+  border-color: rgba(53, 122, 40, .24);
+  background: #fff;
+}
+.page-toiture .benefit-card:hover::before {
+  transform: scaleX(1);
+}
+.page-toiture .benefit-card__icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--green-light);
+  margin-bottom: 14px;
+}
+.page-toiture .benefit-card__value {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--green-dark);
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+.page-toiture .benefit-card__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 8px;
+  letter-spacing: -.005em;
+}
+.page-toiture .benefit-card__text {
+  font-size: .9rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
+.page-toiture .benefit-card__disclaimer {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(53, 122, 40, .18);
+  font-size: .72rem;
+  color: var(--gray);
+  font-style: italic;
+}
 
