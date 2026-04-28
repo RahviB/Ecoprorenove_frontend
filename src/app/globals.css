@@ -5194,6 +5194,44 @@ body:has(.page-home-v6) main { background: var(--white); }
 .setup-form__footer .form-submit { width: 100%; max-width: 360px; }
 .setup-form__footer .form-submit[disabled] { opacity: .6; cursor: not-allowed; }
 
+/* Per-group status select (RCS / Assurance / RGE / Médiateur) */
+.setup-status {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  background: var(--green-pale);
+  border: 1px solid rgba(53, 122, 40, .14);
+  border-radius: 10px;
+}
+.setup-status__label {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--primary-dark, #2d3748);
+}
+.setup-status__select {
+  background: #fff;
+}
+
+/* Locked field group — visual cue when status != "fill" */
+.setup-form .form-grid[data-locked="true"],
+.setup-form .form-group [data-locked="true"] {
+  opacity: .55;
+}
+.setup-form input[disabled],
+.setup-form select[disabled],
+.setup-form textarea[disabled] {
+  background: #f1f5f1 !important;
+  color: #999 !important;
+  cursor: not-allowed;
+}
+.setup-form input[data-locked="true"] {
+  background: #f1f5f1 !important;
+  color: #999 !important;
+}
+
 .setup-success {
   background: #fff; border: 1px solid #c6f6d5; border-radius: 12px;
   padding: 48px 32px; text-align: center; max-width: 640px; margin: 40px auto;

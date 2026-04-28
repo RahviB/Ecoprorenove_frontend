@@ -30,6 +30,18 @@ function fmt(label: string, value: string | undefined): string {
   return `${label.padEnd(34)} ${value && value.trim() ? value.trim() : "—"}`;
 }
 
+const STATUS_LABEL: Record<string, string> = {
+  fill: "Renseigné ci-dessous",
+  pending: "Pas encore disponible — à fournir plus tard",
+  na: "Ne s'applique pas / pas chez le client",
+};
+
+function statusHeader(label: string, raw: string | undefined): string {
+  const status = (raw || "fill").toLowerCase();
+  const text = STATUS_LABEL[status] || raw || "—";
+  return `${label.padEnd(34)} → ${text}`;
+}
+
 export async function submitIntake(
   _prev: IntakeState,
   data: FormData,
@@ -61,64 +73,83 @@ export async function submitIntake(
     return { ok: false, message: "Corrigez les champs en rouge.", errors };
   }
 
-  const block = [
-    "",
-    "================================================================",
-    `  ECOPRORENOVE — INTAKE SUBMISSION  ·  ${new Date().toISOString()}`,
-    "================================================================",
-    "",
-    "[ Identité juridique ]",
-    fmt("Forme juridique", f("forme_juridique")),
-    fmt("Dénomination sociale", f("denomination")),
-    fmt("Capital social", f("capital")),
-    fmt("SIREN (9 chiffres)", siren),
-    fmt("RCS (ville + n°)", f("rcs")),
-    fmt("TVA intracommunautaire", f("tva")),
-    "",
-    "[ Établissements ]",
-    fmt("SIRET Lyon (14 chiffres)", sLyon),
-    fmt("Adresse Lyon", f("adresse_lyon")),
-    fmt("SIRET Réunion (14 chiffres)", sReu),
-    fmt("Adresse Réunion", f("adresse_reunion")),
-    "",
-    "[ Direction & RGPD ]",
-    fmt("Directeur de la publication", f("directeur_publication")),
-    fmt("Email DPO", dpoEmail),
-    fmt("Adresse postale RGPD", f("rgpd_adresse")),
-    "",
-    "[ Coordonnées publiques ]",
-    fmt("Téléphone France", f("telephone_fr")),
-    fmt("Téléphone Réunion", f("telephone_reunion")),
-    fmt("Email contact", email),
-    fmt("Horaires d'ouverture", f("horaires")),
-    "",
-    "[ Assurance ]",
-    fmt("Assureur RC pro", f("assurance_rc_assureur")),
-    fmt("N° police RC pro", f("assurance_rc_police")),
-    fmt("Assureur décennale", f("assurance_dec_assureur")),
-    fmt("N° police décennale", f("assurance_dec_police")),
-    fmt("Zone géo couverte", f("assurance_zone")),
-    "",
-    "[ Certifications RGE ]",
-    fmt("Organisme certificateur", f("rge_organisme")),
-    fmt("N° certificat RGE", f("rge_numero")),
-    fmt("Domaines couverts", f("rge_domaines")),
-    fmt("Date d'expiration", f("rge_expiration")),
-    "",
-    "[ Médiateur de la consommation ]",
-    fmt("Nom du médiateur", f("mediateur_nom")),
-    fmt("URL ou adresse", f("mediateur_contact")),
-    "",
-    "[ Hébergeur ]",
-    fmt("Hébergeur", f("hebergeur_nom")),
-    fmt("Adresse hébergeur", f("hebergeur_adresse")),
-    "",
-    "[ Notes libres ]",
-    f("notes").trim() || "—",
-    "",
-    "================================================================",
-    "",
-  ].join("\n");
+  const statusRcs = f("statut_rcs") || "fill";
+  const statusAss = f("statut_assurance") || "fill";
+  const statusRge = f("statut_rge") || "fill";
+  const statusMed = f("statut_mediateur") || "fill";
+
+  const lines: string[] = [];
+  const push = (...rows: string[]) => lines.push(...rows);
+  const blank = () => lines.push("");
+
+  blank();
+  push("================================================================");
+  push(`  ECOPRORENOVE — INTAKE SUBMISSION  ·  ${new Date().toISOString()}`);
+  push("================================================================");
+  blank();
+  push("[ Identité juridique ]");
+  push(fmt("Forme juridique", f("forme_juridique")));
+  push(fmt("Dénomination sociale", f("denomination")));
+  push(fmt("Capital social", f("capital")));
+  push(fmt("SIREN (9 chiffres)", siren));
+  push(statusHeader("RCS — statut", statusRcs));
+  if (statusRcs === "fill") push(fmt("RCS (ville + n°)", f("rcs")));
+  push(fmt("TVA intracommunautaire", f("tva")));
+  blank();
+  push("[ Établissements ]");
+  push(fmt("SIRET Lyon (14 chiffres)", sLyon));
+  push(fmt("Adresse Lyon", f("adresse_lyon")));
+  push(fmt("SIRET Réunion (14 chiffres)", sReu));
+  push(fmt("Adresse Réunion", f("adresse_reunion")));
+  blank();
+  push("[ Direction & RGPD ]");
+  push(fmt("Directeur de la publication", f("directeur_publication")));
+  push(fmt("Email DPO", dpoEmail));
+  push(fmt("Adresse postale RGPD", f("rgpd_adresse")));
+  blank();
+  push("[ Coordonnées publiques ]");
+  push(fmt("Téléphone France", f("telephone_fr")));
+  push(fmt("Téléphone Réunion", f("telephone_reunion")));
+  push(fmt("Email contact", email));
+  push(fmt("Horaires d'ouverture", f("horaires")));
+  blank();
+  push("[ Assurance ]");
+  push(statusHeader("Statut groupe", statusAss));
+  if (statusAss === "fill") {
+    push(fmt("Assureur RC pro", f("assurance_rc_assureur")));
+    push(fmt("N° police RC pro", f("assurance_rc_police")));
+    push(fmt("Assureur décennale", f("assurance_dec_assureur")));
+    push(fmt("N° police décennale", f("assurance_dec_police")));
+    push(fmt("Zone géo couverte", f("assurance_zone")));
+  }
+  blank();
+  push("[ Certifications RGE ]");
+  push(statusHeader("Statut groupe", statusRge));
+  if (statusRge === "fill") {
+    push(fmt("Organisme certificateur", f("rge_organisme")));
+    push(fmt("N° certificat RGE", f("rge_numero")));
+    push(fmt("Domaines couverts", f("rge_domaines")));
+    push(fmt("Date d'expiration", f("rge_expiration")));
+  }
+  blank();
+  push("[ Médiateur de la consommation ]");
+  push(statusHeader("Statut groupe", statusMed));
+  if (statusMed === "fill") {
+    push(fmt("Nom du médiateur", f("mediateur_nom")));
+    push(fmt("URL ou adresse", f("mediateur_contact")));
+  }
+  blank();
+  push("[ Hébergeur ]");
+  push(fmt("Hébergeur", f("hebergeur_nom")));
+  push(fmt("Adresse hébergeur", f("hebergeur_adresse")));
+  blank();
+  push("[ Notes libres ]");
+  push(f("notes").trim() || "—");
+  blank();
+  push("================================================================");
+  blank();
+
+  const block = lines.join("\n");
 
   console.log(block);
 

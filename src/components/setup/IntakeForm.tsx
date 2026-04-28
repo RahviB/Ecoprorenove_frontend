@@ -1,9 +1,20 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { submitIntake, type IntakeState } from "@/app/setup/actions";
 
 const initialState: IntakeState = { ok: false, message: "" };
+
+type GroupStatus = "fill" | "pending" | "na";
+
+const GROUPS = ["rcs", "assurance", "rge", "mediateur"] as const;
+type Group = (typeof GROUPS)[number];
+
+const STATUS_LABEL: Record<GroupStatus, string> = {
+  fill: "Je le renseigne ci-dessous",
+  pending: "Pas encore disponible — je vous l'enverrai plus tard",
+  na: "Ne s'applique pas / je n'ai pas",
+};
 
 function fieldError(errors: Record<string, string> | undefined, key: string) {
   return errors?.[key];
@@ -11,6 +22,17 @@ function fieldError(errors: Record<string, string> | undefined, key: string) {
 
 export default function IntakeForm() {
   const [state, formAction, isPending] = useActionState(submitIntake, initialState);
+  const [statuses, setStatuses] = useState<Record<Group, GroupStatus>>({
+    rcs: "fill",
+    assurance: "fill",
+    rge: "fill",
+    mediateur: "fill",
+  });
+
+  function setGroup(g: Group, value: GroupStatus) {
+    setStatuses((s) => ({ ...s, [g]: value }));
+  }
+  const isLocked = (g: Group) => statuses[g] !== "fill";
 
   if (state.ok) {
     return (
@@ -39,6 +61,27 @@ export default function IntakeForm() {
   }
 
   const err = state.errors;
+
+  function StatusSelect({ group, label }: { group: Group; label: string }) {
+    return (
+      <div className="setup-status">
+        <label className="setup-status__label" htmlFor={`statut_${group}`}>
+          {label}
+        </label>
+        <select
+          className="form-select setup-status__select"
+          id={`statut_${group}`}
+          name={`statut_${group}`}
+          value={statuses[group]}
+          onChange={(e) => setGroup(group, e.target.value as GroupStatus)}
+        >
+          <option value="fill">{STATUS_LABEL.fill}</option>
+          <option value="pending">{STATUS_LABEL.pending}</option>
+          <option value="na">{STATUS_LABEL.na}</option>
+        </select>
+      </div>
+    );
+  }
 
   return (
     <form action={formAction} className="setup-form" noValidate>
@@ -139,6 +182,7 @@ export default function IntakeForm() {
             />
           </div>
           <div className="form-group form-group--full">
+            <StatusSelect group="rcs" label="RCS — où en êtes-vous&nbsp;?" />
             <label className="form-label" htmlFor="rcs">
               RCS (ville d&apos;immatriculation + numéro)
             </label>
@@ -148,6 +192,8 @@ export default function IntakeForm() {
               id="rcs"
               name="rcs"
               placeholder="Ex&nbsp;: RCS Lyon 894 975 150"
+              disabled={isLocked("rcs")}
+              data-locked={isLocked("rcs") ? "true" : undefined}
             />
             <p className="setup-hint">
               Le numéro RCS reprend généralement le SIREN, précédé de la ville
@@ -345,9 +391,11 @@ export default function IntakeForm() {
       <fieldset className="setup-fieldset">
         <legend>Assurance professionnelle</legend>
         <p className="setup-fieldset__intro">
-          Obligatoire en mentions légales pour les activités de pose RGE.
+          Obligatoire en mentions légales pour les activités de pose RGE. Si vous n&apos;avez
+          pas encore les références, indiquez-le ci-dessous.
         </p>
-        <div className="form-grid">
+        <StatusSelect group="assurance" label="Assurance — où en êtes-vous&nbsp;?" />
+        <div className="form-grid" data-locked={isLocked("assurance") ? "true" : undefined}>
           <div className="form-group">
             <label className="form-label" htmlFor="assurance_rc_assureur">
               Assureur RC pro
@@ -358,6 +406,7 @@ export default function IntakeForm() {
               id="assurance_rc_assureur"
               name="assurance_rc_assureur"
               placeholder="Ex&nbsp;: AXA, MMA, Allianz…"
+              disabled={isLocked("assurance")}
             />
           </div>
           <div className="form-group">
@@ -369,6 +418,7 @@ export default function IntakeForm() {
               type="text"
               id="assurance_rc_police"
               name="assurance_rc_police"
+              disabled={isLocked("assurance")}
             />
           </div>
           <div className="form-group">
@@ -380,6 +430,7 @@ export default function IntakeForm() {
               type="text"
               id="assurance_dec_assureur"
               name="assurance_dec_assureur"
+              disabled={isLocked("assurance")}
             />
           </div>
           <div className="form-group">
@@ -391,6 +442,7 @@ export default function IntakeForm() {
               type="text"
               id="assurance_dec_police"
               name="assurance_dec_police"
+              disabled={isLocked("assurance")}
             />
           </div>
           <div className="form-group form-group--full">
@@ -403,6 +455,7 @@ export default function IntakeForm() {
               id="assurance_zone"
               name="assurance_zone"
               placeholder="France métropolitaine + DOM-TOM"
+              disabled={isLocked("assurance")}
             />
           </div>
         </div>
@@ -412,9 +465,10 @@ export default function IntakeForm() {
         <legend>Certifications RGE</legend>
         <p className="setup-fieldset__intro">
           On affiche déjà la mention RGE en tant que pictogramme — on a besoin du n° officiel
-          pour les mentions légales et la page financement CEE.
+          pour les mentions légales et la page Prime CEE.
         </p>
-        <div className="form-grid">
+        <StatusSelect group="rge" label="Certificat RGE — où en êtes-vous&nbsp;?" />
+        <div className="form-grid" data-locked={isLocked("rge") ? "true" : undefined}>
           <div className="form-group">
             <label className="form-label" htmlFor="rge_organisme">
               Organisme certificateur
@@ -424,6 +478,7 @@ export default function IntakeForm() {
               id="rge_organisme"
               name="rge_organisme"
               defaultValue=""
+              disabled={isLocked("rge")}
             >
               <option value="" disabled>
                 Sélectionnez
@@ -445,6 +500,7 @@ export default function IntakeForm() {
               type="text"
               id="rge_numero"
               name="rge_numero"
+              disabled={isLocked("rge")}
             />
           </div>
           <div className="form-group form-group--full">
@@ -457,6 +513,7 @@ export default function IntakeForm() {
               id="rge_domaines"
               name="rge_domaines"
               placeholder="Ex&nbsp;: isolation thermique, bardage, ventilation"
+              disabled={isLocked("rge")}
             />
           </div>
           <div className="form-group">
@@ -468,6 +525,7 @@ export default function IntakeForm() {
               type="date"
               id="rge_expiration"
               name="rge_expiration"
+              disabled={isLocked("rge")}
             />
           </div>
         </div>
@@ -477,8 +535,12 @@ export default function IntakeForm() {
         <legend>Médiateur de la consommation</legend>
         <p className="setup-fieldset__intro">
           Obligatoire dès lors qu&apos;il y a des particuliers parmi les clients (résidentiel).
+          Si vous n&apos;avez pas encore choisi de médiateur, indiquez-le ci-dessous —
+          ECOPRORENOVE pourra adhérer à <strong>CNPM Médiation Consommation</strong> sur
+          recommandation.
         </p>
-        <div className="form-grid">
+        <StatusSelect group="mediateur" label="Médiateur — où en êtes-vous&nbsp;?" />
+        <div className="form-grid" data-locked={isLocked("mediateur") ? "true" : undefined}>
           <div className="form-group">
             <label className="form-label" htmlFor="mediateur_nom">
               Nom du médiateur
@@ -489,6 +551,7 @@ export default function IntakeForm() {
               id="mediateur_nom"
               name="mediateur_nom"
               placeholder="Ex&nbsp;: CNPM Médiation Consommation"
+              disabled={isLocked("mediateur")}
             />
           </div>
           <div className="form-group">
@@ -501,6 +564,7 @@ export default function IntakeForm() {
               id="mediateur_contact"
               name="mediateur_contact"
               placeholder="https:// ou adresse postale"
+              disabled={isLocked("mediateur")}
             />
           </div>
         </div>
@@ -509,7 +573,7 @@ export default function IntakeForm() {
       <fieldset className="setup-fieldset">
         <legend>Hébergeur du site</legend>
         <p className="setup-fieldset__intro">
-          Confirmez ou modifiez ces valeurs. À compléter avec l&apos;adresse d&apos;OVH.
+          Confirmez ou modifiez ces valeurs.
         </p>
         <div className="form-grid">
           <div className="form-group">
@@ -551,7 +615,7 @@ export default function IntakeForm() {
               id="notes"
               name="notes"
               rows={4}
-              placeholder="Logos, partenaires, demandes spécifiques…"
+              placeholder="Logos, partenaires, demandes spécifiques, dates prévues pour fournir les infos manquantes…"
             />
           </div>
         </div>
