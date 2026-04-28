@@ -12,6 +12,9 @@ export type ContactState = {
 
 const SOURCE_LABEL: Record<string, string> = {
   "home": "Page d'accueil",
+  "tertiaire": "Secteur tertiaire",
+  "residentiel": "Secteur résidentiel",
+  "agricole": "Secteur agricole",
   "isolation-combles": "Isolation des combles",
   "isolation-toiture-rampants": "Isolation toiture (thermoréflectif)",
   "destratificateur-air": "Destratificateur d'air",

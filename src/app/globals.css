@@ -5417,6 +5417,133 @@ body:has(.page-home-v6) main { background: var(--white); }
 /* Scroll-margin compensation for sticky navbar on in-page anchors */
 .cee-card[id="courtage"] { scroll-margin-top: 96px; }
 
+/* =================  Shared: sector pages (tertiaire / residentiel / agricole)  ================= */
+.page-secteur .secteur-section {
+  padding: 96px 0;
+  background: #fff;
+}
+.page-secteur .secteur-section--alt {
+  background: var(--green-pale);
+}
+.page-secteur .secteur-section__header {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.page-secteur .secteur-section__header .section-title {
+  margin-bottom: 20px;
+}
+.page-secteur .secteur-section__header .divider {
+  margin: 0 auto 22px;
+}
+.page-secteur .secteur-section__header .section-intro {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.page-secteur .secteur-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.page-secteur .secteur-card {
+  background: #fff;
+  border: 1px solid rgba(53, 122, 40, .14);
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  transition: var(--transition);
+  text-decoration: none;
+  color: inherit;
+}
+.page-secteur .secteur-section--alt .secteur-card {
+  background: #fff;
+  border-color: rgba(53, 122, 40, .12);
+}
+.page-secteur .secteur-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(53, 122, 40, .1);
+  border-color: rgba(53, 122, 40, .28);
+}
+.page-secteur .secteur-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--green-light);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+.page-secteur .secteur-card:hover .secteur-card__icon {
+  background: var(--green);
+  color: #fff;
+}
+.page-secteur .secteur-card__title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: -.005em;
+  margin: 0;
+  line-height: 1.35;
+}
+.page-secteur .secteur-card__text {
+  font-size: .88rem;
+  color: var(--gray);
+  line-height: 1.65;
+  margin: 0;
+}
+/* Solutions cards have an arrow indicator hint */
+.page-secteur .secteur-card--link::after {
+  content: '';
+  position: absolute;
+  top: 32px;
+  right: 28px;
+  width: 22px;
+  height: 22px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2349a739' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><line x1='7' y1='17' x2='17' y2='7'/><polyline points='7 7 17 7 17 17'/></svg>");
+  opacity: .35;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.page-secteur .secteur-card--link:hover::after {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* Form card scoping inside cta-final on sector pages */
+.page-secteur .cta-final {
+  padding: 100px 0 110px;
+}
+.page-secteur .cta-final__inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.page-secteur .form-card--secteur {
+  margin: 36px auto 28px;
+  text-align: left;
+  background: #fff;
+}
+.page-secteur .cta-final__actions {
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .page-secteur .secteur-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .page-secteur .secteur-section { padding: 72px 0; }
+  .page-secteur .secteur-grid { grid-template-columns: 1fr; gap: 16px; }
+  .page-secteur .secteur-card { padding: 26px 22px; }
+  .page-secteur .secteur-card--link::after { display: none; }
+  .page-secteur .cta-final { padding: 72px 0 80px; }
+}
+
 /* =================  Page: vmc-double-flux  ================= */
 .page-vmc .vmc-stats {
   display: grid;

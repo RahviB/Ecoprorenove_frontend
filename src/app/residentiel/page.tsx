@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "Résidentiel — copropriétés, bailleurs, particuliers (CEE + MaPrimeRénov')",
@@ -50,7 +51,7 @@ const solutions: Array<[string, string, string]> = [
 
 export default function ResidentielPage() {
   return (
-    <div className="page-residentiel">
+    <div className="page-secteur page-residentiel">
       {/* HERO */}
       <section className="hero hero--drift">
         <div className="container">
@@ -76,7 +77,7 @@ export default function ResidentielPage() {
               </p>
 
               <div className="hero__actions">
-                <a href="mailto:contact@ecoprorenove.fr" className="btn btn--primary btn--lg">
+                <a href="#contact" className="btn btn--primary btn--lg">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
@@ -95,74 +96,75 @@ export default function ResidentielPage() {
         </div>
       </section>
 
-      {/* OPERATIONS BLOCK */}
-      <section>
+      {/* OPERATIONS */}
+      <section className="secteur-section secteur-section--alt">
         <div className="container">
-          <p className="section-label fade-in">Opérations en résidentiel</p>
-          <h2 className="section-title fade-in">
-            Cumul des aides &amp; gestion
-            <br />
-            <em>complète</em> du parcours.
-          </h2>
-          <div className="divider fade-in"></div>
-          <p className="section-intro fade-in">
-            Le résidentiel a ses propres règles : cumul CEE + MaPrimeRénov&apos;, AG de
-            copropriété, plafonds de ressources. Voici comment nous structurons un
-            projet selon votre situation.
-          </p>
+          <header className="secteur-section__header fade-in">
+            <p className="section-label">Opérations en résidentiel</p>
+            <h2 className="section-title">
+              Cumul des aides &amp; gestion<br />
+              <em>complète</em> du parcours.
+            </h2>
+            <div className="divider divider--center"></div>
+            <p className="section-intro section-intro--center">
+              Le résidentiel a ses propres règles : cumul CEE + MaPrimeRénov&apos;, AG de
+              copropriété, plafonds de ressources. Voici comment nous structurons un
+              projet selon votre situation.
+            </p>
+          </header>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 22, marginTop: 40 }}>
+          <div className="secteur-grid">
             {operations.map(([title, text], i) => (
-              <article key={title} className={`why-home-card fade-in delay-${(i % 6) + 1}`}>
-                <div className="why-home-card__icon">
+              <article key={title} className={`secteur-card fade-in delay-${(i % 6) + 1}`}>
+                <div className="secteur-card__icon">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="why-home-card__title">{title}</h3>
-                <p className="why-home-card__text">{text}</p>
+                <h3 className="secteur-card__title">{title}</h3>
+                <p className="secteur-card__text">{text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SOLUTIONS BLOCK */}
-      <section>
+      {/* SOLUTIONS */}
+      <section className="secteur-section">
         <div className="container">
-          <p className="section-label fade-in">Solutions adaptées</p>
-          <h2 className="section-title fade-in">
-            Les <em>services ECOPRORENOVE</em>
-            <br />
-            mobilisables en résidentiel.
-          </h2>
-          <div className="divider fade-in"></div>
+          <header className="secteur-section__header fade-in">
+            <p className="section-label">Solutions adaptées</p>
+            <h2 className="section-title">
+              Les <em>services ECOPRORENOVE</em><br />
+              mobilisables en résidentiel.
+            </h2>
+            <div className="divider divider--center"></div>
+          </header>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 22, marginTop: 40 }}>
+          <div className="secteur-grid">
             {solutions.map(([title, href, text], i) => (
-              <Link key={href} href={href} className={`why-home-card fade-in delay-${(i % 6) + 1}`} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
-                <div className="why-home-card__icon">
+              <Link key={href} href={href} className={`secteur-card secteur-card--link fade-in delay-${(i % 6) + 1}`}>
+                <div className="secteur-card__icon">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
                 </div>
-                <h3 className="why-home-card__title">{title}</h3>
-                <p className="why-home-card__text">{text}</p>
+                <h3 className="secteur-card__title">{title}</h3>
+                <p className="secteur-card__text">{text}</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="cta-final">
+      {/* CONTACT FORM */}
+      <section className="cta-final" id="contact">
         <div className="container">
           <div className="cta-final__inner fade-in">
             <p className="cta-final__eyebrow">Parlons de votre projet résidentiel</p>
             <h2 className="cta-final__title">
-              Un dossier complet,
-              <br />
+              Un dossier complet,<br />
               <em>de l&apos;AG au versement.</em>
             </h2>
             <p className="cta-final__subtitle">
@@ -170,19 +172,63 @@ export default function ResidentielPage() {
               CEE + MaPrimeRénov&apos; et coordonnons l&apos;ensemble du parcours. Sans
               engagement.
             </p>
+
+            <div className="form-card form-card--secteur fade-in delay-2">
+              <ContactForm source="residentiel">
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="r-prenom">Prénom *</label>
+                    <input className="form-input" type="text" id="r-prenom" name="prenom" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="r-nom">Nom *</label>
+                    <input className="form-input" type="text" id="r-nom" name="nom" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="r-email">Email *</label>
+                    <input className="form-input" type="email" id="r-email" name="email" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="r-tel">Téléphone *</label>
+                    <input className="form-input" type="tel" id="r-tel" name="telephone" required />
+                  </div>
+                  <div className="form-group form-group--full">
+                    <label className="form-label" htmlFor="r-statut">Vous êtes</label>
+                    <select className="form-select" id="r-statut" name="type_batiment" defaultValue="">
+                      <option value="" disabled>Sélectionnez</option>
+                      <option value="proprietaire-occupant">Propriétaire occupant</option>
+                      <option value="proprietaire-bailleur">Propriétaire bailleur</option>
+                      <option value="copropriete">Copropriété (syndic / conseil syndical)</option>
+                      <option value="bailleur-social">Bailleur social</option>
+                      <option value="autre">Autre</option>
+                    </select>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <label className="form-label" htmlFor="r-message">Décrivez votre projet</label>
+                    <textarea className="form-textarea" id="r-message" name="message" placeholder="Type de logement (maison, appartement, copropriété), surface, travaux envisagés, calendrier souhaité…" rows={4}></textarea>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <div className="form-consent">
+                      <input type="checkbox" id="r-rgpd" name="rgpd" required />
+                      <label htmlFor="r-rgpd">J&apos;accepte que mes données soient utilisées par ECOPRORENOVE pour l&apos;étude de mon projet. Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données personnelles.</label>
+                    </div>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <button type="submit" className="btn btn--primary btn--lg form-submit">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                      Étudier mon projet
+                    </button>
+                  </div>
+                </div>
+              </ContactForm>
+            </div>
+
             <div className="cta-final__actions">
-              <a href="mailto:contact@ecoprorenove.fr" className="btn btn--primary btn--lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-                Nous écrire
-              </a>
               <a href="tel:+33619798391" className="btn btn--secondary btn--lg">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                Nous appeler
+                Ou nous appeler directement
               </a>
             </div>
           </div>

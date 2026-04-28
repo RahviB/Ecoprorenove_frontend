@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "Tertiaire — bureaux, commerces, santé, enseignement, hôtellerie",
@@ -53,7 +54,7 @@ const solutions: Array<[string, string, string]> = [
 
 export default function TertiairePage() {
   return (
-    <div className="page-tertiaire">
+    <div className="page-secteur page-tertiaire">
       {/* HERO */}
       <section className="hero hero--drift">
         <div className="container">
@@ -74,13 +75,13 @@ export default function TertiairePage() {
               <p className="hero__subtitle">
                 Bureaux, commerces, établissements de santé, enseignement, hôtellerie —
                 ECOPRORENOVE accompagne les maîtres d&apos;ouvrage tertiaires dans la
-                trajectoire du décret tertiaire (-40% d&apos;ici 2030), avec un dossier
-                CEE adapté à votre gouvernance et un phasage qui préserve la continuité
-                d&apos;exploitation.
+                trajectoire du décret tertiaire (-40&nbsp;% d&apos;ici 2030), avec un
+                dossier CEE adapté à votre gouvernance et un phasage qui préserve la
+                continuité d&apos;exploitation.
               </p>
 
               <div className="hero__actions">
-                <a href="mailto:contact@ecoprorenove.fr" className="btn btn--primary btn--lg">
+                <a href="#contact" className="btn btn--primary btn--lg">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
@@ -99,93 +100,147 @@ export default function TertiairePage() {
         </div>
       </section>
 
-      {/* OPERATIONS BLOCK */}
-      <section>
+      {/* OPERATIONS */}
+      <section className="secteur-section secteur-section--alt">
         <div className="container">
-          <p className="section-label fade-in">Opérations adaptées au tertiaire</p>
-          <h2 className="section-title fade-in">
-            Les leviers concrets pour
-            <br />
-            un parc <em>tertiaire performant.</em>
-          </h2>
-          <div className="divider fade-in"></div>
-          <p className="section-intro fade-in">
-            Chaque bâtiment tertiaire a ses contraintes propres — usage, occupation,
-            gouvernance, contrats d&apos;exploitation. Voici les opérations que nous
-            mobilisons le plus souvent dans ce secteur.
-          </p>
+          <header className="secteur-section__header fade-in">
+            <p className="section-label">Opérations adaptées au tertiaire</p>
+            <h2 className="section-title">
+              Les leviers concrets pour<br />
+              un parc <em>tertiaire performant.</em>
+            </h2>
+            <div className="divider divider--center"></div>
+            <p className="section-intro section-intro--center">
+              Chaque bâtiment tertiaire a ses contraintes propres — usage, occupation,
+              gouvernance, contrats d&apos;exploitation. Voici les opérations que nous
+              mobilisons le plus souvent dans ce secteur.
+            </p>
+          </header>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 22, marginTop: 40 }}>
+          <div className="secteur-grid">
             {operations.map(([title, text], i) => (
-              <article key={title} className={`why-home-card fade-in delay-${(i % 6) + 1}`}>
-                <div className="why-home-card__icon">
+              <article key={title} className={`secteur-card fade-in delay-${(i % 6) + 1}`}>
+                <div className="secteur-card__icon">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="why-home-card__title">{title}</h3>
-                <p className="why-home-card__text">{text}</p>
+                <h3 className="secteur-card__title">{title}</h3>
+                <p className="secteur-card__text">{text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SOLUTIONS BLOCK */}
-      <section>
+      {/* SOLUTIONS */}
+      <section className="secteur-section">
         <div className="container">
-          <p className="section-label fade-in">Solutions adaptées</p>
-          <h2 className="section-title fade-in">
-            Les <em>services ECOPRORENOVE</em>
-            <br />
-            mobilisables pour le tertiaire.
-          </h2>
-          <div className="divider fade-in"></div>
+          <header className="secteur-section__header fade-in">
+            <p className="section-label">Solutions adaptées</p>
+            <h2 className="section-title">
+              Les <em>services ECOPRORENOVE</em><br />
+              mobilisables pour le tertiaire.
+            </h2>
+            <div className="divider divider--center"></div>
+          </header>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 22, marginTop: 40 }}>
+          <div className="secteur-grid">
             {solutions.map(([title, href, text], i) => (
-              <Link key={href} href={href} className={`why-home-card fade-in delay-${(i % 6) + 1}`} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
-                <div className="why-home-card__icon">
+              <Link key={href} href={href} className={`secteur-card secteur-card--link fade-in delay-${(i % 6) + 1}`}>
+                <div className="secteur-card__icon">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
                 </div>
-                <h3 className="why-home-card__title">{title}</h3>
-                <p className="why-home-card__text">{text}</p>
+                <h3 className="secteur-card__title">{title}</h3>
+                <p className="secteur-card__text">{text}</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="cta-final">
+      {/* CONTACT FORM */}
+      <section className="cta-final" id="contact">
         <div className="container">
           <div className="cta-final__inner fade-in">
             <p className="cta-final__eyebrow">Parlons de votre parc tertiaire</p>
             <h2 className="cta-final__title">
-              Un patrimoine tertiaire,
-              <br />
+              Un patrimoine tertiaire,<br />
               <em>une trajectoire claire.</em>
             </h2>
             <p className="cta-final__subtitle">
               Décret tertiaire, dossier CEE, phasage des travaux : nous cadrons votre
               programme de bout en bout. Sans engagement.
             </p>
+
+            <div className="form-card form-card--secteur fade-in delay-2">
+              <ContactForm source="tertiaire">
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="t-prenom">Prénom *</label>
+                    <input className="form-input" type="text" id="t-prenom" name="prenom" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="t-nom">Nom *</label>
+                    <input className="form-input" type="text" id="t-nom" name="nom" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="t-societe">Société / collectivité</label>
+                    <input className="form-input" type="text" id="t-societe" name="societe" />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="t-tel">Téléphone *</label>
+                    <input className="form-input" type="tel" id="t-tel" name="telephone" required />
+                  </div>
+                  <div className="form-group form-group--full">
+                    <label className="form-label" htmlFor="t-email">Email *</label>
+                    <input className="form-input" type="email" id="t-email" name="email" required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="t-typebat">Type de bâtiment</label>
+                    <select className="form-select" id="t-typebat" name="type_batiment" defaultValue="">
+                      <option value="" disabled>Sélectionnez</option>
+                      <option value="bureaux">Bureaux / siège</option>
+                      <option value="commerce">Commerce / retail</option>
+                      <option value="sante">Santé / médico-social</option>
+                      <option value="enseignement">Enseignement</option>
+                      <option value="hotellerie">Hôtellerie / restauration</option>
+                      <option value="autre">Autre tertiaire</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="t-surface">Surface concernée (m²)</label>
+                    <input className="form-input" type="text" id="t-surface" name="surface" placeholder="Ex. 1 200 m²" />
+                  </div>
+                  <div className="form-group form-group--full">
+                    <label className="form-label" htmlFor="t-message">Décrivez votre programme</label>
+                    <textarea className="form-textarea" id="t-message" name="message" placeholder="Trajectoire décret tertiaire, contraintes d'exploitation, gouvernance (SCI, foncière, exploitant), calendrier souhaité…" rows={4}></textarea>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <div className="form-consent">
+                      <input type="checkbox" id="t-rgpd" name="rgpd" required />
+                      <label htmlFor="t-rgpd">J&apos;accepte que mes données soient utilisées par ECOPRORENOVE pour l&apos;étude de mon projet. Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données personnelles.</label>
+                    </div>
+                  </div>
+                  <div className="form-group form-group--full">
+                    <button type="submit" className="btn btn--primary btn--lg form-submit">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                      Étudier mon programme
+                    </button>
+                  </div>
+                </div>
+              </ContactForm>
+            </div>
+
             <div className="cta-final__actions">
-              <a href="mailto:contact@ecoprorenove.fr" className="btn btn--primary btn--lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-                Nous écrire
-              </a>
               <a href="tel:+33619798391" className="btn btn--secondary btn--lg">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                Nous appeler
+                Ou nous appeler directement
               </a>
             </div>
           </div>
