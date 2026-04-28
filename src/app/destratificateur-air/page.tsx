@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
@@ -574,7 +575,7 @@ export default function DestratificateurPage() {
 
             <div className="form-card fade-in delay-2">
               <h3 className="form-card__title">Demande d&apos;audit — sans engagement</h3>
-              <form action="#" method="POST" noValidate>
+              <ContactForm source="destratificateur-air">
                 <div className="form-grid">
                   <div className="form-group">
                     <label className="form-label" htmlFor="d-prenom">Prénom *</label>
@@ -630,7 +631,7 @@ export default function DestratificateurPage() {
                     </button>
                   </div>
                 </div>
-              </form>
+              </ContactForm>
             </div>
           </div>
         </div>

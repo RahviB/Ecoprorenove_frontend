@@ -38,9 +38,9 @@ export default function Footer() {
           <div className="footer__col">
             <p className="footer__col-title">Secteurs</p>
             <ul>
-              <li><a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Tertiaire</a></li>
-              <li><a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Résidentiel</a></li>
-              <li><a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Agricole</a></li>
+              <li><Link href="/tertiaire">Tertiaire</Link></li>
+              <li><Link href="/residentiel">Résidentiel</Link></li>
+              <li><Link href="/agricole">Agricole</Link></li>
             </ul>
           </div>
 

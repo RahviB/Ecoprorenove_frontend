@@ -907,7 +907,7 @@ export default function BardageClient() {
             </p>
 
             <div className="cta-final__actions">
-              <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="btn btn--primary btn--lg">
+              <a href="mailto:contact@ecoprorenove.fr?subject=Bardage%20-%20Demande%20d'%C3%A9tude" className="btn btn--primary btn--lg">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />

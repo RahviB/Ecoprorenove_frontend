@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
@@ -504,7 +505,7 @@ export default function FinancementCeePage() {
 
             <div className="form-card fade-in delay-2">
               <h3 className="form-card__title">Étude de votre projet — sans engagement</h3>
-              <form action="#" method="POST" noValidate>
+              <ContactForm source="financement-cee">
                 <div className="form-grid">
                   <div className="form-group">
                     <label className="form-label" htmlFor="f-prenom">Prénom *</label>
@@ -554,7 +555,7 @@ export default function FinancementCeePage() {
                     </button>
                   </div>
                 </div>
-              </form>
+              </ContactForm>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
@@ -679,7 +680,7 @@ function ContactSection() {
 
           <div className="form-card fade-in delay-2">
             <h3 className="form-card__title">Demande d&apos;étude — sans engagement</h3>
-            <form action="#" method="POST" noValidate>
+            <ContactForm source="isolation-toiture-rampants">
               <div className="form-grid">
                 <div className="form-group">
                   <label className="form-label" htmlFor="t-prenom">Prénom *</label>
@@ -748,7 +749,7 @@ function ContactSection() {
                   </button>
                 </div>
               </div>
-            </form>
+            </ContactForm>
           </div>
         </div>
       </div>

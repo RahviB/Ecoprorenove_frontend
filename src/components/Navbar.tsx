@@ -96,7 +96,7 @@ export default function Navbar() {
 
                 <div className="megamenu megamenu--secteurs" role="menu">
                   <div className="megamenu__grid--sectors">
-                    <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mm-sector" role="menuitem">
+                    <Link href="/tertiaire" className="mm-sector" role="menuitem">
                       <svg className="mm-sector__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <rect x="4" y="3" width="16" height="18" rx="1" />
                         <line x1="9" y1="8" x2="9" y2="8.01" />
@@ -108,16 +108,16 @@ export default function Navbar() {
                       </svg>
                       <div className="mm-sector__title">Tertiaire</div>
                       <div className="mm-sector__desc">Bureaux, commerces, santé, enseignement, hôtels</div>
-                    </a>
-                    <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mm-sector" role="menuitem">
+                    </Link>
+                    <Link href="/residentiel" className="mm-sector" role="menuitem">
                       <svg className="mm-sector__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M3 10 L12 3 L21 10 V21 H3 Z" />
                         <path d="M9 21 V14 H15 V21" />
                       </svg>
                       <div className="mm-sector__title">Résidentiel</div>
                       <div className="mm-sector__desc">Copropriétés, bailleurs, particuliers</div>
-                    </a>
-                    <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mm-sector" role="menuitem">
+                    </Link>
+                    <Link href="/agricole" className="mm-sector" role="menuitem">
                       <svg className="mm-sector__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M3 20 V11 L8 7 L13 11 V20 Z" />
                         <path d="M13 20 V14 H21 V20" />
@@ -126,7 +126,7 @@ export default function Navbar() {
                       </svg>
                       <div className="mm-sector__title">Agricole</div>
                       <div className="mm-sector__desc">Bâtiments d&apos;élevage, serres, hangars</div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -297,9 +297,9 @@ export default function Navbar() {
 
           <div className="mobile-drawer__group">
             <p className="mobile-drawer__group-title">Secteurs</p>
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Tertiaire</a>
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Résidentiel</a>
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Agricole</a>
+            <Link href="/tertiaire" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Tertiaire</Link>
+            <Link href="/residentiel" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Résidentiel</Link>
+            <Link href="/agricole" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Agricole</Link>
           </div>
 
           <div className="mobile-drawer__group">

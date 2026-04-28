@@ -12,6 +12,9 @@ const routes = [
   "financement-cee",
   "accompagnement-strategique",
   "qui-sommes-nous",
+  "tertiaire",
+  "residentiel",
+  "agricole",
   "mentions-legales",
   "politique-de-confidentialite",
 ];
