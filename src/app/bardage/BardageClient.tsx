@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
+import ScrollNav from "@/components/ScrollNav";
 
 type Profile = "emboitement" | "superpose";
 
@@ -93,7 +94,7 @@ export default function BardageClient() {
   }
 
   return (
-    <div className="page-bardage">
+    <div className="page-bardage solution-template">
       {/* HERO */}
       <section className="hero">
         <div className="container container--wide">
@@ -107,18 +108,15 @@ export default function BardageClient() {
                 <span style={{ color: "rgba(255,255,255,.75)" }}>Bardage fibre-ciment</span>
               </nav>
 
-              <div className="hero__badges">
-                <span className="tag tag--premium">★ Premium</span>
-                <span className="tag tag--white">Fibre-ciment</span>
-                <span className="tag tag--white">7 finitions</span>
-                <span className="tag tag--white">MaPrimeRénov&apos; jusqu&apos;à 75€/m²</span>
-              </div>
-
-              <h1 className="hero__title">
-                Bardage fibre-ciment —<br />
-                <em>l&apos;élégance</em> d&apos;une façade<br />
-                qui <em>traverse</em> les décennies.
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">★ Premium — Fibre-ciment — 7 finitions</span>
+                <span className="hero__title-anchor">L&apos;élégance durable</span>
+                <span className="hero__title-italic">d&apos;une façade qui traverse les décennies.</span>
               </h1>
+
+              <p className="hero__stat-line">
+                MaPrimeRénov&apos; <strong>jusqu&apos;à 75&thinsp;€/m²</strong>
+              </p>
 
               <p className="hero__subtitle">
                 Isolation par l&apos;extérieur, rendu haut de gamme, durabilité exceptionnelle. Sept
@@ -184,6 +182,36 @@ export default function BardageClient() {
           </div>
         </div>
       </section>
+
+      <ScrollNav
+        sections={[
+          { id: "configurateur", label: "Configurateur" },
+          { id: "materiau", label: "Matériau" },
+          { id: "profils", label: "Profils" },
+          { id: "methode", label: "Méthode" },
+          { id: "secteurs", label: "Secteurs" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "Durée de vie 50 ans+",
+              "7 finitions · 2 profils de pose",
+              "Isolation par l'extérieur — RGE",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* CONFIGURATOR */}
       <section className="configurator" id="configurateur">
@@ -415,7 +443,7 @@ export default function BardageClient() {
       </section>
 
       {/* WHY FIBRE-CIMENT */}
-      <section className="why-fc">
+      <section className="why-fc" id="materiau">
         <div className="container container--wide">
           <div className="why-fc__header">
             <div className="fade-in">
@@ -509,7 +537,7 @@ export default function BardageClient() {
       </section>
 
       {/* PROFILES */}
-      <section className="profiles">
+      <section className="profiles" id="profils">
         <div className="container">
           <div className="profiles__header fade-in">
             <p className="section-label">Profils de pose</p>
@@ -696,7 +724,7 @@ export default function BardageClient() {
       </section>
 
       {/* METHOD */}
-      <section className="method">
+      <section className="method" id="methode">
         <div className="container">
           <div className="method__header fade-in">
             <p className="section-label">Méthode de pose</p>
@@ -726,7 +754,7 @@ export default function BardageClient() {
       </section>
 
       {/* SECTORS */}
-      <section className="sectors">
+      <section className="sectors" id="secteurs">
         <div className="container">
           <div className="sectors__header fade-in">
             <p className="section-label">Pour quels bâtiments</p>
@@ -797,7 +825,7 @@ export default function BardageClient() {
       </section>
 
       {/* FAQ */}
-      <section className="faq">
+      <section className="faq" id="faq">
         <div className="container">
           <div className="faq__header fade-in">
             <p className="section-label">Questions fréquentes</p>

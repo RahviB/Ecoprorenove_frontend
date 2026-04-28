@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import ScrollNav from "@/components/ScrollNav";
 
 export const metadata: Metadata = {
   title: "VMC Double Flux agricole — Déshumidification de serre, AGR-TH-119",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function VmcDoubleFluxPage() {
   return (
-    <div className="page-service page-vmc">
+    <div className="page-service solution-template page-vmc">
       <ServiceJsonLd
         name="VMC Double Flux agricole — Thaleos THACTA11901"
         description="Système de ventilation double flux avec récupération de chaleur pour serres et bâtiments agricoles. Fiche CEE AGR-TH-119."
@@ -36,24 +37,21 @@ export default function VmcDoubleFluxPage() {
         <div className="container">
           <div className="hero__inner">
             <div className="hero__content fade-in">
-              <div className="hero__badges">
-                <span className="tag tag--white">Bâtiment agricole</span>
-                <span className="tag tag--white">Marque française · Thaleos</span>
-                <span className="tag tag--accent">Éligible CEE · AGR-TH-119</span>
-              </div>
-
-              <h1 className="hero__title">
-                Déshumidifiez votre <em>serre.</em>
-                <br />
-                Récupérez la chaleur. Sans investissement initial.
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">Bâtiment agricole — CEE AGR-TH-119</span>
+                <span className="hero__title-anchor">Déshumidifiez votre serre</span>
+                <span className="hero__title-italic">récupérez la chaleur, sans investissement initial.</span>
               </h1>
+
+              <p className="hero__stat-line">
+                Jusqu&apos;à <strong>71&thinsp;%</strong> de récupération de chaleur
+              </p>
 
               <p className="hero__subtitle">
                 La VMC double flux Thaleos THACTA11901 capte la chaleur de l&apos;air extrait pour
-                préchauffer l&apos;air entrant — jusqu&apos;à <strong>71 %</strong> de récupération
-                — tout en maintenant une hygrométrie maîtrisée. Solution conforme à la fiche
-                d&apos;opération standardisée <strong>CEE AGR-TH-119</strong>, finançable
-                jusqu&apos;à 100 %.
+                préchauffer l&apos;air entrant tout en maintenant une hygrométrie maîtrisée.
+                Solution conforme à la fiche d&apos;opération standardisée CEE AGR-TH-119,
+                finançable jusqu&apos;à 100 %.
               </p>
 
               <div className="hero__actions">
@@ -63,55 +61,55 @@ export default function VmcDoubleFluxPage() {
                 </a>
                 <a href="#solution" className="btn btn--secondary">Voir la solution Thaleos</a>
               </div>
-
-              <div className="hero__reassurance">
-                {[
-                  "Pose RGE — installateurs qualifiés",
-                  "Régulation automatique (température, hygrométrie, sondes)",
-                  "Durée de vie conventionnelle 17 ans",
-                ].map((t) => (
-                  <div key={t} className="hero__reassurance-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                    {t}
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img-placeholder">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M4 8 H12 A4 4 0 0 1 16 12" />
-                  <path d="M20 16 H12 A4 4 0 0 1 8 12" />
-                  <polyline points="14 6 16 8 14 10" />
-                  <polyline points="10 14 8 16 10 18" />
-                </svg>
-                <span>Photo unité Thaleos<br /><small>Recommandé : 800 × 600 px</small></span>
+              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <div className="hero__bubble hero__bubble--temp">
+                <strong>65 — 71 %</strong>
+                <small>récupération<br />de chaleur</small>
               </div>
-
-              <div className="hero__stat-card">
-                <div className="hero__stat-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M2 12h20" />
-                    <path d="M12 2v20" />
-                    <path d="m4.93 4.93 14.14 14.14" />
-                    <path d="m19.07 4.93-14.14 14.14" />
-                  </svg>
-                </div>
-                <div className="hero__stat-text">
-                  <strong>65 — 71 %</strong>
-                  récupération de chaleur sur l&apos;air extrait
-                </div>
+              <div className="hero__bubble hero__bubble--life">
+                <strong>17 ans</strong>
+                <small>durée de vie<br />conventionnelle</small>
               </div>
-
-              <div className="hero__cee-badge">
-                <span>CEE</span>
-                AGR-TH<br />119
+              <div className="hero__bubble hero__bubble--cee">
+                <strong>CEE</strong>
+                <small>AGR-TH-119</small>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <ScrollNav
+        sections={[
+          { id: "probleme", label: "Le problème" },
+          { id: "solution", label: "Solution Thaleos" },
+          { id: "processus", label: "Fonctionnement" },
+          { id: "eligibilite", label: "Éligibilité" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "Pose RGE — installateurs qualifiés",
+              "Régulation automatique (T°, hygrométrie, sondes)",
+              "Durée de vie conventionnelle 17 ans",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* PROBLEM */}
       <section className="benefits" id="probleme">

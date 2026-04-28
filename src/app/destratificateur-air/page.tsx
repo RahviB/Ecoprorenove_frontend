@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import ScrollNav from "@/components/ScrollNav";
 
 export const metadata: Metadata = {
   title: "Destratificateur d'air — économies de chauffage en grand volume",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function DestratificateurPage() {
   return (
-    <div className="page-service page-destrat">
+    <div className="page-service solution-template page-destrat">
       <ServiceJsonLd
         name="Destratificateur d'air"
         description="Redistribution de la chaleur accumulée sous le plafond. Économies de chauffage en grand volume, éligible CEE."
@@ -35,17 +36,15 @@ export default function DestratificateurPage() {
         <div className="container">
           <div className="hero__inner">
             <div className="hero__content fade-in">
-              <div className="hero__badges">
-                <span className="tag tag--white">Destratificateur d&apos;air</span>
-                <span className="tag tag--white">Économies de chauffage</span>
-                <span className="tag tag--accent">Éligible CEE</span>
-              </div>
-
-              <h1 className="hero__title">
-                La chaleur <em>que vous payez</em><br />
-                reste-t-elle là<br />
-                où vous en avez besoin&nbsp;?
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">Grand volume — Éligible CEE</span>
+                <span className="hero__title-anchor">Récupérez la chaleur</span>
+                <span className="hero__title-italic">qui dort sous le plafond.</span>
               </h1>
+
+              <p className="hero__stat-line">
+                Jusqu&apos;à <strong>−30&thinsp;%</strong> sur la facture de chauffage
+              </p>
 
               <p className="hero__subtitle">
                 Dans les grands volumes, la chaleur monte naturellement vers le plafond — loin des
@@ -61,47 +60,56 @@ export default function DestratificateurPage() {
                 </a>
                 <a href="#fonctionnement" className="btn btn--secondary">Voir le fonctionnement</a>
               </div>
-
-              <div className="hero__reassurance">
-                {["Compatible toutes installations", "Sans travaux lourds", "Financement CEE possible"].map((t) => (
-                  <div key={t} className="hero__reassurance-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                    {t}
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img-placeholder">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                <span>Insérez votre visuel ici<br /><small>Recommandé : 800 × 600 px</small></span>
+              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <div className="hero__bubble hero__bubble--temp">
+                <strong>−30 %</strong>
+                <small>économies<br />de chauffage</small>
               </div>
-
-              <div className="hero__stat-card">
-                <div className="hero__stat-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                  </svg>
-                </div>
-                <div className="hero__stat-text">
-                  <strong>Jusqu&apos;à 30 % d&apos;économies*</strong>
-                  sur la facture de chauffage
-                </div>
+              <div className="hero__bubble hero__bubble--life">
+                <strong>8 — 15 °C</strong>
+                <small>écart sol/plafond<br />sans traitement</small>
               </div>
-
-              <div className="hero__cee-badge">
-                <span>CEE</span>
-                Éligible
+              <div className="hero__bubble hero__bubble--cee">
+                <strong>CEE</strong>
+                <small>Éligible</small>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <ScrollNav
+        sections={[
+          { id: "probleme", label: "Le problème" },
+          { id: "fonctionnement", label: "Fonctionnement" },
+          { id: "benefices", label: "Bénéfices" },
+          { id: "cee", label: "CEE" },
+          { id: "methode", label: "Méthode" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "Compatible toutes installations existantes",
+              "Sans travaux lourds — pose en faîtage",
+              "Financement CEE possible",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* PROBLEM — stratification */}
       <section className="problem" id="probleme">

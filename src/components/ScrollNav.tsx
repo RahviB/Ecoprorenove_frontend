@@ -2,29 +2,23 @@
 
 import { useEffect, useState } from "react";
 
-type Section = { id: string; label: string };
+export type ScrollNavSection = { id: string; label: string };
 
-const SECTIONS: Section[] = [
-  { id: "probleme", label: "Le problème" },
-  { id: "airflex", label: "Airflex 30" },
-  { id: "benefices", label: "Bénéfices" },
-  { id: "batiments", label: "Bâtiments" },
-  { id: "cee", label: "CEE" },
-  { id: "methode", label: "Méthode" },
-  { id: "faq", label: "FAQ" },
-  { id: "contact", label: "Contact" },
-];
+type Props = {
+  sections: ScrollNavSection[];
+  showAfter?: number;
+};
 
-export default function ScrollNav() {
-  const [active, setActive] = useState<string>(SECTIONS[0].id);
+export default function ScrollNav({ sections, showAfter = 480 }: Props) {
+  const [active, setActive] = useState<string>(sections[0]?.id ?? "");
   const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 480);
+    const onScroll = () => setShow(window.scrollY > showAfter);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [showAfter]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,12 +29,12 @@ export default function ScrollNav() {
       },
       { rootMargin: "-30% 0px -55% 0px", threshold: 0 }
     );
-    for (const s of SECTIONS) {
+    for (const s of sections) {
       const el = document.getElementById(s.id);
       if (el) observer.observe(el);
     }
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   return (
     <nav
@@ -48,7 +42,7 @@ export default function ScrollNav() {
       aria-label="Sections de la page"
     >
       <ul>
-        {SECTIONS.map((s) => (
+        {sections.map((s) => (
           <li key={s.id} className={active === s.id ? "is-active" : ""}>
             <a href={`#${s.id}`}>
               <span className="scrollnav-side__dot" aria-hidden="true" />

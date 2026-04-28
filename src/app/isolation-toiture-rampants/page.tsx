@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function IsolationToitureRampantsPage() {
   return (
-    <div className="page-service page-toiture">
+    <div className="page-service solution-template page-toiture">
       <ServiceJsonLd
         name="Isolation toiture sous rampants — Airflex 30"
         description="Barrière thermo-réfléchissante Airflex 30 sous toiture métallique. Pose RGE, fiche CEE BAT-EN-106."
@@ -89,7 +89,18 @@ export default function IsolationToitureRampantsPage() {
         </div>
       </section>
 
-      <ScrollNav />
+      <ScrollNav
+        sections={[
+          { id: "probleme", label: "Le problème" },
+          { id: "airflex", label: "Airflex 30" },
+          { id: "benefices", label: "Bénéfices" },
+          { id: "batiments", label: "Bâtiments" },
+          { id: "cee", label: "CEE" },
+          { id: "methode", label: "Méthode" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
 
       {/* HERO BANDEAU — proof points */}
       <div className="hero-bandeau">

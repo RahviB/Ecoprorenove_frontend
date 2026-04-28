@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import ScrollNav from "@/components/ScrollNav";
 
 export const metadata: Metadata = {
   title: "Accompagnement stratégique — ECOPRORENOVE",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function AccompagnementStrategiquePage() {
   return (
-    <div className="page-service page-accompagnement">
+    <div className="page-service solution-template page-accompagnement">
       <ServiceJsonLd
         name="Accompagnement stratégique en performance énergétique"
         description="Diagnostic énergétique, courtage gaz et électricité, mobilisation des dispositifs CEE et aides — articulés autour d'un interlocuteur unique."
@@ -36,19 +37,22 @@ export default function AccompagnementStrategiquePage() {
         <div className="container">
           <div className="hero__inner">
             <div className="hero__content fade-in">
-              <div className="hero__badges">
-                <span className="tag tag--white">Conformité réglementaire</span>
-                <span className="tag tag--white">Pilotage énergétique</span>
-                <span className="tag tag--white">Courtage gaz &amp; électricité</span>
-              </div>
-
-              <h1 className="hero__title">
-                Votre direction énergie <em>externalisée,</em>
-                <br />de la stratégie au contrat.
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">Conformité — Pilotage — Courtage</span>
+                <span className="hero__title-anchor">Votre direction énergie</span>
+                <span className="hero__title-italic">externalisée, de la stratégie au contrat.</span>
               </h1>
 
+              <p className="hero__stat-line">
+                Une expertise <strong>globale</strong> · Stratégie · Conformité · Contrats
+              </p>
+
               <p className="hero__subtitle">
-                ECOPRORENOVE accompagne les professionnels sur l&apos;ensemble de leur trajectoire énergétique : conformité réglementaire (BACS, décret tertiaire), analyse des besoins, identification des leviers d&apos;optimisation, montage de projets de rénovation et courtage en gaz et électricité. Une seule expertise, articulée autour d&apos;un interlocuteur unique.
+                ECOPRORENOVE accompagne les professionnels sur l&apos;ensemble de leur trajectoire
+                énergétique : conformité réglementaire (BACS, décret tertiaire), analyse des
+                besoins, identification des leviers d&apos;optimisation, montage de projets de
+                rénovation et courtage en gaz et électricité. Une seule expertise, articulée
+                autour d&apos;un interlocuteur unique.
               </p>
 
               <div className="hero__actions">
@@ -58,40 +62,57 @@ export default function AccompagnementStrategiquePage() {
                 </a>
                 <a href="#perimetre" className="btn btn--secondary">Voir le périmètre</a>
               </div>
-
-              <div className="hero__reassurance">
-                {["Interlocuteur unique", "Indépendance & transparence", "Diagnostic sans engagement"].map((t) => (
-                  <div key={t} className="hero__reassurance-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                    {t}
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img-placeholder">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                <span>Insérez votre visuel ici<br /><small>Recommandé : 800 × 600 px</small></span>
+              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <div className="hero__bubble hero__bubble--temp">
+                <strong>1</strong>
+                <small>interlocuteur<br />unique</small>
               </div>
-
-              <div className="hero__stat-card">
-                <div className="hero__stat-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="12 2 15 9 22 9 17 14 18 22 12 18 6 22 7 14 2 9 9 9 12 2"/></svg>
-                </div>
-                <div className="hero__stat-text">
-                  <strong>Une expertise globale</strong>
-                  Stratégie · Conformité · Contrats
-                </div>
+              <div className="hero__bubble hero__bubble--life">
+                <strong>BACS</strong>
+                <small>décret tertiaire<br />conformité</small>
+              </div>
+              <div className="hero__bubble hero__bubble--cee">
+                <strong>Gaz · Élec</strong>
+                <small>courtage indépendant</small>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <ScrollNav
+        sections={[
+          { id: "enjeux", label: "Enjeux" },
+          { id: "perimetre", label: "Périmètre" },
+          { id: "travaux", label: "Travaux" },
+          { id: "methode", label: "Méthode" },
+          { id: "gestion", label: "Gestion projet" },
+          { id: "ecoprorenove", label: "Pourquoi nous" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "Interlocuteur unique",
+              "Indépendance & transparence",
+              "Diagnostic sans engagement",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* WHY — enjeux */}
       <section className="why-renovate" id="enjeux">

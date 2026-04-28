@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import ScrollNav from "@/components/ScrollNav";
 
 export const metadata: Metadata = {
   title: "Extracteur d'air statique — désurchauffe naturelle | ECOPRORENOVE",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function ExtracteurAirPage() {
   return (
-    <div className="page-service page-extracteur">
+    <div className="page-service solution-template page-extracteur">
       <ServiceJsonLd
         name="Extracteur d'air statique Tornado Windmaster"
         description="Évacuation passive de l'air chaud sous toiture métallique par effet venturi. Sans moteur, sans consommation électrique. Complément des solutions d'isolation."
@@ -44,18 +45,15 @@ export default function ExtracteurAirPage() {
                 <span style={{ color: "rgba(255,255,255,.75)" }}>Extracteur d&apos;air statique</span>
               </nav>
 
-              <div className="hero__badges">
-                <span className="tag tag--white">Tornado Windmaster®</span>
-                <span className="tag tag--white">Sans moteur</span>
-                <span className="tag tag--white">Sans consommation</span>
-                <span className="tag tag--accent">Complément de l&apos;Airflex 30</span>
-              </div>
-
-              <h1 className="hero__title">
-                La chaleur monte —<br />
-                <em>laissons-la</em><br />
-                s&apos;<em>échapper</em>.
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">Tornado Windmaster® — Sans moteur</span>
+                <span className="hero__title-anchor">Évacuez la chaleur</span>
+                <span className="hero__title-italic">qui s&apos;accumule sous la toiture.</span>
               </h1>
+
+              <p className="hero__stat-line">
+                <strong>0&thinsp;W</strong> consommation · 24/7 fonctionnement passif
+              </p>
 
               <p className="hero__subtitle">
                 Sous une toiture métallique, l&apos;air chaud s&apos;accumule au plafond et fait grimper la température intérieure. L&apos;extracteur statique évacue cet air en continu — par effet venturi naturel, sans moteur ni consommation électrique.
@@ -101,6 +99,35 @@ export default function ExtracteurAirPage() {
           </div>
         </div>
       </section>
+
+      <ScrollNav
+        sections={[
+          { id: "produit", label: "Le produit" },
+          { id: "benefices", label: "Bénéfices" },
+          { id: "combo", label: "Combo Airflex" },
+          { id: "applications", label: "Applications" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "Sans moteur — sans consommation électrique",
+              "Pose en faîtage — toutes couvertures",
+              "Complément naturel de l'Airflex 30",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* PRODUIT EN PLACE */}
       <section className="product-show" id="produit">
@@ -176,7 +203,7 @@ export default function ExtracteurAirPage() {
       </section>
 
       {/* COMBO AIRFLEX 30 */}
-      <section className="combo">
+      <section className="combo" id="combo">
         <div className="container container--wide">
           <div style={{ textAlign: "center", marginBottom: 56 }} className="fade-in">
             <p className="section-label" style={{ color: "#a8e296" }}>Le duo gagnant</p>
@@ -233,7 +260,7 @@ export default function ExtracteurAirPage() {
       </section>
 
       {/* APPLICATIONS */}
-      <section className="applications">
+      <section className="applications" id="applications">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 56 }} className="fade-in">
             <p className="section-label">Bâtiments concernés</p>
@@ -268,7 +295,7 @@ export default function ExtracteurAirPage() {
       </section>
 
       {/* FAQ */}
-      <section className="faq">
+      <section className="faq" id="faq">
         <div className="container">
           <div className="faq__header fade-in">
             <p className="section-label">Questions fréquentes</p>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import ScrollNav from "@/components/ScrollNav";
 
 export const metadata: Metadata = {
   title: "Isolation des combles — CEE BAT-EN-101 / 106",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function IsolationComblesPage() {
   return (
-    <div className="page-service">
+    <div className="page-service solution-template">
       <ServiceJsonLd
         name="Isolation des combles"
         description="Soufflage ou déroulé, jusqu'à 30 % d'économies de chauffage. Pose RGE, fiches CEE BAT-EN-101 et BAT-EN-106."
@@ -35,23 +36,21 @@ export default function IsolationComblesPage() {
         <div className="container">
           <div className="hero__inner">
             <div className="hero__content fade-in">
-              <div className="hero__badges">
-                <span className="tag tag--white">Isolation des combles</span>
-                <span className="tag tag--white">Bâtiment tertiaire</span>
-                <span className="tag tag--accent">Éligible CEE · BAT-EN-101 / 106</span>
-              </div>
-
-              <h1 className="hero__title">
-                Jusqu&apos;à <em>30&nbsp;%</em> de la chaleur<br />
-                de votre bâtiment<br />
-                s&apos;échappe par la toiture.
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">Bâtiment tertiaire — CEE BAT-EN-101 / 106</span>
+                <span className="hero__title-anchor">Isolez les combles</span>
+                <span className="hero__title-italic">stoppez les fuites par le haut.</span>
               </h1>
+
+              <p className="hero__stat-line">
+                Jusqu&apos;à <strong>−30&thinsp;%</strong> sur la facture de chauffage
+              </p>
 
               <p className="hero__subtitle">
                 L&apos;isolation des combles est l&apos;opération la plus rentable pour réduire vos
                 consommations de chauffage et de climatisation. En soufflage ou en déroulé selon la
-                configuration, ECOPRORENOVE déploie la solution adaptée à votre bâtiment — et
-                mobilise les CEE pour alléger votre reste à charge.
+                configuration, ECOPRORENOVE déploie la solution adaptée — et mobilise les CEE pour
+                alléger votre reste à charge.
               </p>
 
               <div className="hero__actions">
@@ -61,54 +60,57 @@ export default function IsolationComblesPage() {
                 </a>
                 <a href="#modes" className="btn btn--secondary">Voir les deux modes</a>
               </div>
-
-              <div className="hero__reassurance">
-                <div className="hero__reassurance-item">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  Résistance thermique R ≥ 7 m²·K/W
-                </div>
-                <div className="hero__reassurance-item">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  Chantier rapide, sans interruption d&apos;activité
-                </div>
-                <div className="hero__reassurance-item">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  Intervention certifiée RGE
-                </div>
-              </div>
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img-placeholder">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                  <polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
-                <span>Insérez votre visuel ici<br /><small>Recommandé : 800 × 600 px</small></span>
+              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <div className="hero__bubble hero__bubble--temp">
+                <strong>30 %</strong>
+                <small>déperditions<br />par la toiture</small>
               </div>
-
-              <div className="hero__stat-card">
-                <div className="hero__stat-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                    <line x1="8" y1="10" x2="16" y2="10"/>
-                    <line x1="8" y1="14" x2="13" y2="14"/>
-                  </svg>
-                </div>
-                <div className="hero__stat-text">
-                  <strong>Jusqu&apos;à 25 % d&apos;économies*</strong>
-                  sur la facture énergétique du bâtiment
-                </div>
+              <div className="hero__bubble hero__bubble--life">
+                <strong>R ≥ 7</strong>
+                <small>m²·K/W<br />BAT-EN-101</small>
               </div>
-
-              <div className="hero__cee-badge">
-                <span>CEE</span>
-                BAT-EN<br />101 · 106
+              <div className="hero__bubble hero__bubble--cee">
+                <strong>CEE</strong>
+                <small>BAT-EN 101 · 106</small>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <ScrollNav
+        sections={[
+          { id: "probleme", label: "Le problème" },
+          { id: "modes", label: "Techniques" },
+          { id: "benefices", label: "Bénéfices" },
+          { id: "batiments", label: "Bâtiments" },
+          { id: "cee", label: "CEE" },
+          { id: "methode", label: "Méthode" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "R ≥ 7 m²·K/W — BAT-EN-101",
+              "Chantier rapide, sans interruption d'activité",
+              "Pose RGE certifiée",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* PROBLEM */}
       <section className="problem" id="probleme">

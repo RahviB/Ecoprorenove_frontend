@@ -5873,22 +5873,24 @@ body:has(.page-home-v6) main { background: var(--white); }
   .cumul__grid { grid-template-columns: 1fr; }
 }
 
-/* =================  Page: isolation-toiture-rampants  ================= */
-/* Hero title in uppercase per client direction */
+/* =================  Solution-page template — T1 hero / bubbles / bandeau / scroll anchors  ================= */
+/* Applied to <div className="page-service solution-template page-<slug>">.            */
+/* Page-specific styles live under .page-<slug>.                                       */
+
 /* T1 hierarchical hero title (eyebrow caps · big anchor caps · serif italic) */
-.page-toiture .hero__title--t1 {
+.solution-template .hero__title--t1 {
   display: flex; flex-direction: column; gap: 10px;
   text-transform: none;
   margin-bottom: 18px;
 }
-.page-toiture .hero__title-eyebrow {
+.solution-template .hero__title-eyebrow {
   font-size: clamp(.78rem, 1.1vw, .9rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .14em;
   color: rgba(207, 231, 194, .85);
 }
-.page-toiture .hero__title-anchor {
+.solution-template .hero__title-anchor {
   font-size: clamp(2.2rem, 4.4vw, 3.4rem);
   font-weight: 900;
   line-height: 1;
@@ -5896,7 +5898,7 @@ body:has(.page-home-v6) main { background: var(--white); }
   text-transform: uppercase;
   color: #fff;
 }
-.page-toiture .hero__title-italic {
+.solution-template .hero__title-italic {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
@@ -5908,7 +5910,7 @@ body:has(.page-home-v6) main { background: var(--white); }
 }
 
 /* Stat tagline pill between H1 and subtitle */
-.page-toiture .hero__stat-line {
+.solution-template .hero__stat-line {
   display: inline-flex; align-items: center; gap: 10px;
   background: rgba(207, 231, 194, .14);
   border: 1px solid rgba(207, 231, 194, .28);
@@ -5919,34 +5921,48 @@ body:has(.page-home-v6) main { background: var(--white); }
   font-weight: 500;
   margin-bottom: 22px;
 }
-.page-toiture .hero__stat-line strong {
+.solution-template .hero__stat-line strong {
   color: #cfe7c2;
   font-family: var(--serif); font-style: italic; font-weight: 500;
   font-size: 1.1rem; letter-spacing: -.01em;
 }
 
-/* Hero photo */
-.page-toiture .hero__img {
+/* Hero photo (or placeholder while photo is pending) */
+.solution-template .hero__img {
   width: 100%; aspect-ratio: 4/3.1; object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   height: auto;
 }
+.solution-template .hero__img--placeholder {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.02) 100%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 8px, transparent 8px 18px),
+    rgba(15, 23, 20, .35);
+  border: 1px dashed rgba(255, 255, 255, .25);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255, 255, 255, .5);
+  font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.solution-template .hero__img--placeholder::after {
+  content: 'Photo à venir';
+}
 
 /* Floating stat bubbles overlaid on photo */
-@keyframes toitureBubbleFloat {
+@keyframes solutionBubbleFloat {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-10px); }
 }
-@keyframes toitureBubbleFloatAlt {
+@keyframes solutionBubbleFloatAlt {
   0%, 100% { transform: translateY(0) translateX(0); }
   50%      { transform: translateY(-7px) translateX(4px); }
 }
-@keyframes toitureBubblePopIn {
+@keyframes solutionBubblePopIn {
   from { opacity: 0; transform: translateY(14px) scale(.92); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
-.page-toiture .hero__bubble {
+.solution-template .hero__bubble {
   position: absolute; z-index: 3;
   background: rgba(15, 23, 20, .92); color: #fff;
   border: 1px solid rgba(255, 255, 255, .12);
@@ -5955,71 +5971,63 @@ body:has(.page-home-v6) main { background: var(--white); }
   box-shadow: 0 12px 32px rgba(0, 0, 0, .28);
   backdrop-filter: blur(10px);
   font-weight: 600; letter-spacing: -.01em;
-  animation: toitureBubblePopIn .55s ease-out backwards;
+  animation: solutionBubblePopIn .55s ease-out backwards;
 }
-.page-toiture .hero__bubble strong { color: #cfe7c2; font-weight: 700; font-size: 1.15rem; }
-.page-toiture .hero__bubble small { font-size: .72rem; opacity: .65; font-weight: 500; letter-spacing: 0; }
-.page-toiture .hero__bubble--temp {
+.solution-template .hero__bubble strong { color: #cfe7c2; font-weight: 700; font-size: 1.15rem; }
+.solution-template .hero__bubble small { font-size: .72rem; opacity: .65; font-weight: 500; letter-spacing: 0; }
+.solution-template .hero__bubble--temp {
   top: 10%; right: -16px;
-  animation: toitureBubblePopIn .55s ease-out .15s backwards, toitureBubbleFloat 5.5s ease-in-out 1s infinite;
+  animation: solutionBubblePopIn .55s ease-out .15s backwards, solutionBubbleFloat 5.5s ease-in-out 1s infinite;
 }
-.page-toiture .hero__bubble--life {
+.solution-template .hero__bubble--life {
   top: 46%; left: -22px;
-  animation: toitureBubblePopIn .55s ease-out .3s backwards, toitureBubbleFloatAlt 6.5s ease-in-out 1.2s infinite;
+  animation: solutionBubblePopIn .55s ease-out .3s backwards, solutionBubbleFloatAlt 6.5s ease-in-out 1.2s infinite;
 }
-.page-toiture .hero__bubble--cee {
+.solution-template .hero__bubble--cee {
   bottom: 8%; right: 12%;
   background: #49a739; border-color: rgba(255, 255, 255, .2);
-  animation: toitureBubblePopIn .55s ease-out .45s backwards, toitureBubbleFloat 5s ease-in-out 1.4s infinite;
+  animation: solutionBubblePopIn .55s ease-out .45s backwards, solutionBubbleFloat 5s ease-in-out 1.4s infinite;
 }
-.page-toiture .hero__bubble--cee strong { color: #fff; }
-.page-toiture .hero__bubble--cee small { color: rgba(255, 255, 255, .78); }
+.solution-template .hero__bubble--cee strong { color: #fff; }
+.solution-template .hero__bubble--cee small { color: rgba(255, 255, 255, .78); }
 
 /* Bandeau — horizontal proof strip below hero */
-.page-toiture .hero-bandeau {
+.solution-template .hero-bandeau {
   background: #fff;
   border-bottom: 1px solid var(--gray-mid);
 }
-.page-toiture .hero-bandeau__inner {
+.solution-template .hero-bandeau__inner {
   display: flex; flex-wrap: wrap; justify-content: center;
   gap: 28px 48px;
   padding: 22px 0;
 }
-.page-toiture .hero-bandeau__item {
+.solution-template .hero-bandeau__item {
   display: flex; align-items: center; gap: 10px;
   font-size: .85rem; font-weight: 500;
   color: var(--gray-dark);
   letter-spacing: -.005em;
 }
-.page-toiture .hero-bandeau__item svg { color: var(--green); flex-shrink: 0; }
+.solution-template .hero-bandeau__item svg { color: var(--green); flex-shrink: 0; }
 
 @media (max-width: 768px) {
-  .page-toiture .hero__bubble--temp { right: 6px; }
-  .page-toiture .hero__bubble--life { left: 6px; top: 50%; }
-  .page-toiture .hero__bubble--cee  { right: 8%; bottom: 6%; }
-  .page-toiture .hero-bandeau__inner {
+  .solution-template .hero__bubble--temp { right: 6px; }
+  .solution-template .hero__bubble--life { left: 6px; top: 50%; }
+  .solution-template .hero__bubble--cee  { right: 8%; bottom: 6%; }
+  .solution-template .hero-bandeau__inner {
     flex-direction: column; align-items: flex-start;
     gap: 12px; padding: 18px 4px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .page-toiture .hero__bubble {
+  .solution-template .hero__bubble {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
 }
 
-/* Smooth scroll offset for all in-page anchors used by ScrollNav */
-.page-toiture #probleme,
-.page-toiture #airflex,
-.page-toiture #fonctionnement,
-.page-toiture #benefices,
-.page-toiture #batiments,
-.page-toiture #cee,
-.page-toiture #methode,
-.page-toiture #faq,
-.page-toiture #contact { scroll-margin-top: 130px; }
+/* Smooth scroll offset for any in-page anchor section in a solution page */
+.solution-template :where(section[id]) { scroll-margin-top: 130px; }
 
 /* =================  ScrollNav (in-page section navigation — vertical sidebar)  ================= */
 .scrollnav-side {
