@@ -11,6 +11,9 @@ const routes = [
   "extracteur-air",
   "financement-cee",
   "accompagnement-strategique",
+  "qui-sommes-nous",
+  "mentions-legales",
+  "politique-de-confidentialite",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

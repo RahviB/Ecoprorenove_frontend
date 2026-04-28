@@ -37,11 +37,8 @@ export default function MobileCtaBar() {
         Étudier mon projet
       </a>
       <a
-        href="#"
-        aria-disabled="true"
-        tabIndex={-1}
-        title="Numéro à venir"
-        aria-label="Nous appeler — numéro à venir"
+        href="tel:+33619798391"
+        aria-label="Nous appeler — +33 6 19 79 83 91"
         className="mobile-cta-bar__phone"
       >
         <svg

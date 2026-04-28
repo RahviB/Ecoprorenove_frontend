@@ -14,19 +14,25 @@ export default function Footer() {
               Rénovation énergétique pour les bâtiments tertiaires, résidentiels et
               agricoles — CEE, MaPrimeRénov&apos;, pose RGE.
             </p>
-            <div className="footer__contact-line">
+            <a href="tel:+33619798391" className="footer__contact-line">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a8e296" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-              <span>+33 X XX XX XX XX</span>
-            </div>
-            <div className="footer__contact-line">
+              <span>+33 6 19 79 83 91 <em>· Métropole</em></span>
+            </a>
+            <a href="tel:+262693546253" className="footer__contact-line">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a8e296" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>+262 6 93 54 62 53 <em>· La Réunion</em></span>
+            </a>
+            <a href="mailto:contact@ecoprorenove.fr" className="footer__contact-line">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a8e296" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
               <span>contact@ecoprorenove.fr</span>
-            </div>
+            </a>
           </div>
 
           <div className="footer__col">
@@ -56,7 +62,7 @@ export default function Footer() {
             <p className="footer__col-title">ECOPRORENOVE</p>
             <ul>
               <li><Link href="/financement-cee">Financement CEE</Link></li>
-              <li><a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Qui sommes-nous&nbsp;?</a></li>
+              <li><Link href="/qui-sommes-nous">Qui sommes-nous&nbsp;?</Link></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -73,9 +79,8 @@ export default function Footer() {
             </span>
           </p>
           <div className="footer__legal">
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Mentions légales</a>
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Politique de confidentialité</a>
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">RGPD</a>
+            <Link href="/mentions-legales">Mentions légales</Link>
+            <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
           </div>
         </div>
       </div>

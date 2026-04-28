@@ -248,9 +248,9 @@ export default function Navbar() {
               </div>
 
               <div className="nav-item">
-                <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="nav-link">
+                <Link href="/qui-sommes-nous" className="nav-link">
                   Qui sommes-nous&nbsp;?
-                </a>
+                </Link>
               </div>
 
               <div className="nav-item nav-item--cta" style={{ marginLeft: 10 }}>
@@ -316,7 +316,7 @@ export default function Navbar() {
 
           <div className="mobile-drawer__group">
             <Link href="/financement-cee" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Financement CEE</Link>
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Qui sommes-nous&nbsp;?</a>
+            <Link href="/qui-sommes-nous" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Qui sommes-nous&nbsp;?</Link>
           </div>
 
           <a href="#contact" className="btn btn--primary mobile-drawer__cta" onClick={() => setDrawerOpen(false)}>
