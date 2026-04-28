@@ -1,5 +1,10 @@
 "use server";
 
+import { Resend } from "resend";
+
+const RESEND_FROM = "ECOPRORENOVE <contact@ecoprorenove.fr>";
+const RESEND_TO = "rahvi.bichon@gmail.com";
+
 export type IntakeState = {
   ok: boolean;
   message: string;
@@ -116,6 +121,42 @@ export async function submitIntake(
   ].join("\n");
 
   console.log(block);
+
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error("RESEND_API_KEY missing — submission only logged, not emailed.");
+    return {
+      ok: false,
+      message:
+        "Erreur de configuration côté serveur. Vos informations ont été enregistrées dans les logs ; l'équipe Influxe vous recontacte.",
+    };
+  }
+
+  try {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: RESEND_FROM,
+      to: RESEND_TO,
+      replyTo: f("email_contact").trim() || undefined,
+      subject: `[Intake ECOPRORENOVE] ${f("denomination").trim() || "Soumission"}`,
+      text: block,
+    });
+    if (error) {
+      console.error("Resend send error:", error);
+      return {
+        ok: false,
+        message:
+          "Vos informations ont été enregistrées mais l'email n'a pas pu être envoyé. L'équipe Influxe est notifiée.",
+      };
+    }
+  } catch (err) {
+    console.error("Resend send exception:", err);
+    return {
+      ok: false,
+      message:
+        "Vos informations ont été enregistrées mais l'email n'a pas pu être envoyé. L'équipe Influxe est notifiée.",
+    };
+  }
 
   return {
     ok: true,
