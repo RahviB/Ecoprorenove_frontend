@@ -27,8 +27,10 @@ public email).
 
 ## Where the submission lands
 
-The server action (`src/app/setup/actions.ts`) `console.log`s a formatted block to
-stdout. On the Coolify deployment that goes to the container's logs — open the app in
-Coolify → "Logs" tab to read it after Emmanuel submits. No email is sent (Resend is
-planned but not wired yet — if/when it lands, swap the `console.log` for a mailer
-call).
+The server action (`src/app/setup/actions.ts`) sends a formatted text email via
+**Resend** to `rahvi.bichon@gmail.com` (sender: `contact@ecoprorenove.fr`). It also
+mirrors the same block to `console.log` so the Coolify "Logs" tab keeps a backup copy.
+
+Required env var on Coolify: `RESEND_API_KEY`. If it's missing, the action falls back
+to log-only and returns an error message to the client telling them the team will
+follow up.

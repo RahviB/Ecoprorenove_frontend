@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import ScrollNav from "@/components/ScrollNav";
 
 export const metadata: Metadata = {
   title: "Prime CEE — comprendre, vérifier, mobiliser le dispositif",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function PrimeCeePage() {
   return (
-    <div className="page-service page-financement-cee page-prime-cee">
+    <div className="page-service solution-template page-financement-cee page-prime-cee">
       <ServiceJsonLd
         name="Accompagnement Certificats d'Économies d'Énergie (CEE)"
         description="Analyse d'éligibilité, montage du dossier CEE, coordination jusqu'à la finalisation administrative."
@@ -35,17 +36,15 @@ export default function PrimeCeePage() {
         <div className="container">
           <div className="hero__inner">
             <div className="hero__content fade-in">
-              <div className="hero__badges">
-                <span className="tag tag--white">Financement de travaux</span>
-                <span className="tag tag--white">Dispositif CEE</span>
-                <span className="tag tag--white">Rénovation énergétique</span>
-              </div>
-
-              <h1 className="hero__title">
-                Votre projet de rénovation mieux <em>structuré,</em>
-                <br />
-                mieux financé, mieux piloté.
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">Financement CEE — dispositif national</span>
+                <span className="hero__title-anchor">Mobilisez la prime CEE</span>
+                <span className="hero__title-italic">structurez, vérifiez, sécurisez.</span>
               </h1>
+
+              <p className="hero__stat-line">
+                Un dossier <strong>recevable</strong> commence avant les travaux
+              </p>
 
               <p className="hero__subtitle">
                 Le mécanisme des Certificats d&apos;Économies d&apos;Énergie peut constituer un
@@ -62,40 +61,57 @@ export default function PrimeCeePage() {
                 </a>
                 <a href="#methode" className="btn btn--secondary">Voir notre méthode</a>
               </div>
-
-              <div className="hero__reassurance">
-                {["Accompagnement de bout en bout", "Analyse de faisabilité personnalisée", "Sans engagement initial"].map((t) => (
-                  <div key={t} className="hero__reassurance-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                    {t}
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img-placeholder">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                <span>Insérez votre visuel ici<br /><small>Recommandé : 800 × 600 px</small></span>
+              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <div className="hero__bubble hero__bubble--temp">
+                <strong>Avant<br />travaux</strong>
+                <small>condition<br />de recevabilité</small>
               </div>
-
-              <div className="hero__stat-card">
-                <div className="hero__stat-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                </div>
-                <div className="hero__stat-text">
-                  <strong>Économies d&apos;énergie</strong>
-                  Un projet structuré &amp; optimisé
-                </div>
+              <div className="hero__bubble hero__bubble--life">
+                <strong>Tertiaire<br />· Industrie</strong>
+                <small>copropriété<br />&amp; collectif</small>
+              </div>
+              <div className="hero__bubble hero__bubble--cee">
+                <strong>CEE</strong>
+                <small>fiches standardisées</small>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <ScrollNav
+        sections={[
+          { id: "pourquoi", label: "Pourquoi" },
+          { id: "cee", label: "Dispositif" },
+          { id: "travaux", label: "Travaux" },
+          { id: "methode", label: "Méthode" },
+          { id: "gestion", label: "Gestion" },
+          { id: "ecoprorenove", label: "Pourquoi nous" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "Analyse d'éligibilité honnête",
+              "Dossier sécurisé avant travaux",
+              "Accompagnement de bout en bout",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* WHY RENOVATE */}
       <section className="why-renovate" id="pourquoi">

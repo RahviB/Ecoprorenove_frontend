@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import ScrollNav from "@/components/ScrollNav";
 
 export const metadata: Metadata = {
   title: "MaPrimeRénov' — l'aide de l'État pour la rénovation énergétique",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function MaPrimeRenovPage() {
   return (
-    <div className="page-service page-financement-cee page-mpr">
+    <div className="page-service page-financement-cee page-mpr solution-template">
       <ServiceJsonLd
         name="Accompagnement MaPrimeRénov'"
         description="Analyse du parcours pertinent (geste, ampleur, copropriété), montage du dossier MaPrimeRénov', coordination jusqu'au versement de la prime."
@@ -36,17 +37,15 @@ export default function MaPrimeRenovPage() {
         <div className="container">
           <div className="hero__inner">
             <div className="hero__content fade-in">
-              <div className="hero__badges">
-                <span className="tag tag--white">Aide de l&apos;État</span>
-                <span className="tag tag--white">Anah · France Rénov&apos;</span>
-                <span className="tag tag--white">Cumulable avec Prime CEE</span>
-              </div>
-
-              <h1 className="hero__title">
-                MaPrimeRénov&apos; — <em>l&apos;aide unique</em>
-                <br />
-                pour la rénovation énergétique de votre logement.
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">Aide de l&apos;État — Anah · France Rénov&apos;</span>
+                <span className="hero__title-anchor">MaPrimeRénov&apos;</span>
+                <span className="hero__title-italic">l&apos;aide unique pour rénover votre logement.</span>
               </h1>
+
+              <p className="hero__stat-line">
+                <strong>3,6 Md€</strong> de budget national en 2026
+              </p>
 
               <p className="hero__subtitle">
                 MaPrimeRénov&apos; est la principale aide de l&apos;État pour la rénovation
@@ -63,46 +62,56 @@ export default function MaPrimeRenovPage() {
                 </a>
                 <a href="#parcours" className="btn btn--secondary">Voir les 3 parcours</a>
               </div>
-
-              <div className="hero__reassurance">
-                {[
-                  "Pose RGE obligatoire — partenaires qualifiés",
-                  "Dossier déposé avant travaux",
-                  "Cumul avec Prime CEE et Éco-PTZ",
-                ].map((t) => (
-                  <div key={t} className="hero__reassurance-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                    {t}
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img-placeholder">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M3 10 L12 3 L21 10 V21 H3 Z" />
-                  <path d="M9 21 V14 H15 V21" />
-                </svg>
-                <span>Logement résidentiel<br /><small>Recommandé : 800 × 600 px</small></span>
+              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <div className="hero__bubble hero__bubble--temp">
+                <strong>3 parcours</strong>
+                <small>geste · ampleur<br />copropriété</small>
               </div>
-
-              <div className="hero__stat-card">
-                <div className="hero__stat-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <line x1="12" y1="1" x2="12" y2="23" />
-                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                  </svg>
-                </div>
-                <div className="hero__stat-text">
-                  <strong>3,6 milliards € en 2026*</strong>
-                  budget national MaPrimeRénov&apos;
-                </div>
+              <div className="hero__bubble hero__bubble--life">
+                <strong>15 ans</strong>
+                <small>logement<br />minimum</small>
+              </div>
+              <div className="hero__bubble hero__bubble--cee">
+                <strong>Anah</strong>
+                <small>aide de l&apos;État</small>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <ScrollNav
+        sections={[
+          { id: "parcours", label: "Parcours" },
+          { id: "conditions", label: "Conditions" },
+          { id: "travaux", label: "Travaux" },
+          { id: "cumul", label: "Cumul" },
+          { id: "methode", label: "Méthode" },
+          { id: "faq", label: "FAQ" },
+          { id: "contact", label: "Contact" },
+        ]}
+      />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "Pose RGE obligatoire — partenaires qualifiés",
+              "Dossier déposé avant travaux",
+              "Cumul Prime CEE et Éco-PTZ",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* PARCOURS */}
       <section className="cee-mechanism" id="parcours">
