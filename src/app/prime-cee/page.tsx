@@ -4,30 +4,30 @@ import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Financement CEE & MaPrimeRénov' — comprendre, vérifier, mobiliser",
+  title: "Prime CEE — comprendre, vérifier, mobiliser le dispositif",
   description:
     "Le mécanisme des Certificats d'Économies d'Énergie expliqué. Vérification d'éligibilité, montage de dossier, accompagnement de bout en bout. Sans engagement.",
-  alternates: { canonical: "/financement-cee" },
+  alternates: { canonical: "/prime-cee" },
   openGraph: {
-    url: "/financement-cee",
-    title: "Financement CEE & MaPrimeRénov' — ECOPRORENOVE",
+    url: "/prime-cee",
+    title: "Prime CEE — ECOPRORENOVE",
     description:
       "Mécanisme CEE expliqué, éligibilité vérifiée, dossier sécurisé. Métropole et La Réunion.",
   },
 };
 
-export default function FinancementCeePage() {
+export default function PrimeCeePage() {
   return (
-    <div className="page-service page-financement-cee">
+    <div className="page-service page-financement-cee page-prime-cee">
       <ServiceJsonLd
         name="Accompagnement Certificats d'Économies d'Énergie (CEE)"
         description="Analyse d'éligibilité, montage du dossier CEE, coordination jusqu'à la finalisation administrative."
-        url="/financement-cee"
+        url="/prime-cee"
       />
       <BreadcrumbJsonLd
         items={[
           { name: "Accueil", url: "/" },
-          { name: "Financement CEE", url: "/financement-cee" },
+          { name: "Prime CEE", url: "/prime-cee" },
         ]}
       />
       {/* HERO */}
@@ -505,7 +505,7 @@ export default function FinancementCeePage() {
 
             <div className="form-card fade-in delay-2">
               <h3 className="form-card__title">Étude de votre projet — sans engagement</h3>
-              <ContactForm source="financement-cee">
+              <ContactForm source="prime-cee">
                 <div className="form-grid">
                   <div className="form-group">
                     <label className="form-label" htmlFor="f-prenom">Prénom *</label>

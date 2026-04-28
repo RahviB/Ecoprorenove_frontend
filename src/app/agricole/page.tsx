@@ -46,7 +46,7 @@ const solutions: Array<[string, string, string]> = [
   ["Bardage", "/bardage", "Habillage thermique des façades de bâtiments agricoles."],
   ["Extracteur d'air", "/extracteur-air", "Renouvellement d'air et hygrométrie maîtrisée pour le bétail."],
   ["Accompagnement stratégique", "/accompagnement-strategique", "Cadrage du programme et arbitrages selon votre contexte d'exploitation."],
-  ["Financement CEE", "/financement-cee", "Mobilisation des fiches BAT-EN et IND-UT pour le secteur agricole."],
+  ["Prime CEE", "/prime-cee", "Mobilisation des fiches BAT-EN et IND-UT pour le secteur agricole."],
 ];
 
 export default function AgricolePage() {

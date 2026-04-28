@@ -43,6 +43,11 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: "/financement-cee", destination: "/prime-cee", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

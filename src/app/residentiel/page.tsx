@@ -45,7 +45,7 @@ const solutions: Array<[string, string, string]> = [
   ["Isolation des combles", "/isolation-combles", "Premier poste d'économie en maison individuelle et copropriété."],
   ["Bardage", "/bardage", "Isolation thermique par l'extérieur — performance et façade neuve."],
   ["Extracteur d'air", "/extracteur-air", "Renouvellement d'air et qualité d'ambiance après isolation."],
-  ["Financement CEE", "/financement-cee", "CEE et MaPrimeRénov' montés en parallèle pour optimiser le reste à charge."],
+  ["Prime CEE", "/prime-cee", "CEE et MaPrimeRénov' montés en parallèle pour optimiser le reste à charge."],
 ];
 
 export default function ResidentielPage() {

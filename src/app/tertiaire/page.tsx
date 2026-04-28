@@ -48,7 +48,7 @@ const solutions: Array<[string, string, string]> = [
   ["Déstratificateur d'air", "/destratificateur-air", "Homogénéisation thermique en grands volumes (commerces, halls, ateliers)."],
   ["Extracteur d'air", "/extracteur-air", "Renouvellement d'air et qualité d'ambiance pour locaux occupés."],
   ["Accompagnement stratégique", "/accompagnement-strategique", "Cadrage du programme, arbitrages techniques, pilotage de bout en bout."],
-  ["Financement CEE", "/financement-cee", "Mobilisation des Certificats d'Économies d'Énergie pour vos travaux tertiaires."],
+  ["Prime CEE", "/prime-cee", "Mobilisation des Certificats d'Économies d'Énergie pour vos travaux tertiaires."],
 ];
 
 export default function TertiairePage() {

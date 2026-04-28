@@ -470,6 +470,7 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
 }
 
 .megamenu--solutions { width: 640px; }
+.megamenu--subvention { width: 380px; }
 .megamenu__section { margin-bottom: 22px; }
 .megamenu__section:last-child { margin-bottom: 0; }
 .megamenu__section + .megamenu__section {
@@ -5411,6 +5412,284 @@ body:has(.page-home-v6) main { background: var(--white); }
   .about-company__grid { grid-template-columns: 1fr; gap: 40px; }
   .about-values__grid { grid-template-columns: 1fr; }
   .about-contact__grid { grid-template-columns: 1fr; }
+}
+
+/* Scroll-margin compensation for sticky navbar on in-page anchors */
+.cee-card[id="courtage"] { scroll-margin-top: 96px; }
+
+/* =================  Page: vmc-double-flux  ================= */
+.page-vmc .vmc-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 56px 0 64px;
+}
+.page-vmc .vmc-stat {
+  background: #fff;
+  border: 1px solid rgba(53, 122, 40, .14);
+  border-radius: 16px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+.page-vmc .vmc-stat:hover {
+  border-color: var(--green);
+  box-shadow: 0 12px 28px rgba(53, 122, 40, .1);
+  transform: translateY(-3px);
+}
+.page-vmc .vmc-stat__value {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--green-dark);
+  letter-spacing: -.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.page-vmc .vmc-stat__label {
+  font-size: .82rem;
+  color: var(--gray);
+  line-height: 1.4;
+  font-weight: 500;
+}
+@media (max-width: 960px) {
+  .page-vmc .vmc-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .page-vmc .vmc-stats { grid-template-columns: 1fr; }
+}
+
+.page-vmc .vmc-spec {
+  background: #fff;
+  border: 1px solid rgba(53, 122, 40, .14);
+  border-radius: 18px;
+  padding: 36px 32px;
+}
+.page-vmc .vmc-spec__title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0 0 20px;
+}
+.page-vmc .vmc-spec__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(53, 122, 40, .12);
+}
+.page-vmc .vmc-spec__row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 16px;
+  padding: 12px 4px;
+  border-bottom: 1px solid rgba(53, 122, 40, .08);
+  align-items: center;
+}
+.page-vmc .vmc-spec__key {
+  font-size: .82rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+.page-vmc .vmc-spec__val {
+  font-size: .92rem;
+  color: var(--black);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.page-vmc .vmc-spec__footnote {
+  margin: 22px 0 0;
+  font-size: .72rem;
+  color: var(--gray);
+  font-style: italic;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .page-vmc .vmc-spec__grid { grid-template-columns: 1fr; }
+}
+
+/* VMC eligibility split */
+.page-vmc .vmc-elig {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 16px;
+}
+.page-vmc .vmc-elig__pricecard {
+  background: linear-gradient(160deg, var(--green-darker) 0%, var(--green-dark) 100%);
+  color: #fff;
+  border-radius: 20px;
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-vmc .vmc-elig__big {
+  font-size: 4.2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+.page-vmc .vmc-elig__big-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .9);
+  margin: 0 0 22px;
+}
+.page-vmc .vmc-elig__big-text {
+  font-size: .92rem;
+  color: rgba(255, 255, 255, .82);
+  line-height: 1.65;
+  margin: 0;
+}
+.page-vmc .vmc-elig__criteres {
+  background: #fff;
+  border: 1px solid rgba(53, 122, 40, .14);
+  border-radius: 20px;
+  padding: 36px 32px;
+}
+.page-vmc .vmc-elig__title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0 0 20px;
+}
+.page-vmc .vmc-elig__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.page-vmc .vmc-elig__list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.page-vmc .vmc-elig__list svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.page-vmc .vmc-elig__crit-name {
+  display: block;
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+.page-vmc .vmc-elig__crit-desc {
+  display: block;
+  font-size: .82rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+@media (max-width: 960px) {
+  .page-vmc .vmc-elig { grid-template-columns: 1fr; }
+}
+
+/* =================  Page: ma-prime-renov  ================= */
+/* Cumul section — 2-col card grid (Éco-PTZ + aides locales) */
+.cumul {
+  padding: 100px 0;
+  background: var(--green-pale);
+}
+.cumul__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+}
+.cumul__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.cumul-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  border: 1px solid rgba(53, 122, 40, .14);
+  box-shadow: 0 2px 0 rgba(0,0,0,.02);
+  display: flex;
+  flex-direction: column;
+}
+.cumul-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+.cumul-card__eyebrow {
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin: 0 0 8px;
+}
+.cumul-card__title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--black);
+  letter-spacing: -.015em;
+  margin: 0 0 14px;
+  line-height: 1.2;
+}
+.cumul-card__text {
+  font-size: .95rem;
+  color: var(--gray);
+  line-height: 1.65;
+  margin: 0 0 22px;
+}
+.cumul-card__points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cumul-card__points li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: .88rem;
+  line-height: 1.55;
+  color: var(--black);
+}
+.cumul-card__points li svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.cumul-card__footnote {
+  margin: auto 0 0;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(53, 122, 40, .2);
+  font-size: .82rem;
+  color: var(--gray);
+  line-height: 1.55;
+  font-style: italic;
+}
+.cumul__notice {
+  margin-top: 36px;
+  padding: 24px 28px;
+  background: #fff;
+  border-left: 4px solid var(--green);
+  border-radius: 8px;
+  font-size: .92rem;
+  line-height: 1.65;
+  color: var(--black);
+}
+@media (max-width: 960px) {
+  .cumul__grid { grid-template-columns: 1fr; }
 }
 
 /* =================  Page: isolation-toiture-rampants  ================= */

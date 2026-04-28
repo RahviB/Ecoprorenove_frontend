@@ -104,8 +104,7 @@ const SOLUTIONS = [
     ),
   },
   {
-    href: "#",
-    disabled: true,
+    href: "/vmc-double-flux",
     title: "VMC Double flux",
     desc: "Récupération de chaleur sur l'air extrait. Solution dédiée aux bâtiments agricoles.",
     sectors: ["agricole"] as const,
@@ -119,8 +118,7 @@ const SOLUTIONS = [
     ),
   },
   {
-    href: "#",
-    disabled: true,
+    href: "/accompagnement-strategique#courtage",
     title: "Courtage en énergie",
     desc: "Mise en concurrence des fournisseurs gaz / électricité.",
     sectors: ["tertiaire", "agricole"] as const,
@@ -143,8 +141,8 @@ const SOLUTIONS = [
     ),
   },
   {
-    href: "/financement-cee",
-    title: "Financement CEE & MaPrimeRénov'",
+    href: "/prime-cee",
+    title: "Prime CEE & MaPrimeRénov'",
     desc: "Mobilisation et structuration des leviers de financement — analyse jusqu'à la clôture.",
     sectors: ["transverse"] as const,
     cee: true,

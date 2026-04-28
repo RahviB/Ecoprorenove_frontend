@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 
-type Menu = "secteurs" | "solutions" | null;
+type Menu = "secteurs" | "solutions" | "subvention" | null;
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<Menu>(null);
@@ -208,7 +208,7 @@ export default function Navbar() {
                         </svg>
                         Extracteur d&apos;air
                       </Link>
-                      <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mm-link" role="menuitem">
+                      <Link href="/vmc-double-flux" className="mm-link" role="menuitem">
                         <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <path d="M4 8 H12 A4 4 0 0 1 16 12" />
                           <path d="M20 16 H12 A4 4 0 0 1 8 12" />
@@ -216,14 +216,14 @@ export default function Navbar() {
                           <polyline points="10 14 8 16 10 18" />
                         </svg>
                         VMC Double flux
-                      </a>
-                      <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mm-link" role="menuitem">
+                      </Link>
+                      <Link href="/accompagnement-strategique#courtage" className="mm-link" role="menuitem">
                         <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <polyline points="3 17 9 11 13 15 21 7" />
                           <polyline points="14 7 21 7 21 14" />
                         </svg>
                         Courtage en énergie
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -241,10 +241,49 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <div className="nav-item">
-                <Link href="/financement-cee" className="nav-link">
-                  Financement CEE
-                </Link>
+              {/* Subvention */}
+              <div
+                className={`nav-item${openMenu === "subvention" ? " open" : ""}`}
+                data-menu="subvention"
+                onMouseEnter={() => openOnHover("subvention")}
+                onMouseLeave={closeOnLeave}
+              >
+                <button
+                  className="nav-link"
+                  aria-haspopup="true"
+                  aria-expanded={openMenu === "subvention"}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleClick("subvention");
+                  }}
+                >
+                  Subvention
+                  <svg className="nav-link__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+
+                <div className="megamenu megamenu--subvention" role="menu">
+                  <div className="megamenu__section">
+                    <div className="megamenu__section-title">Aides mobilisables</div>
+                    <div className="megamenu__grid">
+                      <Link href="/prime-cee" className="mm-link" role="menuitem">
+                        <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <line x1="12" y1="1" x2="12" y2="23" />
+                          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                        Prime CEE
+                      </Link>
+                      <Link href="/ma-prime-renov" className="mm-link" role="menuitem">
+                        <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M3 10 L12 3 L21 10 V21 H3 Z" />
+                          <path d="M9 21 V14 H15 V21" />
+                        </svg>
+                        MaPrimeRénov&apos;
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="nav-item">
@@ -309,13 +348,18 @@ export default function Navbar() {
             <Link href="/bardage" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Bardage</Link>
             <Link href="/destratificateur-air" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Destratificateur d&apos;air</Link>
             <Link href="/extracteur-air" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Extracteur d&apos;air</Link>
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>VMC Double flux</a>
-            <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Courtage en énergie</a>
+            <Link href="/vmc-double-flux" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>VMC Double flux</Link>
+            <Link href="/accompagnement-strategique#courtage" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Courtage en énergie</Link>
             <Link href="/accompagnement-strategique" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Accompagnement stratégique</Link>
           </div>
 
           <div className="mobile-drawer__group">
-            <Link href="/financement-cee" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Financement CEE</Link>
+            <p className="mobile-drawer__group-title">Subvention</p>
+            <Link href="/prime-cee" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Prime CEE</Link>
+            <Link href="/ma-prime-renov" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>MaPrimeRénov&apos;</Link>
+          </div>
+
+          <div className="mobile-drawer__group">
             <Link href="/qui-sommes-nous" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Qui sommes-nous&nbsp;?</Link>
           </div>
 

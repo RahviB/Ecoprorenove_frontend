@@ -52,16 +52,20 @@ export default function Footer() {
               <li><Link href="/bardage">Bardage</Link></li>
               <li><Link href="/destratificateur-air">Destratificateur d&apos;air</Link></li>
               <li><Link href="/extracteur-air">Extracteur d&apos;air</Link></li>
-              <li><a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">VMC Double flux</a></li>
-              <li><a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Courtage en énergie</a></li>
+              <li><Link href="/vmc-double-flux">VMC Double flux</Link></li>
+              <li><Link href="/accompagnement-strategique#courtage">Courtage en énergie</Link></li>
               <li><Link href="/accompagnement-strategique">Accompagnement stratégique</Link></li>
             </ul>
           </div>
 
           <div className="footer__col">
-            <p className="footer__col-title">ECOPRORENOVE</p>
+            <p className="footer__col-title">Subvention</p>
             <ul>
-              <li><Link href="/financement-cee">Financement CEE</Link></li>
+              <li><Link href="/prime-cee">Prime CEE</Link></li>
+              <li><Link href="/ma-prime-renov">MaPrimeRénov&apos;</Link></li>
+            </ul>
+            <p className="footer__col-title" style={{ marginTop: 20 }}>ECOPRORENOVE</p>
+            <ul>
               <li><Link href="/qui-sommes-nous">Qui sommes-nous&nbsp;?</Link></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
