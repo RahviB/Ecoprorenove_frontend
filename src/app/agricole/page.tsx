@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Agricole — bâtiments d'élevage, serres, hangars (CEE BAT-EN, IND-UT)",
   description:
-    "Rénovation énergétique pour exploitations agricoles : isolation lourde sous toiture, ambiance et hygrométrie pour le bétail, fiches CEE spécifiques (BAT-EN, IND-UT). Métropole et La Réunion.",
+    "Rénovation énergétique agricole : isolation sous toiture, ambiance et hygrométrie pour bétail et serres, fiches CEE BAT-EN et IND-UT. Métropole et La Réunion.",
   alternates: { canonical: "/agricole" },
   openGraph: {
     url: "/agricole",
@@ -54,6 +55,12 @@ const solutions: Array<[string, string, string]> = [
 export default function AgricolePage() {
   return (
     <div className="page-secteur page-agricole">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Agricole", url: "/agricole" },
+        ]}
+      />
       {/* HERO */}
       <section className="hero hero--drift">
         <div className="container">

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Tertiaire — bureaux, commerces, santé, enseignement, hôtellerie",
   description:
-    "Rénovation énergétique pour le secteur tertiaire : décret tertiaire (-40% d'ici 2030), continuité d'exploitation pendant travaux, dossier CEE adapté à votre gouvernance. Métropole et La Réunion.",
+    "Rénovation énergétique tertiaire : décret tertiaire (−40 % d'ici 2030), continuité d'exploitation, dossier CEE structuré. Métropole et La Réunion.",
   alternates: { canonical: "/tertiaire" },
   openGraph: {
     url: "/tertiaire",
@@ -55,6 +56,12 @@ const solutions: Array<[string, string, string]> = [
 export default function TertiairePage() {
   return (
     <div className="page-secteur page-tertiaire">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Tertiaire", url: "/tertiaire" },
+        ]}
+      />
       {/* HERO */}
       <section className="hero hero--drift">
         <div className="container">

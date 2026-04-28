@@ -12,6 +12,7 @@
   --white:        #ffffff;
   --black:        #111a10;
   --gray:         #5a6a57;
+  --gray-dark:    #3a4838;
   --gray-light:   #f5f7f4;
   --gray-mid:     #e4ebe2;
   --accent:       #ff6b35;
@@ -6017,6 +6018,10 @@ body:has(.page-home-v6) main { background: var(--white); }
     flex-direction: column; align-items: flex-start;
     gap: 12px; padding: 18px 4px;
   }
+}
+@media (max-width: 480px) {
+  /* Bubbles are decorative on tiny screens — hide rather than overlap content. */
+  .solution-template .hero__bubble { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .solution-template .hero__bubble {

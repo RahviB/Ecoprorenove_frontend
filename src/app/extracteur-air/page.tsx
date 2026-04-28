@@ -87,7 +87,7 @@ export default function ExtracteurAirPage() {
               <div className="hero__product">
                 <div className="hero__product-badge">Tornado Windmaster®</div>
                 <Image
-                  src="/images/extracteur/tornado-product-transparent.png"
+                  src="/images/extracteur/tornado-product-transparent.webp"
                   alt="Extracteur statique Tornado Windmaster — turbine ventilateur en acier galvanisé"
                   width={460}
                   height={460}
@@ -144,7 +144,7 @@ export default function ExtracteurAirPage() {
 
           <div className="product-show__visual fade-in delay-1">
             <Image
-              src="/images/extracteur/tornado-toiture-installation.png"
+              src="/images/extracteur/tornado-toiture-installation.webp"
               alt="Deux extracteurs Tornado Windmaster installés sur la toiture d'un bâtiment industriel"
               fill
               sizes="(max-width: 1100px) 100vw, 1100px"

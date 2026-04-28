@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Résidentiel — copropriétés, bailleurs, particuliers (CEE + MaPrimeRénov')",
+  title: "Résidentiel — copropriétés & particuliers (CEE, MaPrimeRénov')",
   description:
-    "Rénovation énergétique résidentielle : cumul CEE et MaPrimeRénov', interlocuteur unique pour copropriétés, bailleurs et particuliers, gestion des syndics. Métropole et La Réunion.",
+    "Rénovation énergétique résidentielle : cumul CEE et MaPrimeRénov', un interlocuteur unique pour copropriétés, bailleurs et particuliers. Métropole et La Réunion.",
   alternates: { canonical: "/residentiel" },
   openGraph: {
     url: "/residentiel",
@@ -52,6 +53,12 @@ const solutions: Array<[string, string, string]> = [
 export default function ResidentielPage() {
   return (
     <div className="page-secteur page-residentiel">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Résidentiel", url: "/residentiel" },
+        ]}
+      />
       {/* HERO */}
       <section className="hero hero--drift">
         <div className="container">

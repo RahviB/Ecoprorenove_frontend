@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous ?",
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
 export default function QuiSommesNousPage() {
   return (
     <div className="page-about">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Qui sommes-nous", url: "/qui-sommes-nous" },
+        ]}
+      />
       {/* ========== HERO ========== */}
       <section className="hero">
         <div className="container container--wide">

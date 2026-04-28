@@ -1,0 +1,362 @@
+/* =============================================
+   BARDAGE — Mobile-only native-app configurator
+   Scoped strictly to (max-width: 768px). Desktop untouched.
+   Created in its own file to avoid collisions with parallel
+   work on globals.css.
+============================================= */
+
+/* Desktop default: the mobile-only chrome must be invisible / inert.
+   These selectors don't exist in globals.css, so this won't conflict. */
+.page-bardage .mobile-sheet-handle,
+.page-bardage .mobile-sheet-backdrop {
+  display: none;
+}
+.page-bardage .mobile-sheet-body {
+  /* On desktop the wrapper must be transparent to layout — `display: contents`
+     lets all inner children act as direct children of `.panel` so existing
+     rules (e.g., spacing on .profile-filter, .swatches, .color-info, .upsell)
+     keep working unchanged. */
+  display: contents;
+}
+
+@media (max-width: 768px) {
+
+  /* ----- Section: turn the configurator into a fixed-frame "app" -----
+     The hero photo becomes a sticky stage at the top; the picker
+     anchors to the bottom of the viewport like a native sheet.
+  */
+  .page-bardage .configurator {
+    /* Tighter padding on mobile — the section becomes the "app frame" */
+    padding: 56px 0 0;
+    background: var(--ink);
+    color: #fff;
+  }
+  .page-bardage .configurator::before { display: none; }
+
+  .page-bardage .configurator .container,
+  .page-bardage .configurator .container--wide {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+  }
+
+  .page-bardage .configurator__header {
+    padding: 0 22px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .page-bardage .configurator__header .section-title {
+    font-size: 1.55rem;
+    line-height: 1.15;
+    color: #fff;
+  }
+  .page-bardage .configurator__header .section-intro {
+    color: rgba(255,255,255,.7);
+    font-size: .88rem;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .page-bardage .configurator__eyebrow {
+    background: rgba(255,255,255,.08);
+    color: #e4d9bd;
+    border: 1px solid rgba(255,255,255,.14);
+  }
+  .page-bardage .configurator .divider--center { margin-left: 0; }
+
+  /* ----- Body: photo on top, sheet at bottom ----- */
+  .page-bardage .configurator__body {
+    display: block;
+    gap: 0;
+    position: relative;
+    /* Reserve room at the bottom of the section for the collapsed sheet so
+       the user can scroll the section's content fully without it being
+       covered by the fixed sheet at the bottom of the viewport. */
+    padding-bottom: calc(30vh + env(safe-area-inset-bottom, 0px) + 20px);
+  }
+
+  /* ----- STAGE (photo) — sticky hero ----- */
+  .page-bardage .configurator .stage {
+    position: sticky;
+    top: 0;
+    margin: 0;
+    border-radius: 0;
+    aspect-ratio: auto;
+    height: 50vh;
+    box-shadow: none;
+    z-index: 1;
+    /* shrink subtly when sheet expands */
+    transition: height .42s cubic-bezier(.25, 1.2, .4, 1);
+  }
+  /* Fade the photo a touch when the sheet is expanded so the user's
+     attention shifts to the picker. */
+  .page-bardage .configurator__body[data-mobile-sheet="expanded"] .stage::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(13,20,16,.45);
+    z-index: 4;
+    pointer-events: none;
+    animation: bardage-mobile-fade-in .35s ease forwards;
+  }
+  @keyframes bardage-mobile-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .page-bardage .stage__img {
+    /* Tighter, snappier crossfade to feel native */
+    transition: opacity .28s ease;
+  }
+  .page-bardage .stage__loader {
+    top: 14px; left: 14px;
+    padding: 8px 12px;
+    font-size: .65rem;
+  }
+  .page-bardage .stage__caption {
+    padding: 18px 20px 16px;
+  }
+  .page-bardage .stage__caption-title { font-size: 1.2rem; }
+  .page-bardage .stage__caption-meta { font-size: .72rem; gap: 8px 16px; }
+  .page-bardage .stage__caption-ref-val { font-size: 1rem; }
+
+  /* ----- PANEL = bottom sheet ----- */
+  .page-bardage .configurator .panel {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    margin: 0;
+    z-index: 50;
+    background: #fff;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 -18px 48px rgba(0,0,0,.28);
+    padding: 0;
+    /* Use transform for height changes — GPU-accelerated, 60fps */
+    height: 70vh;
+    transform: translateY(calc(70vh - 30vh));
+    transition: transform .42s cubic-bezier(.25, 1.2, .4, 1);
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  /* Expanded state: slide the whole sheet up to its full height */
+  .page-bardage .configurator__body[data-mobile-sheet="expanded"] .panel {
+    transform: translateY(0);
+  }
+  /* When the configurator section leaves the viewport, slide the sheet
+     fully off-screen so it doesn't cover other sections. */
+  .page-bardage .configurator[data-mobile-in-view="false"] .panel {
+    transform: translateY(100%);
+    pointer-events: none;
+  }
+  .page-bardage .configurator[data-mobile-in-view="false"] .mobile-sheet-backdrop {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Handle bar — tap target for toggle */
+  .page-bardage .configurator .panel::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    width: 44px; height: 5px;
+    border-radius: 999px;
+    background: rgba(13,20,16,.18);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .page-bardage .mobile-sheet-handle {
+    position: relative;
+    display: block !important;
+    width: 100%;
+    padding: 18px 22px 12px;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .page-bardage .mobile-sheet-handle:active { background: rgba(13,20,16,.04); }
+
+  .page-bardage .mobile-sheet-header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px;
+  }
+  .page-bardage .mobile-sheet-header__left {
+    display: flex; align-items: center; gap: 12px;
+    min-width: 0; flex: 1;
+  }
+  .page-bardage .mobile-sheet-thumb {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(13,20,16,.18);
+    position: relative;
+    background: var(--gray-light);
+  }
+  .page-bardage .mobile-sheet-thumb img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: opacity .22s ease;
+  }
+  .page-bardage .mobile-sheet-meta { min-width: 0; }
+  .page-bardage .mobile-sheet-eyebrow {
+    font-size: .58rem; font-weight: 800; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gray);
+    margin-bottom: 2px;
+  }
+  .page-bardage .mobile-sheet-title {
+    font-family: var(--serif); font-style: italic; font-weight: 500;
+    font-size: 1.1rem; color: var(--ink);
+    line-height: 1.15; letter-spacing: -.01em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .page-bardage .mobile-sheet-title small {
+    font-style: normal; font-family: var(--font);
+    font-size: .7rem; font-weight: 700; color: var(--gray);
+    letter-spacing: .04em; text-transform: none;
+    margin-left: 6px;
+  }
+  .page-bardage .mobile-sheet-toggle {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .35s cubic-bezier(.25, 1.2, .4, 1);
+  }
+  .page-bardage .configurator__body[data-mobile-sheet="expanded"]
+    .mobile-sheet-toggle {
+    transform: rotate(180deg);
+  }
+
+  /* Hide on desktop — only render in DOM via React, but make
+     extra-sure it never appears outside mobile breakpoint. */
+
+  /* Step / title / subtitle — hide in collapsed view, show small in expanded */
+  .page-bardage .configurator .panel__step-num,
+  .page-bardage .configurator .panel__title,
+  .page-bardage .configurator .panel__subtitle {
+    display: none;
+  }
+
+  /* ----- Sheet body: scrollable contents ----- */
+  .page-bardage .mobile-sheet-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* In the COLLAPSED state, replace the body with a swatch strip */
+  .page-bardage .configurator__body[data-mobile-sheet="collapsed"]
+    .mobile-sheet-body {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 6px 22px 22px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .page-bardage .configurator__body[data-mobile-sheet="collapsed"]
+    .mobile-sheet-body > *:not(.swatches) { display: none; }
+
+  .page-bardage .configurator__body[data-mobile-sheet="collapsed"]
+    .swatches {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-bottom: 0;
+    grid-template-columns: none;
+    width: max-content;
+  }
+  .page-bardage .configurator__body[data-mobile-sheet="collapsed"]
+    .swatch {
+    width: 84px;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  .page-bardage .configurator__body[data-mobile-sheet="collapsed"]
+    .swatch__label { font-size: .62rem; padding: 8px 8px 6px; }
+
+  /* In the EXPANDED state — full grid + filter + meta */
+  .page-bardage .configurator__body[data-mobile-sheet="expanded"]
+    .swatches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .page-bardage .configurator__body[data-mobile-sheet="expanded"]
+    .profile-filter {
+    margin: 0 0 4px;
+  }
+
+  /* Backdrop when sheet is expanded */
+  .page-bardage .mobile-sheet-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(13,20,16,.42);
+    backdrop-filter: blur(2px);
+    z-index: 49;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .32s ease;
+  }
+  .page-bardage .configurator__body[data-mobile-sheet="expanded"]
+    .mobile-sheet-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Hide the panel's footnote+actions+upsell padding overrides */
+  .page-bardage .configurator .panel__actions,
+  .page-bardage .configurator .upsell,
+  .page-bardage .configurator .color-info,
+  .page-bardage .configurator .panel__footnote {
+    margin: 0;
+  }
+  .page-bardage .configurator .color-info { padding: 18px; }
+  .page-bardage .configurator .upsell { padding: 18px 20px; }
+  .page-bardage .configurator .panel__footnote {
+    font-size: .7rem;
+    color: var(--gray);
+    line-height: 1.55;
+  }
+
+  /* Snappier swatch tap — disable hover scale (no hover on touch) */
+  .page-bardage .swatch:hover .swatch__img { transform: none; }
+  .page-bardage .swatch {
+    transition: transform .12s ease, border-color .15s ease, box-shadow .15s ease;
+  }
+  .page-bardage .swatch:active { transform: scale(.96); }
+
+  /* Native-feel: hide the desktop "Aperçu temps réel" loader chip
+     a bit (still shows on swap) — but keep it readable */
+  .page-bardage .stage__loader { font-weight: 800; }
+}
+
+/* Reduced motion — disable spring + crossfade */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .page-bardage .configurator .panel,
+  .page-bardage .configurator .stage,
+  .page-bardage .stage__img,
+  .page-bardage .mobile-sheet-toggle,
+  .page-bardage .mobile-sheet-backdrop {
+    transition: none !important;
+  }
+}

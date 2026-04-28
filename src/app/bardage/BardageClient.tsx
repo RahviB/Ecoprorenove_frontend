@@ -7,6 +7,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
 import ScrollNav from "@/components/ScrollNav";
+import "./bardage-mobile.css";
 
 type Profile = "emboitement" | "superpose";
 
@@ -46,15 +47,57 @@ function refCode(idx: string, name: string) {
 
 const swatchSrc = (ref: string) => {
   // brut-emboitement and brut-superpose share the brut swatch, but design ships separate files
-  if (ref === "brut-superpose") return "/images/bardage/swatch-brut-superpose.jpeg";
-  return `/images/bardage/swatch-${ref}.jpeg`;
+  if (ref === "brut-superpose") return "/images/bardage/swatch-brut-superpose.webp";
+  return `/images/bardage/swatch-${ref}.webp`;
 };
 
 export default function BardageClient() {
   const [filter, setFilter] = useState<"all" | Profile>("all");
   const [activeRef, setActiveRef] = useState<string>("modern-grey");
   const [swapping, setSwapping] = useState(false);
+  const [mobileSheet, setMobileSheet] = useState<"collapsed" | "expanded">("collapsed");
   const previousRef = useRef(activeRef);
+
+  // Lock background scroll while the mobile sheet is expanded so the page
+  // behind doesn't fight scrolling inside the sheet.
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    if (mobileSheet === "expanded") {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => { document.body.style.overflow = prev; };
+    }
+  }, [mobileSheet]);
+
+  // Track whether the configurator section is in view so the fixed mobile
+  // sheet only renders while user is in the configurator (avoids covering
+  // content in other sections).
+  const configuratorRef = useRef<HTMLElement | null>(null);
+  // Default true so the sheet renders immediately if the section is on
+  // screen at first paint (e.g., user landed via #configurateur anchor).
+  // The IntersectionObserver will correct it on the first scroll event.
+  const [configuratorInView, setConfiguratorInView] = useState(true);
+  useEffect(() => {
+    const el = configuratorRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) setConfiguratorInView(e.isIntersecting);
+      },
+      // Treat the section as "in view" once any part is visible
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  // If user scrolls out of the configurator while the sheet is expanded,
+  // collapse it so the backdrop doesn't bleed elsewhere.
+  useEffect(() => {
+    if (!configuratorInView && mobileSheet === "expanded") {
+      setMobileSheet("collapsed");
+    }
+  }, [configuratorInView, mobileSheet]);
 
   const visibleFinishes = useMemo(
     () => FINISHES.filter((f) => filter === "all" || f.profile === filter),
@@ -163,7 +206,7 @@ export default function BardageClient() {
                 <div className="hero__preview-badge">Configurateur en direct</div>
                 <Image
                   key={effectiveActive.ref}
-                  src={`/images/bardage/maison-${effectiveActive.ref}.jpeg`}
+                  src={`/images/bardage/maison-${effectiveActive.ref}.webp`}
                   alt={`Maison témoin habillée en bardage fibre-ciment finition ${effectiveActive.name}`}
                   fill
                   priority
@@ -214,7 +257,12 @@ export default function BardageClient() {
       </div>
 
       {/* CONFIGURATOR */}
-      <section className="configurator" id="configurateur">
+      <section
+        className="configurator"
+        id="configurateur"
+        ref={configuratorRef}
+        data-mobile-in-view={configuratorInView ? "true" : "false"}
+      >
         <div className="container container--wide">
           <div className="configurator__header fade-in">
             <span className="configurator__eyebrow">Configurateur interactif</span>
@@ -230,7 +278,13 @@ export default function BardageClient() {
             </p>
           </div>
 
-          <div className="configurator__body">
+          <div className="configurator__body" data-mobile-sheet={mobileSheet}>
+            {/* MOBILE backdrop — only visible/interactive ≤768px when sheet expanded */}
+            <div
+              className="mobile-sheet-backdrop"
+              aria-hidden="true"
+              onClick={() => setMobileSheet("collapsed")}
+            />
             {/* STAGE */}
             <div className="stage fade-in">
               <div className="stage__img-wrap">
@@ -238,7 +292,7 @@ export default function BardageClient() {
                   <Image
                     key={f.ref}
                     className={`stage__img${f.ref === effectiveActive.ref ? " active" : ""}`}
-                    src={`/images/bardage/maison-${f.ref}.jpeg`}
+                    src={`/images/bardage/maison-${f.ref}.webp`}
                     alt={`Maison témoin habillée en bardage ${f.name}`}
                     fill
                     sizes="(min-width: 1100px) 60vw, 100vw"
@@ -283,6 +337,48 @@ export default function BardageClient() {
 
             {/* PANEL */}
             <aside className="panel fade-in delay-2">
+              {/* MOBILE-only sheet handle. On desktop this is display:none. */}
+              <button
+                type="button"
+                className="mobile-sheet-handle"
+                aria-expanded={mobileSheet === "expanded"}
+                aria-label={
+                  mobileSheet === "expanded"
+                    ? "Réduire le sélecteur de finitions"
+                    : "Ouvrir le sélecteur de finitions"
+                }
+                onClick={() =>
+                  setMobileSheet((s) => (s === "expanded" ? "collapsed" : "expanded"))
+                }
+              >
+                <div className="mobile-sheet-header">
+                  <div className="mobile-sheet-header__left">
+                    <div className="mobile-sheet-thumb">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        key={effectiveActive.ref}
+                        src={swatchSrc(effectiveActive.ref)}
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="mobile-sheet-meta">
+                      <div className="mobile-sheet-eyebrow">Finition active</div>
+                      <div className="mobile-sheet-title">
+                        {effectiveActive.name}
+                        <small>· {profileLabel(effectiveActive.profile)}</small>
+                      </div>
+                    </div>
+                  </div>
+                  <span className="mobile-sheet-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="18 15 12 9 6 15" />
+                    </svg>
+                  </span>
+                </div>
+              </button>
+
+              <div className="mobile-sheet-body">
               <span className="panel__step-num">Étape — 01</span>
               <h3 className="panel__title">Votre finition</h3>
               <p className="panel__subtitle">
@@ -437,6 +533,7 @@ export default function BardageClient() {
                 * Finitions susceptibles de varier légèrement à l&apos;œil selon la lumière. Un
                 échantillon physique peut être transmis sur demande lors de l&apos;étude.
               </p>
+              </div>
             </aside>
           </div>
         </div>
