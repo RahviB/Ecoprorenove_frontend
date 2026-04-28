@@ -63,7 +63,15 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>© 2026 ECOPRORENOVE — Tous droits réservés</p>
+          <p>
+            © 2026 ECOPRORENOVE — Tous droits réservés
+            <span className="footer__credit">
+              {" · Site édité par "}
+              <a href="https://influxe.agency" target="_blank" rel="noopener noreferrer">
+                Influxe
+              </a>
+            </span>
+          </p>
           <div className="footer__legal">
             <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Mentions légales</a>
             <a href="#" aria-disabled="true" tabIndex={-1} title="Bientôt disponible">Politique de confidentialité</a>

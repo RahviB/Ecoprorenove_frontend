@@ -5007,3 +5007,69 @@ body:has(.page-home-v6) main { background: var(--white); }
   .v6h__stats li { padding-left: 12px; }
 }
 
+/* ============================================================
+   Setup / client intake page (/setup/[token])
+   Internal pre-launch form — not linked from anywhere public.
+   Reuses .form-* primitives from contact-form-section.
+   ============================================================ */
+.setup-page { padding: 80px 0 120px; background: var(--gray-light); min-height: 100vh; }
+.setup-page .container { max-width: 880px; }
+.setup-page__intro { margin-bottom: 32px; }
+.setup-page__intro h1 { font-size: clamp(28px, 4vw, 40px); margin: 8px 0 18px; line-height: 1.15; }
+.setup-page__lead { color: #4a5568; line-height: 1.65; margin: 0 0 14px; max-width: 70ch; }
+.setup-page__notes {
+  list-style: none; padding: 18px 22px; margin: 22px 0 0;
+  background: #fff; border: 1px solid #e2e8f0; border-left: 3px solid var(--primary);
+  border-radius: 8px; display: grid; gap: 10px;
+}
+.setup-page__notes li { color: #2d3748; font-size: 14.5px; line-height: 1.55; }
+
+.setup-form { display: grid; gap: 28px; }
+.setup-fieldset {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+  padding: 26px 28px; margin: 0;
+}
+.setup-fieldset > legend {
+  padding: 0 10px; margin-left: -10px;
+  font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--primary-dark);
+}
+.setup-fieldset__intro { color: #4a5568; font-size: 14px; margin: 4px 0 18px; line-height: 1.55; }
+
+.setup-hint { color: #718096; font-size: 12.5px; margin: 6px 0 0; line-height: 1.45; }
+.setup-error {
+  color: #c53030; font-size: 13px; margin: 6px 0 0; font-weight: 500;
+}
+
+.setup-alert {
+  background: #fff5f5; border: 1px solid #fc8181; color: #742a2a;
+  padding: 14px 18px; border-radius: 8px; font-size: 14px;
+}
+
+.setup-form__footer {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+  padding: 22px 26px; display: grid; gap: 18px;
+}
+.setup-form__footer .form-submit { width: 100%; max-width: 360px; }
+.setup-form__footer .form-submit[disabled] { opacity: .6; cursor: not-allowed; }
+
+.setup-success {
+  background: #fff; border: 1px solid #c6f6d5; border-radius: 12px;
+  padding: 48px 32px; text-align: center; max-width: 640px; margin: 40px auto;
+}
+.setup-success svg { margin-bottom: 8px; }
+.setup-success h2 { font-size: 28px; margin: 4px 0 12px; color: var(--primary-dark); }
+.setup-success p { color: #4a5568; line-height: 1.6; margin: 0 0 10px; }
+.setup-success__sub { font-size: 13.5px; color: #718096; margin-top: 14px; }
+
+@media (max-width: 720px) {
+  .setup-page { padding: 56px 0 90px; }
+  .setup-fieldset { padding: 20px 18px; }
+  .setup-form__footer { padding: 18px 18px; }
+}
+
+/* Footer credit (Site édité par Influxe) */
+.footer__credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer__credit a:hover { color: #fff; }
+
+

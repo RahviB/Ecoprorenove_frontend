@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import ScrollEffects from "@/components/ScrollEffects";
 import BackToTop from "@/components/BackToTop";
 import MobileCtaBar from "@/components/MobileCtaBar";
-import VariantSwitcher from "@/components/VariantSwitcher";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -95,7 +94,6 @@ export default function RootLayout({
         <BackToTop />
         <MobileCtaBar />
         <ScrollEffects />
-        <VariantSwitcher />
       </body>
     </html>
   );
