@@ -193,6 +193,11 @@ a[aria-disabled="true"] {
   /* keeps the visual look but signals to AT and prevents nav */
   pointer-events: none;
 }
+/* Solution cards keep hover animation even when disabled — click is blocked in JS */
+a.solution-card[aria-disabled="true"] {
+  pointer-events: auto;
+  cursor: not-allowed;
+}
 
 /* =============================================
    MICRO-INTERACTIONS

@@ -86,6 +86,7 @@ export default function SolutionsTabs({ solutions }: { solutions: Solution[] }) 
               tabIndex={-1}
               title="Bientôt disponible"
               className={cls}
+              onClick={(e) => e.preventDefault()}
             >
               {inner}
             </a>
