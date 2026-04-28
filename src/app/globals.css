@@ -3226,7 +3226,8 @@ body:has(.page-home-v5) .vsw__toggle { background: rgba(20,32,26,.95); }
 
 /* Solutions tabs */
 .page-home-v3 .solutions { padding: 80px 0; background: var(--white); }
-.page-home-v3 .solutions__header { margin-bottom: 32px; text-align: center; align-items: center; flex-direction: column; }
+.page-home-v3 .solutions__header { display: block; margin-bottom: 32px; text-align: center; }
+.page-home-v3 .solutions__header > .fade-in { max-width: 720px; margin: 0 auto; }
 .page-home-v3 .solutions__header .divider { margin-left: auto; margin-right: auto; }
 .soltabs__bar {
   display: inline-flex; flex-wrap: wrap; gap: 6px;

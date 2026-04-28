@@ -23,9 +23,8 @@ export default function Faq({ items }: { items: FaqEntry[] }) {
     <>
       {items.map((item, idx) => {
         const isOpen = openSet.has(idx);
-        const delay = `delay-${Math.min(idx + 1, 6)}`;
         return (
-          <div key={idx} className={`faq-item fade-in ${delay}${isOpen ? " open" : ""}`}>
+          <div key={idx} className={`faq-item${isOpen ? " open" : ""}`}>
             <button
               type="button"
               className="faq-item__q"
