@@ -44,7 +44,6 @@ const operations: Array<[string, string]> = [
 const solutions: Array<[string, string, string]> = [
   ["Isolation toiture & rampants", "/isolation-toiture-rampants", "Isolation lourde sous toiture pour bâtiments d'élevage et hangars."],
   ["Bardage", "/bardage", "Habillage thermique des façades de bâtiments agricoles."],
-  ["Déstratificateur d'air", "/destratificateur-air", "Homogénéisation thermique des grands volumes — stabulations, hangars, serres."],
   ["Extracteur d'air", "/extracteur-air", "Renouvellement d'air et hygrométrie maîtrisée pour le bétail."],
   ["Accompagnement stratégique", "/accompagnement-strategique", "Cadrage du programme et arbitrages selon votre contexte d'exploitation."],
   ["Financement CEE", "/financement-cee", "Mobilisation des fiches BAT-EN et IND-UT pour le secteur agricole."],
