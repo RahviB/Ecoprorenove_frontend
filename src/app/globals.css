@@ -3376,6 +3376,72 @@ body:has(.page-home-v5) .vsw__toggle { background: rgba(20,32,26,.95); }
   .enga-faq__inner { grid-template-columns: 1fr; gap: 56px; }
 }
 
+/* ============================================================
+   Trust marquee — partner certifications scrolling band
+   Sits between .enga-faq and .cta-final on the homepage.
+   ============================================================ */
+.trust-marquee {
+  background: var(--white);
+  padding: 56px 0 64px;
+  border-top: 1px solid #eef2ef;
+  border-bottom: 1px solid #eef2ef;
+}
+.trust-marquee__intent {
+  font-style: italic;
+  color: var(--gray);
+  font-size: .9rem;
+  letter-spacing: .01em;
+  text-align: center;
+  margin: 0 0 24px;
+}
+.trust-marquee__viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+.trust-marquee__track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  list-style: none;
+  padding: 4px 0;
+  margin: 0;
+  animation: trust-scroll 32s linear infinite;
+}
+.trust-marquee__viewport:hover .trust-marquee__track { animation-play-state: paused; }
+.trust-cert {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--green-pale);
+  border: 1px solid var(--green-light);
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  white-space: nowrap;
+}
+.trust-cert::before {
+  content: "";
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+@keyframes trust-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-marquee__track { animation: none; transform: none; }
+}
+@media (max-width: 720px) {
+  .trust-marquee { padding: 44px 0 48px; }
+  .trust-marquee__track { gap: 12px; animation-duration: 24s; }
+  .trust-cert { padding: 8px 14px; font-size: .72rem; }
+}
+
 .page-home-v3 .cta-final { padding: 90px 0; }
 
 /* =============================================

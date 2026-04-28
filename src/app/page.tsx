@@ -415,15 +415,6 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="enga-faq__partners">
-                <p className="partners__intent">Ils nous font confiance</p>
-                <ul className="partners__list">
-                  <li className="partner-cert">RGE Qualibat</li>
-                  <li className="partner-cert">RGE Qualibois</li>
-                  <li className="partner-cert">Obligé CEE</li>
-                  <li className="partner-cert">MaPrimeRénov&apos;</li>
-                </ul>
-              </div>
             </div>
 
             <div className="enga-faq__right fade-in delay-2">
@@ -472,6 +463,25 @@ export default function HomePage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* =================  4b. TRUST MARQUEE ================= */}
+      <section className="trust-marquee" aria-label="Ils nous font confiance">
+        <div className="container">
+          <p className="trust-marquee__intent">Ils nous font confiance</p>
+        </div>
+        <div className="trust-marquee__viewport">
+          <ul className="trust-marquee__track" aria-hidden="false">
+            <li className="trust-cert">RGE Qualibat</li>
+            <li className="trust-cert">RGE Qualibois</li>
+            <li className="trust-cert">Obligé CEE</li>
+            <li className="trust-cert">MaPrimeRénov&apos;</li>
+            <li className="trust-cert" aria-hidden="true">RGE Qualibat</li>
+            <li className="trust-cert" aria-hidden="true">RGE Qualibois</li>
+            <li className="trust-cert" aria-hidden="true">Obligé CEE</li>
+            <li className="trust-cert" aria-hidden="true">MaPrimeRénov&apos;</li>
+          </ul>
         </div>
       </section>
 
