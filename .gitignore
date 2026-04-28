@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Client source docs (PDFs, HTML mockups) — referenced for content only, not deployed
+/uploaded/
