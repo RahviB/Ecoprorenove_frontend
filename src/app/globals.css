@@ -5456,6 +5456,22 @@ body:has(.page-home-v6) main { background: var(--white); }
 .cee-card[id="courtage"] { scroll-margin-top: 96px; }
 
 /* =================  Shared: sector pages (tertiaire / residentiel / agricole)  ================= */
+.page-secteur .hero { padding: 76px 0 92px; }
+.page-secteur .hero__inner {
+  grid-template-columns: 1fr;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+.page-secteur .hero__badges { justify-content: center; }
+.page-secteur .hero__title { font-size: clamp(2.2rem, 4.2vw, 3.2rem); }
+.page-secteur .hero__subtitle { max-width: 680px; margin-left: auto; margin-right: auto; margin-bottom: 30px; }
+.page-secteur .hero__actions { justify-content: center; }
+
+@media (max-width: 768px) {
+  .page-secteur .hero { padding: 60px 0 72px; }
+}
+
 .page-secteur .secteur-section {
   padding: 96px 0;
   background: #fff;
@@ -5859,16 +5875,193 @@ body:has(.page-home-v6) main { background: var(--white); }
 
 /* =================  Page: isolation-toiture-rampants  ================= */
 /* Hero title in uppercase per client direction */
-.page-toiture .hero__title {
-  text-transform: uppercase;
-  letter-spacing: -.005em;
-}
-.page-toiture .hero__title em {
+/* T1 hierarchical hero title (eyebrow caps · big anchor caps · serif italic) */
+.page-toiture .hero__title--t1 {
+  display: flex; flex-direction: column; gap: 10px;
   text-transform: none;
+  margin-bottom: 18px;
+}
+.page-toiture .hero__title-eyebrow {
+  font-size: clamp(.78rem, 1.1vw, .9rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: rgba(207, 231, 194, .85);
+}
+.page-toiture .hero__title-anchor {
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.page-toiture .hero__title-italic {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  line-height: 1.15;
+  letter-spacing: -.005em;
+  color: #cfe7c2;
+  margin-top: 4px;
 }
 
-/* Smooth scroll offset for #airflex */
-.page-toiture #airflex { scroll-margin-top: 96px; }
+/* Stat tagline pill between H1 and subtitle */
+.page-toiture .hero__stat-line {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(207, 231, 194, .14);
+  border: 1px solid rgba(207, 231, 194, .28);
+  color: rgba(255, 255, 255, .92);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+.page-toiture .hero__stat-line strong {
+  color: #cfe7c2;
+  font-family: var(--serif); font-style: italic; font-weight: 500;
+  font-size: 1.1rem; letter-spacing: -.01em;
+}
+
+/* Hero photo */
+.page-toiture .hero__img {
+  width: 100%; aspect-ratio: 4/3.1; object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  height: auto;
+}
+
+/* Floating stat bubbles overlaid on photo */
+@keyframes toitureBubbleFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes toitureBubbleFloatAlt {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50%      { transform: translateY(-7px) translateX(4px); }
+}
+@keyframes toitureBubblePopIn {
+  from { opacity: 0; transform: translateY(14px) scale(.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.page-toiture .hero__bubble {
+  position: absolute; z-index: 3;
+  background: rgba(15, 23, 20, .92); color: #fff;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 999px; padding: 12px 18px;
+  display: flex; align-items: center; gap: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(10px);
+  font-weight: 600; letter-spacing: -.01em;
+  animation: toitureBubblePopIn .55s ease-out backwards;
+}
+.page-toiture .hero__bubble strong { color: #cfe7c2; font-weight: 700; font-size: 1.15rem; }
+.page-toiture .hero__bubble small { font-size: .72rem; opacity: .65; font-weight: 500; letter-spacing: 0; }
+.page-toiture .hero__bubble--temp {
+  top: 10%; right: -16px;
+  animation: toitureBubblePopIn .55s ease-out .15s backwards, toitureBubbleFloat 5.5s ease-in-out 1s infinite;
+}
+.page-toiture .hero__bubble--life {
+  top: 46%; left: -22px;
+  animation: toitureBubblePopIn .55s ease-out .3s backwards, toitureBubbleFloatAlt 6.5s ease-in-out 1.2s infinite;
+}
+.page-toiture .hero__bubble--cee {
+  bottom: 8%; right: 12%;
+  background: #49a739; border-color: rgba(255, 255, 255, .2);
+  animation: toitureBubblePopIn .55s ease-out .45s backwards, toitureBubbleFloat 5s ease-in-out 1.4s infinite;
+}
+.page-toiture .hero__bubble--cee strong { color: #fff; }
+.page-toiture .hero__bubble--cee small { color: rgba(255, 255, 255, .78); }
+
+/* Bandeau — horizontal proof strip below hero */
+.page-toiture .hero-bandeau {
+  background: #fff;
+  border-bottom: 1px solid var(--gray-mid);
+}
+.page-toiture .hero-bandeau__inner {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 28px 48px;
+  padding: 22px 0;
+}
+.page-toiture .hero-bandeau__item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: .85rem; font-weight: 500;
+  color: var(--gray-dark);
+  letter-spacing: -.005em;
+}
+.page-toiture .hero-bandeau__item svg { color: var(--green); flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .page-toiture .hero__bubble--temp { right: 6px; }
+  .page-toiture .hero__bubble--life { left: 6px; top: 50%; }
+  .page-toiture .hero__bubble--cee  { right: 8%; bottom: 6%; }
+  .page-toiture .hero-bandeau__inner {
+    flex-direction: column; align-items: flex-start;
+    gap: 12px; padding: 18px 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-toiture .hero__bubble {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Smooth scroll offset for all in-page anchors used by ScrollNav */
+.page-toiture #probleme,
+.page-toiture #airflex,
+.page-toiture #fonctionnement,
+.page-toiture #benefices,
+.page-toiture #batiments,
+.page-toiture #cee,
+.page-toiture #methode,
+.page-toiture #faq,
+.page-toiture #contact { scroll-margin-top: 130px; }
+
+/* =================  ScrollNav (in-page section navigation — vertical sidebar)  ================= */
+.scrollnav-side {
+  position: fixed; top: 50%; right: 24px; transform: translateY(-50%) translateX(20px);
+  z-index: 40;
+  background: rgba(255, 255, 255, .94); backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, .06);
+  border-radius: 16px; padding: 14px 8px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .1);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.scrollnav-side.is-shown {
+  opacity: 1; pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+.scrollnav-side ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.scrollnav-side li a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px 8px 12px;
+  font-size: .82rem; font-weight: 600;
+  color: var(--gray); text-decoration: none;
+  border-radius: 10px;
+  position: relative;
+  transition: color .18s, background .18s;
+}
+.scrollnav-side li a:hover { color: var(--gray-dark); background: rgba(53, 122, 40, .06); }
+.scrollnav-side__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(53, 122, 40, .25);
+  transition: background .25s, transform .25s, box-shadow .25s;
+  flex-shrink: 0;
+}
+.scrollnav-side li.is-active a { color: var(--green-dark); background: rgba(53, 122, 40, .08); }
+.scrollnav-side li.is-active .scrollnav-side__dot {
+  background: var(--green); transform: scale(1.6);
+  box-shadow: 0 0 0 4px rgba(73, 167, 57, .18);
+}
+@media (max-width: 1100px) { .scrollnav-side { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .scrollnav-side { transition: none !important; }
+}
 
 /* Polished Résultats concrets cards */
 .page-toiture .benefits {

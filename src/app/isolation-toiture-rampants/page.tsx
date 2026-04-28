@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import ScrollNav from "@/components/ScrollNav";
 
 export const metadata: Metadata = {
   title: "Isolation toiture sous rampants — Airflex 30 (BAT-EN-106)",
@@ -36,23 +38,20 @@ export default function IsolationToitureRampantsPage() {
         <div className="container">
           <div className="hero__inner">
             <div className="hero__content fade-in">
-              <div className="hero__badges">
-                <span className="tag tag--white">Isolation toiture sous rampants</span>
-                <span className="tag tag--white">Tertiaire · France d&apos;outre-mer</span>
-                <span className="tag tag--accent">Éligible CEE · BAT-EN-106</span>
-              </div>
-
-              <h1 className="hero__title">
-                Sous une toiture<br />
-                métallique, la chaleur<br />
-                peut dépasser <em>90&thinsp;°C</em>.
+              <h1 className="hero__title hero__title--t1">
+                <span className="hero__title-eyebrow">Sous une toiture métallique,</span>
+                <span className="hero__title-anchor">Réduisez la chaleur</span>
+                <span className="hero__title-italic">sans déposer la toiture.</span>
               </h1>
 
+              <p className="hero__stat-line">
+                Jusqu&apos;à <strong>−8&thinsp;°C</strong> ressentis sous toiture
+              </p>
+
               <p className="hero__subtitle">
-                L&apos;Airflex 30 d&apos;ATI&nbsp;Isolation pose une barrière thermo-réfléchissante
-                directement sous la tôle. Pas de travaux lourds, pas de perte de volume utile — et
-                un chantier financé en partie ou en totalité par la fiche CEE BAT-EN-106, dédiée au
-                tertiaire en France d&apos;outre-mer.
+                L&apos;Airflex 30 d&apos;ATI&nbsp;Isolation crée une barrière thermo-réfléchissante
+                directement sous la tôle. Une solution rapide, sans perte de volume utile,
+                éligible au dispositif CEE BAT-EN-106.
               </p>
 
               <div className="hero__actions">
@@ -62,55 +61,53 @@ export default function IsolationToitureRampantsPage() {
                 </a>
                 <a href="#airflex" className="btn btn--secondary">Découvrir l&apos;Airflex 30</a>
               </div>
-
-              <div className="hero__reassurance">
-                {[
-                  "R ≥ 1,2 m²·K/W — NF EN ISO 22097",
-                  "Pose sous tôle, sans dépose de toiture",
-                  "Durée de vie conventionnelle 30 ans",
-                ].map((t) => (
-                  <div key={t} className="hero__reassurance-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                    {t}
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img-placeholder">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <polyline points="3 12 12 4 21 12"/>
-                  <line x1="3" y1="16" x2="21" y2="16"/>
-                  <line x1="3" y1="20" x2="21" y2="20"/>
-                </svg>
-                <span>Photo chantier Airflex 30<br /><small>Recommandé : 800 × 600 px</small></span>
+              <Image
+                src="/images/isolation-toiture-rampants.webp"
+                alt="Pose Airflex 30 en sous-face d'une toiture métallique"
+                width={1400}
+                height={1086}
+                className="hero__img"
+                priority
+              />
+              <div className="hero__bubble hero__bubble--temp">
+                <strong>−8 °C</strong>
+                <small>ressentis<br />sous toiture</small>
               </div>
-
-              <div className="hero__stat-card">
-                <div className="hero__stat-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M12 2v2"/><path d="M12 20v2"/>
-                    <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
-                    <path d="M2 12h2"/><path d="M20 12h2"/>
-                    <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
-                    <circle cx="12" cy="12" r="4"/>
-                  </svg>
-                </div>
-                <div className="hero__stat-text">
-                  <strong>Jusqu&apos;à −6 °C sous toiture*</strong>
-                  température ressentie en période chaude
-                </div>
+              <div className="hero__bubble hero__bubble--life">
+                <strong>30 ans</strong>
+                <small>durée de vie<br />conventionnelle</small>
               </div>
-
-              <div className="hero__cee-badge">
-                <span>CEE</span>
-                BAT-EN<br />106
+              <div className="hero__bubble hero__bubble--cee">
+                <strong>CEE</strong>
+                <small>BAT-EN-106</small>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <ScrollNav />
+
+      {/* HERO BANDEAU — proof points */}
+      <div className="hero-bandeau">
+        <div className="container">
+          <div className="hero-bandeau__inner">
+            {[
+              "R ≥ 1,2 m²·K/W — NF EN ISO 22097",
+              "Pose sous tôle, sans dépose de toiture",
+              "Durée de vie conventionnelle 30 ans",
+            ].map((t) => (
+              <div key={t} className="hero-bandeau__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* PROBLEM */}
       <section className="problem" id="probleme">

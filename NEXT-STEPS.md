@@ -62,7 +62,7 @@ npm run build    # 22 routes, must stay clean
 - `/accompagnement-strategique` (hero + project-mgmt section)
 - `/destratificateur-air`
 - `/financement-cee` *(now `/prime-cee` — same placeholder)*
-- `/isolation-toiture-rampants`
+- ~~`/isolation-toiture-rampants`~~ ✅ done 2026-04-29 — real photo + T1 hero (eyebrow / anchor / serif italic), floating bubbles, bandeau
 - `/isolation-combles`
 - `/ma-prime-renov` *(new — needs a residential renovation photo)*
 - `/vmc-double-flux` *(new — needs a Thaleos unit / serre photo)*
