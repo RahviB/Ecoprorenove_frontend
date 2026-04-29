@@ -107,7 +107,8 @@ export default function MentionsLegalesPage() {
           </p>
           <p>
             <strong>Assurance Responsabilité Civile Professionnelle &amp; Décennale&nbsp;:</strong>{" "}
-            APRIL — police n°&nbsp;25&nbsp;096&nbsp;270&nbsp;377.
+            APRIL — police n°&nbsp;25&nbsp;096&nbsp;270&nbsp;377. Zone
+            géographique couverte&nbsp;: DROM.
           </p>
         </section>
 
@@ -170,7 +171,7 @@ export default function MentionsLegalesPage() {
         </section>
 
         <p className="page-legal__updated">
-          Dernière mise à jour&nbsp;: 28&nbsp;avril&nbsp;2026.
+          Dernière mise à jour&nbsp;: 29&nbsp;avril&nbsp;2026.
         </p>
       </div>
     </article>
