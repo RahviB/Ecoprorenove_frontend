@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
@@ -145,14 +144,6 @@ export default function BardageClient() {
         <div className="container container--wide">
           <div className="hero__inner">
             <div className="hero__content fade-in">
-              <nav className="hero__breadcrumb" aria-label="Fil d'Ariane">
-                <Link href="/">Accueil</Link>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-                <Link href="/#solutions">Solutions</Link>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-                <span style={{ color: "rgba(255,255,255,.75)" }}>Bardage fibre-ciment</span>
-              </nav>
-
               <h1 className="hero__title hero__title--t1">
                 <span className="hero__title-eyebrow">★ Premium — Fibre-ciment — 7 finitions</span>
                 <span className="hero__title-anchor">L&apos;élégance durable</span>
