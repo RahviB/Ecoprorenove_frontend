@@ -3,6 +3,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import ScrollNav from "@/components/ScrollNav";
+import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
   title: "VMC Double Flux agricole — Déshumidification de serre, AGR-TH-119",
@@ -341,6 +342,10 @@ export default function VmcDoubleFluxPage() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions
+        items={["extracteur-air", "destratificateur-air", "prime-cee"]}
+      />
 
       {/* CONTACT */}
       <section className="contact-form-section" id="contact">

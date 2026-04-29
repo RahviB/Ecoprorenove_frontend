@@ -3,6 +3,7 @@ import Image from "next/image";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import ScrollNav from "@/components/ScrollNav";
+import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
   title: "Extracteur d'air statique — désurchauffe naturelle | ECOPRORENOVE",
@@ -319,6 +320,10 @@ export default function ExtracteurAirPage() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions
+        items={["isolation-toiture-rampants", "destratificateur-air", "prime-cee"]}
+      />
 
       {/* CTA FINAL */}
       <section className="cta-final" id="contact">

@@ -5,6 +5,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import ScrollNav from "@/components/ScrollNav";
+import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
   title: "Isolation toiture sous rampants — Airflex 30 (BAT-EN-106)",
@@ -647,6 +648,10 @@ export default function IsolationToitureRampantsPage() {
       </section>
 
       {/* CONTACT FORM */}
+      <RelatedSolutions
+        items={["extracteur-air", "isolation-combles", "prime-cee"]}
+      />
+
       <ContactSection />
     </div>
   );

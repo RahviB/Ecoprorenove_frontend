@@ -7,6 +7,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
 import ScrollNav from "@/components/ScrollNav";
+import RelatedSolutions from "@/components/RelatedSolutions";
 import "./bardage-mobile.css";
 
 type Profile = "emboitement" | "superpose";
@@ -1010,6 +1011,10 @@ export default function BardageClient() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions
+        items={["isolation-toiture-rampants", "isolation-combles", "ma-prime-renov"]}
+      />
 
       {/* CTA FINAL — inline form with finition prefill */}
       <section className="cta-final" id="contact">

@@ -3,6 +3,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import ScrollNav from "@/components/ScrollNav";
+import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
   title: "Destratificateur d'air — économies de chauffage en grand volume",
@@ -547,6 +548,10 @@ export default function DestratificateurPage() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions
+        items={["extracteur-air", "isolation-toiture-rampants", "prime-cee"]}
+      />
 
       {/* CONTACT */}
       <section className="contact-section" id="contact">

@@ -3,6 +3,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import ScrollNav from "@/components/ScrollNav";
+import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
   title: "Prime CEE — comprendre, vérifier, mobiliser le dispositif",
@@ -485,6 +486,10 @@ export default function PrimeCeePage() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions
+        items={["isolation-toiture-rampants", "isolation-combles", "ma-prime-renov"]}
+      />
 
       {/* CONTACT */}
       <section className="contact-form-section" id="contact">

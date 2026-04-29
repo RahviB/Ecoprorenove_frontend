@@ -3,6 +3,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import ScrollNav from "@/components/ScrollNav";
+import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
   title: "MaPrimeRénov' — l'aide de l'État pour la rénovation énergétique",
@@ -463,6 +464,10 @@ export default function MaPrimeRenovPage() {
           </div>
         </div>
       </section>
+
+      <RelatedSolutions
+        items={["isolation-combles", "bardage", "prime-cee"]}
+      />
 
       {/* CONTACT */}
       <section className="contact-form-section" id="contact">
