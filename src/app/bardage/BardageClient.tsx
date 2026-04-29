@@ -69,14 +69,13 @@ export default function BardageClient() {
     }
   }, [mobileSheet]);
 
-  // Track whether the configurator section is in view so the fixed mobile
-  // sheet only renders while user is in the configurator (avoids covering
-  // content in other sections).
+  // Track whether the configurator section is meaningfully in view so the
+  // mobile sheet appears only when the user is actually inside the
+  // configurator. Default false to avoid a flash on page load before the
+  // IntersectionObserver fires; the observer will set true on mount if
+  // the section is already visible.
   const configuratorRef = useRef<HTMLElement | null>(null);
-  // Default true so the sheet renders immediately if the section is on
-  // screen at first paint (e.g., user landed via #configurateur anchor).
-  // The IntersectionObserver will correct it on the first scroll event.
-  const [configuratorInView, setConfiguratorInView] = useState(true);
+  const [configuratorInView, setConfiguratorInView] = useState(false);
   useEffect(() => {
     const el = configuratorRef.current;
     if (!el || typeof IntersectionObserver === "undefined") return;
@@ -84,8 +83,10 @@ export default function BardageClient() {
       (entries) => {
         for (const e of entries) setConfiguratorInView(e.isIntersecting);
       },
-      // Treat the section as "in view" once any part is visible
-      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
+      // Require the section to occupy a meaningful portion of the viewport
+      // before the sheet appears. Shrink the active region so the sheet
+      // doesn't pop in just because the section's edge crossed the fold.
+      { threshold: 0, rootMargin: "-25% 0px -25% 0px" }
     );
     obs.observe(el);
     return () => obs.disconnect();
