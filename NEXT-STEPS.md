@@ -1,10 +1,10 @@
 # EcoProRenove — Next Steps
 
-Snapshot from end of session 9, **2026-04-28**. Resume from this doc.
+Snapshot from end of session 10, **2026-04-29**. Resume from this doc.
 
 GitHub: `https://github.com/RahviB/Ecoprorenove_frontend.git` (branch `main`)
 Staging: `https://stag.ecoprorenove.fr` — Coolify redeploys on push.
-Latest commits: `b06a34d` "Polish sector pages — shared layout, mirrored sections, contact form" / `4a14cde` "Restructure subvention menu, ship /ma-prime-renov + /vmc-double-flux".
+Latest commits (session 10): `93e5329` "Bardage mobile sheet: scope to configurator section" / `304bef4` "Audit fixes: image perf, mobile bardage app-feel, SEO + a11y polish" / `656859e` "Subvention pages on solution-template" / `c204fb2` "Roll T1 hero + ScrollNav across solution pages" / `abf8052` "Polish /isolation-toiture-rampants — T1 hero + ScrollNav".
 
 ---
 
@@ -15,6 +15,36 @@ cd C:\Users\rahvi\projects\EcoProrenove\ecoprorenove-web
 npm run dev      # http://localhost:3001
 npm run build    # 22 routes, must stay clean
 ```
+
+---
+
+## ✅ What's done — session 10 (2026-04-29)
+
+### Solution-template pattern applied across all 8 destination pages
+- Reusable `.solution-template` CSS scope: T1 hero (eyebrow / anchor caps / serif italic kicker), `.hero__stat-line` pill, 3 floating bubbles, bandeau strip, smooth `scroll-margin-top` on every `<section[id]>`.
+- Reusable `.hero__img--placeholder` (dashed border + striped gray + "PHOTO À VENIR") for pages awaiting photos.
+- Pages templated: `/isolation-toiture-rampants` (real photo), `/isolation-combles`, `/destratificateur-air`, `/vmc-double-flux`, `/accompagnement-strategique`, `/prime-cee`, `/ma-prime-renov` (all placeholder), `/extracteur-air` + `/bardage` (kept their signature visuals — Tornado product / configurator preview).
+- `<ScrollNav />` made prop-driven (`sections={[{id, label}]}`), vertical floating sidebar (right edge, hidden &lt;1100px), IntersectionObserver scroll-spy.
+
+### Bardage configurator — native-app feel on mobile (≤768px) only
+- New `src/app/bardage/bardage-mobile.css` with bottom-sheet pattern (collapsed 30vh / expanded 70vh, tap-to-toggle, IntersectionObserver scoped strictly to `#configurateur`, body scroll lock when expanded, safe-area-inset-bottom respected).
+- Desktop layout untouched.
+
+### Image performance — 28 MB → 2.2 MB (−92%)
+- 7 bardage hero JPEGs converted to WebP at q=80, max 1600px width — under 320 KB each (was 3.3-3.6 MB).
+- 7 bardage swatches converted to WebP at q=82, max 600px — under 30 KB each.
+- 2 Tornado PNGs (1.2 MB + 730 KB) converted to WebP with alpha at q=82 — under 80 KB each.
+- Reusable script: `scripts/convert-images.mjs` (sharp-based, idempotent).
+
+### SEO / a11y / launch polish
+- `BreadcrumbJsonLd` added to `/agricole`, `/tertiaire`, `/residentiel`, `/qui-sommes-nous` (was missing).
+- Meta descriptions trimmed to ≤160 chars on agricole + tertiaire; `/residentiel` title shortened 71 → 62 chars.
+- `robots.ts` now explicitly disallows `/setup/`.
+- Fixed undefined `--gray-dark` CSS variable (was referenced but never declared).
+- Hero floating bubbles hidden below 480px (were overlapping content on small phones).
+- New `src/app/opengraph-image.tsx` — code-defined branded OG (1200×630, applies to every route by default).
+- New `src/app/not-found.tsx` — branded 404 with helpful link grid (Solutions + Subvention).
+- Setup intake teardown doc corrected — Resend is wired and live.
 
 ---
 
@@ -58,16 +88,16 @@ npm run build    # 22 routes, must stay clean
 
 ## ⚠️ Blockers / must do before public launch
 
-### 1. Hero image dashed placeholders (waiting on client photos)
-- `/accompagnement-strategique` (hero + project-mgmt section)
+### 1. Hero photos — 6 pages still on the gray "PHOTO À VENIR" placeholder
+All use the new `.hero__img--placeholder` class (search for that to locate). Drop the file in `public/images/{page-slug}.webp`, then swap the `<div className="hero__img hero__img--placeholder" />` for an `<Image src="..." />`:
+- `/accompagnement-strategique`
 - `/destratificateur-air`
-- `/financement-cee` *(now `/prime-cee` — same placeholder)*
-- ~~`/isolation-toiture-rampants`~~ ✅ done 2026-04-29 — real photo + T1 hero (eyebrow / anchor / serif italic), floating bubbles, bandeau
+- `/prime-cee`
 - `/isolation-combles`
-- `/ma-prime-renov` *(new — needs a residential renovation photo)*
-- `/vmc-double-flux` *(new — needs a Thaleos unit / serre photo)*
+- `/ma-prime-renov` (residential rénovation photo)
+- `/vmc-double-flux` (Thaleos unit / serre photo)
 
-Search for `.hero__img-placeholder` to find each.
+✅ Done 2026-04-29: `/isolation-toiture-rampants` (real photo, Airflex install in agricultural building).
 
 ### 2. Test the 8 form sources end-to-end on staging
 After Coolify rebuilds, submit one form on each: `/`, `/prime-cee`, `/ma-prime-renov`, `/vmc-double-flux`, `/bardage`, `/tertiaire`, `/residentiel`, `/agricole`, plus the original 5 service pages already tested. Confirm emails land in `rahvi.bichon@gmail.com` with the right SOURCE_LABEL.
@@ -91,8 +121,11 @@ Currently `/mentions-legales` shows "—" for these:
 - Dedupe the 25+ inline check-icon SVGs into a `<CheckIcon />` component
 - Mobile drawer focus trap (Tab currently leaves the drawer; Esc closes correctly)
 - iOS body scroll lock — switch from `document.body.style.overflow="hidden"` to `position:fixed; top:-scrollY` to avoid Safari layout glitches
-- Custom `app/not-found.tsx` (currently uses Next.js default 404)
-- `opengraph-image.tsx` for branded social shares
+- Internal "Related solutions" cross-linking between pages (audit recommendation — needs pairings)
+- Orphan CSS cleanup (~50-100 lines of dead rules from old hero variants — `.hero__img-placeholder` old version, `.hero__cee-badge`, `.hero__stat-icon`, `.hero__stat-text`)
+- `npm audit fix --force` for the resend / svix / uuid moderate-CVE chain (breaking — re-test `/setup` intake after)
+- ~~Custom `app/not-found.tsx`~~ ✅ done 2026-04-29
+- ~~`opengraph-image.tsx` for branded social shares~~ ✅ done 2026-04-29
 
 ---
 
@@ -139,11 +172,11 @@ ecoprorenove-web/
 ## 🎯 Recommended next pick
 
 If client provides:
-- Hero photos for the 7 placeholder pages → trivial swap, ~10 min total
-- Missing legal info (RCS / RGE cert / médiateur / assurance zone) → fill `/mentions-legales` strings (single file)
+- Hero photos for the 6 placeholder pages → trivial swap, ~10 min total
+- Missing legal info (RCS / RGE cert / médiateur / assurance zone) → fill `/mentions-legales` strings (single file). May already be in the `/setup` intake submission Emmanuel sent — check `rahvi.bichon@gmail.com` for "[Intake ECOPRORENOVE]" email.
 
 If pushing toward launch:
 1. End-to-end form smoke test on staging (8 form sources)
-2. Lighthouse pass on `/`, `/prime-cee`, `/ma-prime-renov`, `/vmc-double-flux`
+2. PageSpeed Insights pass on `/`, `/bardage`, `/prime-cee`, `/vmc-double-flux` — image perf gains from session 10 should show in LCP
 3. Broken-link check (especially internal anchors `#contact`, `#airflex`, `#courtage`)
-4. OG image check
+4. ~~OG image check~~ ✅ done 2026-04-29 — auto-generated via `opengraph-image.tsx`
