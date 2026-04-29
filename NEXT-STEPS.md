@@ -1,10 +1,10 @@
 # EcoProRenove — Next Steps
 
-Snapshot from end of session 10, **2026-04-29**. Resume from this doc.
+Snapshot from end of session 11, **2026-04-29 (late)**. Resume from this doc.
 
 GitHub: `https://github.com/RahviB/Ecoprorenove_frontend.git` (branch `main`)
 Staging: `https://stag.ecoprorenove.fr` — Coolify redeploys on push.
-Latest commits (session 10): `93e5329` "Bardage mobile sheet: scope to configurator section" / `304bef4` "Audit fixes: image perf, mobile bardage app-feel, SEO + a11y polish" / `656859e` "Subvention pages on solution-template" / `c204fb2` "Roll T1 hero + ScrollNav across solution pages" / `abf8052` "Polish /isolation-toiture-rampants — T1 hero + ScrollNav".
+Latest commits (session 11): `f16b1ab` "Pin svix>=1.92.2 via overrides — clears uuid CVE chain" / `e7fae33` "Cross-link solution + subvention pages; strip dead V4/V5/V6 CSS (-1634 lines)" / `f1b7e27` "Branded OG image + 404 page".
 
 ---
 
@@ -15,6 +15,39 @@ cd C:\Users\rahvi\projects\EcoProrenove\ecoprorenove-web
 npm run dev      # http://localhost:3001
 npm run build    # 22 routes, must stay clean
 ```
+
+---
+
+## ✅ What's done — session 11 (2026-04-29 late)
+
+### Cross-linking — `<RelatedSolutions />` component
+- New `src/components/RelatedSolutions.tsx` with hand-curated catalog (9 entries).
+- "Pages en lien" section inserted before the contact section on all 8 destination pages (6 solutions + 2 subventions). Visual: green-pale band, 3 white cards with hover gradient strip, Solution (green) vs Subvention (orange) tag colour. Pairings:
+  - toiture → extracteur, combles, prime-cee
+  - combles → toiture, destrat, ma-prime-renov
+  - bardage → toiture, combles, ma-prime-renov
+  - destrat → extracteur, toiture, prime-cee
+  - extracteur → toiture, destrat, prime-cee
+  - vmc → extracteur, destrat, prime-cee
+  - prime-cee → toiture, combles, ma-prime-renov
+  - ma-prime-renov → combles, bardage, prime-cee
+
+### Dead CSS cleanup — `globals.css` 6,242 → 4,608 lines (−26 %)
+- Stripped 3 abandoned homepage iterations: `.page-home-v4`, `v5`, `v6` (active homepage uses `v3`, untouched).
+- Bundled feature blocks gone with them: `bento`, `scrolly`, `closer`, `hero-glass`, `ed__*`, `rail__*`, `v6*`. Lines 3517-5150 deleted.
+- Build clean, every page visually intact (regression-tested home + bardage).
+
+### Security — uuid CVE chain cleared (5 vulns → 2)
+- Pinned `svix@^1.92.2` via `package.json` `overrides`. Svix 1.92.2 dropped its `uuid` dependency entirely (only `standardwebhooks` remains), so the CVE-chain (uuid → svix → resend) is broken without touching resend itself (still on 6.12.2).
+- Did **not** run `npm audit fix --force` because the suggested fixes regressed both `resend` (6.12.2 → 6.1.3) and `next` (16 → 9.3.3, 7-major-version downgrade).
+- Remaining 2 vulns are postcss inside Next.js — upstream-only fix; wait for Next 16.x bump.
+
+### Branded OG image + 404 page
+- `src/app/opengraph-image.tsx` — code-defined 1200×630 OG via `next/og` `ImageResponse`. Dark green gradient + ECOPRORENOVE wordmark + tagline + 4 trust pills (Prime CEE / MaPrimeRénov' / Pose RGE / Interlocuteur unique). Auto-applies to every route by default.
+- `src/app/not-found.tsx` — branded 404 with serif-italic headline ("Cette page s'est échappée par la toiture.") and a helpful link grid covering every Solution + Subvention page.
+
+### Setup intake teardown doc — corrected stale paragraph
+- `docs/launch/setup-teardown.md` now reflects that Resend is **wired and live** (sends to `rahvi.bichon@gmail.com`, requires `RESEND_API_KEY` env var on Coolify). Previously claimed Resend was "planned but not wired".
 
 ---
 
@@ -121,11 +154,13 @@ Currently `/mentions-legales` shows "—" for these:
 - Dedupe the 25+ inline check-icon SVGs into a `<CheckIcon />` component
 - Mobile drawer focus trap (Tab currently leaves the drawer; Esc closes correctly)
 - iOS body scroll lock — switch from `document.body.style.overflow="hidden"` to `position:fixed; top:-scrollY` to avoid Safari layout glitches
-- Internal "Related solutions" cross-linking between pages (audit recommendation — needs pairings)
-- Orphan CSS cleanup (~50-100 lines of dead rules from old hero variants — `.hero__img-placeholder` old version, `.hero__cee-badge`, `.hero__stat-icon`, `.hero__stat-text`)
-- `npm audit fix --force` for the resend / svix / uuid moderate-CVE chain (breaking — re-test `/setup` intake after)
+- Run PageSpeed Insights manually in browser (Google API quota exhausted in session 11) — image perf gains from session 10 should now show on `/bardage` LCP
+- Postcss CVE in Next.js — wait for Next 16.x to bump postcss upstream; rerun `npm audit` periodically
 - ~~Custom `app/not-found.tsx`~~ ✅ done 2026-04-29
 - ~~`opengraph-image.tsx` for branded social shares~~ ✅ done 2026-04-29
+- ~~Internal "Related solutions" cross-linking~~ ✅ done 2026-04-29 (session 11)
+- ~~Orphan CSS cleanup~~ ✅ done 2026-04-29 (session 11) — 1634 lines killed
+- ~~uuid CVE chain~~ ✅ done 2026-04-29 (session 11) — svix override
 
 ---
 
