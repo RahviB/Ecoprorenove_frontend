@@ -1658,12 +1658,6 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   padding: 36px;
   position: relative;
 }
-.panel__step-num {
-  display: inline-block;
-  font-family: var(--serif); font-style: italic; font-weight: 500;
-  font-size: .9rem; color: var(--gray);
-  margin-bottom: 4px;
-}
 .panel__title {
   font-size: 1.5rem; font-weight: 800; color: var(--ink);
   letter-spacing: -.01em; margin-bottom: 10px;
@@ -1779,50 +1773,116 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   font-family: var(--font); font-style: normal; font-weight: 700;
 }
 
-.upsell {
-  padding: 22px 24px;
-  background: linear-gradient(135deg, #fef7ec 0%, #fdefd6 100%);
-  border: 1.5px solid #e4d9bd;
-  border-radius: var(--radius);
-  margin-bottom: 22px;
+/* Paint personalization block — visible inside .panel only when Brut finition is active */
+.finition-paint {
   position: relative;
+  margin-bottom: 22px;
+  padding: 24px 26px;
+  background: linear-gradient(135deg, #1a2318 0%, #0d1410 100%);
+  border: 1px solid rgba(228, 217, 189, .22);
+  border-radius: var(--radius);
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(13, 20, 16, .14);
   display: none;
 }
-.upsell.visible { display: block; animation: bardage-slideIn .4s ease; }
+.finition-paint.visible { display: block; animation: bardage-slideIn .42s cubic-bezier(.22, 1, .36, 1); }
 @keyframes bardage-slideIn {
-  from { opacity: 0; transform: translateY(-8px); }
+  from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.upsell__head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-.upsell__icon {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  background: var(--ink);
-  color: #e4d9bd;
-  display: flex; align-items: center; justify-content: center;
+.finition-paint__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.finition-paint__icon {
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
-}
-.upsell__badge {
-  font-size: .62rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
-  color: #8e7344;
-}
-.upsell__title {
-  font-size: 1.02rem; font-weight: 800; color: var(--ink);
-  margin-bottom: 8px; letter-spacing: -.01em;
-}
-.upsell__text {
-  font-size: .85rem; color: var(--gray); line-height: 1.55; margin-bottom: 14px;
-}
-.upsell__options { display: flex; flex-direction: column; gap: 8px; }
-.upsell__option {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 10px 12px;
-  background: rgba(255,255,255,.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
-  font-size: .82rem; color: var(--ink);
+  background: rgba(228, 217, 189, .14);
+  color: #e4d9bd;
 }
-.upsell__option svg { flex-shrink: 0; margin-top: 2px; color: var(--green-dark); }
-.upsell__option strong { font-weight: 800; }
+.finition-paint__eyebrow {
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #e4d9bd;
+  margin: 0 0 2px;
+}
+.finition-paint__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+  letter-spacing: -.01em;
+}
+.finition-paint__text {
+  font-size: .88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .78);
+  margin: 0 0 18px;
+}
+.finition-paint__text strong { color: #e4d9bd; font-weight: 700; }
+.finition-paint__options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.finition-paint__option {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 12px;
+  transition: background .18s, border-color .18s, transform .18s;
+}
+.finition-paint__option:hover {
+  background: rgba(255, 255, 255, .07);
+  border-color: rgba(228, 217, 189, .28);
+  transform: translateX(2px);
+}
+.finition-paint__letter {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #1a2318;
+  background: #e4d9bd;
+  border-radius: 50%;
+  line-height: 1;
+}
+.finition-paint__letter--accent {
+  background: var(--accent);
+  color: #1a2318;
+}
+.finition-paint__option strong {
+  display: block;
+  font-size: .92rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+  letter-spacing: -.005em;
+}
+.finition-paint__option p {
+  font-size: .8rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .7);
+  margin: 0;
+}
 
 .panel__actions { display: flex; flex-direction: column; gap: 10px; }
 .panel__actions .btn { width: 100%; justify-content: center; }
@@ -1920,79 +1980,6 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
 }
 .profile-card__points svg { flex-shrink: 0; margin-top: 3px; color: var(--green); }
 
-/* Paint upsell */
-.paint-upsell {
-  padding: 110px 0;
-  background: linear-gradient(135deg, var(--ink) 0%, #1a2318 100%);
-  color: #fff;
-  position: relative; overflow: hidden;
-}
-.paint-upsell::before {
-  content: ''; position: absolute;
-  width: 560px; height: 560px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(228,217,189,.08) 0, transparent 60%);
-  top: -200px; left: -140px;
-}
-.paint-upsell__inner {
-  position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
-  align-items: center;
-}
-.paint-upsell__eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase;
-  color: #e4d9bd; margin-bottom: 20px;
-}
-.paint-upsell__eyebrow::before {
-  content: ''; width: 24px; height: 1px; background: #e4d9bd;
-}
-.paint-upsell__title {
-  font-size: clamp(2rem, 3.6vw, 2.8rem); font-weight: 800; line-height: 1.12;
-  margin-bottom: 22px; letter-spacing: -.02em;
-}
-.paint-upsell__title em {
-  font-style: italic; font-family: var(--serif); font-weight: 500; color: #e4d9bd;
-}
-.paint-upsell__text {
-  font-size: 1.02rem; color: rgba(255,255,255,.75); line-height: 1.75;
-  margin-bottom: 32px;
-}
-.paint-upsell__actions { display: flex; flex-wrap: wrap; gap: 14px; }
-.paint-upsell__cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
-.paint-card {
-  display: flex; gap: 20px; align-items: flex-start;
-  padding: 24px 26px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: var(--radius-lg);
-  transition: var(--transition);
-}
-.paint-card:hover {
-  background: rgba(255,255,255,.08);
-  border-color: rgba(228,217,189,.3);
-  transform: translateX(4px);
-}
-.paint-card__num {
-  font-family: var(--serif); font-style: italic; font-weight: 500;
-  font-size: 1.6rem; color: #e4d9bd;
-  flex-shrink: 0; line-height: 1;
-}
-.paint-card__title {
-  font-size: 1.05rem; font-weight: 800; color: #fff;
-  margin-bottom: 6px; letter-spacing: -.005em;
-}
-.paint-card__text {
-  font-size: .85rem; color: rgba(255,255,255,.7); line-height: 1.6;
-}
-.paint-card__tag {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  padding: 3px 10px; border-radius: 50px;
-}
-.paint-card__tag--diy { background: rgba(168,226,150,.15); color: #a8e296; }
-.paint-card__tag--pro { background: rgba(228,217,189,.15); color: #e4d9bd; }
-
 /* Bardage method (different from method-home) */
 .method { padding: 110px 0; background: var(--white); }
 .method__header { text-align: center; margin-bottom: 64px; }
@@ -2068,7 +2055,6 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   .why-fc__header { grid-template-columns: 1fr; gap: 20px; }
   .why-fc__grid { grid-template-columns: repeat(2, 1fr); }
   .profiles__grid { grid-template-columns: 1fr; }
-  .paint-upsell__inner { grid-template-columns: 1fr; gap: 48px; }
   .method__steps { grid-template-columns: repeat(2, 1fr); }
   .page-bardage .sectors__grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
 }
@@ -2082,7 +2068,7 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   .stage__caption { padding: 20px 22px 18px; }
   .stage__caption-title { font-size: 1.3rem; }
   .swatches { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .why-fc, .profiles, .paint-upsell, .method { padding: 72px 0; }
+  .why-fc, .profiles, .method { padding: 72px 0; }
   .why-fc__grid { grid-template-columns: 1fr; }
   .method__steps { grid-template-columns: 1fr; }
 }
@@ -4524,6 +4510,10 @@ body:has(.page-home-v5) .vsw__toggle { background: rgba(20,32,26,.95); }
   box-shadow: 0 0 0 4px rgba(73, 167, 57, .18);
 }
 @media (max-width: 1100px) { .scrollnav-side { display: none; } }
+/* Bardage: hide on every viewport — its 148px width overlaps the right-side
+   configurator panel (max-width container 1320px + right:24px nav doesn't
+   fit comfortably until viewport ≥ 1660px, which is rare). */
+.page-bardage .scrollnav-side { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .scrollnav-side { transition: none !important; }
 }

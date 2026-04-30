@@ -14,7 +14,7 @@
 .page-bardage .mobile-sheet-body {
   /* On desktop the wrapper must be transparent to layout — `display: contents`
      lets all inner children act as direct children of `.panel` so existing
-     rules (e.g., spacing on .profile-filter, .swatches, .color-info, .upsell)
+     rules (e.g., spacing on .profile-filter, .swatches, .color-info, .finition-paint)
      keep working unchanged. */
   display: contents;
 }
@@ -237,8 +237,7 @@
   /* Hide on desktop — only render in DOM via React, but make
      extra-sure it never appears outside mobile breakpoint. */
 
-  /* Step / title / subtitle — hide in collapsed view, show small in expanded */
-  .page-bardage .configurator .panel__step-num,
+  /* Title / subtitle — hide in collapsed view, show small in expanded */
   .page-bardage .configurator .panel__title,
   .page-bardage .configurator .panel__subtitle {
     display: none;
@@ -323,15 +322,15 @@
     pointer-events: auto;
   }
 
-  /* Hide the panel's footnote+actions+upsell padding overrides */
+  /* Sheet body — reset margins on stacked blocks; tighter padding inside */
   .page-bardage .configurator .panel__actions,
-  .page-bardage .configurator .upsell,
+  .page-bardage .configurator .finition-paint,
   .page-bardage .configurator .color-info,
   .page-bardage .configurator .panel__footnote {
     margin: 0;
   }
   .page-bardage .configurator .color-info { padding: 18px; }
-  .page-bardage .configurator .upsell { padding: 18px 20px; }
+  .page-bardage .configurator .finition-paint { padding: 18px 20px; }
   .page-bardage .configurator .panel__footnote {
     font-size: .7rem;
     color: var(--gray);

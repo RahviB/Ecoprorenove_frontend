@@ -372,7 +372,6 @@ export default function BardageClient() {
               </button>
 
               <div className="mobile-sheet-body">
-              <span className="panel__step-num">Étape — 01</span>
               <h3 className="panel__title">Votre finition</h3>
               <p className="panel__subtitle">
                 7 finitions fibre-ciment, 2 profils de pose. Le type de profil (emboîtement ou
@@ -472,41 +471,40 @@ export default function BardageClient() {
                 </div>
               </div>
 
-              {/* Upsell */}
-              <div className={`upsell${effectiveActive.brut ? " visible" : ""}`}>
-                <div className="upsell__head">
-                  <div className="upsell__icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M19 7h-1V5.5A2.5 2.5 0 0 0 15.5 3h-6A2.5 2.5 0 0 0 7 5.5V7H6a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h1v2h10v-2h1a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1z" />
+              {/* Paint personalization — visible only for Brut finitions */}
+              <div className={`finition-paint${effectiveActive.brut ? " visible" : ""}`}>
+                <div className="finition-paint__head">
+                  <div className="finition-paint__icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M19 11h2v8h-2zM6 5l8.5-1L13 14l-7 1z" />
+                      <path d="M3 14l3 1 .5-1L9 9.5 7 8.5z" />
                     </svg>
                   </div>
-                  <span className="upsell__badge">★ Upsell recommandé</span>
+                  <div>
+                    <p className="finition-paint__eyebrow">Personnalisation incluse</p>
+                    <h4 className="finition-paint__title">Mise en peinture sur-mesure</h4>
+                  </div>
                 </div>
-                <div className="upsell__title">Finition sur-mesure — mise en peinture</div>
-                <p className="upsell__text">
-                  Le Brut à peindre est une finition neutre. Il se peint avec une{" "}
-                  <strong>peinture microporeuse adaptée aux bardages fibre-ciment</strong> — dans la
-                  teinte de votre choix. Deux options pour concrétiser votre projet :
+
+                <p className="finition-paint__text">
+                  Le Brut à peindre se personnalise dans <strong>n&apos;importe quelle teinte RAL</strong>{" "}
+                  avec une peinture microporeuse adaptée — tenue identique à une finition d&apos;origine.
                 </p>
-                <div className="upsell__options">
-                  <div className="upsell__option">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span>
-                      <strong>Option A — Vous peignez.</strong> Nous livrons le bardage brut. Vous
-                      appliquez vous-même une peinture microporeuse (ou via votre peintre).
-                    </span>
+
+                <div className="finition-paint__options">
+                  <div className="finition-paint__option">
+                    <span className="finition-paint__letter">A</span>
+                    <div>
+                      <strong>Vous peignez vous-même</strong>
+                      <p>Bardage livré brut. Application par vos soins ou via votre peintre.</p>
+                    </div>
                   </div>
-                  <div className="upsell__option">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span>
-                      <strong>Option B — Nous nous occupons de tout.</strong> Peinture microporeuse
-                      dans la teinte de votre choix, incluse dans la prestation.{" "}
-                      <span style={{ color: "var(--gray)", fontStyle: "italic" }}>Devis personnalisé.</span>
-                    </span>
+                  <div className="finition-paint__option">
+                    <span className="finition-paint__letter finition-paint__letter--accent">B</span>
+                    <div>
+                      <strong>Prestation complète</strong>
+                      <p>Peinture microporeuse dans votre teinte, appliquée par nos équipes.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -760,58 +758,6 @@ export default function BardageClient() {
         </div>
       </section>
 
-      {/* PAINT UPSELL */}
-      <section className="paint-upsell">
-        <div className="container container--wide">
-          <div className="paint-upsell__inner">
-            <div className="fade-in">
-              <div className="paint-upsell__eyebrow">Finition Brut à peindre</div>
-              <h2 className="paint-upsell__title">
-                Une toile blanche,<br />
-                <em>votre</em> teinte.
-              </h2>
-              <p className="paint-upsell__text">
-                Le Brut à peindre est une finition neutre. Une peinture{" "}
-                <strong style={{ color: "#fff" }}>microporeuse adaptée aux bardages fibre-ciment</strong>{" "}
-                permet de le personnaliser dans n&apos;importe quelle teinte RAL — avec une tenue
-                identique à celle d&apos;une finition d&apos;origine.
-              </p>
-              <div className="paint-upsell__actions">
-                <a href="#contact" className="btn btn--accent btn--lg">Demander un devis peinture</a>
-                <a href="#configurateur" className="btn btn--secondary">Voir les profils Brut</a>
-              </div>
-            </div>
-
-            <div className="paint-upsell__cards fade-in delay-2">
-              <div className="paint-card">
-                <div className="paint-card__num">A</div>
-                <div>
-                  <h3 className="paint-card__title">Vous peignez vous-même</h3>
-                  <p className="paint-card__text">
-                    Nous livrons le bardage brut. Vous appliquez une peinture microporeuse
-                    spécifiquement formulée — après pose ou en amont. Économie sur la prestation,
-                    flexibilité sur le calendrier.
-                  </p>
-                  <span className="paint-card__tag paint-card__tag--diy">DIY / Entreprise peintre</span>
-                </div>
-              </div>
-
-              <div className="paint-card">
-                <div className="paint-card__num">B</div>
-                <div>
-                  <h3 className="paint-card__title">Nous prenons en charge</h3>
-                  <p className="paint-card__text">
-                    Prestation complète — fourniture de la peinture microporeuse dans la teinte de
-                    votre choix, application par nos équipes, garantie pose incluse. Un chantier, un
-                    interlocuteur.
-                  </p>
-                  <span className="paint-card__tag paint-card__tag--pro">Prestation ECOPRORENOVE</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* METHOD */}
       <section className="method" id="methode">
