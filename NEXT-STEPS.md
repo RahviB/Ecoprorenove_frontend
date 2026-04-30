@@ -1,10 +1,10 @@
 # EcoProRenove — Next Steps
 
-Snapshot from end of session 11, **2026-04-29 (late)**. Resume from this doc.
+Snapshot from end of session 12, **2026-04-30**. Resume from this doc.
 
 GitHub: `https://github.com/RahviB/Ecoprorenove_frontend.git` (branch `main`)
 Staging: `https://stag.ecoprorenove.fr` — Coolify redeploys on push.
-Latest commits (session 11): `f16b1ab` "Pin svix>=1.92.2 via overrides — clears uuid CVE chain" / `e7fae33` "Cross-link solution + subvention pages; strip dead V4/V5/V6 CSS (-1634 lines)" / `f1b7e27` "Branded OG image + 404 page".
+Latest commits (session 12): `dfe4be3` "Bardage configurator: bento mosaic layout at desktop ≥1101px" / `390f75a` "Bardage: redesign Brut paint block, drop standalone upsell band, hide ScrollNav" / `e7f83d3` "Replace fixed-position aides floater with inline callout pointing to step 02" / `be35ac1` "Homepage UI polish + vmc-double-flux grid fix; unify eyebrow site-wide".
 
 ---
 
@@ -15,6 +15,54 @@ cd C:\Users\rahvi\projects\EcoProrenove\ecoprorenove-web
 npm run dev      # http://localhost:3001
 npm run build    # 22 routes, must stay clean
 ```
+
+---
+
+## ✅ What's done — session 12 (2026-04-30)
+
+### Homepage UI polish
+- **Solutions tabs reordered**: bardage first (premium), then toiture, combles, destrat, extracteur, vmc, courtage, accompagnement, prime-cee.
+- **Parcours title rewritten**: was "Notre méthode" eyebrow + "Notre processus" title (repetitive); now "Notre méthode" + "Six étapes, *un dossier maîtrisé*".
+- **Removed duplicate stats** from parcours (the +200 000 MWh / +500 dossiers numbers were already in hero).
+- **Replaced "Interlocuteur unique" engagement card** (it duplicated the hero subtitle) with "Étude gratuite, sans engagement".
+- **CTA section now has dual phone buttons** with La Réunion as **primary** (accent green border + tint) and Métropole secondary. Both numbers visible — replaces the generic "Ou nous appeler directement" button.
+- **Eyebrow unification across 7 pages** (homepage + 6 others): `cta-final__eyebrow` and `trust-marquee__intent` swapped for `section-label section-label--white` (or `section-label` on light bg). Added global `.section-label--white { color: rgba(255,255,255,.7); }` modifier. Old CSS rules deleted.
+
+### `AidesCallout` component (replaces `AidesFloater`)
+- New `src/components/AidesCallout.tsx` (server component). Inline element rendered inside `.parcours-unifie` *below the timeline*, with a triangle pointer at top-left aimed UP at step 02 ("Analyse technique & éligibilité CEE"). On desktop: positioned via `margin-left: max(0px, calc((100% / 6) * 1))` to align with column 2. On tablet (≤1024): aligns to col 2 of 3. On mobile (≤640): full width below stacked timeline.
+- Old `AidesFloater.tsx` (fixed bottom-right with IntersectionObserver + sessionStorage dismiss) deleted. The fixed-position version conflicted with `.back-to-top` and `.mobile-cta-bar` across breakpoints.
+- Speech-bubble feel anchors the "we check your aides" message to the actual step where it happens.
+
+### vmc-double-flux — "Votre transition en 4 étapes" grid bug
+- The 4-step section was rendering as 4 stacked full-width strips. Cause: JSX used `className="how-it-works__steps"` but the CSS rule is `.how-steps` (3 other solution pages all use `.how-steps`). Renamed to match.
+- Tightened the eyebrow: "Votre transition en 4 étapes" → "Notre méthode en 4 étapes" (consistent with homepage parcours).
+
+### Bardage configurator overhaul
+- **Removed "Étape — 01"** eyebrow (no Étape 02 exists).
+- **Replaced inline `.upsell` block** (with customer-facing "★ Upsell recommandé" badge) with `.finition-paint` — premium dark card style, "Personnalisation incluse" eyebrow, "Mise en peinture sur-mesure" title, two stacked options with **A/B letter badges** (B in accent orange). Customer-facing copy contains no "Upsell" wording.
+- **Removed standalone `.paint-upsell` section** (the big dark band below the configurator) — content fully integrated into the configurator panel.
+- **Stripped dead CSS**: `.paint-upsell*`, `.paint-card*`, `.panel__step-num`, `.aides-card*`, `.parcours-unifie__stats*`.
+- **Hidden `.scrollnav-side` on `.page-bardage`** at all viewports — its 148px width was overlapping the configurator panel right edge, cutting off body copy.
+
+### Bardage configurator — BENTO MOSAIC at desktop ≥1101px
+- `.configurator__body` becomes a 12-col grid with `grid-template-areas`. Tile layout:
+  - Stage (cols 1-7, rows 1-2) — large maison preview
+  - Profile filter (cols 8-12, row 1)
+  - Color details (cols 8-12, row 2)
+  - Swatches full width row 3 — single 7-col row of finishes
+  - Paint card full width row 4 (only when Brut, else collapses)
+  - CTA full width row 5 (centered, 320px min)
+  - Footnote full width row 6 (centered)
+- **`.panel` and `.mobile-sheet-body` use `display: contents`** at desktop so their grandchildren bubble up as direct grid items. Each tile gets its own white card style (background, padding, radius, shadow).
+- Stage drops `position: sticky` and `aspect-ratio` — stretches to fill grid area, image uses `object-fit: cover`.
+- **Mobile bottom-sheet pattern at ≤1100px is unchanged** — bento is desktop-only override.
+- Eliminates the previous 700-1000px of empty cream space on the left below the sticky preview.
+
+### Commits (session 12)
+- `be35ac1` Homepage UI polish + vmc-double-flux grid fix; unify eyebrow site-wide
+- `e7f83d3` Replace fixed-position aides floater with inline callout pointing to step 02
+- `390f75a` Bardage: redesign Brut paint block, drop standalone upsell band, hide ScrollNav
+- `dfe4be3` Bardage configurator: bento mosaic layout at desktop ≥1101px
 
 ---
 
@@ -120,6 +168,19 @@ npm run build    # 22 routes, must stay clean
 ---
 
 ## ⚠️ Blockers / must do before public launch
+
+### 0. **5 of 7 bardage maison images need replacement** (waiting on user)
+All 7 `public/images/bardage/maison-*.webp` files are similar size (~225-232 KB) but **only afromasia and beech have crisp wood texture**. The other 5 are softer/lower fidelity from the source AI generation:
+- `maison-brut-emboitement.webp`
+- `maison-brut-superpose.webp`
+- `maison-light-yellow.webp`
+- `maison-modern-grey.webp`
+- `maison-wallnut.webp`
+
+Source JPEGs only exist for afromasia/beech in `public/uploads/`. When user provides new sources: drop into `public/uploads/`, run `node scripts/convert-images.mjs` (sharp-based, idempotent).
+
+### 0b. Trust marquee logos (waiting on user)
+The homepage trust band (`.trust-marquee` between `.enga-faq` and `.cta-final`) currently shows 4 text certs ("RGE Qualibat", "RGE Qualibois", "Obligé CEE", "MaPrimeRénov'") doubled to fake a loop. User will send actual logo SVGs/images.
 
 ### 1. Hero photos — 6 pages still on the gray "PHOTO À VENIR" placeholder
 All use the new `.hero__img--placeholder` class (search for that to locate). Drop the file in `public/images/{page-slug}.webp`, then swap the `<div className="hero__img hero__img--placeholder" />` for an `<Image src="..." />`:
