@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import AidesFloater from "@/components/AidesFloater";
+import AidesCallout from "@/components/AidesCallout";
 import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
@@ -170,7 +170,6 @@ export default function HomePage() {
       <OrganizationJsonLd />
       <WebSiteJsonLd />
       <HeroAnimations />
-      <AidesFloater />
 
       {/* =================  1. HERO+ (numbers as inline chips) ================= */}
       <section className="hero hero--drift">
@@ -324,6 +323,7 @@ export default function HomePage() {
             ))}
           </ol>
 
+          <AidesCallout />
         </div>
       </section>
 
