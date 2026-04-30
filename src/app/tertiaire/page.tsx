@@ -173,7 +173,7 @@ export default function TertiairePage() {
       <section className="cta-final" id="contact">
         <div className="container">
           <div className="cta-final__inner fade-in">
-            <p className="cta-final__eyebrow">Parlons de votre parc tertiaire</p>
+            <p className="section-label section-label--white">Parlons de votre parc tertiaire</p>
             <h2 className="cta-final__title">
               Un patrimoine tertiaire,<br />
               <em>une trajectoire claire.</em>

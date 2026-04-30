@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import AidesFloater from "@/components/AidesFloater";
 import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
@@ -36,6 +36,20 @@ export const metadata: Metadata = {
 
 const SOLUTIONS = [
   {
+    href: "/bardage",
+    title: "Bardage",
+    desc: "Isolation par l'extérieur, traitement des ponts thermiques, habillage durable.",
+    sectors: ["tertiaire", "residentiel", "agricole"] as const,
+    premium: true,
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="4" y="3" width="16" height="18" rx="1" />
+        <line x1="4" y1="9" x2="20" y2="9" />
+        <line x1="4" y1="15" x2="20" y2="15" />
+      </svg>
+    ),
+  },
+  {
     href: "/isolation-toiture-rampants",
     title: "Isolation toiture — thermoréflectif",
     desc: "Réduire les transferts thermiques sous la couverture, sans reprise de la charpente.",
@@ -57,20 +71,6 @@ const SOLUTIONS = [
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12 4 L20 10 V20 H4 V10 Z" />
         <line x1="4" y1="14" x2="20" y2="14" />
-      </svg>
-    ),
-  },
-  {
-    href: "/bardage",
-    title: "Bardage",
-    desc: "Isolation par l'extérieur, traitement des ponts thermiques, habillage durable.",
-    sectors: ["tertiaire", "residentiel", "agricole"] as const,
-    premium: true,
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="4" y="3" width="16" height="18" rx="1" />
-        <line x1="4" y1="9" x2="20" y2="9" />
-        <line x1="4" y1="15" x2="20" y2="15" />
       </svg>
     ),
   },
@@ -170,6 +170,7 @@ export default function HomePage() {
       <OrganizationJsonLd />
       <WebSiteJsonLd />
       <HeroAnimations />
+      <AidesFloater />
 
       {/* =================  1. HERO+ (numbers as inline chips) ================= */}
       <section className="hero hero--drift">
@@ -303,11 +304,9 @@ export default function HomePage() {
       <section className="parcours-unifie" id="parcours">
         <div className="container">
           <div className="parcours-unifie__header fade-in">
-            <span className="tag tag--white" style={{ marginBottom: 16 }}>
-              Notre méthode
-            </span>
+            <p className="section-label section-label--white">Notre méthode</p>
             <h2 className="section-title section-title--white">
-              Notre <em className="acc" style={{ color: "#ff9570" }}>processus</em>
+              Six étapes, <em className="acc" style={{ color: "#ff9570" }}>un dossier maîtrisé</em>
             </h2>
             <div className="divider divider--white divider--center"></div>
             <p className="section-intro section-intro--white">
@@ -325,33 +324,6 @@ export default function HomePage() {
             ))}
           </ol>
 
-          <div className="parcours-unifie__stats">
-            <div className="parcours-stat">
-              <div className="parcours-stat__value">
-                <CountUp end={200000} thinSpace duration={1700} /> <span>MWh cumac valorisés</span>
-              </div>
-            </div>
-            <div className="parcours-stat">
-              <div className="parcours-stat__value">
-                <CountUp end={500} prefix="+" duration={1200} /> <span>dossiers accompagnés</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="aides-card fade-in">
-            <div className="aides-card__head">
-              <p className="aides-card__eyebrow">Comprendre les aides</p>
-              <h3 className="aides-card__title">Quel dispositif pour votre projet&nbsp;?</h3>
-            </div>
-            <div className="aides-card__actions">
-              <Link href="/prime-cee" className="btn btn--accent btn--lg">
-                Prime CEE
-              </Link>
-              <Link href="/ma-prime-renov" className="btn btn--secondary btn--lg">
-                MaPrimeRénov&apos;
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -371,15 +343,14 @@ export default function HomePage() {
                 <div className="why-home-card">
                   <div className="why-home-card__icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="9" y1="15" x2="15" y2="15" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="why-home-card__title">Interlocuteur unique</h3>
-                    <p className="why-home-card__text">Un seul point de contact, de l&apos;analyse à la clôture.</p>
+                    <h3 className="why-home-card__title">Étude gratuite, sans engagement</h3>
+                    <p className="why-home-card__text">Analyse technique offerte. Vous décidez si la suite a du sens.</p>
                   </div>
                 </div>
 
@@ -475,8 +446,8 @@ export default function HomePage() {
 
       {/* =================  4b. TRUST MARQUEE ================= */}
       <section className="trust-marquee" aria-label="Ils nous font confiance">
-        <div className="container">
-          <p className="trust-marquee__intent">Ils nous font confiance</p>
+        <div className="container" style={{ textAlign: "center" }}>
+          <p className="section-label">Ils nous font confiance</p>
         </div>
         <div className="trust-marquee__viewport">
           <ul className="trust-marquee__track" aria-hidden="false">
@@ -496,7 +467,7 @@ export default function HomePage() {
       <section className="cta-final" id="contact">
         <div className="container">
           <div className="cta-final__inner fade-in">
-            <p className="cta-final__eyebrow">Parlons de votre projet</p>
+            <p className="section-label section-label--white">Parlons de votre projet</p>
             <h2 className="cta-final__title">
               Votre projet mérite<br />
               d&apos;être <em>bien étudié.</em>
@@ -554,12 +525,25 @@ export default function HomePage() {
               </ContactForm>
             </div>
 
-            <div className="cta-final__actions">
-              <a href="tel:+33619798391" className="btn btn--secondary btn--lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <p className="cta-final__phones-label">Ou nous appeler directement</p>
+            <div className="cta-final__phones">
+              <a href="tel:+262693546253" className="phone-link phone-link--primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                Ou nous appeler directement
+                <span>
+                  <span className="phone-link__region">La Réunion</span>
+                  <span className="phone-link__number">+262 6 93 54 62 53</span>
+                </span>
+              </a>
+              <a href="tel:+33619798391" className="phone-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>
+                  <span className="phone-link__region">Métropole</span>
+                  <span className="phone-link__number">+33 6 19 79 83 91</span>
+                </span>
               </a>
             </div>
           </div>

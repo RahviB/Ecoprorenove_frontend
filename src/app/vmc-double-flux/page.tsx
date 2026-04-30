@@ -234,7 +234,7 @@ export default function VmcDoubleFluxPage() {
       <section className="how-it-works" id="processus">
         <div className="container">
           <div className="how-it-works__header fade-in">
-            <p className="section-label">Votre transition en 4 étapes</p>
+            <p className="section-label">Notre méthode en 4 étapes</p>
             <h2 className="section-title">
               D&apos;une <em>visite technique</em><br />
               à la mise en service.
@@ -242,7 +242,7 @@ export default function VmcDoubleFluxPage() {
             <div className="divider divider--center"></div>
           </div>
 
-          <div className="how-it-works__steps">
+          <div className="how-steps fade-in">
             {[
               ["01", "Diagnostic", "Analyse hygrométrique et structurelle de votre serre par nos experts. Relevé du dimensionnement, de l'exposition, des contraintes d'exploitation."],
               ["02", "Étude & devis", "Dimensionnement précis Thaleos THACTA11901, validation de la fiche CEE AGR-TH-119, chiffrage 100 % du financement mobilisable."],

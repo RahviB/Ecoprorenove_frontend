@@ -253,7 +253,7 @@ export default function QuiSommesNousPage() {
       <section className="cta-final">
         <div className="container">
           <div className="cta-final__inner fade-in">
-            <p className="cta-final__eyebrow">Parlons de votre projet</p>
+            <p className="section-label section-label--white">Parlons de votre projet</p>
             <h2 className="cta-final__title">
               Votre projet mérite<br />
               d&apos;être <em>bien étudié.</em>

@@ -329,7 +329,7 @@ export default function ExtracteurAirPage() {
       <section className="cta-final" id="contact">
         <div className="container">
           <div className="cta-final__inner fade-in">
-            <p className="cta-final__eyebrow">Parlons de votre toiture</p>
+            <p className="section-label section-label--white">Parlons de votre toiture</p>
             <h2 className="cta-final__title">
               De l&apos;air chaud <em>en moins.</em>
               <br />De la facture en moins.
