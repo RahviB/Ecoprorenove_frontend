@@ -1598,6 +1598,101 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   background: var(--ink);
   aspect-ratio: 16/9.5;
 }
+
+/* ============================================================
+   Bardage configurator — BENTO MOSAIC at desktop ≥1101px
+   Tiles: stage (big) | filter & info (right column) on rows 1-2,
+   swatches full row, paint card full row (when Brut), CTA, footnote.
+   .panel & .mobile-sheet-body use display:contents so their children
+   bubble up to be direct grid items of .configurator__body.
+   ============================================================ */
+@media (min-width: 1101px) {
+  .page-bardage .configurator__body {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "stage stage stage stage stage stage stage filter filter filter filter filter"
+      "stage stage stage stage stage stage stage info info info info info"
+      "swatches swatches swatches swatches swatches swatches swatches swatches swatches swatches swatches swatches"
+      "paint paint paint paint paint paint paint paint paint paint paint paint"
+      "cta cta cta cta cta cta cta cta cta cta cta cta"
+      "foot foot foot foot foot foot foot foot foot foot foot foot";
+    gap: 16px;
+    align-items: stretch;
+  }
+  .page-bardage .stage {
+    grid-area: stage;
+    position: static;
+    aspect-ratio: auto;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+  }
+  /* Dissolve panel + sheet-body wrappers so their children become grid items */
+  .page-bardage .panel,
+  .page-bardage .panel > .mobile-sheet-body {
+    display: contents;
+  }
+  /* Hide redundant intro + the mobile sheet handle on desktop */
+  .page-bardage .panel .panel__title,
+  .page-bardage .panel .panel__subtitle,
+  .page-bardage .panel .mobile-sheet-handle {
+    display: none;
+  }
+  /* Tile placement + tile-card styling */
+  .page-bardage .profile-filter {
+    grid-area: filter;
+    margin: 0;
+    align-self: stretch;
+    background: #fff;
+    padding: 18px;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .page-bardage .color-info {
+    grid-area: info;
+    margin: 0;
+    align-self: stretch;
+    background: #fff;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    padding: 22px 26px;
+  }
+  .page-bardage .swatches {
+    grid-area: swatches;
+    margin: 0;
+    background: #fff;
+    padding: 22px;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+  }
+  .page-bardage .finition-paint {
+    grid-area: paint;
+    margin: 0;
+  }
+  .page-bardage .panel__actions {
+    grid-area: cta;
+    margin: 0;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .page-bardage .panel__actions .btn {
+    width: auto;
+    min-width: 320px;
+    padding: 22px 40px;
+    font-size: 1.05rem;
+  }
+  .page-bardage .panel__footnote {
+    grid-area: foot;
+    margin: 0;
+    text-align: center;
+    font-size: .76rem;
+  }
+}
 .stage__img-wrap { position: relative; width: 100%; height: 100%; }
 .stage__img {
   position: absolute; inset: 0;
