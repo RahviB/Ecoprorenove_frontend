@@ -37,6 +37,8 @@ const FIELD_LABEL: Record<string, string> = {
   type_batiment: "Type de bâtiment",
   type_combles: "Type de combles",
   type_couverture: "Type de couverture",
+  type_contrat: "Type de contrat",
+  echeance: "Échéance du contrat actuel",
   finition: "Finition bardage",
   profil: "Profil de pose",
   surface: "Surface (m²)",
