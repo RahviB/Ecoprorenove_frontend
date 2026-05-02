@@ -53,7 +53,7 @@ export default function Footer() {
               <li><Link href="/destratificateur-air">Destratificateur d&apos;air</Link></li>
               <li><Link href="/extracteur-air">Extracteur d&apos;air</Link></li>
               <li><Link href="/vmc-double-flux">VMC Double flux</Link></li>
-              <li><Link href="/accompagnement-strategique#courtage">Courtage en énergie</Link></li>
+              <li><Link href="/courtage-energie">Courtage en énergie</Link></li>
               <li><Link href="/accompagnement-strategique">Accompagnement stratégique</Link></li>
             </ul>
           </div>
