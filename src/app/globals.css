@@ -3986,9 +3986,6 @@ body:has(.page-home-v5) .vsw__toggle { background: rgba(20,32,26,.95); }
   .about-contact__grid { grid-template-columns: 1fr; }
 }
 
-/* Scroll-margin compensation for sticky navbar on in-page anchors */
-.cee-card[id="courtage"] { scroll-margin-top: 96px; }
-
 /* =================  Shared: sector pages (tertiaire / residentiel / agricole)  ================= */
 .page-secteur .hero { padding: 76px 0 92px; }
 .page-secteur .hero__inner {
