@@ -170,7 +170,7 @@ export default function AccompagnementStrategiquePage() {
           <div className="cee-mechanism__grid">
             {[
               { id: undefined, n: "01 — Diagnostic & trajectoire", t: "Comprendre avant d'agir", p: "Avant toute recommandation, nous analysons votre situation énergétique réelle : consommations, contrats en cours, état du bâti, équipements techniques, profil d'usage. Ce diagnostic donne une vision claire des marges de manœuvre et permet de construire une trajectoire pluriannuelle priorisée — celle qui produit le meilleur rapport coût-bénéfice, dans votre contexte spécifique." },
-              { id: "courtage", n: "02 — Courtage en énergie", t: "Acheter mieux, contractualiser juste", p: "Le marché de l'énergie est complexe : multiplicité des fournisseurs, structures tarifaires opaques, fenêtres d'arbitrage étroites. Notre activité de courtage couvre la mise en concurrence des fournisseurs gaz et électricité, l'analyse comparative des offres, la négociation des conditions, et le suivi des renouvellements. L'objectif : sécuriser un coût maîtrisé sur la durée, sans engagement piégeux." },
+              { id: undefined, n: "02 — Courtage en énergie", t: "Acheter mieux, contractualiser juste", p: "Mise en concurrence des fournisseurs gaz et électricité, lecture comparée des offres, négociation des conditions, suivi des renouvellements. Notre rôle : sécuriser un coût maîtrisé sur la durée, en toute indépendance. Page dédiée pour le détail." },
               { id: undefined, n: "03 — Financement & CEE", t: "Mobiliser les bons dispositifs", p: "Certificats d'Économies d'Énergie, aides territoriales, dispositifs sectoriels : plusieurs mécanismes peuvent cofinancer vos actions de performance énergétique. Nous identifions ceux qui s'appliquent à votre projet, structurons les dossiers, sécurisons les conditions d'éligibilité (date d'engagement, qualité RGE, conformité technique) et pilotons les démarches jusqu'au versement." },
             ].map((c, i) => (
               <div key={c.n} id={c.id} className={`cee-card fade-in delay-${i + 1}`}>
@@ -179,6 +179,13 @@ export default function AccompagnementStrategiquePage() {
                 <p className="cee-card__text">{c.p}</p>
               </div>
             ))}
+          </div>
+
+          <div className="fade-in" style={{ textAlign: "center", marginTop: 32 }}>
+            <a href="/courtage-energie" className="btn btn--secondary">
+              Voir la page Courtage en énergie
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ marginLeft: 8 }}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
 
           <div className="cee-notice fade-in">
