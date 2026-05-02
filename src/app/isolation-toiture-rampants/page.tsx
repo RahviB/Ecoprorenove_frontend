@@ -10,7 +10,7 @@ import RelatedSolutions from "@/components/RelatedSolutions";
 export const metadata: Metadata = {
   title: "Isolation toiture sous rampants — Airflex 30 (BAT-EN-106)",
   description:
-    "Barrière thermo-réfléchissante Airflex 30 sous toiture métallique. Jusqu'à −8 °C ressentis, charge de climatisation réduite. Fiche CEE BAT-EN-106 (DOM).",
+    "Barrière thermo-réfléchissante Airflex 30 sous toiture métallique. Jusqu'à −6 °C ressentis, charge de climatisation réduite. Fiche CEE BAT-EN-106 (DOM).",
   alternates: { canonical: "/isolation-toiture-rampants" },
   openGraph: {
     url: "/isolation-toiture-rampants",
@@ -46,7 +46,7 @@ export default function IsolationToitureRampantsPage() {
               </h1>
 
               <p className="hero__stat-line">
-                Jusqu&apos;à <strong>−8&thinsp;°C</strong> ressentis sous toiture
+                Jusqu&apos;à <strong>−6&thinsp;°C</strong> ressentis sous toiture
               </p>
 
               <p className="hero__subtitle">
@@ -74,7 +74,7 @@ export default function IsolationToitureRampantsPage() {
                 priority
               />
               <div className="hero__bubble hero__bubble--temp">
-                <strong>−8 °C</strong>
+                <strong>−6 °C</strong>
                 <small>ressentis<br />sous toiture</small>
               </div>
               <div className="hero__bubble hero__bubble--life">
@@ -254,7 +254,7 @@ export default function IsolationToitureRampantsPage() {
               </div>
               <div className="mode-card__when">
                 <p className="mode-card__when-label">Épaisseur totale</p>
-                <p className="mode-card__when-text">30 mm — un gain d&apos;espace déterminant en sous-toiture, là où chaque centimètre compte pour préserver la hauteur sous plafond et les passages de réseaux.</p>
+                <p className="mode-card__when-text">13 mm — un gain d&apos;espace déterminant en sous-toiture, là où chaque centimètre compte pour préserver la hauteur sous plafond et les passages de réseaux.</p>
               </div>
             </div>
 
@@ -278,7 +278,7 @@ export default function IsolationToitureRampantsPage() {
               <div className="mode-card__features">
                 {[
                   ["Conçu pour le climat tropical", "Testé et déployé à la Réunion, aux Antilles, en Guyane — sur le terrain, pas en laboratoire seul."],
-                  ["Faible épaisseur, haute performance", "30 mm seulement pour une barrière radiative comparable à plusieurs dizaines de cm d'isolant classique face au rayonnement."],
+                  ["Faible épaisseur, haute performance", "13 mm seulement pour une barrière radiative comparable à plusieurs dizaines de cm d'isolant classique face au rayonnement."],
                   ["Compatible CEE BAT-EN-106", "Mise en œuvre conforme à la fiche tertiaire dédiée — primes mobilisables sur un chantier type."],
                 ].map(([t, p]) => (
                   <div key={t} className="mode-feat">
@@ -359,7 +359,7 @@ export default function IsolationToitureRampantsPage() {
 
           <div className="benefits__grid">
             {[
-              { v: "jusqu'à −8 °C", t: "Température ressentie sous toiture", p: "En blocant la réémission infrarouge de la tôle vers l'intérieur, la barrière fait chuter la température ressentie dans les volumes sous toiture aux heures les plus chaudes.", d: "* Gain observé sur relevés terrain — variable selon exposition, configuration et période." },
+              { v: "jusqu'à −6 °C", t: "Température ressentie sous toiture", p: "En blocant la réémission infrarouge de la tôle vers l'intérieur, la barrière fait chuter la température ressentie dans les volumes sous toiture aux heures les plus chaudes.", d: "* Gain observé sur relevés terrain — variable selon exposition, configuration et période." },
               { v: "climatisation ↓", t: "Charge de climatisation réduite", p: "Moins de chaleur rayonnée vers l'intérieur, c'est un appel de climatisation réduit tout au long de la journée — et donc une consommation électrique et des coûts d'exploitation allégés.", d: "* Économies variables selon le profil d'usage, la puissance installée et les habitudes d'exploitation." },
               { v: "+ confort", t: "Conditions d'occupation stabilisées", p: "Zones sous toiture redevenues utilisables en milieu de journée, atmosphère plus homogène, baisse visible de la sensation d'étouffement — l'ambiance sous toiture change de nature." },
               { v: "BAT-EN-106", t: "Prime CEE mobilisable", p: "La pose conforme à la fiche tertiaire BAT-EN-106 ouvre droit à une prime CEE qui vient réduire le reste à charge du chantier — un levier de financement à part entière.", d: "* Montant dépendant du volume de CEE généré, de l'obligé retenu et du cours en vigueur." },
@@ -599,7 +599,7 @@ export default function IsolationToitureRampantsPage() {
           <div className="faq__list">
             <Faq
               items={[
-                { q: "En quoi l'Airflex 30 diffère-t-il d'une laine minérale classique ?", a: "Une laine minérale agit principalement par conduction — elle ralentit la transmission de la chaleur à travers une épaisseur d'isolant. L'Airflex 30 agit d'abord par rayonnement : ses films aluminium basse émissivité réfléchissent les infrarouges émis par la tôle chauffée au soleil, avant qu'ils ne pénètrent dans le bâtiment. Sous une toiture métallique en climat chaud, c'est le rayonnement qui porte l'essentiel de la charge thermique — l'Airflex 30 s'attaque donc au bon vecteur, sur une faible épaisseur (30 mm)." },
+                { q: "En quoi l'Airflex 30 diffère-t-il d'une laine minérale classique ?", a: "Une laine minérale agit principalement par conduction — elle ralentit la transmission de la chaleur à travers une épaisseur d'isolant. L'Airflex 30 agit d'abord par rayonnement : ses films aluminium basse émissivité réfléchissent les infrarouges émis par la tôle chauffée au soleil, avant qu'ils ne pénètrent dans le bâtiment. Sous une toiture métallique en climat chaud, c'est le rayonnement qui porte l'essentiel de la charge thermique — l'Airflex 30 s'attaque donc au bon vecteur, sur une faible épaisseur (13 mm)." },
                 { q: "Faut-il déposer la toiture existante pour poser l'Airflex 30 ?", a: "Non. C'est l'un des avantages décisifs de la solution : l'Airflex 30 se pose en sous-face de toiture, à l'intérieur du bâtiment, sans toucher à la couverture. L'étanchéité existante reste intacte, il n'y a pas d'exposition aux intempéries, et l'activité sous le bâtiment peut généralement se poursuivre avec un aménagement minimal. Cela simplifie drastiquement la logistique et le coût global du projet par rapport à une dépose/repose de couverture." },
                 { q: "Mon bâtiment tertiaire outre-mer est-il éligible à la fiche BAT-EN-106 ?", a: "La fiche BAT-EN-106 cible l'isolation thermique de toitures en bâtiments tertiaires existants situés en France d'outre-mer — où le climat chaud justifie un dispositif spécifique. Sont concernés une très large majorité de bureaux, commerces, établissements d'enseignement, hôtels, établissements de santé, bâtiments des collectivités, locaux associatifs ou équipements sportifs, dès lors qu'ils existent depuis au moins 2 ans. ECOPRORENOVE vérifie l'éligibilité précise de votre bâtiment dès la visite technique." },
                 { q: "Le chantier perturbe-t-il l'activité du bâtiment ?", a: "Dans la grande majorité des cas, l'impact est contenu. La pose se fait en sous-face de toiture, souvent dans des volumes peu ou pas occupés. Nous coordonnons le planning avec votre exploitation : intervention de nuit, week-end, ou zones traitées par tranches. L'absence de dépose de couverture évite toute exposition aux intempéries et simplifie considérablement la logistique." },
