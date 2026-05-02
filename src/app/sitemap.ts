@@ -13,6 +13,7 @@ const routes = [
   "ma-prime-renov",
   "vmc-double-flux",
   "accompagnement-strategique",
+  "courtage-energie",
   "qui-sommes-nous",
   "tertiaire",
   "residentiel",
