@@ -6,15 +6,15 @@ import ScrollNav from "@/components/ScrollNav";
 import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
-  title: "VMC Double Flux agricole — Déshumidification de serre, AGR-TH-119",
+  title: "VMC Double Flux serre maraîchère — CEE AGR-TH-119",
   description:
-    "VMC double flux Thaleos pour serres et bâtiments agricoles. Récupération de chaleur 65-71 %, fiche CEE AGR-TH-119, financement jusqu'à 100 %. Pose RGE.",
+    "Ventilation double flux Thaleos pour serre maraîchère : déshumidification, récupération de chaleur 65-71 %, fiche CEE AGR-TH-119 finançable jusqu'à 100 %.",
   alternates: { canonical: "/vmc-double-flux" },
   openGraph: {
     url: "/vmc-double-flux",
-    title: "VMC Double Flux agricole — ECOPRORENOVE",
+    title: "VMC Double Flux serre maraîchère — ECOPRORENOVE",
     description:
-      "Solution Thaleos pour serres maraîchères : 4 000 m³/h, 1 000 m² couverts, fiche CEE AGR-TH-119.",
+      "Solution Thaleos pour serre maraîchère : 4 000 m³/h, 1 000 m² couverts, déshumidification et récupération de chaleur — fiche CEE AGR-TH-119.",
   },
 };
 
@@ -23,7 +23,7 @@ export default function VmcDoubleFluxPage() {
     <div className="page-service solution-template page-vmc">
       <ServiceJsonLd
         name="VMC Double Flux agricole — Thaleos THACTA11901"
-        description="Système de ventilation double flux avec récupération de chaleur pour serres et bâtiments agricoles. Fiche CEE AGR-TH-119."
+        description="Ventilation double flux avec récupération de chaleur pour serre maraîchère. Déshumidification de l'air et fiche CEE AGR-TH-119."
         url="/vmc-double-flux"
       />
       <BreadcrumbJsonLd
@@ -132,15 +132,15 @@ export default function VmcDoubleFluxPage() {
             {[
               {
                 t: "Maladies cryptogamiques",
-                p: "Développement rapide de champignons et moisissures lorsque l'humidité ambiante stagne au-delà des seuils. Une ventilation maîtrisée prévient ces foyers d'infection avant qu'ils ne s'installent.",
+                p: "Quand l'humidité stagne, champignons et moisissures s'installent. Une ventilation continue empêche les foyers d'infection.",
               },
               {
                 t: "Condensation excessive",
-                p: "L'air saturé provoque des gouttes d'eau directes sur les feuillages et les structures, accélérant la dégradation des cultures et de la serre. La double flux abaisse l'humidité relative en continu.",
+                p: "L'air saturé crée des gouttes sur le feuillage et la structure. La double flux abaisse l'humidité relative en continu.",
               },
               {
                 t: "Pertes de rendement",
-                p: "Impact direct sur la qualité visuelle et gustative — donc sur la valeur marchande à la sortie. Un climat de serre stable se traduit par des rendements plus prévisibles d'une saison à l'autre.",
+                p: "Climat instable, qualité variable — donc valeur marchande variable. Un climat stabilisé rend les rendements prévisibles d'une saison à l'autre.",
               },
             ].map((b, i) => (
               <div key={b.t} className={`benefit-card fade-in delay-${i + 1}`}>
@@ -331,11 +331,11 @@ export default function VmcDoubleFluxPage() {
           <div className="faq__list">
             <Faq
               items={[
-                { q: "La VMC double flux Thaleos est-elle adaptée à toutes les serres ?", a: "L'unité THACTA11901 est dimensionnée pour 1 000 m² de serre maraîchère à parois rigides, avec un débit nominal de 4 000 m³/h. Pour les serres plus grandes, il est possible d'installer plusieurs unités en régulation simultanée (jusqu'à 9-18 machines selon le système de pilotage retenu). L'éligibilité finale se vérifie sur visite technique." },
-                { q: "Quel impact concret sur la culture ?", a: "Une ventilation double flux maîtrisée permet de stabiliser l'hygrométrie, de réduire la condensation et de prévenir les maladies cryptogamiques. Les retours terrain montrent une amélioration de la qualité visuelle et gustative des cultures, ainsi qu'une plus grande prévisibilité des rendements d'une saison à l'autre. Les gains économiques varient selon l'exploitation, le type de culture et la conduite climatique." },
-                { q: "Le chantier perturbe-t-il l'activité de la serre ?", a: "L'installation est conçue pour limiter l'impact : les unités sont posées en amont et en aval des alimentations existantes, sans intervention lourde sur la structure. Nos équipes coordonnent le planning avec votre exploitation pour intervenir en dehors des phases sensibles. La maintenance courante en milieu agricole est facilitée par la conception de l'unité." },
-                { q: "Quelle est la durée de vie de l'équipement ?", a: "La durée de vie conventionnelle indiquée par le fabricant est de 17 ans. La structure est entièrement en tôle galvanisée avec émail cuit au four (gris mat), conçue pour résister aux atmosphères humides et poussiéreuses propres aux exploitations agricoles. Les câbles électriques utilisés sont à trois conducteurs, conformes aux exigences de sécurité." },
-                { q: "Comment se passe le montage du dossier CEE AGR-TH-119 ?", a: "Nous prenons en charge l'intégralité du dossier : vérification de l'éligibilité, choix de l'obligé, constitution des pièces administratives, respect strict de la chronologie (engagement avant travaux), suivi jusqu'au versement de la prime. Le dossier doit être ouvert avant le début du chantier — nous vérifions ce point dès la première analyse, avant tout engagement de votre part." },
+                { q: "Convient-elle à toutes les tailles de serre ?", a: "Une unité THACTA11901 couvre 1 000 m² de serre maraîchère à parois rigides (débit 4 000 m³/h). Au-delà, on installe plusieurs unités en régulation commune. L'éligibilité se confirme sur visite technique." },
+                { q: "Quel impact concret sur la culture ?", a: "Hygrométrie stabilisée, moins de condensation, moins de maladies cryptogamiques. Les retours terrain montrent une qualité plus régulière et des rendements plus prévisibles d'une saison à l'autre." },
+                { q: "Le chantier perturbe-t-il l'activité de la serre ?", a: "Très peu. Les unités se posent en amont et en aval des alimentations existantes — pas de gros œuvre. Le planning est calé avec vous pour éviter les phases sensibles." },
+                { q: "Quelle durée de vie pour l'équipement ?", a: "17 ans en durée de vie conventionnelle. Tôle galvanisée et émail cuit au four — conçu pour résister à l'humidité et à la poussière des serres." },
+                { q: "Comment se passe le dossier CEE AGR-TH-119 ?", a: "Nous gérons tout : éligibilité, choix de l'obligé, pièces administratives, suivi jusqu'au versement de la prime. Important : le dossier doit être ouvert avant le démarrage des travaux. Nous vérifions ce point dès la première analyse, avant tout engagement." },
               ]}
             />
           </div>
