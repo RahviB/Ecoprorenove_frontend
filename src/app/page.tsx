@@ -118,7 +118,7 @@ const SOLUTIONS = [
     ),
   },
   {
-    href: "/accompagnement-strategique#courtage",
+    href: "/courtage-energie",
     title: "Courtage en énergie",
     desc: "Mise en concurrence des fournisseurs gaz / électricité.",
     sectors: ["tertiaire", "agricole"] as const,
