@@ -217,7 +217,7 @@ export default function Navbar() {
                         </svg>
                         VMC Double flux
                       </Link>
-                      <Link href="/accompagnement-strategique#courtage" className="mm-link" role="menuitem">
+                      <Link href="/courtage-energie" className="mm-link" role="menuitem">
                         <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <polyline points="3 17 9 11 13 15 21 7" />
                           <polyline points="14 7 21 7 21 14" />
@@ -349,7 +349,7 @@ export default function Navbar() {
             <Link href="/destratificateur-air" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Destratificateur d&apos;air</Link>
             <Link href="/extracteur-air" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Extracteur d&apos;air</Link>
             <Link href="/vmc-double-flux" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>VMC Double flux</Link>
-            <Link href="/accompagnement-strategique#courtage" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Courtage en énergie</Link>
+            <Link href="/courtage-energie" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Courtage en énergie</Link>
             <Link href="/accompagnement-strategique" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Accompagnement stratégique</Link>
           </div>
 
