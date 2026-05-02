@@ -1,10 +1,10 @@
 # EcoProRenove — Next Steps
 
-Snapshot from end of session 12, **2026-04-30**. Resume from this doc.
+Snapshot from end of session 13, **2026-05-02**. Resume from this doc.
 
 GitHub: `https://github.com/RahviB/Ecoprorenove_frontend.git` (branch `main`)
 Staging: `https://stag.ecoprorenove.fr` — Coolify redeploys on push.
-Latest commits (session 12): `dfe4be3` "Bardage configurator: bento mosaic layout at desktop ≥1101px" / `390f75a` "Bardage: redesign Brut paint block, drop standalone upsell band, hide ScrollNav" / `e7f83d3` "Replace fixed-position aides floater with inline callout pointing to step 02" / `be35ac1` "Homepage UI polish + vmc-double-flux grid fix; unify eyebrow site-wide".
+Latest commits (session 13): `232aab8` "Remove dead .cee-card[id=courtage] scroll-margin rule" / `84aa11a` "Accompagnement: card 02 points to dedicated /courtage-energie page" / `c4f4f1c` "Add /courtage-energie page with full content and form" / `9da66b7` "Add /courtage-energie spec + implementation plan".
 
 ---
 
@@ -13,8 +13,48 @@ Latest commits (session 12): `dfe4be3` "Bardage configurator: bento mosaic layou
 ```bash
 cd C:\Users\rahvi\projects\EcoProrenove\ecoprorenove-web
 npm run dev      # http://localhost:3001
-npm run build    # 22 routes, must stay clean
+npm run build    # 23 routes, must stay clean
 ```
+
+---
+
+## ✅ What's done — session 13 (2026-05-02)
+
+### `/courtage-energie` page — new dedicated route
+- **New route** `src/app/courtage-energie/page.tsx` (23 routes total now). Built on the `.solution-template` pattern, mirrors `/vmc-double-flux` structurally. 7 sections: `#concept` (qu'est-ce que le courtage), `#valeur` (4 value cards), `#methode` (5-step `.how-steps`), `#independance` (dark `.method` band — 3 statements on absence d'exclusivité), `#perimetre` (gaz / élec / tous secteurs / multi-sites), `#faq` (6 entries), `#contact` (inline `ContactForm` with `type_contrat` select + `echeance` field).
+- **Inspiration:** loose mirror of [alliancedesenergies.fr/negociez-votre-contrat](https://alliancedesenergies.fr/negociez-votre-contrat/) — adapted to the EcoProRenove voice: pedagogical, no fake stats, lead with indépendance.
+- **Hero placeholder** (`.hero__img--placeholder` "PHOTO À VENIR") — 7 pages now on placeholder (was 6). Real photo TBD.
+- **Two new FIELD_LABEL entries** in `src/lib/contact-action.ts`: `type_contrat`, `echeance`. New SOURCE_LABEL `courtage-energie` → "Courtage énergie (gaz / électricité)".
+
+### `#courtage` anchor retired across the site
+- All inbound links to `/accompagnement-strategique#courtage` updated to `/courtage-energie`:
+  - Navbar mégamenu (desktop)
+  - Mobile drawer
+  - Footer ECOPRORENOVE column
+  - Homepage SolutionsTabs entry (sectors `["tertiaire", "agricole"]` unchanged)
+- `/accompagnement-strategique` — card 02 in `cee-mechanism` keeps its title ("02 — Courtage en énergie") with shorter description and adds a `Voir la page Courtage en énergie →` outbound button between the grid and `cee-notice` band. The `id="courtage"` was removed from the card (`id: undefined` → React omits the attribute).
+- Dead CSS rule `.cee-card[id="courtage"] { scroll-margin-top: 96px; }` (and its preceding "Scroll-margin compensation" comment) deleted from `globals.css`.
+- Sweep verified: `git grep "#courtage" src/` returns 0 matches; `git grep "accompagnement-strategique#courtage" src/` returns 0 matches.
+
+### Spec + plan committed alongside
+- Spec: `docs/superpowers/specs/2026-05-02-courtage-energie-page-design.md`
+- Plan: `docs/superpowers/plans/2026-05-02-courtage-energie-page.md`
+- Both committed in `9da66b7` for traceability — first time spec/plan docs land in-repo. Pattern can be reused for future feature work.
+
+### Form-source count is now 9 (was 8)
+The `/courtage-energie` form is the 9th source. End-to-end staging smoke test on this form is the only outstanding verification — submit a test, confirm email arrives in `rahvi.bichon@gmail.com` with subject prefix `[Contact ECOPRORENOVE — Courtage énergie (gaz / électricité)]` and body fields labelled "Type de contrat" + "Échéance du contrat actuel".
+
+### Commits (session 13)
+- `9da66b7` Add /courtage-energie spec + implementation plan
+- `c090660` Add courtage-energie SOURCE_LABEL for upcoming page
+- `da26eae` RelatedSolutions: add courtage-energie catalog entry
+- `c4f4f1c` Add /courtage-energie page with full content and form
+- `95f985a` Sitemap: add /courtage-energie
+- `81365b6` Navbar: link Courtage en énergie to /courtage-energie
+- `27aa2a6` Footer: link Courtage en énergie to /courtage-energie
+- `ec3d5b3` Homepage: link Courtage tab to /courtage-energie
+- `84aa11a` Accompagnement: card 02 points to dedicated /courtage-energie page
+- `232aab8` Remove dead .cee-card[id=courtage] scroll-margin rule
 
 ---
 
@@ -182,19 +222,20 @@ Source JPEGs only exist for afromasia/beech in `public/uploads/`. When user prov
 ### 0b. Trust marquee logos (waiting on user)
 The homepage trust band (`.trust-marquee` between `.enga-faq` and `.cta-final`) currently shows 4 text certs ("RGE Qualibat", "RGE Qualibois", "Obligé CEE", "MaPrimeRénov'") doubled to fake a loop. User will send actual logo SVGs/images.
 
-### 1. Hero photos — 6 pages still on the gray "PHOTO À VENIR" placeholder
-All use the new `.hero__img--placeholder` class (search for that to locate). Drop the file in `public/images/{page-slug}.webp`, then swap the `<div className="hero__img hero__img--placeholder" />` for an `<Image src="..." />`:
+### 1. Hero photos — 7 pages still on the gray "PHOTO À VENIR" placeholder
+All use the `.hero__img--placeholder` class (search for that to locate). Drop the file in `public/images/{page-slug}.webp`, then swap the `<div className="hero__img hero__img--placeholder" />` for an `<Image src="..." />`:
 - `/accompagnement-strategique`
 - `/destratificateur-air`
 - `/prime-cee`
 - `/isolation-combles`
 - `/ma-prime-renov` (residential rénovation photo)
 - `/vmc-double-flux` (Thaleos unit / serre photo)
+- `/courtage-energie` (suggested: a "marché énergie" abstract — graphique courbe ou poignée de main contractuelle)
 
 ✅ Done 2026-04-29: `/isolation-toiture-rampants` (real photo, Airflex install in agricultural building).
 
-### 2. Test the 8 form sources end-to-end on staging
-After Coolify rebuilds, submit one form on each: `/`, `/prime-cee`, `/ma-prime-renov`, `/vmc-double-flux`, `/bardage`, `/tertiaire`, `/residentiel`, `/agricole`, plus the original 5 service pages already tested. Confirm emails land in `rahvi.bichon@gmail.com` with the right SOURCE_LABEL.
+### 2. Test the 9 form sources end-to-end on staging
+After Coolify rebuilds, submit one form on each: `/`, `/prime-cee`, `/ma-prime-renov`, `/vmc-double-flux`, `/bardage`, `/courtage-energie`, `/tertiaire`, `/residentiel`, `/agricole`, plus the original 5 service pages already tested. Confirm emails land in `rahvi.bichon@gmail.com` with the right SOURCE_LABEL. The `/courtage-energie` form is the new one — confirm subject contains `[Contact ECOPRORENOVE — Courtage énergie (gaz / électricité)]` and body shows "Type de contrat" + "Échéance du contrat actuel" labels.
 
 ---
 
