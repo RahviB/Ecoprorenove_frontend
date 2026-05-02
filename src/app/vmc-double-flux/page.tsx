@@ -99,8 +99,7 @@ export default function VmcDoubleFluxPage() {
         <div className="container">
           <div className="hero-bandeau__inner">
             {[
-              "Pose RGE — installateurs qualifiés",
-              "Régulation automatique (T°, hygrométrie, sondes)",
+              "Régulation automatique — sondes T° et hygrométrie",
               "Durée de vie conventionnelle 17 ans",
             ].map((t) => (
               <div key={t} className="hero-bandeau__item">
@@ -244,10 +243,10 @@ export default function VmcDoubleFluxPage() {
 
           <div className="how-steps fade-in">
             {[
-              ["01", "Diagnostic", "Analyse hygrométrique et structurelle de votre serre par nos experts. Relevé du dimensionnement, de l'exposition, des contraintes d'exploitation."],
-              ["02", "Étude & devis", "Dimensionnement précis Thaleos THACTA11901, validation de la fiche CEE AGR-TH-119, chiffrage 100 % du financement mobilisable."],
-              ["03", "Installation", "Pose par nos installateurs certifiés RGE — sans arrêt d'activité. Branchement en amont et en aval directement sur les alimentations."],
-              ["04", "Mise en service", "Paramétrage de l'auto-pilotage (température, hygrométrie, programmation). Formation à la gestion des flux d'air."],
+              ["01", "Diagnostic", "Visite de votre serre : hygrométrie, structure, exposition, contraintes d'exploitation."],
+              ["02", "Étude & devis", "Dimensionnement Thaleos THACTA11901, validation AGR-TH-119, chiffrage du financement CEE mobilisable."],
+              ["03", "Installation", "Pose par nos équipes sans arrêt d'activité. Branchement en amont et en aval des alimentations existantes."],
+              ["04", "Mise en service", "Réglage de la régulation automatique (consignes T° et hygrométrie). Formation rapide à la prise en main."],
             ].map(([n, t, p]) => (
               <div key={n} className="how-step fade-in">
                 <div className="how-step__num">{n}</div>
@@ -293,7 +292,7 @@ export default function VmcDoubleFluxPage() {
                 {[
                   ["Secteur maraîchage", "Activité de production maraîchère sous serre."],
                   ["Débit ≥ 1 vol/h", "Respect des normes de renouvellement d'air pour le volume traité."],
-                  ["Auto-pilotage", "Système de gestion automatisé obligatoire (sondes, programmation)."],
+                  ["Régulation automatique", "Pilotage automatique obligatoire — sondes T° / hygrométrie et programmation horaire."],
                   ["Installation professionnelle", "Pose par une entreprise qualifiée. Visite préalable du chantier."],
                   ["Murs rigides", "Structure de serre compatible — parois rigides exigées par la fiche."],
                 ].map(([t, d]) => (
@@ -407,13 +406,10 @@ export default function VmcDoubleFluxPage() {
                     <input className="form-input" type="email" id="v-email" name="email" required />
                   </div>
                   <div className="form-group">
-                    <label className="form-label" htmlFor="v-batiment">Type de bâtiment</label>
+                    <label className="form-label" htmlFor="v-batiment">Type de serre</label>
                     <select className="form-select" id="v-batiment" name="type_batiment" defaultValue="">
                       <option value="" disabled>Sélectionnez</option>
                       <option value="serre-maraichage">Serre maraîchère</option>
-                      <option value="serre-horticole">Serre horticole</option>
-                      <option value="elevage">Bâtiment d&apos;élevage</option>
-                      <option value="stockage">Local de production / stockage</option>
                       <option value="autre">Autre</option>
                     </select>
                   </div>
