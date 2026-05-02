@@ -45,6 +45,12 @@ const CATALOG: Record<string, Related> = {
     lead: "Direction énergie externalisée — conformité, courtage, projets.",
     group: "solution",
   },
+  "courtage-energie": {
+    slug: "courtage-energie",
+    title: "Courtage en énergie",
+    lead: "Mise en concurrence gaz & électricité, indépendance, suivi continu.",
+    group: "solution",
+  },
   "prime-cee": {
     slug: "prime-cee",
     title: "Prime CEE",
