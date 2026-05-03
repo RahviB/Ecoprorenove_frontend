@@ -190,15 +190,8 @@ export default function HomePage() {
                 <em>
                   <W d={3}>bien</W>{" "}
                   <W d={4}>conduite</W>
-                </em>{" "}
-                <W d={5}>—</W>{" "}
-                <W d={6}>de</W>{" "}
-                <W d={7}>l&apos;audit</W>
-                <br />
-                <W d={8}>à</W>{" "}
-                <W d={9}>la</W>{" "}
-                <W d={10}>finalisation</W>{" "}
-                <W d={11}>CEE.</W>
+                </em>
+                <W d={5}>.</W>
               </h1>
 
               <p className="hero__subtitle">

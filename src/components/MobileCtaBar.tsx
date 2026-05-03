@@ -1,18 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function MobileCtaBar() {
-  const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [contactVisible, setContactVisible] = useState(false);
 
   useEffect(() => {
     function onScroll() {
-      setVisible(window.scrollY > 600);
+      setScrolled(window.scrollY > 600);
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setContactVisible(false);
+    const target = document.getElementById("contact");
+    if (!target) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setContactVisible(entry.isIntersecting),
+      { rootMargin: "0px 0px -10% 0px" },
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  const visible = scrolled && !contactVisible;
 
   return (
     <div

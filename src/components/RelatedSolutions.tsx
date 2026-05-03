@@ -6,7 +6,7 @@ const CATALOG: Record<string, Related> = {
   "isolation-toiture-rampants": {
     slug: "isolation-toiture-rampants",
     title: "Isolation toiture sous rampants",
-    lead: "Airflex 30 sous tôle métallique, sans dépose. CEE BAT-EN-106.",
+    lead: "Barrière thermo-réfléchissante sous tôle métallique, sans dépose. CEE BAT-EN-106.",
     group: "solution",
   },
   "isolation-combles": {

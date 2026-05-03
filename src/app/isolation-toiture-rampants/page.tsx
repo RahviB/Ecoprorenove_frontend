@@ -8,15 +8,15 @@ import ScrollNav from "@/components/ScrollNav";
 import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
-  title: "Isolation toiture sous rampants — Airflex 30 (BAT-EN-106)",
+  title: "Isolation toiture sous rampants — barrière thermo-réfléchissante (BAT-EN-106)",
   description:
-    "Barrière thermo-réfléchissante Airflex 30 sous toiture métallique. Jusqu'à −6 °C ressentis, charge de climatisation réduite. Fiche CEE BAT-EN-106 (DOM).",
+    "Barrière thermo-réfléchissante haute performance sous toiture métallique. Jusqu'à −6 °C ressentis, charge de climatisation réduite. Fiche CEE BAT-EN-106 (DOM).",
   alternates: { canonical: "/isolation-toiture-rampants" },
   openGraph: {
     url: "/isolation-toiture-rampants",
     title: "Isolation toiture sous rampants — ECOPRORENOVE",
     description:
-      "Airflex 30 sous tôle, sans dépose de couverture. Fiche CEE BAT-EN-106.",
+      "Barrière thermo-réfléchissante sous tôle, sans dépose de couverture. Fiche CEE BAT-EN-106.",
   },
 };
 
@@ -24,8 +24,8 @@ export default function IsolationToitureRampantsPage() {
   return (
     <div className="page-service solution-template page-toiture">
       <ServiceJsonLd
-        name="Isolation toiture sous rampants — Airflex 30"
-        description="Barrière thermo-réfléchissante Airflex 30 sous toiture métallique. Pose RGE, fiche CEE BAT-EN-106."
+        name="Isolation toiture sous rampants — barrière thermo-réfléchissante"
+        description="Barrière thermo-réfléchissante haute performance sous toiture métallique. Pose RGE, fiche CEE BAT-EN-106."
         url="/isolation-toiture-rampants"
       />
       <BreadcrumbJsonLd
@@ -50,7 +50,7 @@ export default function IsolationToitureRampantsPage() {
               </p>
 
               <p className="hero__subtitle">
-                L&apos;Airflex 30 d&apos;ATI&nbsp;Isolation crée une barrière thermo-réfléchissante
+                Notre barrière thermo-réfléchissante haute performance se pose
                 directement sous la tôle. Une solution rapide, sans perte de volume utile,
                 éligible au dispositif CEE BAT-EN-106.
               </p>
@@ -60,14 +60,14 @@ export default function IsolationToitureRampantsPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   Demander un audit gratuit
                 </a>
-                <a href="#airflex" className="btn btn--secondary">Découvrir l&apos;Airflex 30</a>
+                <a href="#solution" className="btn btn--secondary">Découvrir la solution</a>
               </div>
             </div>
 
             <div className="hero__visual fade-in delay-3">
               <Image
                 src="/images/isolation-toiture-rampants.webp"
-                alt="Pose Airflex 30 en sous-face d'une toiture métallique"
+                alt="Pose d'une barrière thermo-réfléchissante en sous-face d'une toiture métallique"
                 width={1400}
                 height={1086}
                 className="hero__img"
@@ -93,7 +93,7 @@ export default function IsolationToitureRampantsPage() {
       <ScrollNav
         sections={[
           { id: "probleme", label: "Le problème" },
-          { id: "airflex", label: "Airflex 30" },
+          { id: "solution", label: "La solution" },
           { id: "benefices", label: "Bénéfices" },
           { id: "batiments", label: "Bâtiments" },
           { id: "cee", label: "CEE" },
@@ -147,7 +147,7 @@ export default function IsolationToitureRampantsPage() {
               <div className="loss-others">
                 {[
                   ["+40 °C", "Sous tôle en été"],
-                  ["−6 °C", "Avec Airflex 30*"],
+                  ["−6 °C", "Avec barrière thermo-réfléchissante*"],
                   ["95 %", "IR bloqué"],
                 ].map(([pct, name]) => (
                   <div key={name} className="loss-others__item">
@@ -156,7 +156,7 @@ export default function IsolationToitureRampantsPage() {
                   </div>
                 ))}
               </div>
-              <p className="loss-schema__caption">* Données issues de relevés terrain et documentation ATI Isolation — résultats variables selon configuration</p>
+              <p className="loss-schema__caption">* Données issues de relevés terrain et documentation fabricant — résultats variables selon configuration</p>
             </div>
 
             <div className="problem__content fade-in delay-2">
@@ -201,22 +201,21 @@ export default function IsolationToitureRampantsPage() {
         </div>
       </section>
 
-      {/* PRODUIT — Airflex 30 */}
-      <section className="modes" id="airflex">
+      {/* PRODUIT — barrière thermo-réfléchissante */}
+      <section className="modes" id="solution">
         <div className="container">
           <div className="modes__header fade-in">
-            <p className="section-label">Le produit que nous posons</p>
+            <p className="section-label">La solution que nous posons</p>
             <h2 className="section-title">
-              L&apos;Airflex 30&nbsp;:<br />
-              une <em>barrière thermo-réfléchissante</em> conçue<br />
+              Une <em>barrière thermo-réfléchissante</em><br />
+              haute performance, conçue<br />
               pour la tôle en climat chaud
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Développé par ATI Isolation et déployé sur des milliers de m² en France
-              d&apos;outre-mer, l&apos;Airflex 30 est un complexe multicouche mince haute
-              performance, pensé pour bloquer le rayonnement avant qu&apos;il n&apos;entre dans le
-              bâtiment.
+              Déployée sur des milliers de m² en France d&apos;outre-mer, notre solution est un
+              complexe multicouche mince haute performance, pensé pour bloquer le rayonnement
+              avant qu&apos;il n&apos;entre dans le bâtiment.
             </p>
           </div>
 
@@ -236,7 +235,7 @@ export default function IsolationToitureRampantsPage() {
                 </div>
               </div>
               <p className="mode-card__lead">
-                L&apos;Airflex 30 combine plusieurs couches fonctionnelles sur une faible épaisseur.
+                Notre complexe combine plusieurs couches fonctionnelles sur une faible épaisseur.
                 Chaque strate joue un rôle précis dans la chaîne thermique, du rayonnement solaire
                 jusqu&apos;à l&apos;ambiance intérieure.
               </p>
@@ -271,8 +270,8 @@ export default function IsolationToitureRampantsPage() {
                 </div>
               </div>
               <p className="mode-card__lead">
-                Conçu spécifiquement pour les toitures métalliques en zone tropicale et subtropicale,
-                l&apos;Airflex 30 coche l&apos;ensemble des critères d&apos;une barrière thermique
+                Conçue spécifiquement pour les toitures métalliques en zone tropicale et subtropicale,
+                notre solution coche l&apos;ensemble des critères d&apos;une barrière thermique
                 efficace en climat chaud.
               </p>
               <div className="mode-card__features">
@@ -299,12 +298,12 @@ export default function IsolationToitureRampantsPage() {
             <BeforeAfterSlider
               beforeSrc="/assets/chantier-duparc-avant.jpeg"
               afterSrc="/assets/chantier-duparc-apres.jpg"
-              beforeAlt="Toiture métallique non isolée — charpente nue sous tôle, avant pose de l'Airflex 30"
-              afterAlt="Même toiture après pose de l'Airflex 30 — sous-face entièrement tapissée d'une barrière thermo-réfléchissante"
+              beforeAlt="Toiture métallique non isolée — charpente nue sous tôle, avant pose de la barrière thermo-réfléchissante"
+              afterAlt="Même toiture après pose — sous-face entièrement tapissée d'une barrière thermo-réfléchissante"
             />
           </div>
           <p className="ba-caption fade-in">
-            <strong>Chantier ZR Duparc</strong> — pose de l&apos;Airflex 30 en sous-face de toiture métallique, sans dépose de la couverture existante.
+            <strong>Chantier ZR Duparc</strong> — pose de la barrière thermo-réfléchissante en sous-face de toiture métallique, sans dépose de la couverture existante.
           </p>
         </div>
       </section>
@@ -316,7 +315,7 @@ export default function IsolationToitureRampantsPage() {
             <p className="section-label">Déroulement d&apos;un chantier</p>
             <h2 className="section-title">
               Comment se déroule<br />
-              la <em>pose de l&apos;Airflex 30</em>&nbsp;?
+              la <em>pose de la barrière thermo-réfléchissante</em>&nbsp;?
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
@@ -327,7 +326,7 @@ export default function IsolationToitureRampantsPage() {
             {[
               ["01", "Reconnaissance du support", "Relevé de la toiture métallique, repérage de la charpente, des pannes et des fixations existantes, identification des points singuliers (faîtage, rives, traversées, éclairements naturels)."],
               ["02", "Protection de l'activité en place", "Mise en place des accès de chantier, protection des équipements et zones d'exploitation sous la toiture, coordination avec la maîtrise d'ouvrage pour limiter l'impact sur l'exploitation."],
-              ["03", "Pose de l'Airflex 30", "Déploiement du complexe en sous-face de la toiture, fixation mécanique sur pannes ou ossature, recouvrement et jonction des lés pour assurer une continuité radiative parfaite, sans rupture réfléchissante."],
+              ["03", "Pose de la barrière thermo-réfléchissante", "Déploiement du complexe en sous-face de la toiture, fixation mécanique sur pannes ou ossature, recouvrement et jonction des lés pour assurer une continuité radiative parfaite, sans rupture réfléchissante."],
               ["04", "Contrôle & réception", "Vérification de la continuité des recouvrements, du soin apporté au traitement des points singuliers, reportage photographique du chantier, remise du PV de fin de travaux pour le dossier CEE."],
             ].map(([n, t, p]) => (
               <div key={n} className="how-step">
@@ -351,7 +350,7 @@ export default function IsolationToitureRampantsPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Une barrière Airflex 30 correctement déployée produit des effets mesurables dès les
+              Une barrière thermo-réfléchissante correctement déployée produit des effets mesurables dès les
               premières semaines — sur la température ressentie, sur la consommation de
               climatisation, sur la valeur d&apos;usage du bâtiment.
             </p>
@@ -395,7 +394,7 @@ export default function IsolationToitureRampantsPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              L&apos;Airflex 30 s&apos;adresse à tous les bâtiments tertiaires, industriels ou commerciaux dotés d&apos;une toiture métallique en climat chaud — publics ou privés, grandes ou petites surfaces.
+              Notre solution s&apos;adresse à tous les bâtiments tertiaires, industriels ou commerciaux dotés d&apos;une toiture métallique en climat chaud — publics ou privés, grandes ou petites surfaces.
             </p>
           </div>
 
@@ -463,7 +462,7 @@ export default function IsolationToitureRampantsPage() {
                 <p className="fiche-card__text">Opération standardisée pour la mise en œuvre d&apos;un système d&apos;isolation thermique de toiture dans les bâtiments tertiaires existants situés en France d&apos;outre-mer — régions ciblées pour leur climat chaud.</p>
                 <div className="fiche-card__meta">
                   <div className="fiche-card__meta-item"><strong>Cible</strong>Toitures métalliques</div>
-                  <div className="fiche-card__meta-item"><strong>Produit</strong>Airflex 30 compatible</div>
+                  <div className="fiche-card__meta-item"><strong>Produit</strong>Barrière thermo-réfléchissante compatible</div>
                   <div className="fiche-card__meta-item"><strong>Certification</strong>Pose RGE exigée</div>
                 </div>
               </div>
@@ -504,10 +503,10 @@ export default function IsolationToitureRampantsPage() {
           <div className="method__steps">
             {[
               ["01", "Visite technique & diagnostic", "Relevé de la toiture métallique, état de la couverture et de la charpente, identification des points singuliers et des contraintes d'exploitation du bâtiment."],
-              ["02", "Étude technique & dimensionnement", "Définition du système Airflex 30 adapté, métré précis, planification des recouvrements et du traitement des points singuliers conformément aux prescriptions du fabricant."],
+              ["02", "Étude technique & dimensionnement", "Définition de notre solution thermo-réfléchissante adaptée, métré précis, planification des recouvrements et du traitement des points singuliers conformément aux prescriptions du fabricant."],
               ["03", "Proposition chiffrée & éligibilité CEE", "Devis détaillé, estimation de la prime CEE au titre de la fiche BAT-EN-106 et calendrier prévisionnel du chantier — tout est posé noir sur blanc avant engagement."],
               ["04", "Montage du dossier administratif", "Engagement du dossier CEE avant travaux, constitution des pièces techniques, respect strict de la chronologie imposée par le dispositif."],
-              ["05", "Réalisation du chantier", "Pose par nos équipes certifiées RGE, dans le respect des prescriptions ATI Isolation et des règles de l'art. Coordination avec l'exploitant pour limiter l'impact sur l'activité."],
+              ["05", "Réalisation du chantier", "Pose par nos équipes certifiées RGE, dans le respect des prescriptions du fabricant et des règles de l'art. Coordination avec l'exploitant pour limiter l'impact sur l'activité."],
               ["06", "Réception & clôture CEE", "PV de réception, attestation de fin de travaux, reportage photographique et pièces pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
             ].map(([n, t, p], i) => (
               <div key={n} className={`method__step fade-in delay-${(i % 3) + 1}`}>
@@ -573,7 +572,7 @@ export default function IsolationToitureRampantsPage() {
               Le reste, c&apos;est de la méthode.
             </h2>
             <p className="value-banner__subtitle">
-              Bon diagnostic, bon produit (Airflex 30), bonne pose, bon dossier CEE BAT-EN-106. ECOPRORENOVE assemble les quatre — sur chaque chantier, pour chaque bâtiment à toiture métallique en climat chaud.
+              Bon diagnostic, bon produit, bonne pose, bon dossier CEE BAT-EN-106. ECOPRORENOVE assemble les quatre — sur chaque chantier, pour chaque bâtiment à toiture métallique en climat chaud.
             </p>
             <a href="#contact" className="btn btn--secondary" style={{ borderColor: "rgba(255,255,255,.6)", color: "#fff", fontSize: "1rem", padding: "16px 34px" }}>
               Discutons de votre bâtiment
@@ -589,7 +588,7 @@ export default function IsolationToitureRampantsPage() {
             <p className="section-label">Questions fréquentes</p>
             <h2 className="section-title">
               Tout ce que vous devez<br />
-              savoir sur l&apos;<em>isolation thermoréflectif sous tuile</em>
+              savoir sur la <em>barrière thermo-réfléchissante sous toiture métallique</em>
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
@@ -599,14 +598,14 @@ export default function IsolationToitureRampantsPage() {
           <div className="faq__list">
             <Faq
               items={[
-                { q: "En quoi l'Airflex 30 diffère-t-il d'une laine minérale classique ?", a: "Une laine minérale agit principalement par conduction — elle ralentit la transmission de la chaleur à travers une épaisseur d'isolant. L'Airflex 30 agit d'abord par rayonnement : ses films aluminium basse émissivité réfléchissent les infrarouges émis par la tôle chauffée au soleil, avant qu'ils ne pénètrent dans le bâtiment. Sous une toiture métallique en climat chaud, c'est le rayonnement qui porte l'essentiel de la charge thermique — l'Airflex 30 s'attaque donc au bon vecteur, sur une faible épaisseur (13 mm)." },
-                { q: "Faut-il déposer la toiture existante pour poser l'Airflex 30 ?", a: "Non. C'est l'un des avantages décisifs de la solution : l'Airflex 30 se pose en sous-face de toiture, à l'intérieur du bâtiment, sans toucher à la couverture. L'étanchéité existante reste intacte, il n'y a pas d'exposition aux intempéries, et l'activité sous le bâtiment peut généralement se poursuivre avec un aménagement minimal. Cela simplifie drastiquement la logistique et le coût global du projet par rapport à une dépose/repose de couverture." },
+                { q: "En quoi notre barrière thermo-réfléchissante diffère-t-elle d'une laine minérale classique ?", a: "Une laine minérale agit principalement par conduction — elle ralentit la transmission de la chaleur à travers une épaisseur d'isolant. Notre barrière thermo-réfléchissante agit d'abord par rayonnement : ses films aluminium basse émissivité réfléchissent les infrarouges émis par la tôle chauffée au soleil, avant qu'ils ne pénètrent dans le bâtiment. Sous une toiture métallique en climat chaud, c'est le rayonnement qui porte l'essentiel de la charge thermique — notre solution s'attaque donc au bon vecteur, sur une faible épaisseur (13 mm)." },
+                { q: "Faut-il déposer la toiture existante pour poser la barrière thermo-réfléchissante ?", a: "Non. C'est l'un des avantages décisifs de la solution : elle se pose en sous-face de toiture, à l'intérieur du bâtiment, sans toucher à la couverture. L'étanchéité existante reste intacte, il n'y a pas d'exposition aux intempéries, et l'activité sous le bâtiment peut généralement se poursuivre avec un aménagement minimal. Cela simplifie drastiquement la logistique et le coût global du projet par rapport à une dépose/repose de couverture." },
                 { q: "Mon bâtiment tertiaire outre-mer est-il éligible à la fiche BAT-EN-106 ?", a: "La fiche BAT-EN-106 cible l'isolation thermique de toitures en bâtiments tertiaires existants situés en France d'outre-mer — où le climat chaud justifie un dispositif spécifique. Sont concernés une très large majorité de bureaux, commerces, établissements d'enseignement, hôtels, établissements de santé, bâtiments des collectivités, locaux associatifs ou équipements sportifs, dès lors qu'ils existent depuis au moins 2 ans. ECOPRORENOVE vérifie l'éligibilité précise de votre bâtiment dès la visite technique." },
                 { q: "Le chantier perturbe-t-il l'activité du bâtiment ?", a: "Dans la grande majorité des cas, l'impact est contenu. La pose se fait en sous-face de toiture, souvent dans des volumes peu ou pas occupés. Nous coordonnons le planning avec votre exploitation : intervention de nuit, week-end, ou zones traitées par tranches. L'absence de dépose de couverture évite toute exposition aux intempéries et simplifie considérablement la logistique." },
-                { q: "Quelle durabilité attendre de l'Airflex 30 une fois posé ?", a: "Posé en sous-face, à l'abri des UV directs et des intempéries, l'Airflex 30 conserve ses propriétés radiatives sur plusieurs décennies. La durabilité effective dépend toujours des conditions de mise en œuvre et de l'environnement du bâtiment, mais le produit est conçu pour une tenue longue sans maintenance spécifique. ECOPRORENOVE vous remet la documentation du fabricant avec les préconisations complètes." },
+                { q: "Quelle durabilité attendre de la barrière thermo-réfléchissante une fois posée ?", a: "Posée en sous-face, à l'abri des UV directs et des intempéries, notre solution conserve ses propriétés radiatives sur plusieurs décennies. La durabilité effective dépend toujours des conditions de mise en œuvre et de l'environnement du bâtiment, mais le produit est conçu pour une tenue longue sans maintenance spécifique. ECOPRORENOVE vous remet la documentation du fabricant avec les préconisations complètes." },
                 { q: "Quel est le montant de la prime CEE pour mon projet ?", a: "La prime CEE au titre de la fiche BAT-EN-106 dépend de la surface de toiture traitée, de la zone climatique et du cours en vigueur au moment de l'engagement du dossier. Le montant varie également selon l'obligé retenu et les bonifications applicables. Nous communiquons une estimation précise dès la remise du devis, avant tout engagement. La façon la plus rapide d'obtenir un chiffre pour votre bâtiment est de demander une étude gratuite via le formulaire en bas de page." },
                 { q: "Faut-il engager le dossier CEE avant le début des travaux ?", a: (<>Oui — et c&apos;est un point critique. Le dispositif CEE impose impérativement que le dossier soit engagé <strong>avant</strong> le début des travaux, avec une signature de devis postérieure à la date d&apos;engagement auprès de l&apos;obligé. Un chantier démarré avant cette étape devient inéligible, sans possibilité de rattrapage. C&apos;est précisément pour éviter ce type d&apos;erreur que nous pilotons chaque dossier en chronologie stricte.</>) },
-                { q: "Quelle est la durée d'un chantier type sous toiture métallique ?", a: "Cela dépend de la surface, de la hauteur sous toiture et de l'accessibilité. À titre indicatif, la pose de l'Airflex 30 avance rapidement grâce à la légèreté du produit et aux lais de grande largeur. Sur un bâtiment de plusieurs milliers de m², le chantier est généralement découpé en zones successives pour lisser l'impact sur l'activité. Nous vous remettons un planning prévisionnel dès la phase d'étude." },
+                { q: "Quelle est la durée d'un chantier type sous toiture métallique ?", a: "Cela dépend de la surface, de la hauteur sous toiture et de l'accessibilité. À titre indicatif, la pose avance rapidement grâce à la légèreté du complexe et aux lais de grande largeur. Sur un bâtiment de plusieurs milliers de m², le chantier est généralement découpé en zones successives pour lisser l'impact sur l'activité. Nous vous remettons un planning prévisionnel dès la phase d'étude." },
               ]}
             />
           </div>
@@ -623,7 +622,7 @@ export default function IsolationToitureRampantsPage() {
               de la chaleur <em>en ce moment même.</em>
             </h2>
             <p className="cta-final__subtitle">
-              Parlons de votre projet. Nous évaluons la configuration de votre toiture métallique, le dimensionnement Airflex 30, le potentiel de gain thermique et la prime CEE BAT-EN-106 mobilisable — sans engagement.
+              Parlons de votre projet. Nous évaluons la configuration de votre toiture métallique, le dimensionnement de notre solution thermo-réfléchissante, le potentiel de gain thermique et la prime CEE BAT-EN-106 mobilisable — sans engagement.
             </p>
             <div className="cta-final__actions">
               <a href="#contact" className="btn btn--primary btn--lg">

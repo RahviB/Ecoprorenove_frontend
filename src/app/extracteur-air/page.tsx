@@ -6,7 +6,7 @@ import ScrollNav from "@/components/ScrollNav";
 import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
-  title: "Extracteur d'air statique — désurchauffe naturelle | ECOPRORENOVE",
+  title: "Extracteur d'air statique — désurchauffe naturelle",
   description:
     "Extracteurs d'air statiques rotatifs — évacuation passive de la chaleur sous toiture métallique. Sans moteur, sans consommation, complément naturel de l'isolation thermique.",
   alternates: { canonical: "/extracteur-air" },
@@ -79,7 +79,7 @@ export default function ExtracteurAirPage() {
                 </div>
                 <div>
                   <div className="hero__highlight-num">+</div>
-                  <div className="hero__highlight-lbl">Complément naturel de l&apos;Airflex 30 et des destratificateurs</div>
+                  <div className="hero__highlight-lbl">Complément naturel de notre barrière thermo-réfléchissante et des destratificateurs</div>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function ExtracteurAirPage() {
         sections={[
           { id: "produit", label: "Le produit" },
           { id: "benefices", label: "Bénéfices" },
-          { id: "combo", label: "Combo Airflex" },
+          { id: "combo", label: "Combo isolation" },
           { id: "applications", label: "Applications" },
           { id: "faq", label: "FAQ" },
           { id: "contact", label: "Contact" },
@@ -119,7 +119,7 @@ export default function ExtracteurAirPage() {
             {[
               "Sans moteur — sans consommation électrique",
               "Pose en faîtage — toutes couvertures",
-              "Complément naturel de l'Airflex 30",
+              "Complément naturel de notre barrière thermo-réfléchissante",
             ].map((t) => (
               <div key={t} className="hero-bandeau__item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -203,7 +203,7 @@ export default function ExtracteurAirPage() {
         </div>
       </section>
 
-      {/* COMBO AIRFLEX 30 */}
+      {/* COMBO ISOLATION + EXTRACTION */}
       <section className="combo" id="combo">
         <div className="container container--wide">
           <div style={{ textAlign: "center", marginBottom: 56 }} className="fade-in">
@@ -214,7 +214,7 @@ export default function ExtracteurAirPage() {
             </h2>
             <div className="divider divider--center divider--white"></div>
             <p className="section-intro section-intro--white section-intro--center">
-              Un extracteur seul ne suffit pas si la toiture rayonne sa chaleur sans barrière. Un isolant seul ne suffit pas si l&apos;air chaud reste piégé sous-toiture. Combinés, l&apos;<strong style={{ color: "#fff" }}>Airflex 30 et l&apos;extracteur statique</strong> agissent à deux niveaux complémentaires.
+              Un extracteur seul ne suffit pas si la toiture rayonne sa chaleur sans barrière. Un isolant seul ne suffit pas si l&apos;air chaud reste piégé sous-toiture. Combinés, <strong style={{ color: "#fff" }}>la barrière thermo-réfléchissante et l&apos;extracteur statique</strong> agissent à deux niveaux complémentaires.
             </p>
           </div>
 
@@ -225,7 +225,7 @@ export default function ExtracteurAirPage() {
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="3 12 12 4 21 12"/><line x1="3" y1="16" x2="21" y2="16"/><line x1="3" y1="20" x2="21" y2="20"/></svg>
                 </div>
                 <div>
-                  <div className="combo-item__title">Airflex 30 — barrière thermique</div>
+                  <div className="combo-item__title">Barrière thermo-réfléchissante</div>
                   <div className="combo-item__desc">Réfléchit le rayonnement infrarouge avant qu&apos;il ne pénètre.</div>
                 </div>
               </div>
@@ -246,14 +246,14 @@ export default function ExtracteurAirPage() {
                 Deux mécaniques complémentaires<br />contre la même chaleur.
               </h3>
               <p className="combo__text">
-                L&apos;<strong>Airflex 30</strong> agit en <strong className="combo__hl">amont</strong> : il réfléchit le rayonnement de la toiture métallique et empêche la conduction thermique vers l&apos;intérieur. Mais une part de chaleur passe toujours, par les jonctions et l&apos;air ambiant.
+                La <strong>barrière thermo-réfléchissante</strong> agit en <strong className="combo__hl">amont</strong> : elle réfléchit le rayonnement de la toiture métallique et empêche la conduction thermique vers l&apos;intérieur. Mais une part de chaleur passe toujours, par les jonctions et l&apos;air ambiant.
               </p>
               <p className="combo__text">
                 L&apos;<strong>extracteur statique</strong> prend le relais en <strong className="combo__hl">aval</strong> : il évacue cet air chaud résiduel avant qu&apos;il ne s&apos;accumule au plafond. Le résultat — une température intérieure significativement plus stable, sans climatisation.
               </p>
               <a href="/isolation-toiture-rampants" className="btn btn--primary">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                Découvrir l&apos;Airflex 30
+                Découvrir notre solution d&apos;isolation
               </a>
             </div>
           </div>
@@ -311,10 +311,10 @@ export default function ExtracteurAirPage() {
             <Faq
               items={[
                 { q: "L'extracteur statique fonctionne-t-il vraiment sans électricité ?", a: "Oui — strictement aucune alimentation électrique. Le principe repose sur la convection thermique (l'air chaud monte naturellement) et l'effet venturi (les aubes incurvées tournent dès qu'un filet d'air les sollicite et créent une dépression). Le système est donc passif et permanent — il fonctionne 24h/24 dès lors qu'un différentiel thermique ou un peu de vent est présent." },
-                { q: "Faut-il combiner extracteur et isolation Airflex 30 ?", a: "Idéalement oui — les deux solutions agissent à des niveaux différents. L'Airflex 30 bloque le rayonnement infrarouge de la toiture métallique en amont (barrière thermique). L'extracteur statique évacue en aval l'air chaud résiduel qui s'accumule sous-toiture. Combinés, on évite à la fois l'apport thermique et la stratification chaude au plafond. C'est la configuration la plus efficace pour les bâtiments à toiture métallique." },
+                { q: "Faut-il combiner extracteur et isolation thermo-réfléchissante ?", a: "Idéalement oui — les deux solutions agissent à des niveaux différents. La barrière thermo-réfléchissante bloque le rayonnement infrarouge de la toiture métallique en amont. L'extracteur statique évacue en aval l'air chaud résiduel qui s'accumule sous-toiture. Combinés, on évite à la fois l'apport thermique et la stratification chaude au plafond. C'est la configuration la plus efficace pour les bâtiments à toiture métallique." },
                 { q: "Sur quels types de toiture peut-on poser un extracteur statique ?", a: "Toutes les toitures sont compatibles avec une embase adaptée — bac acier, tôle ondulée, panneaux sandwich, fibrociment, tuiles. La pose se fait en faîtage (point haut) pour optimiser le tirage thermique. L'installation se fait généralement en demi-journée, sans dépose de la couverture, avec calfeutrement et solin pour garantir l'étanchéité." },
                 { q: "Quelle maintenance est nécessaire ?", a: "Très limitée. Pas de moteur, pas de courroie, pas de capteur — donc aucune pièce électrique à remplacer. Un contrôle visuel annuel et un nettoyage périodique des aubes (poussières, feuilles, résidus) suffisent à maintenir le rendement. La structure inox / acier galvanisé est dimensionnée pour plusieurs décennies en environnement courant." },
-                { q: "L'extracteur est-il éligible à des aides (CEE, MaPrimeRénov') ?", a: "L'extracteur statique seul, en tant qu'équipement passif, n'entre pas dans les fiches CEE ou MaPrimeRénov'. En revanche, il est souvent intégré au sein d'un projet plus large (isolation Airflex 30 sous toiture, traitement thermique d'un bâtiment tertiaire ou agricole) — auquel cas le volet isolation est, lui, généralement éligible. Nous étudions chaque dossier dans son ensemble pour identifier les leviers mobilisables." },
+                { q: "L'extracteur est-il éligible à des aides (CEE, MaPrimeRénov') ?", a: "L'extracteur statique seul, en tant qu'équipement passif, n'entre pas dans les fiches CEE ou MaPrimeRénov'. En revanche, il est souvent intégré au sein d'un projet plus large (isolation thermo-réfléchissante sous toiture, traitement thermique d'un bâtiment tertiaire ou agricole) — auquel cas le volet isolation est, lui, généralement éligible. Nous étudions chaque dossier dans son ensemble pour identifier les leviers mobilisables." },
               ]}
             />
           </div>
@@ -335,7 +335,7 @@ export default function ExtracteurAirPage() {
               <br />De la facture en moins.
             </h2>
             <p className="cta-final__subtitle">
-              Partagez-nous votre projet — type de bâtiment, surface de toiture, contraintes climatiques. Nous revenons avec un dimensionnement (nombre d&apos;extracteurs préconisés, positionnement) et, si pertinent, l&apos;articulation avec une isolation Airflex 30.
+              Partagez-nous votre projet — type de bâtiment, surface de toiture, contraintes climatiques. Nous revenons avec un dimensionnement (nombre d&apos;extracteurs préconisés, positionnement) et, si pertinent, l&apos;articulation avec une isolation thermo-réfléchissante.
             </p>
             <div className="cta-final__actions">
               <a href="#contact" className="btn btn--primary btn--lg">

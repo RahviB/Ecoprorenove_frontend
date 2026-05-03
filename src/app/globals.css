@@ -208,7 +208,7 @@ a.solution-card[aria-disabled="true"] {
 section[id], [id^="cee"], [id^="modes"], [id^="methode"],
 #contact, #solutions, #secteurs, #pourquoi, #faq,
 #configurateur, #fonctionnement, #benefices, #batiments,
-#airflex, #travaux, #gestion, #ecoprorenove, #probleme {
+#solution, #travaux, #gestion, #ecoprorenove, #probleme {
   scroll-margin-top: 88px;
 }
 
@@ -4456,6 +4456,7 @@ body:has(.page-home-v5) .vsw__toggle { background: rgba(20,32,26,.95); }
   color: #cfe7c2;
   font-family: var(--serif); font-style: italic; font-weight: 500;
   font-size: 1.1rem; letter-spacing: -.01em;
+  white-space: nowrap;
 }
 
 /* Hero photo (or placeholder while photo is pending) */
