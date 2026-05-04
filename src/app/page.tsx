@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import AidesCallout from "@/components/AidesCallout";
+import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
 import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
@@ -175,12 +175,12 @@ const SOLUTIONS = [
 ];
 
 const PARCOURS_STEPS = [
-  { n: "01", t: "Échange initial", p: "Comprendre le bâtiment, vos objectifs, vos contraintes." },
-  { n: "02", t: "Analyse technique & éligibilité CEE", p: "Étude des travaux, fiche CEE identifiée, chronologie validée." },
-  { n: "03", t: "Montage du dossier", p: "Pièces requises, conformité, coordination des acteurs." },
-  { n: "04", t: "Travaux & pose RGE", p: "Entreprises qualifiées, documents de chantier sécurisés." },
-  { n: "05", t: "Suivi & coordination", p: "Pilotage, qualité, ajustements en temps réel." },
-  { n: "06", t: "Clôture & valorisation", p: "Dépôt, validation obligé, versement du financement." },
+  { n: "01", i: "💬", t: "Échange initial", p: "Comprendre le bâtiment, vos objectifs, vos contraintes." },
+  { n: "02", i: "📄", t: "Analyse technique & éligibilité CEE", p: "Étude des travaux, fiche CEE identifiée, chronologie validée." },
+  { n: "03", i: "📁", t: "Montage du dossier", p: "Pièces requises, conformité, coordination des acteurs." },
+  { n: "04", i: "👷", t: "Travaux & pose RGE", p: "Entreprises qualifiées, documents de chantier sécurisés." },
+  { n: "05", i: "✅", t: "Suivi & coordination", p: "Pilotage, qualité, ajustements en temps réel." },
+  { n: "06", i: "€", t: "Clôture & valorisation", p: "Dépôt, validation obligé, versement du financement." },
 ];
 
 export default function HomePage() {
@@ -311,31 +311,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* =================  3. NOTRE PROCESSUS ================= */}
-      <section className="parcours-unifie" id="parcours">
+      {/* =================  3. NOTRE MÉTHODE ================= */}
+      <section className="parcours-unifie method-section" id="parcours">
         <div className="container">
-          <div className="parcours-unifie__header fade-in">
-            <p className="section-label section-label--white">Notre méthode</p>
-            <h2 className="section-title section-title--white">
-              Six étapes, <em className="acc" style={{ color: "#ff9570" }}>un dossier maîtrisé</em>
+          <div className="method-header fade-in">
+            <span className="method-pill">Notre méthode</span>
+            <h2>
+              Six étapes, <span>un dossier maîtrisé</span>
             </h2>
-            <div className="divider divider--white divider--center"></div>
-            <p className="section-intro section-intro--white">
-              De la première conversation à la livraison de votre projet.
-            </p>
+            <div className="method-line"></div>
+            <p>De la première conversation à la livraison de votre projet.</p>
           </div>
 
-          <ol className="parcours-unifie__timeline">
+          <div className="steps-grid">
             {PARCOURS_STEPS.map((s, i) => (
-              <li key={s.n} className={`parcours-step fade-in delay-${(i % 6) + 1}`}>
-                <div className="parcours-step__num">{s.n}</div>
-                <h3 className="parcours-step__title">{s.t}</h3>
-                <p className="parcours-step__text">{s.p}</p>
-              </li>
+              <div key={s.n} className={`step-card fade-in delay-${(i % 6) + 1}`}>
+                <span className="step-number">{s.n}</span>
+                <div className="step-icon" aria-hidden="true">{s.i}</div>
+                <h3>{s.t}</h3>
+                <small></small>
+                <p>{s.p}</p>
+              </div>
             ))}
-          </ol>
+          </div>
 
-          <AidesCallout />
+          <div className="aid-highlight fade-in delay-2">
+            <svg className="curved-arrow" viewBox="0 0 160 90" fill="none" aria-hidden="true">
+              <path
+                d="M10 0 C5 45 45 65 75 45 C100 28 97 70 48 58 C85 78 110 82 145 75"
+                stroke="#a8e296"
+                strokeWidth="3"
+                strokeLinecap="round"
+                pathLength="1"
+              />
+              <path
+                d="M135 64 L148 76 L132 82"
+                stroke="#a8e296"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                pathLength="1"
+              />
+            </svg>
+
+            <div className="aid-content">
+              <div className="aid-title">✓ Aides vérifiées</div>
+              <p>(CEE + MaPrimeRénov&apos;)</p>
+
+              <div className="aid-buttons">
+                <Link href="/prime-cee">Prime CEE</Link>
+                <Link href="/ma-prime-renov">MaPrimeRénov&apos;</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

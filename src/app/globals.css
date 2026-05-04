@@ -3453,146 +3453,179 @@ body:has(.page-home-v5) .vsw__toggle { background: rgba(20,32,26,.95); }
   width: 360px; height: 360px; border-radius: 50%;
   background: rgba(255,255,255,.04); bottom: -120px; left: -100px; pointer-events: none;
 }
-.parcours-unifie__header { text-align: center; max-width: 760px; margin: 0 auto 56px; position: relative; }
-.parcours-unifie__timeline {
-  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
-  list-style: none; padding: 0; margin: 0; position: relative;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+/* Notre méthode — 6 step cards w/ chevrons + curved-arrow aid highlight.
+   .parcours-unifie wraps for the dark gradient bg; .method-section adds the new layout. */
+.parcours-unifie .method-header {
+  text-align: center; position: relative; z-index: 2;
+  max-width: 760px; margin: 0 auto 55px;
 }
-.parcours-step {
-  padding: 28px 22px 30px;
-  border-right: 1px solid rgba(255,255,255,.08);
-  position: relative;
-  transition: background .25s;
+.parcours-unifie .method-pill {
+  display: inline-block; padding: 9px 24px;
+  border-radius: 999px;
+  background: rgba(168, 226, 134, .14);
+  color: #a8e296;
+  font-weight: 800; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+  border: 1px solid rgba(168, 226, 134, .28);
 }
-.parcours-step:last-child { border-right: none; }
-.parcours-step:hover { background: rgba(255,255,255,.04); }
-.parcours-step__num {
-  font-size: .72rem; font-weight: 900; letter-spacing: .14em;
-  color: #a8e296; margin-bottom: 14px;
+.parcours-unifie .method-header h2 {
+  margin: 22px 0 14px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05; font-weight: 900; color: #fff;
+  letter-spacing: -.02em;
+}
+.parcours-unifie .method-header h2 span {
+  color: #a8e296; font-style: italic; font-weight: 800;
+}
+.parcours-unifie .method-line {
+  width: 70px; height: 4px;
+  background: #a8e296; border-radius: 20px;
+  margin: 0 auto 22px;
+}
+.parcours-unifie .method-header > p {
+  font-size: 1.1rem; color: rgba(255, 255, 255, .75); margin: 0;
+}
+
+.parcours-unifie .steps-grid {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px;
+}
+.parcours-unifie .step-card {
+  position: relative; min-height: 310px;
+  padding: 34px 22px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 18px;
+  text-align: center;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transition: background .25s, transform .25s, border-color .25s;
+}
+.parcours-unifie .step-card:hover {
+  background: rgba(255, 255, 255, .1);
+  border-color: rgba(168, 226, 134, .35);
+  transform: translateY(-2px);
+}
+.parcours-unifie .step-number {
+  position: absolute; top: 22px; left: 22px;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #a8e296; color: #0d2410;
+  font-weight: 800; font-size: .82rem;
+  display: grid; place-items: center;
   font-variant-numeric: tabular-nums;
 }
-.parcours-step__title {
-  font-size: .95rem; font-weight: 800; color: #fff;
-  margin-bottom: 8px; line-height: 1.3;
+.parcours-unifie .step-icon {
+  width: 76px; height: 76px;
+  margin: 22px auto 22px;
+  background: rgba(168, 226, 134, .15);
+  border: 1px solid rgba(168, 226, 134, .28);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 1.65rem;
+  line-height: 1;
 }
-.parcours-step__text {
-  font-size: .82rem; color: rgba(255,255,255,.72);
-  line-height: 1.55;
+.parcours-unifie .step-card h3 {
+  font-size: 1rem; line-height: 1.3;
+  margin: 0; font-weight: 800; color: #fff;
+  letter-spacing: -.005em;
 }
-@media (max-width: 1024px) {
-  .parcours-unifie__timeline { grid-template-columns: repeat(3, 1fr); }
-  .parcours-step:nth-child(3n) { border-right: none; }
-  .parcours-step:nth-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,.08); }
+.parcours-unifie .step-card small {
+  display: block; width: 36px; height: 3px;
+  background: #a8e296; border-radius: 20px;
+  margin: 14px auto;
 }
-@media (max-width: 640px) {
-  .parcours-unifie__timeline { grid-template-columns: 1fr; }
-  .parcours-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
-  .parcours-step:last-child { border-bottom: none; }
+.parcours-unifie .step-card > p {
+  font-size: .87rem; line-height: 1.55;
+  color: rgba(255, 255, 255, .75); margin: 0;
+}
+/* Chevron between cards (desktop only) */
+.parcours-unifie .step-card:not(:last-child)::after {
+  content: "›";
+  position: absolute; right: -18px; top: 50%; transform: translateY(-50%);
+  width: 32px; height: 32px;
+  background: rgba(168, 226, 134, .15);
+  border: 1px solid rgba(168, 226, 134, .25);
+  color: #a8e296;
+  border-radius: 50%;
+  font-size: 1.6rem; font-weight: 700;
+  display: grid; place-items: center;
+  z-index: 5;
+  line-height: 0; padding-bottom: 4px;
 }
 
-/* Aides callout — sits below parcours timeline, pointer aimed at step 02
-   On a 6-col timeline, step 02 column center = 25% from left.
-   The pointer triangle sits at the top of the callout, aligned with that column. */
-.aides-callout {
-  position: relative;
-  margin: 28px 0 0 auto;
-  margin-left: max(0px, calc((100% / 6) * 1));   /* slot at column 2 (0-indexed) */
-  width: min(420px, calc((100% / 6) * 2.6));
-  padding: 22px 24px 20px;
-  background: linear-gradient(155deg, rgba(20, 50, 25, .96) 0%, rgba(15, 38, 19, .96) 100%);
-  border: 1px solid rgba(168, 226, 134, .26);
-  border-radius: 16px;
-  color: #fff;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, .28);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+/* Aid highlight — curved arrow + verified-aides block */
+.parcours-unifie .aid-highlight {
+  position: relative; z-index: 2;
+  margin: 8px 0 0 max(0px, calc((100% / 6) * 1.4));
+  display: flex; align-items: flex-start; gap: 22px;
 }
-.aides-callout__pointer {
-  position: absolute;
-  top: -10px;
-  left: 36px;
-  width: 18px;
-  height: 18px;
-  background: linear-gradient(155deg, rgba(20, 50, 25, .96) 0%, rgba(20, 50, 25, .96) 100%);
-  border-top: 1px solid rgba(168, 226, 134, .26);
-  border-left: 1px solid rgba(168, 226, 134, .26);
-  transform: rotate(45deg);
-  border-top-left-radius: 4px;
+.parcours-unifie .curved-arrow {
+  width: 150px; height: 90px; flex-shrink: 0;
+  overflow: visible;
 }
-.aides-callout__step {
-  display: inline-block;
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 6px;
+.parcours-unifie .curved-arrow path {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
 }
-.aides-callout__title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  margin: 0 0 8px;
-  letter-spacing: -.01em;
-  line-height: 1.3;
+.parcours-unifie .aid-highlight.visible .curved-arrow path {
+  animation: methodArrowDraw 1.4s cubic-bezier(.55, 0, .25, 1) forwards;
+  animation-delay: .35s;
 }
-.aides-callout__text {
-  font-size: .88rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, .78);
-  margin: 0 0 16px;
+.parcours-unifie .aid-highlight.visible .curved-arrow path:nth-of-type(2) {
+  animation-delay: 1.25s;
 }
-.aides-callout__actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+@keyframes methodArrowDraw {
+  to { stroke-dashoffset: 0; }
 }
-.aides-callout__btn {
-  flex: 1 1 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 11px 16px;
-  font-size: .85rem;
-  font-weight: 700;
+@media (prefers-reduced-motion: reduce) {
+  .parcours-unifie .curved-arrow path { stroke-dashoffset: 0; animation: none; }
+}
+
+.parcours-unifie .aid-content { margin-top: 50px; }
+.parcours-unifie .aid-title {
+  color: #a8e296;
+  font-size: 1rem; font-weight: 800;
+  letter-spacing: -.005em;
+}
+.parcours-unifie .aid-content > p {
+  margin: 6px 0 18px;
+  color: rgba(255, 255, 255, .72);
+  font-size: .9rem;
+}
+.parcours-unifie .aid-buttons {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.parcours-unifie .aid-buttons a {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 42px; min-width: 150px;
+  padding: 0 22px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, .08);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, .16);
+  border: 1.5px solid #a8e296;
+  color: #a8e296;
+  font-weight: 700; font-size: .9rem;
   text-decoration: none;
-  transition: background .18s, border-color .18s, transform .18s;
+  transition: background .18s, color .18s, border-color .18s;
 }
-.aides-callout__btn:hover { background: rgba(255, 255, 255, .14); transform: translateY(-1px); }
-.aides-callout__btn--primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #1a2318;
+.parcours-unifie .aid-buttons a:first-child {
+  background: #a8e296; color: #0d2410;
 }
-.aides-callout__btn--primary:hover { background: #ffb088; border-color: #ffb088; }
-
-/* Tablet — timeline becomes 3-col, step 02 is in column 2 (center area) */
-@media (max-width: 1024px) {
-  .aides-callout {
-    margin-left: max(0px, calc((100% / 3) * 1));
-    width: min(420px, calc((100% / 3) * 1.6));
-  }
-  .aides-callout__pointer { left: 32px; }
+.parcours-unifie .aid-buttons a:first-child:hover {
+  background: #c2eda8; border-color: #c2eda8;
+}
+.parcours-unifie .aid-buttons a:not(:first-child):hover {
+  background: rgba(168, 226, 134, .14);
 }
 
-/* Mobile — timeline goes 1-col stacked, callout becomes full-width below
-   Pointer stays top, aimed at the step 02 card sitting above */
-@media (max-width: 640px) {
-  .aides-callout {
-    margin: 22px 0 0;
-    width: 100%;
-    padding: 18px 20px 16px;
-  }
-  .aides-callout__pointer { left: 28px; }
-  .aides-callout__title { font-size: 1.05rem; }
-  .aides-callout__text { font-size: .82rem; }
+@media (max-width: 1100px) {
+  .parcours-unifie .steps-grid { grid-template-columns: repeat(3, 1fr); }
+  .parcours-unifie .step-card:not(:last-child)::after { display: none; }
+  .parcours-unifie .aid-highlight { margin-left: 0; }
+}
+@media (max-width: 700px) {
+  .parcours-unifie .steps-grid { grid-template-columns: 1fr; }
+  .parcours-unifie .step-card { min-height: auto; }
+  .parcours-unifie .aid-highlight { margin-top: 25px; flex-direction: column; gap: 12px; }
+  .parcours-unifie .curved-arrow { display: none; }
+  .parcours-unifie .aid-content { margin-top: 0; }
+  .parcours-unifie .aid-buttons { flex-direction: column; }
+  .parcours-unifie .aid-buttons a { width: 100%; }
 }
 
 /* Engagements + FAQ — 2-col */
