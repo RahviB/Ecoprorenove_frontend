@@ -54,6 +54,7 @@ const SOLUTIONS = [
     title: "Isolation toiture — thermoréflectif",
     desc: "Réduire les transferts thermiques sous la couverture, sans reprise de la charpente.",
     sectors: ["tertiaire", "agricole"] as const,
+    ceeFinance: true,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <polyline points="3 12 12 4 21 12" />
@@ -67,6 +68,7 @@ const SOLUTIONS = [
     title: "Isolation des combles",
     desc: "Soufflage ou déroulé. Jusqu'à 30 % des pertes traitées à la source.",
     sectors: ["tertiaire", "residentiel"] as const,
+    ceeFinance: true,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12 4 L20 10 V20 H4 V10 Z" />
@@ -75,10 +77,26 @@ const SOLUTIONS = [
     ),
   },
   {
+    href: "/isolation-planchers-bas",
+    title: "Isolation des planchers bas",
+    desc: "Flocage ou panneaux en sous-face — vide sanitaire, parking, local non chauffé.",
+    sectors: ["tertiaire", "residentiel"] as const,
+    ceeFinance: true,
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="14" rx="1" />
+        <line x1="3" y1="14" x2="21" y2="14" />
+        <line x1="6" y1="18" x2="6" y2="20" />
+        <line x1="18" y1="18" x2="18" y2="20" />
+      </svg>
+    ),
+  },
+  {
     href: "/destratificateur-air",
     title: "Destratificateur d'air",
     desc: "Redistribuer la chaleur en hauteur pour réduire les consommations de chauffage.",
     sectors: ["tertiaire"] as const,
+    ceeFinance: true,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="3" />
@@ -108,6 +126,7 @@ const SOLUTIONS = [
     title: "VMC Double flux",
     desc: "Récupération de chaleur sur l'air extrait. Solution dédiée aux bâtiments agricoles.",
     sectors: ["agricole"] as const,
+    ceeFinance: true,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M4 8 H12 A4 4 0 0 1 16 12" />

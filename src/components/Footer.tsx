@@ -49,6 +49,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/isolation-toiture-rampants">Isolation toiture</Link></li>
               <li><Link href="/isolation-combles">Isolation combles</Link></li>
+              <li><Link href="/isolation-planchers-bas">Isolation planchers bas</Link></li>
               <li><Link href="/bardage">Bardage</Link></li>
               <li><Link href="/destratificateur-air">Destratificateur d&apos;air</Link></li>
               <li><Link href="/extracteur-air">Extracteur d&apos;air</Link></li>

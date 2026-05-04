@@ -6,6 +6,7 @@ const routes = [
   "",
   "bardage",
   "isolation-combles",
+  "isolation-planchers-bas",
   "isolation-toiture-rampants",
   "destratificateur-air",
   "extracteur-air",

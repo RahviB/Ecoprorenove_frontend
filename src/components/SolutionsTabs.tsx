@@ -10,6 +10,7 @@ type Solution = {
   disabled?: boolean;
   premium?: boolean;
   cee?: boolean;
+  ceeFinance?: boolean;
   icon: ReactNode;
   title: string;
   desc: string;
@@ -54,6 +55,9 @@ export default function SolutionsTabs({ solutions }: { solutions: Solution[] }) 
     const inner = (
       <>
         {s.premium && <span className="solution-card__badge">Premium</span>}
+        {s.ceeFinance && (
+          <span className="solution-card__badge solution-card__badge--cee">100% CEE Financé</span>
+        )}
         <div className="solution-card__icon">{s.icon}</div>
         <h3 className="solution-card__title">{s.title}</h3>
         <p className="solution-card__desc">{s.desc}</p>

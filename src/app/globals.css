@@ -932,6 +932,9 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   padding: 3px 9px; border-radius: 50px;
   background: var(--accent); color: #fff;
 }
+.solution-card__badge--cee {
+  background: var(--green);
+}
 .solution-card--cee {
   background: linear-gradient(135deg, var(--green-pale) 0%, var(--green-light) 100%);
   border-color: var(--green-light);

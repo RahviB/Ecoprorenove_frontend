@@ -15,6 +15,12 @@ const CATALOG: Record<string, Related> = {
     lead: "Soufflage ou déroulé selon configuration. CEE BAT-EN-101.",
     group: "solution",
   },
+  "isolation-planchers-bas": {
+    slug: "isolation-planchers-bas",
+    title: "Isolation des planchers bas",
+    lead: "Flocage ou panneaux en sous-face. R ≥ 3 m²·K/W. CEE BAT-EN-103.",
+    group: "solution",
+  },
   bardage: {
     slug: "bardage",
     title: "Bardage fibre-ciment",
