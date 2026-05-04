@@ -20,7 +20,7 @@ type Solution = {
 type Tab = "tous" | Sector;
 
 const TABS: { id: Tab; label: string; intro: string }[] = [
-  { id: "tous", label: "Tous", intro: "Huit offres concrètes qui couvrent l'enveloppe du bâtiment, l'aéraulique et le pilotage énergétique." },
+  { id: "tous", label: "Tous", intro: "Neuf offres concrètes qui couvrent l'enveloppe du bâtiment, l'aéraulique et le pilotage énergétique." },
   { id: "tertiaire", label: "Tertiaire", intro: "Bureaux, commerces, santé, enseignement, hôtels — décret tertiaire et continuité d'exploitation." },
   { id: "residentiel", label: "Résidentiel", intro: "Copropriétés, bailleurs, particuliers — cumul CEE + MaPrimeRénov', gestion des syndics." },
   { id: "agricole", label: "Agricole", intro: "Bâtiments d'élevage, serres, hangars — ambiance, hygrométrie, fiches CEE adaptées." },

@@ -301,7 +301,7 @@ export default function HomePage() {
             <div className="fade-in">
               <p className="section-label">Solutions par secteur</p>
               <h2 className="section-title">
-                Trois secteurs, <em>huit opérations</em> ciblées
+                Trois secteurs, <em>neuf opérations</em> ciblées
               </h2>
               <div className="divider"></div>
             </div>
