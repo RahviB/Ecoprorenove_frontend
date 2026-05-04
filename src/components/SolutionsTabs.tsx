@@ -56,7 +56,7 @@ export default function SolutionsTabs({ solutions }: { solutions: Solution[] }) 
       <>
         {s.premium && <span className="solution-card__badge">Premium</span>}
         {s.ceeFinance && (
-          <span className="solution-card__badge solution-card__badge--cee">100% CEE Financé</span>
+          <span className="solution-card__badge solution-card__badge--cee">Financé 100% CEE</span>
         )}
         <div className="solution-card__icon">{s.icon}</div>
         <h3 className="solution-card__title">{s.title}</h3>
