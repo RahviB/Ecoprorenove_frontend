@@ -175,12 +175,12 @@ const SOLUTIONS = [
 ];
 
 const PARCOURS_STEPS = [
-  { n: "01", i: "💬", t: "Échange initial", p: "Comprendre le bâtiment, vos objectifs, vos contraintes." },
-  { n: "02", i: "📄", t: "Analyse technique & éligibilité CEE", p: "Étude des travaux, fiche CEE identifiée, chronologie validée." },
-  { n: "03", i: "📁", t: "Montage du dossier", p: "Pièces requises, conformité, coordination des acteurs." },
-  { n: "04", i: "👷", t: "Travaux & pose RGE", p: "Entreprises qualifiées, documents de chantier sécurisés." },
-  { n: "05", i: "✅", t: "Suivi & coordination", p: "Pilotage, qualité, ajustements en temps réel." },
-  { n: "06", i: "€", t: "Clôture & valorisation", p: "Dépôt, validation obligé, versement du financement." },
+  { n: "01", t: "Échange initial", p: "Comprendre le bâtiment, vos objectifs, vos contraintes." },
+  { n: "02", t: "Analyse technique & éligibilité CEE", p: "Étude des travaux, fiche CEE identifiée, chronologie validée." },
+  { n: "03", t: "Montage du dossier", p: "Pièces requises, conformité, coordination des acteurs." },
+  { n: "04", t: "Travaux & pose RGE", p: "Entreprises qualifiées, documents de chantier sécurisés." },
+  { n: "05", t: "Suivi & coordination", p: "Pilotage, qualité, ajustements en temps réel." },
+  { n: "06", t: "Clôture & valorisation", p: "Dépôt, validation obligé, versement du financement." },
 ];
 
 export default function HomePage() {
@@ -323,17 +323,15 @@ export default function HomePage() {
             <p>De la première conversation à la livraison de votre projet.</p>
           </div>
 
-          <div className="steps-grid">
+          <ol className="parcours-unifie__timeline">
             {PARCOURS_STEPS.map((s, i) => (
-              <div key={s.n} className={`step-card fade-in delay-${(i % 6) + 1}`}>
-                <span className="step-number">{s.n}</span>
-                <div className="step-icon" aria-hidden="true">{s.i}</div>
-                <h3>{s.t}</h3>
-                <small></small>
-                <p>{s.p}</p>
-              </div>
+              <li key={s.n} className={`parcours-step fade-in delay-${(i % 6) + 1}`}>
+                <div className="parcours-step__num">{s.n}</div>
+                <h3 className="parcours-step__title">{s.t}</h3>
+                <p className="parcours-step__text">{s.p}</p>
+              </li>
             ))}
-          </div>
+          </ol>
 
           <div className="aid-highlight fade-in delay-2">
             <svg className="curved-arrow" viewBox="0 0 160 90" fill="none" aria-hidden="true">
