@@ -326,38 +326,6 @@ export default function IsolationComblesPage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="how-it-works" id="fonctionnement">
-        <div className="container">
-          <div className="how-it-works__header fade-in">
-            <p className="section-label">Déroulement d&apos;un chantier</p>
-            <h2 className="section-title">
-              Comment se déroule<br />
-              un <em>chantier d&apos;isolation des combles</em>&nbsp;?
-            </h2>
-            <div className="divider divider--center"></div>
-            <p className="section-intro section-intro--center">
-              Que ce soit en soufflage ou en déroulé, la mise en œuvre suit une méthodologie rigoureuse — conforme au DTU et aux exigences des fiches CEE — pour garantir la performance dans le temps.
-            </p>
-          </div>
-
-          <div className="how-steps fade-in">
-            {[
-              ["01", "Préparation du support", "Vérification du plancher haut, repérage des points singuliers (trappes, spots, conduits), pose éventuelle d'un écran pare-vapeur si nécessaire."],
-              ["02", "Protection des éléments sensibles", "Coffrages autour des conduits de fumée, capots sur les spots encastrés, rehausse de la trappe d'accès, protection des appareillages électriques."],
-              ["03", "Pose de l'isolant", "Soufflage mécanisé à épaisseur contrôlée par piges graduées, ou déroulé en une / deux couches croisées selon l'épaisseur totale requise pour atteindre la résistance thermique visée."],
-              ["04", "Contrôle & réception", "Vérification de l'épaisseur, de l'homogénéité et de la continuité de l'isolation. Repère visuel de l'épaisseur posée, photos de chantier, remise du PV de fin de travaux pour le dossier CEE."],
-            ].map(([n, t, p]) => (
-              <div key={n} className="how-step">
-                <div className="how-step__num">{n}</div>
-                <h3 className="how-step__title">{t}</h3>
-                <p className="how-step__text">{p}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* BENEFITS */}
       <section className="benefits" id="benefices">
         <div className="container">
@@ -524,8 +492,8 @@ export default function IsolationComblesPage() {
               ["02", "Étude thermique & dimensionnement", "Calcul de la résistance thermique cible, choix du matériau, détermination de l'épaisseur nécessaire pour satisfaire aux exigences de la fiche CEE applicable."],
               ["03", "Proposition chiffrée & éligibilité CEE", "Devis détaillé, estimation de la prime CEE, identification de la fiche applicable (BAT-EN-101 ou 106) et calendrier prévisionnel du chantier."],
               ["04", "Montage du dossier administratif", "Engagement du dossier CEE avant travaux, constitution des pièces techniques, respect strict de la chronologie imposée par le dispositif."],
-              ["05", "Réalisation du chantier", "Intervention par nos équipes certifiées RGE, dans le respect du DTU et des règles de l'art. Protection des occupants, minimisation des nuisances, chantier propre."],
-              ["06", "Réception & clôture CEE", "PV de réception, attestation de fin de travaux, photos et relevé d'épaisseur pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
+              ["05", "Réalisation du chantier", "Préparation du support, protection des points singuliers (conduits, spots, trappes), pose à épaisseur contrôlée par nos équipes certifiées RGE — soufflage mécanisé sur piges graduées ou déroulé en couches croisées. Respect du DTU, propreté, minimisation des nuisances pour l'activité."],
+              ["06", "Réception & clôture CEE", "Vérification de l'épaisseur, de l'homogénéité et de la continuité de l'isolation. PV de réception, reportage photographique et pièces pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
             ].map(([n, t, p], i) => (
               <div key={n} className={`method__step fade-in delay-${(i % 3) + 1}`}>
                 <div className="method__step-num">{n}</div>

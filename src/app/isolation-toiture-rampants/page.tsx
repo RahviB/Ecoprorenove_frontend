@@ -308,37 +308,6 @@ export default function IsolationToitureRampantsPage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="how-it-works" id="fonctionnement">
-        <div className="container">
-          <div className="how-it-works__header fade-in">
-            <p className="section-label">Déroulement d&apos;un chantier</p>
-            <h2 className="section-title">
-              Comment se déroule<br />
-              la <em>pose de la barrière thermo-réfléchissante</em>&nbsp;?
-            </h2>
-            <div className="divider divider--center"></div>
-            <p className="section-intro section-intro--center">
-              La mise en œuvre suit une méthodologie rigoureuse — conforme aux prescriptions du fabricant et aux exigences de la fiche CEE BAT-EN-106 — pour garantir la performance radiative dans la durée.
-            </p>
-          </div>
-          <div className="how-steps fade-in">
-            {[
-              ["01", "Reconnaissance du support", "Relevé de la toiture métallique, repérage de la charpente, des pannes et des fixations existantes, identification des points singuliers (faîtage, rives, traversées, éclairements naturels)."],
-              ["02", "Protection de l'activité en place", "Mise en place des accès de chantier, protection des équipements et zones d'exploitation sous la toiture, coordination avec la maîtrise d'ouvrage pour limiter l'impact sur l'exploitation."],
-              ["03", "Pose de la barrière thermo-réfléchissante", "Déploiement du complexe en sous-face de la toiture, fixation mécanique sur pannes ou ossature, recouvrement et jonction des lés pour assurer une continuité radiative parfaite, sans rupture réfléchissante."],
-              ["04", "Contrôle & réception", "Vérification de la continuité des recouvrements, du soin apporté au traitement des points singuliers, reportage photographique du chantier, remise du PV de fin de travaux pour le dossier CEE."],
-            ].map(([n, t, p]) => (
-              <div key={n} className="how-step">
-                <div className="how-step__num">{n}</div>
-                <h3 className="how-step__title">{t}</h3>
-                <p className="how-step__text">{p}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* BENEFITS */}
       <section className="benefits" id="benefices">
         <div className="container">
@@ -506,8 +475,8 @@ export default function IsolationToitureRampantsPage() {
               ["02", "Étude technique & dimensionnement", "Définition de notre solution thermo-réfléchissante adaptée, métré précis, planification des recouvrements et du traitement des points singuliers conformément aux prescriptions du fabricant."],
               ["03", "Proposition chiffrée & éligibilité CEE", "Devis détaillé, estimation de la prime CEE au titre de la fiche BAT-EN-106 et calendrier prévisionnel du chantier — tout est posé noir sur blanc avant engagement."],
               ["04", "Montage du dossier administratif", "Engagement du dossier CEE avant travaux, constitution des pièces techniques, respect strict de la chronologie imposée par le dispositif."],
-              ["05", "Réalisation du chantier", "Pose par nos équipes certifiées RGE, dans le respect des prescriptions du fabricant et des règles de l'art. Coordination avec l'exploitant pour limiter l'impact sur l'activité."],
-              ["06", "Réception & clôture CEE", "PV de réception, attestation de fin de travaux, reportage photographique et pièces pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
+              ["05", "Réalisation du chantier", "Reconnaissance du support et déploiement de la barrière thermo-réfléchissante par nos équipes certifiées RGE — fixation mécanique sur pannes, recouvrement et jonction des lés pour assurer une continuité radiative parfaite. Protection de l'activité en place et coordination avec l'exploitant."],
+              ["06", "Réception & clôture CEE", "Vérification de la continuité des recouvrements et du traitement des points singuliers. PV de réception, reportage photographique et pièces pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
             ].map(([n, t, p], i) => (
               <div key={n} className={`method__step fade-in delay-${(i % 3) + 1}`}>
                 <div className="method__step-num">{n}</div>

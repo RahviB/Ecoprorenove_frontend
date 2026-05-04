@@ -329,38 +329,6 @@ export default function IsolationPlanchersBasPage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="how-it-works" id="fonctionnement">
-        <div className="container">
-          <div className="how-it-works__header fade-in">
-            <p className="section-label">Déroulement d&apos;un chantier</p>
-            <h2 className="section-title">
-              Comment se déroule<br />
-              un <em>chantier d&apos;isolation des planchers bas</em>&nbsp;?
-            </h2>
-            <div className="divider divider--center"></div>
-            <p className="section-intro section-intro--center">
-              Que ce soit en flocage ou en panneaux, la mise en œuvre suit une méthodologie rigoureuse — conforme au DTU et aux exigences de la fiche CEE BAT-EN-103 — pour garantir la performance dans le temps.
-            </p>
-          </div>
-
-          <div className="how-steps fade-in">
-            {[
-              ["01", "Diagnostic & relevé", "Audit complet de la sous-face : état du support, accessibilité, repérage des réseaux, identification des zones de déperdition et de la technique la plus adaptée."],
-              ["02", "Étude & dimensionnement", "Calcul de la résistance thermique cible (R ≥ 3 m²·K/W), choix du matériau, détermination de l'épaisseur, montage du dossier de financement CEE."],
-              ["03", "Mise en œuvre", "Intervention de nos équipes certifiées RGE — flocage projeté ou pose mécanique des panneaux. Protection des réseaux, traitement des points singuliers, contrôle d'épaisseur."],
-              ["04", "Réception & clôture", "Vérification de l'épaisseur posée, photos de chantier, PV de fin de travaux. Dépôt et suivi du dossier CEE jusqu'au versement effectif de la prime."],
-            ].map(([n, t, p]) => (
-              <div key={n} className="how-step">
-                <div className="how-step__num">{n}</div>
-                <h3 className="how-step__title">{t}</h3>
-                <p className="how-step__text">{p}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* BENEFITS */}
       <section className="benefits" id="benefices">
         <div className="container">
@@ -527,8 +495,8 @@ export default function IsolationPlanchersBasPage() {
               ["02", "Étude thermique & dimensionnement", "Calcul de la résistance thermique cible (R ≥ 3 m²·K/W), choix du matériau, détermination de l'épaisseur nécessaire pour satisfaire aux exigences de la fiche BAT-EN-103."],
               ["03", "Proposition chiffrée & éligibilité CEE", "Devis détaillé, estimation de la prime CEE, identification du périmètre éligible et calendrier prévisionnel du chantier."],
               ["04", "Montage du dossier administratif", "Engagement du dossier CEE avant travaux, constitution des pièces techniques, respect strict de la chronologie imposée par le dispositif."],
-              ["05", "Réalisation du chantier", "Intervention par nos équipes certifiées RGE, dans le respect du DTU et des règles de l'art. Protection des réseaux, des occupants en surface, chantier propre."],
-              ["06", "Réception & clôture CEE", "PV de réception, attestation de fin de travaux, photos et relevé d'épaisseur pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
+              ["05", "Réalisation du chantier", "Diagnostic du support et protection des réseaux (gaines, conduits, canalisations), pose en sous-face par nos équipes certifiées RGE — flocage projeté ou pose mécanique des panneaux à épaisseur contrôlée. Respect du DTU, occupants en surface non perturbés, chantier propre."],
+              ["06", "Réception & clôture CEE", "Vérification de l'épaisseur posée, du traitement des points singuliers et de la continuité de l'isolation. PV de réception, reportage photographique et pièces pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
             ].map(([n, t, p], i) => (
               <div key={n} className={`method__step fade-in delay-${(i % 3) + 1}`}>
                 <div className="method__step-num">{n}</div>
