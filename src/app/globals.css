@@ -415,7 +415,7 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   display: inline-block;
   height: auto;
   width: auto;
-  max-height: 38px;
+  max-height: 60px;
 }
 
 .navbar__nav { display: flex; align-items: center; gap: 4px; }

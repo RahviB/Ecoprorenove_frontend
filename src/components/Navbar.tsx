@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="container container--wide">
           <div className="navbar__inner">
             <Link href="/" className="navbar__logo" aria-label="ECOPRORENOVE — accueil">
-              <Logo size={38} variant="navbar" />
+              <Logo size={53} variant="navbar" />
             </Link>
 
             <div className="navbar__nav">
@@ -333,7 +333,7 @@ export default function Navbar() {
         <div className="mobile-drawer__panel">
           <div className="mobile-drawer__head">
             <Link href="/" className="navbar__logo" onClick={() => setDrawerOpen(false)}>
-              <Logo size={36} variant="navbar" />
+              <Logo size={48} variant="navbar" />
             </Link>
             <button className="mobile-drawer__close" aria-label="Fermer" onClick={() => setDrawerOpen(false)}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111a10" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
