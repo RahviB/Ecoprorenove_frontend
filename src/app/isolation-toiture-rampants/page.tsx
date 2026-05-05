@@ -68,7 +68,7 @@ export default function IsolationToitureRampantsPage() {
               <Image
                 src="/images/isolation-toiture-rampants.webp"
                 alt="Pose d'une barrière thermo-réfléchissante en sous-face d'une toiture métallique"
-                width={1400}
+                width={1448}
                 height={1086}
                 className="hero__img"
                 priority

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
@@ -64,7 +65,14 @@ export default function CourtageEnergiePage() {
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <Image
+                src="/images/courtage-energie.webp"
+                alt="Courtage en énergie — comparaison de contrats fournisseurs gaz et électricité"
+                width={1448}
+                height={1086}
+                className="hero__img"
+                priority
+              />
               <div className="hero__bubble hero__bubble--temp">
                 <strong>€/MWh</strong>
                 <small>arbitrage<br />tarifaire</small>

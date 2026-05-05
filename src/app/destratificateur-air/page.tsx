@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
@@ -64,7 +65,14 @@ export default function DestratificateurPage() {
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <Image
+                src="/images/destratificateur-air.webp"
+                alt="Destratificateur d'air installé en plafond technique d'un bâtiment tertiaire"
+                width={1448}
+                height={1086}
+                className="hero__img"
+                priority
+              />
               <div className="hero__bubble hero__bubble--temp">
                 <strong>−30 %</strong>
                 <small>économies<br />de chauffage</small>

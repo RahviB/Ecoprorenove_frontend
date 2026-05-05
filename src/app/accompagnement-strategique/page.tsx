@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
@@ -65,7 +66,14 @@ export default function AccompagnementStrategiquePage() {
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <Image
+                src="/images/accompagnement-strategique.webp"
+                alt="Accompagnement stratégique en rénovation énergétique — plan, audit et tableau de bord"
+                width={1448}
+                height={1086}
+                className="hero__img"
+                priority
+              />
               <div className="hero__bubble hero__bubble--temp">
                 <strong>1</strong>
                 <small>interlocuteur<br />unique</small>

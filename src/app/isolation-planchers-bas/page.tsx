@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactForm from "@/components/contact/ContactForm";
 import Faq from "@/components/Faq";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
@@ -61,7 +62,14 @@ export default function IsolationPlanchersBasPage() {
             </div>
 
             <div className="hero__visual fade-in delay-3">
-              <div className="hero__img hero__img--placeholder" aria-label="Photo à venir" />
+              <Image
+                src="/images/isolation-planchers-bas.webp"
+                alt="Pose d'un isolant en sous-face de plancher bas avec membrane réflective"
+                width={1448}
+                height={1086}
+                className="hero__img"
+                priority
+              />
               <div className="hero__bubble hero__bubble--temp">
                 <strong>7 – 10 %</strong>
                 <small>déperditions<br />par le plancher</small>
