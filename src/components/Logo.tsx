@@ -6,17 +6,16 @@ type LogoProps = {
   className?: string;
 };
 
+const NAV = { src: "/images/logo-ecoprorenove-nav.webp", ratio: 532 / 133 };
+const FOOTER = { src: "/images/logo-ecoprorenove-white.webp", ratio: 800 / 250 };
+
 export default function Logo({
   size = 42,
   variant = "navbar",
   className,
 }: LogoProps) {
-  const src =
-    variant === "footer"
-      ? "/images/logo-ecoprorenove-white.webp"
-      : "/images/logo-ecoprorenove.webp";
-
-  const width = Math.round(size * (800 / 250));
+  const { src, ratio } = variant === "footer" ? FOOTER : NAV;
+  const width = Math.round(size * ratio);
 
   return (
     <Image
