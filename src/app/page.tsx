@@ -280,7 +280,7 @@ export default function HomePage() {
               <div className="hero__photo-frame">
                 <div className="hero__photo-zoom">
                   <Image
-                    src="/uploads/maison-modern-grey.jpeg"
+                    src="/images/bardage/maison-modern-grey.webp"
                     alt="Bâtiment habillé d'un bardage moderne"
                     fill
                     priority
