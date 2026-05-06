@@ -175,12 +175,12 @@ const SOLUTIONS = [
 ];
 
 const PARCOURS_STEPS = [
-  { n: "01", t: "Échange initial", p: "Comprendre le bâtiment, vos objectifs, vos contraintes." },
-  { n: "02", t: "Analyse technique & éligibilité CEE", p: "Étude des travaux, fiche CEE identifiée, chronologie validée." },
-  { n: "03", t: "Montage du dossier", p: "Pièces requises, conformité, coordination des acteurs." },
-  { n: "04", t: "Travaux & pose RGE", p: "Entreprises qualifiées, documents de chantier sécurisés." },
-  { n: "05", t: "Suivi & coordination", p: "Pilotage, qualité, ajustements en temps réel." },
-  { n: "06", t: "Clôture & valorisation", p: "Dépôt, validation obligé, versement du financement." },
+  { n: "01", t: "Échange initial", p: "Nous prenons le temps de comprendre votre bâtiment, vos besoins et vos contraintes." },
+  { n: "02", t: "Étude technique & aides", p: "Nous analysons les travaux possibles et vérifions les dispositifs mobilisables : CEE, MaPrimeRénov’ ou autres aides." },
+  { n: "03", t: "Dossier travaux & subventions", p: "Nous constituons le dossier complet : pièces administratives, projet travaux, devis, éligibilité aux aides et conformité des démarches." },
+  { n: "04", t: "Réalisation des travaux", p: "Les travaux sont réalisés par nos équipes et/ou des entreprises qualifiées, selon les exigences techniques du projet." },
+  { n: "05", t: "Suivi & coordination", p: "Nous assurons le suivi du chantier, les échanges avec les intervenants et les ajustements nécessaires." },
+  { n: "06", t: "Fin de chantier & dépôt du dossier", p: "Nous finalisons les documents de fin de travaux et déposons le dossier auprès de l’organisme concerné, selon l’aide mobilisée." },
 ];
 
 export default function HomePage() {
@@ -214,9 +214,9 @@ export default function HomePage() {
               </h1>
 
               <p className="hero__subtitle">
-                ECOPRORENOVE accompagne les maîtres d&apos;ouvrage sur des opérations
-                d&apos;efficacité énergétique finançables par les CEE et MaPrimeRénov&apos;.
-                Interlocuteur unique, dossier sécurisé.
+                ECOPRORENOVE vous accompagne de l&apos;étude à la réalisation de vos
+                projets d&apos;efficacité énergétique : étude, aides, partenaires
+                qualifiés et suivi des travaux.
               </p>
 
               <div className="hero__actions">
@@ -265,13 +265,19 @@ export default function HomePage() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Pose RGE
+                  Métropole &amp; La Réunion
                 </div>
                 <div className="hero__reassurance-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Métropole &amp; La Réunion
+                  Programmes CEE
+                </div>
+                <div className="hero__reassurance-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Projet clé en main
                 </div>
               </div>
             </div>
@@ -317,7 +323,7 @@ export default function HomePage() {
           <div className="method-header fade-in">
             <span className="method-pill">Notre méthode</span>
             <h2>
-              Six étapes, <span>un dossier maîtrisé</span>
+              Six étapes <span>pour un projet maîtrisé</span>
             </h2>
             <div className="method-line"></div>
             <p>De la première conversation à la livraison de votre projet.</p>
@@ -388,7 +394,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="why-home-card__title">Étude gratuite, sans engagement</h3>
-                    <p className="why-home-card__text">Analyse technique offerte. Vous décidez si la suite a du sens.</p>
+                    <p className="why-home-card__text">Nous analysons votre besoin, votre bâtiment et les solutions réellement adaptées à votre projet.</p>
                   </div>
                 </div>
 
@@ -399,8 +405,8 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="why-home-card__title">Dossier CEE sécurisé</h3>
-                    <p className="why-home-card__text">Éligibilité vérifiée, chronologie respectée.</p>
+                    <h3 className="why-home-card__title">Aides étudiées &amp; dossier sécurisé</h3>
+                    <p className="why-home-card__text">Nous vérifions les dispositifs mobilisables : CEE, MaPrimeRénov&apos; ou aides spécifiques selon votre projet travaux.</p>
                   </div>
                 </div>
 
@@ -411,8 +417,8 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="why-home-card__title">Pose RGE</h3>
-                    <p className="why-home-card__text">Équipes et installateurs qualifiés RGE.</p>
+                    <h3 className="why-home-card__title">Partenaires qualifiés</h3>
+                    <p className="why-home-card__text">Nous nous appuyons sur des artisans sélectionnés, assurés et qualifiés selon la nature des travaux.</p>
                   </div>
                 </div>
 
@@ -425,8 +431,8 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="why-home-card__title">Honnêteté technique</h3>
-                    <p className="why-home-card__text">Si l&apos;opération n&apos;est pas pertinente, nous le disons.</p>
+                    <h3 className="why-home-card__title">Conseil transparent</h3>
+                    <p className="why-home-card__text">Si une opération n&apos;est pas pertinente, pas éligible ou mal adaptée, nous vous le disons clairement.</p>
                   </div>
                 </div>
               </div>
@@ -445,17 +451,17 @@ export default function HomePage() {
                 items={[
                   {
                     q: "Qu'est-ce qui différencie ECOPRORENOVE d'une entreprise de travaux classique ?",
-                    a: "Nous structurons un projet — cadrage technique, montage administratif, mobilisation des financements, coordination des entreprises, suivi jusqu'à la clôture.",
+                    a: "Nous structurons un projet complet : cadrage technique, montage administratif, mobilisation des financements, coordination des entreprises et suivi jusqu'à la clôture.",
                   },
                   {
                     q: "Mon bâtiment est-il éligible aux CEE ou à MaPrimeRénov' ?",
-                    a: "L'éligibilité dépend du type de bâtiment, de son usage, des travaux. MaPrimeRénov' concerne le résidentiel ; les CEE couvrent tertiaire, agricole et résidentiel. Analyse personnalisée gratuite et sans engagement.",
+                    a: "L'éligibilité dépend du type de bâtiment, de son usage, des travaux envisagés et de la chronologie du dossier. MaPrimeRénov' concerne principalement le résidentiel ; les CEE peuvent concerner le résidentiel, le tertiaire, l'agricole, l'industrie ou certaines activités spécifiques selon les opérations.",
                   },
                   {
                     q: "À quel moment faut-il nous contacter ?",
                     a: (
                       <>
-                        Le plus tôt possible — et impérativement <strong>avant le début des travaux</strong>. Condition sine qua non pour la recevabilité du dossier CEE.
+                        Le plus tôt possible, idéalement <strong>avant toute signature de devis ou démarrage des travaux</strong>. Pour certains dispositifs, notamment les CEE, la chronologie est essentielle pour sécuriser la recevabilité du dossier.
                       </>
                     ),
                   },
@@ -463,7 +469,7 @@ export default function HomePage() {
                     q: "Le financement CEE couvre-t-il l'intégralité des travaux ?",
                     a: (
                       <>
-                        Non. Les CEE constituent un financement <strong>partiel</strong> dont le montant dépend du type d&apos;opération, de la taille du projet et du contexte de marché.
+                        Cela dépend de l&apos;opération, du bâtiment, de la surface traitée et de la valorisation disponible. Certaines opérations CEE peuvent être financées à <strong>100 %</strong>, tandis que d&apos;autres nécessitent un reste à charge. Dans tous les cas, nous vous présentons une proposition claire avant engagement.
                       </>
                     ),
                   },
@@ -471,7 +477,7 @@ export default function HomePage() {
                     q: "Intervenez-vous uniquement en Métropole ?",
                     a: (
                       <>
-                        Non — nous intervenons en <strong>Métropole</strong> et à <strong>La Réunion</strong>, avec des équipes locales.
+                        Non, nous intervenons en <strong>Métropole</strong> et à <strong>l&apos;île de la Réunion</strong>, avec des équipes locales selon les projets et les dispositifs mobilisables.
                       </>
                     ),
                   },
