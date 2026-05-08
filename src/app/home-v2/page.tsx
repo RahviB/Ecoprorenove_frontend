@@ -100,21 +100,6 @@ const solutions = [
     ),
   },
   {
-    href: "/vmc-double-flux",
-    title: "VMC Double flux",
-    desc: "Récupération de chaleur sur l'air extrait, dédiée aux bâtiments agricoles.",
-    sectors: ["agricole"] as const,
-    ceeFinance: true,
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M4 8 H12 A4 4 0 0 1 16 12" />
-        <path d="M20 16 H12 A4 4 0 0 1 8 12" />
-        <polyline points="14 6 16 8 14 10" />
-        <polyline points="10 14 8 16 10 18" />
-      </svg>
-    ),
-  },
-  {
     href: "/prime-cee",
     title: "Prime CEE & MaPrimeRénov'",
     desc: "Mobilisation et structuration des leviers de financement.",

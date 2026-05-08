@@ -39,12 +39,6 @@ const CATALOG: Record<string, Related> = {
     lead: "Tornado Windmaster® — évacuation passive, 0 W consommation.",
     group: "solution",
   },
-  "vmc-double-flux": {
-    slug: "vmc-double-flux",
-    title: "VMC double flux agricole",
-    lead: "Thaleos — récupération de chaleur 65-71 %. CEE AGR-TH-119.",
-    group: "solution",
-  },
   "accompagnement-strategique": {
     slug: "accompagnement-strategique",
     title: "Accompagnement stratégique",

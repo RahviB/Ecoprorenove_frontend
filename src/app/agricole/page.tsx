@@ -47,7 +47,6 @@ const solutions: Array<[string, string, string]> = [
   ["Isolation toiture - thermoreflectif", "/isolation-toiture-rampants", "Limiter les surchauffes sous toiture et améliorer le confort thermique des bâtiments agricoles."],
   ["Bardage", "/bardage", "Protéger les façades, améliorer l’aspect du bâtiment et renforcer le confort thermique selon la configuration."],
   ["Extracteur d'air", "/extracteur-air", "Évacuer l’air chaud ou humide et améliorer le renouvellement d’air dans les bâtiments d’élevage, hangars ou zones de stockage."],
-  ["VMC Double flux", "/vmc-double-flux", "Solution adaptée à certaines serres pour piloter l’hygrométrie, la ventilation et le climat intérieur selon les conditions de la fiche CEE."],
   ["Prime CEE", "/prime-cee", "Identifier les fiches applicables selon votre besoin de travaux et sécuriser le dossier avant engagement, selon le bâtiment, l’usage et l’opération envisagée."],
 ];
 

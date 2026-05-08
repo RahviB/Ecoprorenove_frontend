@@ -21,7 +21,6 @@ const SOURCE_LABEL: Record<string, string> = {
   "destratificateur-air": "Destratificateur d'air",
   "prime-cee": "Prime CEE",
   "ma-prime-renov": "MaPrimeRénov'",
-  "vmc-double-flux": "VMC double flux agricole",
   "accompagnement-strategique": "Accompagnement stratégique",
   "courtage-energie": "Courtage énergie (gaz / électricité)",
   "extracteur-air": "Extracteur d'air",

@@ -70,7 +70,6 @@ export default function AgricoleV2Page() {
         { title: "Isolation toiture & rampants", href: "/isolation-toiture-rampants", text: "Isolation lourde sous toiture agricole." },
         { title: "Bardage", href: "/bardage", text: "Façades et enveloppe de bâtiments agricoles." },
         { title: "Extracteur d'air", href: "/extracteur-air", text: "Hygrométrie et renouvellement d'air." },
-        { title: "VMC double flux agricole", href: "/vmc-double-flux", text: "Récupération de chaleur sur air extrait." },
         { title: "Accompagnement stratégique", href: "/accompagnement-strategique", text: "Arbitrage selon l'exploitation." },
         { title: "Prime CEE", href: "/prime-cee", text: "Montage du financement adapté." },
       ]}

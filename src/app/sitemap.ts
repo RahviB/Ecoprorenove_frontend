@@ -12,7 +12,6 @@ const routes = [
   "extracteur-air",
   "prime-cee",
   "ma-prime-renov",
-  "vmc-double-flux",
   "accompagnement-strategique",
   "courtage-energie",
   "qui-sommes-nous",

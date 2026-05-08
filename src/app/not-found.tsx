@@ -55,7 +55,6 @@ export default function NotFound() {
               <li><Link href="/bardage">Bardage fibre-ciment</Link></li>
               <li><Link href="/destratificateur-air">Destratificateur d&apos;air</Link></li>
               <li><Link href="/extracteur-air">Extracteur d&apos;air statique</Link></li>
-              <li><Link href="/vmc-double-flux">VMC double flux agricole</Link></li>
             </ul>
             <p className="not-found__links-label">Subvention</p>
             <ul>

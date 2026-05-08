@@ -217,15 +217,6 @@ export default function Navbar() {
                         </svg>
                         Extracteur d&apos;air
                       </Link>
-                      <Link href="/vmc-double-flux" className="mm-link" role="menuitem">
-                        <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M4 8 H12 A4 4 0 0 1 16 12" />
-                          <path d="M20 16 H12 A4 4 0 0 1 8 12" />
-                          <polyline points="14 6 16 8 14 10" />
-                          <polyline points="10 14 8 16 10 18" />
-                        </svg>
-                        VMC Double flux
-                      </Link>
                       <Link href="/courtage-energie" className="mm-link" role="menuitem">
                         <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <polyline points="3 17 9 11 13 15 21 7" />
@@ -358,7 +349,6 @@ export default function Navbar() {
             <Link href="/bardage" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Bardage</Link>
             <Link href="/destratificateur-air" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Destratificateur d&apos;air</Link>
             <Link href="/extracteur-air" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Extracteur d&apos;air</Link>
-            <Link href="/vmc-double-flux" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>VMC Double flux</Link>
             <Link href="/courtage-energie" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Courtage en énergie</Link>
             <Link href="/accompagnement-strategique" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Accompagnement stratégique</Link>
           </div>
