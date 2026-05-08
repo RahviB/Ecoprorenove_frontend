@@ -7,15 +7,15 @@ import ScrollNav from "@/components/ScrollNav";
 import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
-  title: "Isolation des combles — CEE BAT-EN-101 / 106",
+  title: "Isolation des combles — Tertiaire & résidentiel",
   description:
-    "Soufflage ou déroulé, jusqu'à 30 % d'économies de chauffage. Pose RGE et dossier CEE sécurisé pour bâtiments tertiaires. Étude gratuite.",
+    "Soufflage, déroulé ou pose traditionnelle. Combles perdus, rampants ou plafonds hauts. Aides CEE et MaPrimeRénov' selon le projet.",
   alternates: { canonical: "/isolation-combles" },
   openGraph: {
     url: "/isolation-combles",
     title: "Isolation des combles — ECOPRORENOVE",
     description:
-      "Soufflage ou déroulé, jusqu'à 30 % d'économies de chauffage. Pose RGE.",
+      "Soufflage, déroulé ou pose traditionnelle. Aides CEE et MaPrimeRénov' selon le projet.",
   },
 };
 
@@ -24,7 +24,7 @@ export default function IsolationComblesPage() {
     <div className="page-service solution-template">
       <ServiceJsonLd
         name="Isolation des combles"
-        description="Soufflage ou déroulé, jusqu'à 30 % d'économies de chauffage. Pose RGE, fiches CEE BAT-EN-101 et BAT-EN-106."
+        description="Soufflage, déroulé ou pose traditionnelle. Tertiaire et résidentiel : fiches CEE BAT-EN-101 / BAT-EN-106 ou BAR-EN-101 / BAR-EN-106."
         url="/isolation-combles"
       />
       <BreadcrumbJsonLd
@@ -39,7 +39,7 @@ export default function IsolationComblesPage() {
           <div className="hero__inner">
             <div className="hero__content fade-in">
               <h1 className="hero__title hero__title--t1">
-                <span className="hero__title-eyebrow">Bâtiment tertiaire — CEE BAT-EN-101 / 106</span>
+                <span className="hero__title-eyebrow">Bâtiment tertiaire et résidentiel</span>
                 <span className="hero__title-anchor">Isolez les combles</span>
                 <span className="hero__title-italic">stoppez les fuites par le haut.</span>
               </h1>
@@ -49,10 +49,10 @@ export default function IsolationComblesPage() {
               </p>
 
               <p className="hero__subtitle">
-                L&apos;isolation des combles est l&apos;opération la plus rentable pour réduire vos
-                consommations de chauffage et de climatisation. En soufflage ou en déroulé selon la
-                configuration, ECOPRORENOVE déploie la solution adaptée — et mobilise les CEE pour
-                alléger votre reste à charge.
+                Combles perdus, rampants, plafonds hauts ou zones sous toiture&nbsp;: ECOPRORENOVE
+                étudie la solution d&apos;isolation la plus adaptée à votre bâtiment, en soufflage,
+                déroulé ou pose traditionnelle, avec mobilisation des aides CEE selon le secteur,
+                le territoire et la configuration du projet.
               </p>
 
               <div className="hero__actions">
@@ -82,8 +82,8 @@ export default function IsolationComblesPage() {
                 <small>m²·K/W<br />BAT-EN-101</small>
               </div>
               <div className="hero__bubble hero__bubble--cee">
-                <strong>CEE</strong>
-                <small>BAT-EN 101 · 106</small>
+                <strong>100&thinsp;%</strong>
+                <small>Financé<br />CEE</small>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function IsolationComblesPage() {
             {[
               "R ≥ 7 m²·K/W — BAT-EN-101",
               "Chantier rapide, sans interruption d'activité",
-              "Pose RGE certifiée",
+              "Aides CEE & MaPrimeRénov'",
             ].map((t) => (
               <div key={t} className="hero-bandeau__item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -171,9 +171,12 @@ export default function IsolationComblesPage() {
               </h2>
               <div className="divider"></div>
               <p className="section-intro">
-                L&apos;air chaud monte. Dans un bâtiment tertiaire non isolé — ou mal isolé — la chaleur
-                produite pour le confort des occupants s&apos;échappe massivement par le plafond et la
-                toiture. Isoler les combles, c&apos;est traiter la première cause de surconsommation.
+                En Métropole, une toiture mal isolée laisse s&apos;échapper une part importante de la
+                chaleur en hiver. En Outre-mer, elle devient surtout une source majeure d&apos;apports
+                thermiques sous l&apos;effet du soleil. Dans les deux cas, isoler les combles, les
+                rampants ou les plafonds hauts permet d&apos;améliorer le confort intérieur, de réduire
+                les besoins en chauffage ou en climatisation, et de limiter les consommations
+                énergétiques du bâtiment.
               </p>
 
               <div className="problem__list">
@@ -182,8 +185,8 @@ export default function IsolationComblesPage() {
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                   </div>
                   <div>
-                    <p className="problem-item__title">Une facture énergétique qui grimpe chaque hiver</p>
-                    <p className="problem-item__desc">Le chauffage tourne plus longtemps, plus fort, pour compenser les pertes par le haut. Les économies possibles sont pourtant considérables dès la première saison suivant les travaux.</p>
+                    <p className="problem-item__title">Une facture énergétique mieux maîtrisée</p>
+                    <p className="problem-item__desc">En hiver, l&apos;isolation limite les pertes de chaleur par le haut. En climat chaud, elle réduit les apports thermiques venant de la toiture. Résultat : le chauffage ou la climatisation sont moins sollicités.</p>
                   </div>
                 </div>
 
@@ -192,8 +195,8 @@ export default function IsolationComblesPage() {
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17.66 8L12 2.35 6.34 8A8 8 0 1 0 17.66 8z"/></svg>
                   </div>
                   <div>
-                    <p className="problem-item__title">Un confort d&apos;été dégradé sous les toits</p>
-                    <p className="problem-item__desc">Sans isolation performante, les combles accumulent la chaleur en été et la restituent vers les locaux. Températures en hausse, inconfort croissant, sollicitation accrue de la climatisation.</p>
+                    <p className="problem-item__title">Un meilleur confort toute l&apos;année</p>
+                    <p className="problem-item__desc">Des combles ou rampants bien isolés permettent de limiter les sensations de froid en hiver, les surchauffes en été et les variations de température dans les pièces situées sous toiture.</p>
                   </div>
                 </div>
 
@@ -202,8 +205,8 @@ export default function IsolationComblesPage() {
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                   </div>
                   <div>
-                    <p className="problem-item__title">Des obligations réglementaires qui se durcissent</p>
-                    <p className="problem-item__desc">Décret tertiaire, DPE, obligations de réduction de consommation : les bâtiments tertiaires doivent baisser leur consommation énergétique. L&apos;isolation des combles est un levier prioritaire, fiable et mesurable.</p>
+                    <p className="problem-item__title">Un levier adapté aux aides CEE</p>
+                    <p className="problem-item__desc">Selon le bâtiment, le territoire et la nature des travaux, l&apos;isolation des combles peut relever des fiches CEE adaptées : BAT-EN-101 ou BAT-EN-106 pour le tertiaire, BAR-EN-101 ou BAR-EN-106 pour le résidentiel.</p>
                   </div>
                 </div>
               </div>
@@ -223,9 +226,10 @@ export default function IsolationComblesPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Chaque configuration de combles appelle une technique d&apos;isolation différente.
-              ECOPRORENOVE vous oriente vers la méthode la plus efficace, la plus adaptée à la
-              géométrie de votre toiture et aux contraintes de votre activité.
+              Chaque bâtiment a sa propre configuration : combles perdus, rampants, plancher haut,
+              accès technique ou zones partiellement circulables. ECOPRORENOVE identifie la méthode
+              la plus adaptée pour garantir une isolation efficace, continue et compatible avec vos
+              contraintes d&apos;usage.
             </p>
           </div>
 
@@ -251,9 +255,9 @@ export default function IsolationComblesPage() {
 
               <div className="mode-card__features">
                 {[
-                  ["Pose rapide", "Une journée type suffit pour plusieurs centaines de m²."],
-                  ["Couverture parfaite", "Pénètre les recoins, les irrégularités, les obstacles — aucune zone laissée à découvert."],
-                  ["Zéro pont thermique", "Le flocon se répartit en tapis continu, sans joints ni raccords."],
+                  ["Pose rapide", "Une mise en œuvre efficace, particulièrement adaptée aux grandes surfaces de combles perdus."],
+                  ["Couverture homogène", "L'isolant se répartit dans les zones difficiles d'accès et limite les discontinuités."],
+                  ["Limitation des ponts thermiques", "La pose en vrac permet de former une couche continue, sous réserve d'une mise en œuvre soignée."],
                 ].map(([title, desc]) => (
                   <div key={title} className="mode-feat">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -264,7 +268,7 @@ export default function IsolationComblesPage() {
 
               <div className="mode-card__when">
                 <p className="mode-card__when-label">Recommandé pour</p>
-                <p className="mode-card__when-text">Combles perdus non aménageables, difficiles d&apos;accès, encombrés de réseaux (gaines, conduits). Bâtiments à grande surface de plancher haut.</p>
+                <p className="mode-card__when-text">Combles perdus non aménageables, accès réduits, zones encombrées de réseaux, grandes surfaces de plancher haut ou bâtiments où la circulation dans les combles n&apos;est pas nécessaire.</p>
               </div>
             </div>
 
@@ -285,16 +289,16 @@ export default function IsolationComblesPage() {
                 </div>
               </div>
               <p className="mode-card__lead">
-                Des rouleaux ou panneaux d&apos;isolant semi-rigide (laine minérale, biosourcé) sont
-                déroulés manuellement au sol des combles, en une ou deux couches croisées pour
-                éliminer les ponts thermiques.
+                Des rouleaux ou panneaux isolants sont posés manuellement sur le plancher des combles,
+                en une ou plusieurs couches selon la performance recherchée. Cette technique convient
+                particulièrement aux zones accessibles, régulières et facilement contrôlables.
               </p>
 
               <div className="mode-card__features">
                 {[
-                  ["Pose maîtrisée", "Épaisseur parfaitement contrôlée, visuellement vérifiable."],
-                  ["Zone circulable", "Permet de laisser un accès pour circulation ou stockage avec platelage complémentaire."],
-                  ["Compatible biosourcé", "Large choix de matériaux, y compris écologiques (ouate, chanvre, fibre de bois)."],
+                  ["Pose contrôlable", "L'épaisseur, les recouvrements et la continuité de l'isolant sont facilement vérifiables."],
+                  ["Accès technique possible", "La solution peut être adaptée pour conserver certains cheminements ou accès de maintenance."],
+                  ["Large choix de matériaux", "Laine minérale, isolants biosourcés ou panneaux semi-rigides selon le projet et les contraintes du bâtiment."],
                 ].map(([title, desc]) => (
                   <div key={title} className="mode-feat">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -305,31 +309,9 @@ export default function IsolationComblesPage() {
 
               <div className="mode-card__when">
                 <p className="mode-card__when-label">Recommandé pour</p>
-                <p className="mode-card__when-text">Combles accessibles, surfaces planes et dégagées, souhait de conserver un accès technique ou un espace de circulation au-dessus de l&apos;isolant.</p>
+                <p className="mode-card__when-text">Combles accessibles, surfaces planes et dégagées, zones techniques nécessitant un accès ponctuel, bâtiments où l&apos;on souhaite garder une circulation maîtrisée au-dessus de l&apos;isolant.</p>
               </div>
             </div>
-          </div>
-
-          <div className="modes__compare fade-in">
-            <h3 className="modes__compare-title">Comparatif synthétique des deux techniques</h3>
-            <table className="compare-table">
-              <thead>
-                <tr><th>Critère</th><th>Soufflage</th><th>Déroulé</th></tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Accessibilité des combles", "Difficile d'accès, encombré", "Accessible, plan, dégagé"],
-                  ["Rapidité de pose", "Très rapide (mécanisé)", "Rapide (manuel)"],
-                  ["Maîtrise visuelle de l'épaisseur", "Contrôlée par piges graduées", "Contrôle direct sur chaque lé"],
-                  ["Traitement des irrégularités", "Excellent — couvre tout", "Bon — découpes manuelles"],
-                  ["Circulation / stockage au-dessus", "Non recommandé", "Possible avec platelage"],
-                  ["Choix des matériaux", "Laine minérale, ouate vrac", "Rouleaux et panneaux (large gamme)"],
-                  ["Fiche CEE applicable", "BAT-EN-101 ou BAT-EN-106", "BAT-EN-101 ou BAT-EN-106"],
-                ].map(([k, v1, v2]) => (
-                  <tr key={k}><td>{k}</td><td>{v1}</td><td>{v2}</td></tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
       </section>
@@ -351,12 +333,12 @@ export default function IsolationComblesPage() {
 
           <div className="benefits__grid">
             {[
-              { value: "–20 à 30 %", title: "Réduction de la facture de chauffage", text: "En supprimant la principale voie de déperdition du bâtiment, l'isolation des combles produit l'un des meilleurs rapports performance/investissement du marché.", disc: "* Estimation variable selon l'état initial, la zone climatique et le niveau d'isolation posé." },
-              { value: "R ≥ 7", title: "Performance thermique CEE", text: "Les fiches BAT-EN-101 et BAT-EN-106 imposent une résistance thermique minimale — gage d'une isolation réellement performante, durable, et conforme aux standards nationaux.", disc: "* Résistance thermique minimale exigée selon la fiche applicable à votre projet." },
-              { value: "+ confort", title: "Été comme hiver", text: "L'isolation limite les surchauffes sous toiture en été et maintient la chaleur en hiver. Un confort homogène, plus stable, pour l'ensemble des occupants du bâtiment." },
-              { value: "1 à 3 ans", title: "Retour sur investissement rapide", text: "Combinée à la prime CEE, l'opération présente un retour sur investissement généralement rapide — parmi les meilleurs de tous les travaux d'efficacité énergétique.", disc: "* Délai indicatif variable selon la surface, le mode de chauffage et le niveau de prime CEE obtenu." },
-              { value: "Décret tertiaire", title: "Mise en conformité", text: "Les travaux d'isolation des combles contribuent directement aux objectifs de baisse de consommation du décret tertiaire (−40 % en 2030, −50 % en 2040, −60 % en 2050)." },
-              { value: "DPE ↑", title: "Valorisation du bâtiment", text: "Un diagnostic de performance énergétique amélioré valorise l'actif immobilier — atout lors d'une vente, d'une location ou d'une renégociation de bail." },
+              { value: "–20 à 30 %", title: "Chauffage ou climatisation moins sollicités", text: "En réduisant les échanges thermiques par la toiture, l'isolation des combles peut limiter les besoins en chauffage ou en climatisation, selon le climat, l'usage des locaux et l'état initial du bâtiment.", disc: "* Estimation variable selon la configuration du bâtiment, le niveau d'isolation existant et les équipements en place." },
+              { value: "+ confort", title: "Été comme hiver", text: "L'isolation des combles limite les pertes de chaleur en hiver et réduit les apports thermiques par la toiture en climat chaud. Les locaux deviennent plus stables et plus confortables au quotidien." },
+              { value: "DPE", title: "Amélioration de la performance énergétique", text: "En résidentiel, l'isolation des combles peut contribuer à améliorer le DPE, selon la configuration du logement, les travaux réalisés, les équipements existants et le diagnostic établi." },
+              { value: "Prime CEE", title: "Un reste à charge optimisé", text: "Lorsque l'opération est éligible, la prime CEE peut être directement déduite du devis et de la facture. Dans certains cas, elle peut couvrir jusqu'à 100 % du montant HT des travaux. Dans le cadre d'une rénovation d'ampleur, MaPrimeRénov' peut également être étudiée selon le profil du ménage, le logement et le bouquet de travaux envisagé." },
+              { value: "Décret tertiaire", title: "Trajectoire de réduction des consommations", text: "Dans le tertiaire, l'isolation des combles peut contribuer aux objectifs de réduction des consommations énergétiques, en complément d'autres actions sur l'enveloppe, les équipements et le pilotage du bâtiment." },
+              { value: "Valorisation", title: "Un actif plus confortable et plus performant", text: "Un bâtiment mieux isolé est plus agréable à occuper, plus cohérent avec les attentes énergétiques actuelles et plus facile à valoriser dans le cadre d'une vente, d'une location ou d'une rénovation globale." },
             ].map((b, i) => (
               <div key={b.title} className={`benefit-card fade-in delay-${(i % 3) + 1}`}>
                 <div className="benefit-card__icon">
@@ -380,27 +362,29 @@ export default function IsolationComblesPage() {
       <section className="buildings" id="batiments">
         <div className="container">
           <div className="buildings__header fade-in">
-            <p className="section-label">Applications tertiaires</p>
+            <p className="section-label">Applications tertiaires &amp; résidentielles</p>
             <h2 className="section-title">
               Quels bâtiments sont<br />
               <em>concernés</em>&nbsp;?
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Les fiches CEE BAT-EN-101 et BAT-EN-106 couvrent l&apos;ensemble des bâtiments tertiaires — publics ou privés — dotés de combles ou de plafonds à isoler.
+              Maisons individuelles, copropriétés, logements collectifs ou bâtiments tertiaires :
+              l&apos;isolation des combles peut être étudiée en Métropole comme en Outre-mer, avec une
+              fiche CEE adaptée selon le secteur, le territoire et la configuration du projet.
             </p>
           </div>
 
           <div className="buildings__grid">
             {[
-              ["Bureaux & tertiaires", "Immeubles de bureaux, sièges sociaux, espaces de coworking, centres d'affaires."],
-              ["Commerces & boutiques", "Supermarchés, boutiques, galeries marchandes, showrooms et enseignes commerciales."],
-              ["Enseignement", "Écoles, collèges, lycées, universités, centres de formation publics ou privés."],
-              ["Santé & médico-social", "Cliniques, cabinets médicaux, EHPAD, maisons de santé, établissements hospitaliers."],
-              ["Hôtellerie & restauration", "Hôtels, résidences de tourisme, restaurants, salles de réception et traiteurs."],
-              ["Entrepôts & logistique", "Plateformes de stockage, locaux logistiques, bâtiments industriels chauffés."],
-              ["Collectivités publiques", "Mairies, crèches, médiathèques, équipements culturels et administratifs."],
-              ["Équipements sportifs", "Gymnases, salles polyvalentes, clubs de sport, équipements municipaux."],
+              ["Maisons individuelles", "Villas, maisons ou logements avec combles perdus, rampants de toiture ou plafonds hauts à isoler."],
+              ["Copropriétés", "Immeubles collectifs avec combles, toitures ou parties communes pouvant faire l'objet d'une isolation globale."],
+              ["Logements collectifs", "Résidences, bailleurs sociaux ou privés, logements groupés avec zones sous toiture ou planchers hauts à traiter."],
+              ["Bureaux & locaux administratifs", "Sièges sociaux, bureaux, espaces de coworking ou locaux administratifs avec combles, rampants ou plafonds isolables."],
+              ["Commerces & grandes surfaces", "Boutiques, supermarchés, galeries, showrooms ou réserves avec zones sous toiture à améliorer thermiquement."],
+              ["Établissements publics & collectivités", "Mairies, crèches, écoles, médiathèques, salles communales ou bâtiments administratifs avec toiture isolable."],
+              ["Santé, médico-social & enseignement", "Cliniques, cabinets, EHPAD, écoles, centres de formation ou établissements recevant du public selon les contraintes du site."],
+              ["Hôtellerie, restauration & locaux d'activité", "Hôtels, restaurants, salles de réception, locaux associatifs ou bâtiments professionnels avec combles ou plafonds hauts à traiter."],
             ].map(([name, desc], i) => (
               <div key={name} className={`building-card fade-in delay-${(i % 4) + 1}`}>
                 <div className="building-card__icon">
@@ -417,7 +401,7 @@ export default function IsolationComblesPage() {
           </div>
 
           <div className="buildings__notice fade-in">
-            <strong>À noter :</strong> les fiches BAT-EN-101 et BAT-EN-106 s&apos;appliquent aux bâtiments tertiaires existants (≥ 2 ans). L&apos;éligibilité précise dépend du type de comble, de la résistance thermique visée, de la conformité technique de la pose et du respect de la chronologie administrative. ECOPRORENOVE vérifie chaque point avant d&apos;engager les travaux.
+            <strong>À noter :</strong> l&apos;isolation des combles peut relever de différentes fiches CEE selon le bâtiment et le territoire : BAR-EN-101 ou BAR-EN-106 pour le résidentiel, BAT-EN-101 ou BAT-EN-106 pour le tertiaire. ECOPRORENOVE vérifie la fiche applicable, la résistance thermique exigée, la configuration du bâtiment et la chronologie du dossier avant tout engagement.
           </div>
         </div>
       </section>
@@ -430,13 +414,16 @@ export default function IsolationComblesPage() {
               <p className="section-label" style={{ color: "rgba(255,255,255,.55)" }}>Financement CEE</p>
               <h2 className="section-title section-title--white">
                 Vos combles isolés,<br />
-                <em style={{ color: "#a8e296" }}>en partie financés</em><br />
-                par les CEE
+                <em style={{ color: "#a8e296" }}>jusqu&apos;à 100&thinsp;% financés</em><br />
+                par les CEE*
               </h2>
               <div className="divider divider--white"></div>
               <p className="section-intro section-intro--white" style={{ marginBottom: 32 }}>
-                L&apos;isolation des combles est l&apos;une des opérations les plus activement valorisées dans le dispositif des Certificats d&apos;Économies d&apos;Énergie. Deux fiches standardisées couvrent les cas les plus fréquents dans le bâtiment tertiaire :{" "}
-                <strong style={{ color: "#fff" }}>BAT-EN-101</strong> et <strong style={{ color: "#fff" }}>BAT-EN-106</strong>.
+                L&apos;isolation des combles fait partie des opérations fortement valorisées dans le
+                dispositif des Certificats d&apos;Économies d&apos;Énergie. La prime CEE peut être
+                directement déduite du devis et de la facture. Dans certains cas, elle peut couvrir
+                jusqu&apos;à <strong style={{ color: "#fff" }}>100&thinsp;%</strong> du montant HT des
+                travaux.
               </p>
               <div className="cee-block__cta-wrap">
                 <a href="#contact" className="btn btn--primary btn--lg">
@@ -449,29 +436,27 @@ export default function IsolationComblesPage() {
             <div className="fiche-cards fade-in delay-2">
               <div className="fiche-card">
                 <div className="fiche-card__head">
-                  <span className="fiche-card__badge">BAT-EN-101</span>
+                  <span className="fiche-card__badge">BAT-EN-101 / 106</span>
                   <span className="fiche-card__type">Fiche CEE · Tertiaire</span>
                 </div>
-                <p className="fiche-card__title">Isolation de combles ou de toitures</p>
-                <p className="fiche-card__text">Opération standardisée couvrant la mise en place d&apos;un isolant thermique sur plancher de combles perdus ou en rampants de toiture, pour les bâtiments tertiaires existants.</p>
+                <p className="fiche-card__title">Tertiaire</p>
+                <p className="fiche-card__text">Isolation de combles, rampants ou toitures selon la localisation du bâtiment : Métropole ou Outre-mer.</p>
                 <div className="fiche-card__meta">
-                  <div className="fiche-card__meta-item"><strong>R minimale</strong>R ≥ 7 m²·K/W</div>
-                  <div className="fiche-card__meta-item"><strong>Modes</strong>Soufflage · Déroulé</div>
-                  <div className="fiche-card__meta-item"><strong>Certification</strong>Pose RGE obligatoire</div>
+                  <div className="fiche-card__meta-item"><strong>Financement possible</strong>Prime CEE directement déduite du devis, jusqu&apos;à 100&thinsp;% HT financé selon éligibilité.</div>
+                  <div className="fiche-card__meta-item"><strong>Points vérifiés</strong>Usage du bâtiment, surface, résistance thermique, mode de pose, chronologie et conformité du dossier.</div>
                 </div>
               </div>
 
               <div className="fiche-card">
                 <div className="fiche-card__head">
-                  <span className="fiche-card__badge">BAT-EN-106</span>
-                  <span className="fiche-card__type">Fiche CEE · Tertiaire</span>
+                  <span className="fiche-card__badge">BAR-EN-101 / 106</span>
+                  <span className="fiche-card__type">Fiche CEE · Résidentiel</span>
                 </div>
-                <p className="fiche-card__title">Isolation des toitures-terrasses &amp; plafonds</p>
-                <p className="fiche-card__text">Opération standardisée pour l&apos;isolation thermique de toitures-terrasses ou de plafonds hauts dans les bâtiments tertiaires existants, selon la configuration architecturale.</p>
+                <p className="fiche-card__title">Résidentiel</p>
+                <p className="fiche-card__text">Isolation des combles en maison individuelle, copropriété ou logement collectif, selon le territoire et la configuration.</p>
                 <div className="fiche-card__meta">
-                  <div className="fiche-card__meta-item"><strong>R minimale</strong>Selon fiche en vigueur</div>
-                  <div className="fiche-card__meta-item"><strong>Surface</strong>Plafond haut / toit-terrasse</div>
-                  <div className="fiche-card__meta-item"><strong>Certification</strong>Pose RGE obligatoire</div>
+                  <div className="fiche-card__meta-item"><strong>Financement possible</strong>Prime CEE mobilisable selon les conditions du dossier, avec possibilité d&apos;un reste à charge fortement réduit.</div>
+                  <div className="fiche-card__meta-item"><strong>Aides complémentaires</strong>MaPrimeRénov&apos; peut également être étudiée dans le cadre d&apos;une rénovation d&apos;ampleur.</div>
                 </div>
               </div>
             </div>
@@ -490,18 +475,19 @@ export default function IsolationComblesPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              De la première visite à la clôture du dossier CEE, nous structurons chaque étape pour que votre projet soit bien cadré, bien posé, bien financé.
+              Nous cadrons chaque étape : étude technique, choix de la solution, financement CEE,
+              réalisation des travaux et clôture du dossier.
             </p>
           </div>
 
           <div className="method__steps">
             {[
-              ["01", "Visite technique & diagnostic", "Relevé des combles, état de l'existant, identification des points singuliers et de la technique la plus adaptée (soufflage ou déroulé)."],
-              ["02", "Étude thermique & dimensionnement", "Calcul de la résistance thermique cible, choix du matériau, détermination de l'épaisseur nécessaire pour satisfaire aux exigences de la fiche CEE applicable."],
-              ["03", "Proposition chiffrée & éligibilité CEE", "Devis détaillé, estimation de la prime CEE, identification de la fiche applicable (BAT-EN-101 ou 106) et calendrier prévisionnel du chantier."],
-              ["04", "Montage du dossier administratif", "Engagement du dossier CEE avant travaux, constitution des pièces techniques, respect strict de la chronologie imposée par le dispositif."],
-              ["05", "Réalisation du chantier", "Préparation du support, protection des points singuliers (conduits, spots, trappes), pose à épaisseur contrôlée par nos équipes certifiées RGE — soufflage mécanisé sur piges graduées ou déroulé en couches croisées. Respect du DTU, propreté, minimisation des nuisances pour l'activité."],
-              ["06", "Réception & clôture CEE", "Vérification de l'épaisseur, de l'homogénéité et de la continuité de l'isolation. PV de réception, reportage photographique et pièces pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
+              ["01", "Visite technique", "Nous analysons votre bâtiment : accès, surface à isoler, configuration des combles, rampants ou plafonds hauts, et contraintes d'intervention."],
+              ["02", "Choix de la solution", "Nous déterminons la méthode la plus adaptée : soufflage, déroulé ou pose spécifique selon la configuration du bâtiment."],
+              ["03", "Étude des aides", "Nous vérifions la fiche CEE applicable, les conditions techniques à respecter et le financement mobilisable pour votre projet. Nous montons la demande MaPrimeRénov' si le projet y est éligible."],
+              ["04", "Devis avec prime déduite", "Vous recevez une proposition claire, avec la prime CEE directement déduite lorsque l'opération est éligible."],
+              ["05", "Réalisation des travaux", "Les travaux sont réalisés par des professionnels qualifiés, avec une pose soignée et un chantier organisé pour limiter les contraintes sur site."],
+              ["06", "Fin de chantier & dossier CEE", "Nous contrôlons les éléments de fin de travaux, préparons les justificatifs, accompagnons le contrôle éventuel par organisme accrédité COFRAC et transmettons le dossier pour validation."],
             ].map(([n, t, p], i) => (
               <div key={n} className={`method__step fade-in delay-${(i % 3) + 1}`}>
                 <div className="method__step-num">{n}</div>
@@ -531,14 +517,16 @@ export default function IsolationComblesPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Un bon projet d&apos;isolation, c&apos;est un bon diagnostic, un bon matériau, une bonne pose — et un dossier CEE bien ficelé. Nous pilotons les quatre volets.
+              Un bon projet d&apos;isolation, c&apos;est une solution adaptée au bâtiment, une pose
+              maîtrisée, un dossier d&apos;aide sécurisé et un accompagnement clair jusqu&apos;à la fin
+              du chantier.
             </p>
           </div>
 
           <div className="why-us__grid">
             {[
               ["Interlocuteur unique", "Un seul point de contact pour toutes les dimensions du projet : technique, administrative, financière. Simplicité et cohérence du début à la fin."],
-              ["Qualification RGE", "Nos équipes de pose sont qualifiées RGE — une exigence obligatoire pour ouvrir droit au financement CEE sur ce type d'opération."],
+              ["Pose maîtrisée", "Nous sélectionnons la technique adaptée à votre bâtiment : soufflage, déroulé ou pose spécifique, avec une mise en œuvre conforme aux exigences du projet."],
               ["Dossier CEE sécurisé", "Nous maîtrisons les règles du dispositif. Engagement avant travaux, pièces conformes, chronologie respectée — pour que la prime soit bien versée."],
               ["Approche honnête", "Nous ne promettons que ce que nous pouvons tenir. Pas d'éligibilité survendue, pas de surface gonflée, pas de mauvaise surprise au versement de la prime."],
             ].map(([t, p], i) => (
@@ -563,11 +551,13 @@ export default function IsolationComblesPage() {
           <div className="value-banner__inner fade-in">
             <p className="value-banner__eyebrow">L&apos;essentiel à retenir</p>
             <h2 className="value-banner__title">
-              Isoler les combles, c&apos;est traiter la première cause de surconsommation.<br />
-              Le reste, c&apos;est de la méthode.
+              Une isolation efficace<br />
+              commence par le bon choix de solution.
             </h2>
             <p className="value-banner__subtitle">
-              Bon diagnostic, bonne technique (soufflage ou déroulé), bonne résistance thermique, bon dossier CEE. ECOPRORENOVE assemble les quatre — sur chaque projet, pour chaque bâtiment.
+              Soufflage, déroulé, combles perdus, rampants ou plafonds hauts : nous identifions la
+              bonne méthode, vérifions les aides mobilisables et pilotons le projet jusqu&apos;à la
+              clôture du dossier.
             </p>
             <a href="#contact" className="btn btn--secondary" style={{ borderColor: "rgba(255,255,255,.6)", color: "#fff", fontSize: "1rem", padding: "16px 34px" }}>
               Discutons de votre bâtiment
@@ -593,14 +583,14 @@ export default function IsolationComblesPage() {
           <div className="faq__list">
             <Faq
               items={[
-                { q: "Quelle est la différence entre l'isolation en soufflage et en déroulé ?", a: "Le soufflage consiste à projeter mécaniquement un isolant en vrac (flocons de laine minérale ou ouate de cellulose) sur le plancher des combles. Il est idéal pour les combles perdus difficiles d'accès ou encombrés. Le déroulé consiste à poser manuellement des rouleaux ou panneaux d'isolant semi-rigide, en général en une ou deux couches croisées. Il est adapté aux combles plans, accessibles, où l'on souhaite conserver une zone de circulation ou de stockage. Les deux techniques atteignent les mêmes niveaux de performance thermique, mais le choix dépend de la configuration réelle du bâtiment." },
-                { q: "Quelle est la résistance thermique minimale exigée pour être éligible aux CEE ?", a: "Pour l'isolation de combles ou de rampants de toiture dans le tertiaire (fiche BAT-EN-101), la résistance thermique R de l'isolant mis en œuvre doit être supérieure ou égale à 7 m²·K/W. Pour les toitures-terrasses (fiche BAT-EN-106), le seuil peut être différent selon la configuration. Nous vérifions systématiquement le seuil applicable à votre projet lors de l'étude préalable — et l'épaisseur d'isolant à poser est calculée en conséquence." },
-                { q: "Mon bâtiment tertiaire est-il éligible aux fiches BAT-EN-101 et BAT-EN-106 ?", a: "Les deux fiches concernent les bâtiments du secteur tertiaire — publics ou privés — existants depuis au moins 2 ans. Cela couvre une très large majorité de bureaux, commerces, établissements d'enseignement, hôtels, établissements de santé, bâtiments de la collectivité, locaux associatifs ou équipements sportifs. BAT-EN-101 vise les combles et rampants, BAT-EN-106 couvre les toitures-terrasses et plafonds hauts. ECOPRORENOVE identifie la fiche applicable à votre situation lors de la visite technique." },
-                { q: "Le chantier perturbe-t-il l'activité du bâtiment ?", a: "Dans la grande majorité des cas, non. Les interventions se font dans les combles — zone non occupée — et n'impliquent pas d'arrêt de l'activité en dessous. Le soufflage est rapide (quelques heures à une journée pour plusieurs centaines de m²). Le déroulé est également peu intrusif. Nous adaptons systématiquement le planning à vos contraintes (intervention de nuit, week-end, vacances scolaires pour les écoles, etc.)." },
-                { q: "Quels matériaux isolants sont utilisés ?", a: "Pour le soufflage, nous utilisons principalement la laine de verre, la laine de roche ou la ouate de cellulose en vrac. Pour le déroulé, la laine minérale en rouleaux ou panneaux est la plus courante, mais les isolants biosourcés (fibre de bois, chanvre, coton recyclé, etc.) sont également possibles. Tous les matériaux que nous utilisons sont certifiés ACERMI, répondent aux exigences des fiches CEE et disposent d'une documentation technique conforme à la réglementation en vigueur." },
-                { q: "Quel est le montant de la prime CEE pour mon projet ?", a: "La prime CEE est proportionnelle à la surface isolée, à la zone climatique du bâtiment et au type d'usage (chauffé, chauffé + climatisé). Le montant varie également selon les obligés et les bonifications en vigueur à la date d'engagement du dossier. Nous vous communiquons une estimation précise dès la remise du devis, avant tout engagement. Pour connaître le montant applicable à votre projet, la solution la plus rapide est de demander une étude gratuite via le formulaire en bas de page." },
-                { q: "Faut-il engager le dossier CEE avant le début des travaux ?", a: (<>Oui — et c&apos;est un point critique. Le dispositif CEE impose impérativement que le dossier soit engagé <strong>avant</strong> le début des travaux, avec une signature de devis postérieure à la date d&apos;engagement auprès de l&apos;obligé. Un chantier démarré avant cette étape devient inéligible, sans possibilité de rattrapage. C&apos;est précisément pour éviter ce type d&apos;erreur que nous pilotons chaque dossier en chronologie stricte.</>) },
-                { q: "Combien de temps dure un chantier d'isolation des combles ?", a: "Cela dépend de la surface et de la configuration. À titre indicatif : pour un soufflage, plusieurs centaines de mètres carrés sont traités en une journée. Pour un déroulé, le rythme est légèrement inférieur mais reste très productif. Sur des bâtiments de grande surface, le chantier peut s'étendre sur plusieurs jours, avec des phases de préparation, de pose et de réception. Le planning est toujours calé sur vos contraintes d'activité." },
+                { q: "Quelle est la différence entre l'isolation en soufflage et en déroulé ?", a: "Le soufflage consiste à projeter mécaniquement un isolant en vrac sur le plancher des combles. Il est particulièrement adapté aux combles perdus, difficiles d'accès ou encombrés. Le déroulé consiste à poser manuellement des rouleaux ou panneaux isolants. Il convient plutôt aux combles accessibles, aux surfaces planes ou aux zones où l'on souhaite conserver un accès technique. Dans les deux cas, la technique est choisie selon la configuration réelle du bâtiment et les exigences de la fiche CEE applicable." },
+                { q: "Quelle résistance thermique faut-il atteindre pour être éligible aux CEE ?", a: "La résistance thermique minimale dépend de la fiche CEE applicable, du secteur concerné et du territoire : résidentiel ou tertiaire, Métropole ou Outre-mer. ECOPRORENOVE vérifie la fiche concernée, la performance thermique exigée et l'épaisseur d'isolant nécessaire avant toute proposition." },
+                { q: "Mon bâtiment est-il éligible aux CEE ?", a: (<>L&apos;éligibilité dépend du type de bâtiment, de son usage, de sa localisation, de la configuration des combles ou rampants, de la surface à isoler et du respect de la chronologie administrative. Selon le cas, l&apos;opération peut relever d&apos;une fiche tertiaire <strong>BAT-EN-101 / BAT-EN-106</strong> ou d&apos;une fiche résidentielle <strong>BAR-EN-101 / BAR-EN-106</strong>. ECOPRORENOVE identifie la fiche applicable lors de l&apos;étude technique.</>) },
+                { q: "Le chantier perturbe-t-il l'activité du bâtiment ?", a: "Dans la majorité des cas, l'impact est limité. Les interventions se font principalement dans les combles, les rampants ou les zones techniques, avec un planning adapté à l'occupation du site. Pour les bâtiments professionnels, nous pouvons organiser le chantier par zones ou sur des créneaux adaptés à votre activité." },
+                { q: "Quels matériaux isolants sont utilisés ?", a: "Le matériau dépend de la technique retenue, de la configuration du bâtiment et des exigences du projet. En soufflage, on utilise généralement des isolants en vrac comme la laine minérale ou la ouate de cellulose. En déroulé, on utilise plutôt des rouleaux ou panneaux isolants. Les matériaux retenus doivent disposer des justificatifs techniques nécessaires pour le dossier CEE." },
+                { q: "Quel est le montant de la prime CEE pour mon projet ?", a: (<>Le montant dépend de plusieurs éléments : surface isolée, fiche applicable, territoire, type de bâtiment, usage des locaux, performance thermique visée et valorisation CEE disponible au moment de l&apos;engagement. Lorsque l&apos;opération est éligible, la prime CEE peut être directement déduite du devis et de la facture. Dans certains cas, elle peut couvrir jusqu&apos;à <strong>100&thinsp;% du montant HT des travaux</strong>.</>) },
+                { q: "Faut-il engager le dossier CEE avant le début des travaux ?", a: "Oui, c'est indispensable. Le dossier doit être étudié et engagé avant le démarrage des travaux, avec une chronologie administrative stricte. Un chantier commencé trop tôt peut rendre l'opération non recevable au titre des CEE. C'est pour éviter ce type d'erreur qu'ECOPRORENOVE pilote le dossier avant le lancement du chantier." },
+                { q: "Combien de temps dure un chantier d'isolation des combles ?", a: "La durée dépend de la surface, de l'accessibilité, de la technique retenue et des contraintes du bâtiment. Un soufflage peut être rapide sur plusieurs centaines de mètres carrés, tandis qu'un déroulé ou un chantier plus complexe peut nécessiter davantage de temps. Le planning est toujours défini après la visite technique." },
               ]}
             />
           </div>
@@ -661,7 +651,7 @@ function ContactSection() {
             <h2 className="contact-info__title">Parlons de<br />vos combles</h2>
             <div className="divider"></div>
             <p className="contact-info__text">
-              Que vous ayez un projet précis ou que vous souhaitiez simplement savoir si votre bâtiment est concerné par les fiches BAT-EN-101 ou BAT-EN-106, nous sommes disponibles pour répondre à vos questions et vous donner une première orientation claire.
+              Que vous ayez un projet précis ou que vous souhaitiez simplement savoir si votre bâtiment est concerné par les fiches CEE applicables (BAR-EN ou BAT-EN selon le secteur), nous sommes disponibles pour répondre à vos questions et vous donner une première orientation claire.
             </p>
             <div className="contact-info__items">
               <div className="contact-info__item">
@@ -713,6 +703,8 @@ function ContactSection() {
                   <label className="form-label" htmlFor="type-batiment">Type de bâtiment</label>
                   <select className="form-select" id="type-batiment" name="type_batiment" defaultValue="">
                     <option value="" disabled>Sélectionnez</option>
+                    <option value="maison-individuelle">Maison individuelle</option>
+                    <option value="copropriete">Copropriété / logement collectif</option>
                     <option value="bureaux">Bureaux / tertiaire</option>
                     <option value="commerce">Commerce / boutique</option>
                     <option value="enseignement">Enseignement</option>
