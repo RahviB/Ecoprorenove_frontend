@@ -41,13 +41,20 @@ const operations: Array<[string, string]> = [
     "Qualité d’air & ventilation",
     "VMC, extracteurs adaptés au logement collectif. Maintenir une ventilation saine après isolation est aussi important que l’isolation elle-même.",
   ],
+  [
+    "Chauffage",
+    "Remplacement et optimisation des systèmes de chauffage en logement individuel ou collectif — pompe à chaleur collective Air/Eau, dispositifs adaptés aux copropriétés et résidences.",
+  ],
 ];
 
 const solutions: Array<[string, string, string]> = [
-  ["Isolation des combles", "/isolation-combles", "Premier poste d'économie en maison individuelle et copropriété."],
-  ["Bardage", "/bardage", "Isolation thermique par l'extérieur — performance et façade neuve."],
-  ["Extracteur d'air", "/extracteur-air", "Renouvellement d'air et qualité d'ambiance après isolation."],
-  ["Prime CEE", "/prime-cee", "CEE et MaPrimeRénov' montés en parallèle pour optimiser le reste à charge."],
+  ["Isolation des combles", "/isolation-combles", "Réduire les déperditions par la toiture et améliorer rapidement le confort thermique du logement."],
+  ["Isolation toiture & rampants", "/isolation-toiture-rampants", "Traiter les zones sous toiture pour limiter les pertes énergétiques ou les surchauffes selon la configuration du bâtiment."],
+  ["Isolation des planchers bas", "/isolation-planchers-bas", "Améliorer le confort des logements situés au-dessus d’un garage, d’un vide sanitaire, d’un sous-sol ou d’un local non chauffé."],
+  ["Bardage & isolation extérieure", "/bardage", "Renforcer la performance thermique du bâtiment tout en rénovant l’aspect extérieur de la façade."],
+  ["Ventilation / VMC", "/extracteur-air", "Préserver une bonne qualité d’air intérieur après les travaux d’isolation et améliorer le confort des occupants."],
+  ["Pompe à chaleur collective", "#contact", "Accompagner les copropriétés et bâtiments résidentiels collectifs dans le remplacement ou l’optimisation de leur système de chauffage collectif."],
+  ["Prime CEE x MaPrimeRénov'", "/prime-cee", "Mobiliser les CEE et MaPrimeRénov' lorsque l’opération est éligible, et selon le profil du ménage, le logement, la copropriété et les travaux envisagés."],
 ];
 
 export default function ResidentielPage() {
@@ -71,16 +78,15 @@ export default function ResidentielPage() {
               </div>
 
               <h1 className="hero__title">
-                Rénover en <em>résidentiel,</em>
-                <br />
-                avec un seul interlocuteur.
+                Rénovation énergétique<br />
+                des <em>logements</em> et copropriétés.
               </h1>
 
               <p className="hero__subtitle">
-                Copropriétés, bailleurs sociaux et privés, particuliers : ECOPRORENOVE
-                cumule CEE et MaPrimeRénov&apos; pour optimiser votre reste à charge,
-                gère la coordination avec votre syndic et structure le dossier
-                administratif jusqu&apos;au versement des aides.
+                Maisons individuelles, copropriétés, bailleurs sociaux ou privés :
+                ECOPRORENOVE vous accompagne dans vos travaux d&apos;amélioration
+                énergétique, de l&apos;étude du projet au montage des aides CEE et
+                MaPrimeRénov&apos;, avec un parcours clair et sécurisé.
               </p>
 
               <div className="hero__actions">
@@ -109,14 +115,15 @@ export default function ResidentielPage() {
           <header className="secteur-section__header fade-in">
             <p className="section-label">Opérations en résidentiel</p>
             <h2 className="section-title">
-              Cumul des aides &amp; gestion<br />
-              <em>complète</em> du parcours.
+              Un parcours clair,<br />
+              des <em>aides sécurisées.</em>
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Le résidentiel a ses propres règles : cumul CEE + MaPrimeRénov&apos;, AG de
-              copropriété, plafonds de ressources. Voici comment nous structurons un
-              projet selon votre situation.
+              Le résidentiel implique des règles spécifiques : revenus du ménage,
+              statut du propriétaire, copropriété, vote en assemblée générale, travaux
+              éligibles et chronologie du dossier. Nous vous aidons à structurer le
+              projet avant tout engagement.
             </p>
           </header>
 
@@ -171,13 +178,13 @@ export default function ResidentielPage() {
           <div className="cta-final__inner fade-in">
             <p className="section-label section-label--white">Parlons de votre projet résidentiel</p>
             <h2 className="cta-final__title">
-              Un dossier complet,<br />
-              <em>de l&apos;AG au versement.</em>
+              Un projet résidentiel<br />
+              <em>à étudier ?</em>
             </h2>
             <p className="cta-final__subtitle">
-              Copropriétés, bailleurs, particuliers : nous prenons en charge le cumul
-              CEE + MaPrimeRénov&apos; et coordonnons l&apos;ensemble du parcours. Sans
-              engagement.
+              Maison individuelle, copropriété ou logement locatif : décrivez-nous
+              votre projet. Nous vérifions les solutions adaptées, les aides
+              mobilisables et les étapes à respecter avant engagement.
             </p>
 
             <div className="form-card form-card--secteur fade-in delay-2">

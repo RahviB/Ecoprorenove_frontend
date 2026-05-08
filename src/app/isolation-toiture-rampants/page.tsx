@@ -25,7 +25,7 @@ export default function IsolationToitureRampantsPage() {
     <div className="page-service solution-template page-toiture">
       <ServiceJsonLd
         name="Isolation toiture sous rampants — barrière thermo-réfléchissante"
-        description="Barrière thermo-réfléchissante haute performance sous toiture métallique. Pose RGE, fiche CEE BAT-EN-106."
+        description="Barrière thermo-réfléchissante haute performance sous toiture métallique. Fiche CEE BAT-EN-106."
         url="/isolation-toiture-rampants"
       />
       <BreadcrumbJsonLd
@@ -78,8 +78,8 @@ export default function IsolationToitureRampantsPage() {
                 <small>ressentis<br />sous toiture</small>
               </div>
               <div className="hero__bubble hero__bubble--life">
-                <strong>30 ans</strong>
-                <small>durée de vie<br />conventionnelle</small>
+                <strong>100 %</strong>
+                <small>financé<br />par les CEE</small>
               </div>
               <div className="hero__bubble hero__bubble--cee">
                 <strong>CEE</strong>
@@ -330,7 +330,7 @@ export default function IsolationToitureRampantsPage() {
               { v: "jusqu'à −6 °C", t: "Température ressentie sous toiture", p: "En blocant la réémission infrarouge de la tôle vers l'intérieur, la barrière fait chuter la température ressentie dans les volumes sous toiture aux heures les plus chaudes.", d: "* Gain observé sur relevés terrain — variable selon exposition, configuration et période." },
               { v: "climatisation ↓", t: "Charge de climatisation réduite", p: "Moins de chaleur rayonnée vers l'intérieur, c'est un appel de climatisation réduit tout au long de la journée — et donc une consommation électrique et des coûts d'exploitation allégés.", d: "* Économies variables selon le profil d'usage, la puissance installée et les habitudes d'exploitation." },
               { v: "+ confort", t: "Conditions d'occupation stabilisées", p: "Zones sous toiture redevenues utilisables en milieu de journée, atmosphère plus homogène, baisse visible de la sensation d'étouffement — l'ambiance sous toiture change de nature." },
-              { v: "BAT-EN-106", t: "Prime CEE mobilisable", p: "La pose conforme à la fiche tertiaire BAT-EN-106 ouvre droit à une prime CEE qui vient réduire le reste à charge du chantier — un levier de financement à part entière.", d: "* Montant dépendant du volume de CEE généré, de l'obligé retenu et du cours en vigueur." },
+              { v: "Financé à 100%", t: "Prime CEE mobilisable", p: "La pose conforme à la fiche tertiaire BAT-EN-106 ouvre droit à une prime CEE qui vient réduire le reste à charge du chantier — un levier de financement à part entière.", d: "* Montant dépendant du volume de CEE généré, de l'obligé retenu et du cours en vigueur." },
               { v: "sans dépose", t: "Chantier non invasif", p: "La pose se fait en sous-face, sans dépose de la couverture existante. L'étanchéité de la toiture reste intacte, l'activité sous le bâtiment continue sans interruption majeure." },
               { v: "valeur ↑", t: "Valeur d'usage du bâtiment", p: "Un bâtiment dont les volumes sous toiture redeviennent pleinement exploitables voit sa valeur locative et d'usage progresser — un argument concret lors d'une relocation ou d'une cession." },
             ].map((b, i) => (
@@ -363,20 +363,23 @@ export default function IsolationToitureRampantsPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Notre solution s&apos;adresse à tous les bâtiments tertiaires, industriels ou commerciaux dotés d&apos;une toiture métallique en climat chaud — publics ou privés, grandes ou petites surfaces.
+              Notre solution s&apos;adresse principalement aux bâtiments professionnels équipés d&apos;une toiture métallique accessible depuis l&apos;intérieur : entrepôts, dépôts, commerces, ateliers, salles polyvalentes ou bâtiments recevant du public.
+            </p>
+            <p className="section-intro section-intro--center">
+              Lorsque la toiture n&apos;est pas accessible, ou qu&apos;un faux plafond empêche la pose, d&apos;autres solutions peuvent être étudiées : isolation des combles, traitement de façade, ventilation ou extraction d&apos;air.
             </p>
           </div>
 
           <div className="buildings__grid">
             {[
-              ["Bureaux & tertiaires", "Immeubles de bureaux, sièges sociaux, espaces de coworking, centres d'affaires."],
-              ["Commerces & boutiques", "Supermarchés, boutiques, galeries marchandes, showrooms et enseignes commerciales."],
-              ["Enseignement", "Écoles, collèges, lycées, universités, centres de formation publics ou privés."],
-              ["Santé & médico-social", "Cliniques, cabinets médicaux, EHPAD, maisons de santé, établissements hospitaliers."],
-              ["Hôtellerie & restauration", "Hôtels, résidences de tourisme, restaurants, salles de réception et traiteurs."],
-              ["Entrepôts & logistique", "Plateformes de stockage, locaux logistiques, bâtiments industriels chauffés."],
-              ["Collectivités publiques", "Mairies, crèches, médiathèques, équipements culturels et administratifs."],
-              ["Équipements sportifs", "Gymnases, salles polyvalentes, clubs de sport, équipements municipaux."],
+              ["Entrepôts & dépôts logistiques", "Bâtiments de stockage, réserves, plateformes logistiques, zones de préparation ou de livraison avec toiture métallique apparente."],
+              ["Commerces & grandes surfaces", "Supermarchés, cash & carry, magasins spécialisés, showrooms ou surfaces de vente sous toiture bac acier accessible."],
+              ["Garages & centres auto", "Ateliers de réparation, centres de contrôle, concessions, zones de maintenance ou locaux de location de matériel."],
+              ["Bâtiments d'activité mixtes", "Sites combinant accueil client, stockage, atelier ou zone administrative, avec une partie exploitable sous toiture métallique."],
+              ["Salles de sport & équipements collectifs", "Gymnases, dojos, salles polyvalentes, clubs sportifs ou équipements municipaux avec grands volumes sous toiture."],
+              ["Bâtiments publics adaptés", "Ateliers municipaux, dépôts communaux, marchés couverts, salles associatives ou locaux techniques accessibles sous toiture."],
+              ["Salles de réception & restauration", "Restaurants, traiteurs, salles événementielles ou espaces recevant du public lorsque la toiture est accessible depuis l'intérieur."],
+              ["Hangars & locaux professionnels", "Hangars de stockage, locaux artisanaux, bâtiments associatifs ou professionnels exposés aux fortes chaleurs sous toiture."],
             ].map(([n, d], i) => (
               <div key={n} className={`building-card fade-in delay-${(i % 4) + 1}`}>
                 <div className="building-card__icon">
@@ -393,7 +396,7 @@ export default function IsolationToitureRampantsPage() {
           </div>
 
           <div className="buildings__notice fade-in">
-            <strong>À noter :</strong> la fiche CEE BAT-EN-106 s&apos;applique aux bâtiments tertiaires existants (≥ 2 ans) en France d&apos;outre-mer. L&apos;éligibilité précise dépend de la configuration de la toiture, de la conformité technique de la pose et du respect strict de la chronologie administrative. ECOPRORENOVE vérifie chaque point avant d&apos;engager les travaux.
+            <strong>À noter :</strong> la fiche CEE BAT-EN-106 concerne les bâtiments tertiaires situés en France d&apos;outre-mer, existants ou neufs. L&apos;éligibilité dépend du type de bâtiment, de son usage, de la configuration de la toiture, de la surface traitée et du respect strict de la chronologie administrative.
           </div>
         </div>
       </section>
@@ -406,7 +409,7 @@ export default function IsolationToitureRampantsPage() {
               <p className="section-label" style={{ color: "rgba(255,255,255,.55)" }}>Financement CEE</p>
               <h2 className="section-title section-title--white">
                 Votre toiture isolée,<br />
-                <em style={{ color: "#a8e296" }}>en partie financée</em><br />
+                <em style={{ color: "#a8e296" }}>financée à 100 %</em><br />
                 par les CEE
               </h2>
               <div className="divider divider--white"></div>
@@ -432,7 +435,6 @@ export default function IsolationToitureRampantsPage() {
                 <div className="fiche-card__meta">
                   <div className="fiche-card__meta-item"><strong>Cible</strong>Toitures métalliques</div>
                   <div className="fiche-card__meta-item"><strong>Produit</strong>Barrière thermo-réfléchissante compatible</div>
-                  <div className="fiche-card__meta-item"><strong>Certification</strong>Pose RGE exigée</div>
                 </div>
               </div>
 
@@ -445,7 +447,7 @@ export default function IsolationToitureRampantsPage() {
                 <p className="fiche-card__text">Le volume de CEE généré est fonction de la surface de toiture isolée, de la zone climatique et du cours en vigueur. La prime est versée directement sur le chantier, en déduction du reste à charge.</p>
                 <div className="fiche-card__meta">
                   <div className="fiche-card__meta-item"><strong>Versée par</strong>Obligé (énergéticien)</div>
-                  <div className="fiche-card__meta-item"><strong>Moment</strong>Après fin de chantier</div>
+                  <div className="fiche-card__meta-item"><strong>Moment</strong>Déduit sur devis</div>
                   <div className="fiche-card__meta-item"><strong>Condition clé</strong>Dossier engagé avant travaux</div>
                 </div>
               </div>
@@ -471,12 +473,12 @@ export default function IsolationToitureRampantsPage() {
 
           <div className="method__steps">
             {[
-              ["01", "Visite technique & diagnostic", "Relevé de la toiture métallique, état de la couverture et de la charpente, identification des points singuliers et des contraintes d'exploitation du bâtiment."],
-              ["02", "Étude technique & dimensionnement", "Définition de notre solution thermo-réfléchissante adaptée, métré précis, planification des recouvrements et du traitement des points singuliers conformément aux prescriptions du fabricant."],
-              ["03", "Proposition chiffrée & éligibilité CEE", "Devis détaillé, estimation de la prime CEE au titre de la fiche BAT-EN-106 et calendrier prévisionnel du chantier — tout est posé noir sur blanc avant engagement."],
-              ["04", "Montage du dossier administratif", "Engagement du dossier CEE avant travaux, constitution des pièces techniques, respect strict de la chronologie imposée par le dispositif."],
-              ["05", "Réalisation du chantier", "Reconnaissance du support et déploiement de la barrière thermo-réfléchissante par nos équipes certifiées RGE — fixation mécanique sur pannes, recouvrement et jonction des lés pour assurer une continuité radiative parfaite. Protection de l'activité en place et coordination avec l'exploitant."],
-              ["06", "Réception & clôture CEE", "Vérification de la continuité des recouvrements et du traitement des points singuliers. PV de réception, reportage photographique et pièces pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
+              ["01", "Visite technique", "Nous relevons la surface à traiter, l'accessibilité, la configuration de la toiture, la hauteur de pose et les contraintes d'exploitation du site."],
+              ["02", "Étude d'éligibilité", "Nous vérifions l'usage réel du bâtiment, la fiche CEE mobilisable, les conditions techniques et la chronologie à respecter avant travaux."],
+              ["03", "Devis avec prime CEE déduite", "Lorsque le bâtiment est éligible, nous vous présentons un devis clair avec la prime CEE directement déduite. Cette opération est subventionnée jusqu'à 100 % du montant HT."],
+              ["04", "Montage du dossier CEE", "Nous constituons le dossier avant le démarrage du chantier : pièces administratives, devis, engagement, surfaces, justificatifs et conformité du montage."],
+              ["05", "Réalisation des travaux", "La pose de l'isolant thermo-réfléchissant est réalisée en sous-face de toiture, depuis l'intérieur, avec un planning adapté à votre activité."],
+              ["06", "Fin de chantier & validation CEE", "Nous préparons les documents de fin de travaux, accompagnons le contrôle par un organisme accrédité COFRAC et transmettons le dossier CEE pour validation."],
             ].map(([n, t, p], i) => (
               <div key={n} className={`method__step fade-in delay-${(i % 3) + 1}`}>
                 <div className="method__step-num">{n}</div>
@@ -506,15 +508,15 @@ export default function IsolationToitureRampantsPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Un bon projet d&apos;isolation, c&apos;est un bon diagnostic, un bon matériau, une bonne pose — et un dossier CEE bien ficelé. Nous pilotons les quatre volets.
+              Un bon projet d&apos;isolation, c&apos;est un bon diagnostic, une pose maîtrisée et un dossier CEE sécurisé. Nous pilotons chaque étape pour vous apporter une solution claire, conforme et adaptée à votre bâtiment.
             </p>
           </div>
           <div className="why-us__grid">
             {[
-              ["Interlocuteur unique", "Un seul point de contact pour toutes les dimensions du projet : technique, administrative, financière. Simplicité et cohérence du début à la fin."],
-              ["Qualification RGE", "Nos équipes de pose sont qualifiées RGE — une exigence obligatoire pour ouvrir droit au financement CEE sur ce type d'opération."],
-              ["Dossier CEE sécurisé", "Nous maîtrisons les règles du dispositif. Engagement avant travaux, pièces conformes, chronologie respectée — pour que la prime soit bien versée."],
-              ["Approche honnête", "Nous ne promettons que ce que nous pouvons tenir. Pas d'éligibilité survendue, pas de surface gonflée, pas de mauvaise surprise au versement de la prime."],
+              ["Interlocuteur unique", "Un seul point de contact pour coordonner le projet : étude technique, dossier administratif, financement CEE, planning et suivi chantier."],
+              ["Pose technique encadrée", "Nous préparons la mise en œuvre en amont : accès, sécurité, fixation, recouvrements, continuité de pose et contraintes d'exploitation."],
+              ["Dossier CEE sécurisé", "Nous respectons les règles du dispositif : engagement avant travaux, pièces conformes, chronologie validée et justificatifs de fin de chantier."],
+              ["Approche transparente", "Nous annonçons clairement ce qui est possible : éligibilité, surface retenue, financement mobilisable et éventuel reste à charge."],
             ].map(([t, p], i) => (
               <div key={t} className={`why-us-card fade-in delay-${i + 1}`}>
                 <div className="why-us-card__icon">
@@ -537,11 +539,11 @@ export default function IsolationToitureRampantsPage() {
           <div className="value-banner__inner fade-in">
             <p className="value-banner__eyebrow">L&apos;essentiel à retenir</p>
             <h2 className="value-banner__title">
-              Bloquer le rayonnement avant qu&apos;il n&apos;entre, c&apos;est agir à la source.<br />
-              Le reste, c&apos;est de la méthode.
+              La bonne solution, c&apos;est celle qui<br />
+              traite la chaleur avant qu&apos;elle ne se diffuse.
             </h2>
             <p className="value-banner__subtitle">
-              Bon diagnostic, bon produit, bonne pose, bon dossier CEE BAT-EN-106. ECOPRORENOVE assemble les quatre — sur chaque chantier, pour chaque bâtiment à toiture métallique en climat chaud.
+              Un bon diagnostic, un produit adapté, une pose maîtrisée et un dossier CEE sécurisé : Ecoprorenove coordonne chaque étape pour les bâtiments professionnels sous toiture métallique exposés aux fortes chaleurs.
             </p>
             <a href="#contact" className="btn btn--secondary" style={{ borderColor: "rgba(255,255,255,.6)", color: "#fff", fontSize: "1rem", padding: "16px 34px" }}>
               Discutons de votre bâtiment
@@ -567,14 +569,14 @@ export default function IsolationToitureRampantsPage() {
           <div className="faq__list">
             <Faq
               items={[
-                { q: "En quoi notre barrière thermo-réfléchissante diffère-t-elle d'une laine minérale classique ?", a: "Une laine minérale agit principalement par conduction — elle ralentit la transmission de la chaleur à travers une épaisseur d'isolant. Notre barrière thermo-réfléchissante agit d'abord par rayonnement : ses films aluminium basse émissivité réfléchissent les infrarouges émis par la tôle chauffée au soleil, avant qu'ils ne pénètrent dans le bâtiment. Sous une toiture métallique en climat chaud, c'est le rayonnement qui porte l'essentiel de la charge thermique — notre solution s'attaque donc au bon vecteur, sur une faible épaisseur (13 mm)." },
-                { q: "Faut-il déposer la toiture existante pour poser la barrière thermo-réfléchissante ?", a: "Non. C'est l'un des avantages décisifs de la solution : elle se pose en sous-face de toiture, à l'intérieur du bâtiment, sans toucher à la couverture. L'étanchéité existante reste intacte, il n'y a pas d'exposition aux intempéries, et l'activité sous le bâtiment peut généralement se poursuivre avec un aménagement minimal. Cela simplifie drastiquement la logistique et le coût global du projet par rapport à une dépose/repose de couverture." },
-                { q: "Mon bâtiment tertiaire outre-mer est-il éligible à la fiche BAT-EN-106 ?", a: "La fiche BAT-EN-106 cible l'isolation thermique de toitures en bâtiments tertiaires existants situés en France d'outre-mer — où le climat chaud justifie un dispositif spécifique. Sont concernés une très large majorité de bureaux, commerces, établissements d'enseignement, hôtels, établissements de santé, bâtiments des collectivités, locaux associatifs ou équipements sportifs, dès lors qu'ils existent depuis au moins 2 ans. ECOPRORENOVE vérifie l'éligibilité précise de votre bâtiment dès la visite technique." },
-                { q: "Le chantier perturbe-t-il l'activité du bâtiment ?", a: "Dans la grande majorité des cas, l'impact est contenu. La pose se fait en sous-face de toiture, souvent dans des volumes peu ou pas occupés. Nous coordonnons le planning avec votre exploitation : intervention de nuit, week-end, ou zones traitées par tranches. L'absence de dépose de couverture évite toute exposition aux intempéries et simplifie considérablement la logistique." },
-                { q: "Quelle durabilité attendre de la barrière thermo-réfléchissante une fois posée ?", a: "Posée en sous-face, à l'abri des UV directs et des intempéries, notre solution conserve ses propriétés radiatives sur plusieurs décennies. La durabilité effective dépend toujours des conditions de mise en œuvre et de l'environnement du bâtiment, mais le produit est conçu pour une tenue longue sans maintenance spécifique. ECOPRORENOVE vous remet la documentation du fabricant avec les préconisations complètes." },
-                { q: "Quel est le montant de la prime CEE pour mon projet ?", a: "La prime CEE au titre de la fiche BAT-EN-106 dépend de la surface de toiture traitée, de la zone climatique et du cours en vigueur au moment de l'engagement du dossier. Le montant varie également selon l'obligé retenu et les bonifications applicables. Nous communiquons une estimation précise dès la remise du devis, avant tout engagement. La façon la plus rapide d'obtenir un chiffre pour votre bâtiment est de demander une étude gratuite via le formulaire en bas de page." },
-                { q: "Faut-il engager le dossier CEE avant le début des travaux ?", a: (<>Oui — et c&apos;est un point critique. Le dispositif CEE impose impérativement que le dossier soit engagé <strong>avant</strong> le début des travaux, avec une signature de devis postérieure à la date d&apos;engagement auprès de l&apos;obligé. Un chantier démarré avant cette étape devient inéligible, sans possibilité de rattrapage. C&apos;est précisément pour éviter ce type d&apos;erreur que nous pilotons chaque dossier en chronologie stricte.</>) },
-                { q: "Quelle est la durée d'un chantier type sous toiture métallique ?", a: "Cela dépend de la surface, de la hauteur sous toiture et de l'accessibilité. À titre indicatif, la pose avance rapidement grâce à la légèreté du complexe et aux lais de grande largeur. Sur un bâtiment de plusieurs milliers de m², le chantier est généralement découpé en zones successives pour lisser l'impact sur l'activité. Nous vous remettons un planning prévisionnel dès la phase d'étude." },
+                { q: "En quoi la barrière thermo-réfléchissante diffère-t-elle d'une laine minérale classique ?", a: "Une laine minérale agit principalement en ralentissant la transmission de chaleur à travers son épaisseur. Notre solution thermo-réfléchissante agit surtout sur le rayonnement : ses parements aluminisés limitent la chaleur rayonnée par la toiture métallique avant qu'elle ne se diffuse dans le bâtiment. En climat chaud, sous une toiture en tôle, le rayonnement représente une part importante de l'inconfort thermique. C'est précisément ce phénomène que la solution vient traiter." },
+                { q: "Faut-il déposer la toiture existante pour poser la barrière thermo-réfléchissante ?", a: "Non. La pose se fait par l'intérieur, en sous-face de toiture, sans dépose de la couverture existante. Cela permet de conserver l'étanchéité en place, de limiter les contraintes de chantier et de réduire l'impact sur l'activité du bâtiment." },
+                { q: "Mon bâtiment tertiaire outre-mer est-il éligible à la fiche BAT-EN-106 ?", a: "La fiche BAT-EN-106 concerne les bâtiments tertiaires situés en France d'outre-mer, existants ou neufs, pour des travaux d'isolation de combles, rampants de toiture ou toiture terrasse. L'éligibilité dépend toutefois de plusieurs éléments : usage réel du bâtiment, surface traitée, accessibilité de la toiture, résistance thermique de l'isolant posé, chronologie du dossier et conformité des pièces administratives. Ecoprorenove vérifie ces points avant toute proposition." },
+                { q: "Le chantier perturbe-t-il l'activité du bâtiment ?", a: "Dans la majorité des cas, l'impact est limité. La pose se fait depuis l'intérieur, principalement sous toiture, avec un phasage adapté à l'exploitation du site. Selon la configuration, nous pouvons organiser l'intervention par zones, sur des créneaux spécifiques ou pendant les périodes les moins sensibles pour votre activité." },
+                { q: "Quelle durabilité attendre de la barrière thermo-réfléchissante une fois posée ?", a: "Posée en sous-face, à l'abri des UV directs et des intempéries, la solution conserve ses propriétés dans le temps lorsque la mise en œuvre est correctement réalisée. La durabilité dépend de l'environnement du bâtiment, de la ventilation, de l'humidité et des conditions de pose. Ecoprorenove vous remet la documentation fabricant et les préconisations techniques associées." },
+                { q: "Quel est le montant de la prime CEE pour mon projet ?", a: "Le montant dépend notamment de la surface isolée, du type de bâtiment, du secteur d'activité, du caractère neuf ou existant du bâtiment, ainsi que de la valorisation CEE disponible au moment de l'engagement. Lorsque l'opération est éligible, la prime CEE peut être directement déduite du devis et de la facture. Dans certains cas, elle peut couvrir jusqu'à 100 % du montant HT des travaux. Nous vous remettons une proposition claire avant engagement, avec le financement mobilisable et le reste à charge éventuel." },
+                { q: "Faut-il engager le dossier CEE avant le début des travaux ?", a: "Oui, c'est indispensable. Le dossier doit être structuré et engagé avant le démarrage du chantier. Un chantier commencé trop tôt peut rendre l'opération non recevable au titre des CEE. C'est pourquoi Ecoprorenove pilote la chronologie : étude, proposition, engagement du dossier, puis démarrage des travaux." },
+                { q: "Quelle est la durée d'un chantier type sous toiture métallique ?", a: "La durée dépend de la surface, de la hauteur sous toiture, de l'accessibilité, des contraintes de sécurité et de l'activité du site. La pose est généralement rapide grâce à la légèreté du complexe et à une mise en œuvre par l'intérieur. Pour les grandes surfaces, le chantier est souvent découpé par zones afin de limiter l'impact sur l'exploitation. Nous vous remettons un planning prévisionnel après la visite technique." },
               ]}
             />
           </div>

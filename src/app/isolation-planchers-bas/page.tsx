@@ -79,8 +79,8 @@ export default function IsolationPlanchersBasPage() {
                 <small>m²·K/W<br />BAR / BAT-EN-103</small>
               </div>
               <div className="hero__bubble hero__bubble--cee">
-                <strong>CEE</strong>
-                <small>BAR-EN-103<br />BAT-EN-103</small>
+                <strong>100%</strong>
+                <small>financée<br />CEE</small>
               </div>
             </div>
           </div>
@@ -162,16 +162,19 @@ export default function IsolationPlanchersBasPage() {
             <div className="problem__content fade-in delay-2">
               <p className="section-label">Le pont thermique du dessous</p>
               <h2 className="section-title">
-                Vide sanitaire, parking, local non chauffé&nbsp;:<br />
-                <em>votre dalle devient une zone<br />
-                de perte thermique.</em>
+                Vide sanitaire, parking, sous-sol&nbsp;:<br />
+                <em>votre plancher devient une zone<br />
+                d&apos;échange thermique.</em>
               </h2>
               <div className="divider"></div>
               <p className="section-intro">
-                Lorsqu&apos;un plancher donne sur un vide sanitaire, un parking ou un local non chauffé, la dalle reste exposée aux variations de température. Sans isolation, les échanges thermiques se font directement par le sol&nbsp;: sensation de paroi froide, inconfort pour les occupants et pertes énergétiques durables.
+                Lorsqu&apos;un plancher donne sur un vide sanitaire, un parking, une cave, un sous-sol ou un local non chauffé, la dalle reste exposée aux variations de température.
               </p>
               <p className="section-intro">
-                Isoler le plancher bas permet de traiter la déperdition à la source, sans intervenir à l&apos;intérieur des locaux.
+                Sans isolation, les échanges thermiques se font directement par le dessous&nbsp;: sensation de sol froid, inconfort dans les pièces occupées et besoins énergétiques plus importants.
+              </p>
+              <p className="section-intro">
+                Isoler le plancher bas permet de traiter cette zone à la source, sans intervenir à l&apos;intérieur des locaux.
               </p>
 
               <div className="problem__list">
@@ -221,9 +224,9 @@ export default function IsolationPlanchersBasPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Chaque configuration de plancher bas appelle une technique différente. ECOPRORENOVE
-              vous oriente vers la méthode la plus efficace, en fonction de l&apos;accessibilité du
-              dessous, des passages de réseaux et de l&apos;usage du local situé en sous-face.
+              Chaque plancher bas a ses contraintes&nbsp;: accès, hauteur disponible, réseaux,
+              humidité, sécurité incendie, usage du local situé en dessous. ECOPRORENOVE
+              choisit la technique la plus adaptée pour isoler efficacement la sous-face du plancher.
             </p>
           </div>
 
@@ -242,14 +245,14 @@ export default function IsolationPlanchersBasPage() {
                 </div>
               </div>
               <p className="mode-card__lead">
-                Une laine minérale est projetée mécaniquement en sous-face de dalle afin de former une couche isolante continue, particulièrement adaptée aux zones irrégulières, encombrées ou difficiles à traiter avec des panneaux.
+                Le flocage consiste à projeter mécaniquement un isolant en sous-face de dalle. C&apos;est une solution particulièrement adaptée aux parkings, vides sanitaires, sous-sols techniques ou zones avec réseaux apparents.
               </p>
 
               <div className="mode-card__features">
                 {[
-                  ["Très bonne continuité d'isolation", "Le flocage épouse les irrégularités du support et facilite le traitement des poutres, gaines, conduits et points singuliers."],
-                  ["Confort thermique et acoustique", "La solution contribue à limiter les déperditions par le sol et peut améliorer le confort acoustique selon la configuration du bâtiment."],
-                  ["Solutions adaptées aux contraintes feu", "Selon le produit retenu, des solutions classées A1 peuvent être proposées pour répondre aux exigences des parkings, vides sanitaires et locaux techniques."],
+                  ["Bonne continuité d'isolation", "Le flocage épouse les reliefs du support et facilite le traitement des poutres, gaines, conduits et points singuliers."],
+                  ["Adapté aux grandes surfaces", "Une solution efficace pour traiter rapidement des sous-faces importantes, notamment en parking ou sous-sol."],
+                  ["Compatible avec les contraintes du site", "Le produit est choisi selon le support, l'humidité, les exigences feu, l'usage du local et la performance thermique recherchée."],
                 ].map(([title, desc]) => (
                   <div key={title} className="mode-feat">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -260,7 +263,7 @@ export default function IsolationPlanchersBasPage() {
 
               <div className="mode-card__when">
                 <p className="mode-card__when-label">Recommandé pour</p>
-                <p className="mode-card__when-text">Sous-faces irrégulières, dalles encombrées de réseaux, gaines, canalisations, vides sanitaires accessibles, parkings et locaux techniques.</p>
+                <p className="mode-card__when-text">Parkings, vides sanitaires accessibles, sous-sols, locaux techniques, sous-faces irrégulières ou zones avec réseaux apparents.</p>
               </div>
             </div>
 
@@ -281,16 +284,14 @@ export default function IsolationPlanchersBasPage() {
                 </div>
               </div>
               <p className="mode-card__lead">
-                Des panneaux isolants rigides (polystyrène extrudé, polyuréthane, laine de roche
-                haute densité) sont fixés mécaniquement en sous-face — solution esthétique et
-                ultra-performante pour les locaux techniques accessibles.
+                Les panneaux isolants sont fixés en sous-face de plancher, par collage ou fixation mécanique selon le support. Cette solution convient surtout aux surfaces planes, dégagées et facilement accessibles.
               </p>
 
               <div className="mode-card__features">
                 {[
-                  ["Performance maximale", "Conductivité thermique faible — atteint des résistances R élevées avec une épaisseur réduite."],
-                  ["Finition propre", "Sous-face plane, esthétique, compatible avec un local technique ou un parking accessible aux usagers."],
-                  ["Pose maîtrisée", "Épaisseur visuellement vérifiable, joints traités, pose rapide sur dalle plane."],
+                  ["Finition propre", "La sous-face reste régulière et visuellement plus nette lorsque l'aspect final est important."],
+                  ["Épaisseur maîtrisée", "L'épaisseur, les joints et la continuité de pose sont facilement contrôlables."],
+                  ["Adapté aux zones simples", "Les panneaux sont pertinents lorsque la dalle est plane, avec peu d'obstacles et peu de réseaux à contourner."],
                 ].map(([title, desc]) => (
                   <div key={title} className="mode-feat">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -301,32 +302,11 @@ export default function IsolationPlanchersBasPage() {
 
               <div className="mode-card__when">
                 <p className="mode-card__when-label">Recommandé pour</p>
-                <p className="mode-card__when-text">Parkings souterrains, locaux techniques accessibles au public, sous-faces planes et dégagées, bâtiments où l&apos;esthétique du dessous compte.</p>
+                <p className="mode-card__when-text">Caves, sous-sols dégagés, locaux techniques simples, sous-faces planes ou zones où l&apos;aspect final compte davantage.</p>
               </div>
             </div>
           </div>
 
-          <div className="modes__compare fade-in">
-            <h3 className="modes__compare-title">Comparatif synthétique des deux techniques</h3>
-            <table className="compare-table">
-              <thead>
-                <tr><th>Critère</th><th>Flocage projeté</th><th>Panneaux rigides</th></tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Sous-face irrégulière", "Très adapté, épouse les reliefs du support", "Plus complexe, nécessite découpes et ajustements"],
-                  ["Passages de réseaux", "Traite facilement les gaines, conduits et points singuliers", "Nécessite des découpes précises autour des réseaux"],
-                  ["Esthétique du dessous", "Aspect texturé, finition mate", "Sous-face plane, propre et régulière"],
-                  ["Résistance thermique / épaisseur", "Bonne performance selon épaisseur projetée", "Très bonne performance selon l'isolant retenu"],
-                  ["Confort acoustique", "Bonne contribution acoustique selon configuration", "Variable selon le type de panneau choisi"],
-                  ["Accessibilité requise", "Adapté aux zones accessibles à la lance de projection", "Support plan, accessible et suffisamment dégagé"],
-                  ["Cadre CEE mobilisable", "BAT-EN-103 et BAR-EN-103 selon éligibilité du bâtiment", "BAT-EN-103 et BAR-EN-103 selon éligibilité du bâtiment"],
-                ].map(([k, v1, v2]) => (
-                  <tr key={k}><td>{k}</td><td>{v1}</td><td>{v2}</td></tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </section>
 
@@ -350,7 +330,7 @@ export default function IsolationPlanchersBasPage() {
               { value: "Jusqu'à 10 à 15 %", title: "Économies d'énergie potentielles", text: "En limitant les échanges thermiques entre les locaux chauffés ou climatisés et les volumes non traités situés en dessous, l'isolation du plancher bas permet de réduire les besoins énergétiques du bâtiment.", disc: "* Estimation variable selon l'état initial du bâtiment, la surface traitée, l'usage des locaux et le niveau d'isolation posé." },
               { value: "R ≥ 3", title: "Performance thermique conforme CEE", text: "La fiche BAT-EN-103 impose une résistance thermique minimale de R ≥ 3 m²·K/W pour l'isolation installée. Cette exigence garantit un niveau de performance adapté aux opérations d'isolation des planchers bas en bâtiment tertiaire.", disc: "* Résistance thermique minimale exigée dans le cadre de la fiche CEE BAT-EN-103." },
               { value: "+ confort", title: "Réduction de l'effet de paroi froide", text: "L'isolation limite la sensation de sol froid et améliore le confort ressenti dans les locaux situés au-dessus. Le bâtiment devient plus agréable à utiliser, avec une température plus homogène et un meilleur confort pour les occupants." },
-              { value: "1 à 3 ans", title: "Retour sur investissement rapide", text: "Combinée à la prime CEE, l'opération présente un retour sur investissement généralement rapide — parmi les meilleurs de tous les travaux d'efficacité énergétique.", disc: "* Délai indicatif variable selon la surface, le mode de chauffage et le niveau de prime CEE obtenu." },
+              { value: "Prime CEE", title: "Un reste à charge optimisé", text: "Lorsque l'opération est éligible, la prime CEE peut être directement déduite du devis et de la facture. Dans certains cas, elle peut couvrir jusqu'à 100 % du montant HT des travaux." },
               { value: "Décret tertiaire", title: "Mise en conformité", text: "L'isolation du plancher bas contribue directement aux objectifs de baisse de consommation du décret tertiaire (−40 % en 2030, −50 % en 2040, −60 % en 2050)." },
               { value: "DPE ↑", title: "Valorisation du bâtiment", text: "Un diagnostic de performance énergétique amélioré valorise l'actif immobilier — atout lors d'une vente, d'une location ou d'une renégociation de bail." },
             ].map((b, i) => (
@@ -389,14 +369,14 @@ export default function IsolationPlanchersBasPage() {
 
           <div className="buildings__grid">
             {[
-              ["Industrie & logistique", "Entrepôts, plateformes, ateliers, locaux industriels avec dalle sur vide sanitaire ou hourdis."],
-              ["Bureaux & tertiaires", "Immeubles de bureaux, sièges sociaux, espaces de coworking — planchers au-dessus de parkings ou caves."],
-              ["Commerces & boutiques", "Supermarchés, galeries marchandes, magasins — souvent posés sur parking ou vide sanitaire."],
-              ["Santé & médico-social", "Cliniques, EHPAD, cabinets médicaux — exigences thermiques et hygiéniques élevées."],
-              ["Hôtellerie & restauration", "Hôtels, restaurants, salles de réception — planchers techniques et caves voûtées."],
-              ["Enseignement", "Écoles, collèges, lycées, universités — bâtiments anciens fréquemment sur vide sanitaire."],
-              ["Collectivités publiques", "Mairies, médiathèques, équipements culturels, bâtiments administratifs."],
-              ["Équipements sportifs", "Gymnases, salles polyvalentes, vestiaires sur dalle non isolée."],
+              ["Maisons individuelles", "Maisons ou villas avec plancher sur vide sanitaire, garage, cave, passage ouvert ou sous-sol non chauffé."],
+              ["Copropriétés & logements collectifs", "Immeubles résidentiels avec logements situés au-dessus de parkings, caves, sous-sols ou locaux techniques."],
+              ["Bureaux & locaux tertiaires", "Bureaux, sièges sociaux, locaux administratifs ou espaces professionnels avec plancher bas isolable."],
+              ["Commerces & grandes surfaces", "Magasins, supermarchés, galeries ou surfaces de vente au-dessus de parkings, réserves ou volumes non chauffés."],
+              ["Santé & médico-social", "Cliniques, EHPAD, cabinets médicaux ou maisons de santé avec planchers bas accessibles par le dessous."],
+              ["Enseignement & collectivités", "Écoles, crèches, mairies, médiathèques ou bâtiments publics avec vide sanitaire, sous-sol ou local non chauffé."],
+              ["Hôtellerie & restauration", "Hôtels, restaurants, salles de réception ou résidences de tourisme avec caves, sous-sols ou zones techniques."],
+              ["Locaux d'activité & équipements sportifs", "Gymnases, salles polyvalentes, vestiaires, locaux associatifs ou bâtiments d'activité à usage éligible, sous réserve d'analyse."],
             ].map(([name, desc], i) => (
               <div key={name} className={`building-card fade-in delay-${(i % 4) + 1}`}>
                 <div className="building-card__icon">
@@ -413,7 +393,7 @@ export default function IsolationPlanchersBasPage() {
           </div>
 
           <div className="buildings__notice fade-in">
-            <strong>À noter :</strong> les fiches BAR-EN-103 (résidentiel) et BAT-EN-103 (tertiaire) s&apos;appliquent aux bâtiments existants (≥ 2 ans). L&apos;éligibilité précise dépend du type de plancher bas (sur vide sanitaire, sur parking, sur local non chauffé), de la résistance thermique visée, de la conformité technique de la pose et du respect de la chronologie administrative. ECOPRORENOVE vérifie chaque point avant d&apos;engager les travaux.
+            <strong>À noter :</strong> les fiches BAR-EN-103 et BAT-EN-103 peuvent s&apos;appliquer à l&apos;isolation des planchers bas lorsque le bâtiment, le support et la configuration respectent les conditions du dispositif CEE. ECOPRORENOVE vérifie notamment l&apos;usage réel du bâtiment, la surface isolable, la résistance thermique exigée, l&apos;accessibilité de la sous-face, la conformité technique de la pose et la chronologie administrative avant tout engagement.
           </div>
         </div>
       </section>
@@ -487,18 +467,18 @@ export default function IsolationPlanchersBasPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              De la première visite à la clôture du dossier CEE, nous structurons chaque étape pour que votre projet soit bien cadré, bien posé, bien financé.
+              Nous cadrons chaque étape&nbsp;: visite technique, choix de la solution, financement CEE, réalisation des travaux et clôture du dossier.
             </p>
           </div>
 
           <div className="method__steps">
             {[
-              ["01", "Visite technique & diagnostic", "Relevé du plancher bas, état de l'existant, accessibilité de la sous-face, identification des points singuliers et de la technique la plus adaptée (flocage ou panneaux)."],
-              ["02", "Étude thermique & dimensionnement", "Calcul de la résistance thermique cible (R ≥ 3 m²·K/W), choix du matériau, détermination de l'épaisseur nécessaire pour satisfaire aux exigences des fiches BAR-EN-103 (résidentiel) ou BAT-EN-103 (tertiaire)."],
-              ["03", "Proposition chiffrée & éligibilité CEE", "Devis détaillé, estimation de la prime CEE, identification du périmètre éligible et calendrier prévisionnel du chantier."],
-              ["04", "Montage du dossier administratif", "Engagement du dossier CEE avant travaux, constitution des pièces techniques, respect strict de la chronologie imposée par le dispositif."],
-              ["05", "Réalisation du chantier", "Diagnostic du support et protection des réseaux (gaines, conduits, canalisations), pose en sous-face par nos équipes certifiées RGE — flocage projeté ou pose mécanique des panneaux à épaisseur contrôlée. Respect du DTU, occupants en surface non perturbés, chantier propre."],
-              ["06", "Réception & clôture CEE", "Vérification de l'épaisseur posée, du traitement des points singuliers et de la continuité de l'isolation. PV de réception, reportage photographique et pièces pour le dossier CEE. Suivi jusqu'au versement effectif de la prime."],
+              ["01", "Visite technique", "Nous analysons le plancher bas : accès, surface, support, réseaux, humidité, hauteur disponible et contraintes du site."],
+              ["02", "Choix de la solution", "Nous déterminons la technique la plus adaptée : flocage projeté, panneaux isolants ou traitement spécifique selon la configuration."],
+              ["03", "Étude CEE", "Nous vérifions la fiche applicable, la résistance thermique exigée, la surface éligible et le financement mobilisable."],
+              ["04", "Devis avec prime déduite", "Vous recevez une proposition claire, avec la prime CEE directement déduite lorsque l'opération est éligible."],
+              ["05", "Réalisation des travaux", "La pose est réalisée en sous-face du plancher, depuis le vide sanitaire, le parking, la cave ou le local concerné, avec un chantier organisé selon vos contraintes."],
+              ["06", "Fin de chantier & validation CEE", "Nous préparons les justificatifs, le reportage photo et les documents de fin de travaux, puis accompagnons le contrôle éventuel par un organisme accrédité COFRAC avant transmission du dossier."],
             ].map(([n, t, p], i) => (
               <div key={n} className={`method__step fade-in delay-${(i % 3) + 1}`}>
                 <div className="method__step-num">{n}</div>
@@ -528,14 +508,14 @@ export default function IsolationPlanchersBasPage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Un bon projet d&apos;isolation, c&apos;est un bon diagnostic, un bon matériau, une bonne pose — et un dossier CEE bien ficelé. Nous pilotons les quatre volets.
+              Un bon projet d&apos;isolation des planchers bas, c&apos;est un bon diagnostic, une technique adaptée, une pose maîtrisée et un dossier CEE sécurisé. Nous pilotons chaque étape.
             </p>
           </div>
 
           <div className="why-us__grid">
             {[
               ["Interlocuteur unique", "Un seul point de contact pour toutes les dimensions du projet : technique, administrative, financière. Simplicité et cohérence du début à la fin."],
-              ["Qualification RGE", "Nos équipes de pose sont qualifiées RGE — une exigence obligatoire pour ouvrir droit au financement CEE sur ce type d'opération."],
+              ["Technique adaptée", "Flocage, panneaux ou solution spécifique : nous choisissons la méthode selon le support, l'accès et les contraintes du site."],
               ["Dossier CEE sécurisé", "Nous maîtrisons les règles du dispositif. Engagement avant travaux, pièces conformes, chronologie respectée — pour que la prime soit bien versée."],
               ["Approche honnête", "Nous ne promettons que ce que nous pouvons tenir. Pas d'éligibilité survendue, pas de surface gonflée, pas de mauvaise surprise au versement de la prime."],
             ].map(([t, p], i) => (
@@ -560,11 +540,10 @@ export default function IsolationPlanchersBasPage() {
           <div className="value-banner__inner fade-in">
             <p className="value-banner__eyebrow">L&apos;essentiel à retenir</p>
             <h2 className="value-banner__title">
-              Isoler le plancher bas, c&apos;est traiter le pont thermique du dessous.<br />
-              Le reste, c&apos;est de la méthode.
+              Isoler le plancher bas, c&apos;est traiter les échanges thermiques par le dessous.
             </h2>
             <p className="value-banner__subtitle">
-              Bon diagnostic, bonne technique (flocage ou panneaux), bonne résistance thermique, bon dossier CEE. ECOPRORENOVE assemble les quatre — sur chaque projet, pour chaque bâtiment.
+              Bon diagnostic, bonne technique, bonne résistance thermique, bon dossier CEE&nbsp;: ECOPRORENOVE structure chaque projet pour améliorer le confort, optimiser le financement et sécuriser les travaux.
             </p>
             <a href="#contact" className="btn btn--secondary" style={{ borderColor: "rgba(255,255,255,.6)", color: "#fff", fontSize: "1rem", padding: "16px 34px" }}>
               Discutons de votre bâtiment
@@ -590,15 +569,15 @@ export default function IsolationPlanchersBasPage() {
           <div className="faq__list">
             <Faq
               items={[
-                { q: "Qu'appelle-t-on exactement un « plancher bas » ?", a: "Le plancher bas désigne le plancher du rez-de-chaussée — ou plus généralement le plancher situé au-dessus d'un volume non chauffé : vide sanitaire, parking, cave voûtée, local technique, ou tout local intérieur non chauffé. C'est la frontière thermique entre votre bâtiment chauffé et un volume froid en dessous. Sans isolation, c'est une voie de fuite directe pour vos calories." },
-                { q: "Quelle est la différence entre flocage projeté et panneaux rigides ?", a: "Le flocage projeté consiste à projeter mécaniquement une laine minérale (verre ou roche) en sous-face de la dalle. Il est idéal pour les sous-faces irrégulières et les zones encombrées de réseaux, car il épouse parfaitement le support sans démontage. Les panneaux rigides (polystyrène extrudé, polyuréthane, laine de roche haute densité) se fixent mécaniquement sur dalle plane — solution plus esthétique, idéale pour parkings accessibles ou locaux techniques où l'aspect du dessous compte. Les deux techniques atteignent les mêmes niveaux de performance thermique, mais le choix dépend de la configuration réelle du bâtiment." },
-                { q: "Quelle résistance thermique minimale pour être éligible aux CEE ?", a: "Pour l'isolation d'un plancher bas, la résistance thermique R de l'isolant mis en œuvre doit être supérieure ou égale à 3 m²·K/W — exigence commune aux fiches BAR-EN-103 (résidentiel) et BAT-EN-103 (tertiaire). Nous vérifions systématiquement le seuil applicable à votre projet lors de l'étude préalable — et l'épaisseur d'isolant à poser est calculée en conséquence du matériau retenu et de la cible de performance." },
-                { q: "Mon bâtiment est-il éligible aux fiches BAR-EN-103 ou BAT-EN-103 ?", a: "Les fiches concernent les bâtiments existants depuis au moins 2 ans, dont une partie est chauffée et dont le plancher bas se situe au-dessus d'un vide sanitaire, d'un parking ou d'un local non chauffé. La fiche BAR-EN-103 couvre le résidentiel (maisons individuelles, copropriétés, logements collectifs) ; la fiche BAT-EN-103 couvre le tertiaire (bureaux, commerces, enseignement, hôtels, santé, collectivités, locaux logistiques, équipements sportifs). ECOPRORENOVE identifie les conditions applicables à votre situation lors de la visite technique." },
-                { q: "Le chantier perturbe-t-il l'activité dans le bâtiment ?", a: "Dans la grande majorité des cas, non. La pose s'effectue en sous-face — depuis le vide sanitaire, le parking ou le local situé en dessous — et ne nécessite généralement aucun arrêt de l'activité en surface. Le flocage est rapide (plusieurs centaines de m² par jour). La pose de panneaux est également peu intrusive. Nous adaptons systématiquement le planning à vos contraintes (intervention de nuit, week-end, vacances scolaires, etc.)." },
-                { q: "Quels matériaux isolants sont utilisés ?", a: "Pour le flocage, nous utilisons principalement la laine de verre projetée ou la laine de roche projetée. Pour les panneaux rigides, le choix dépend de la performance et de la finition recherchées : polystyrène extrudé (XPS) pour le rapport performance/coût, polyuréthane (PUR/PIR) pour la performance thermique maximale à épaisseur réduite, laine de roche haute densité pour les exigences acoustiques et coupe-feu. Tous nos matériaux sont certifiés ACERMI et conformes aux exigences des fiches CEE." },
-                { q: "Quel est le montant de la prime CEE pour mon projet ?", a: "La prime CEE est proportionnelle à la surface isolée, à la zone climatique du bâtiment et au type d'usage. Le montant varie également selon les obligés et les bonifications en vigueur à la date d'engagement du dossier. Nous vous communiquons une estimation précise dès la remise du devis, avant tout engagement. Pour connaître le montant applicable à votre projet, la solution la plus rapide est de demander une étude gratuite via le formulaire en bas de page." },
-                { q: "Faut-il engager le dossier CEE avant le début des travaux ?", a: (<>Oui — et c&apos;est un point critique. Le dispositif CEE impose impérativement que le dossier soit engagé <strong>avant</strong> le début des travaux, avec une signature de devis postérieure à la date d&apos;engagement auprès de l&apos;obligé. Un chantier démarré avant cette étape devient inéligible, sans possibilité de rattrapage. C&apos;est précisément pour éviter ce type d&apos;erreur que nous pilotons chaque dossier en chronologie stricte.</>) },
-                { q: "Combien de temps dure un chantier d'isolation des planchers bas ?", a: "Cela dépend de la surface, de l'accessibilité et de la technique retenue. À titre indicatif : pour un flocage, plusieurs centaines de mètres carrés sont traités en une journée. Pour des panneaux, le rythme est légèrement inférieur mais reste très productif. Sur des bâtiments de grande surface, le chantier peut s'étendre sur plusieurs jours, avec des phases de préparation, de pose et de réception. Le planning est toujours calé sur vos contraintes d'activité." },
+                { q: "Qu'appelle-t-on exactement un « plancher bas » ?", a: "Le plancher bas désigne le plancher situé au-dessus d'un volume non chauffé ou non traité : vide sanitaire, parking, cave, sous-sol, passage ouvert ou local technique. Lorsqu'il n'est pas isolé, ce plancher devient une zone d'échange thermique entre les locaux occupés et le volume situé en dessous. Cela peut provoquer une sensation de sol froid, une perte de confort et une consommation énergétique plus importante." },
+                { q: "Quelle est la différence entre flocage projeté et panneaux rigides ?", a: "Le flocage projeté consiste à projeter mécaniquement un isolant en sous-face de dalle. Il est souvent privilégié pour les parkings, vides sanitaires, sous-sols ou zones techniques, notamment lorsque la sous-face est irrégulière ou traversée par des réseaux. Les panneaux rigides sont fixés sous le plancher, par collage ou fixation mécanique selon le support. Ils conviennent plutôt aux surfaces planes, dégagées et facilement accessibles. Le choix dépend toujours de la configuration réelle du bâtiment, de l'accessibilité, des contraintes feu, de l'humidité, des réseaux et du rendu attendu." },
+                { q: "Quelle résistance thermique minimale faut-il atteindre pour être éligible aux CEE ?", a: (<>Pour l&apos;isolation d&apos;un plancher bas, les fiches <strong>BAR-EN-103</strong> et <strong>BAT-EN-103</strong> exigent une résistance thermique minimale de l&apos;isolant installé de <strong>R ≥ 3 m².K/W</strong>. ECOPRORENOVE vérifie la fiche applicable, le matériau retenu, l&apos;épaisseur nécessaire et les justificatifs techniques avant toute proposition.</>) },
+                { q: "Mon bâtiment est-il éligible aux fiches BAR-EN-103 ou BAT-EN-103 ?", a: (<>L&apos;éligibilité dépend du type de bâtiment, de son usage réel, de la configuration du plancher bas, de la surface isolable et du respect de la chronologie CEE. La fiche <strong>BAR-EN-103</strong> concerne le résidentiel : maisons individuelles, copropriétés ou logements collectifs. La fiche <strong>BAT-EN-103</strong> concerne les locaux tertiaires existants réservés à une utilisation professionnelle. Dans tous les cas, le plancher doit être situé au-dessus d&apos;un volume adapté : vide sanitaire, sous-sol non chauffé, parking, passage ouvert ou local non chauffé.</>) },
+                { q: "Le chantier perturbe-t-il l'activité dans le bâtiment ?", a: "Dans la majorité des cas, l'impact est limité, car l'intervention se fait par le dessous : vide sanitaire, parking, cave, sous-sol ou local technique. Nous organisons le chantier selon les contraintes du site : accès, horaires, zones occupées, sécurité, circulation, protection des réseaux et maintien de l'activité lorsque cela est possible." },
+                { q: "Quels matériaux isolants sont utilisés ?", a: "Le matériau dépend de la technique retenue et des contraintes du site. Pour le flocage, on utilise généralement des isolants projetés adaptés aux sous-faces de dalle, parkings ou locaux techniques. Pour les panneaux, le choix dépend du support, de la performance recherchée, de l'humidité, des exigences feu, de l'aspect final et de la facilité de pose. Les matériaux retenus doivent disposer des justificatifs techniques nécessaires pour le dossier CEE." },
+                { q: "Quel est le montant de la prime CEE pour mon projet ?", a: (<>Le montant dépend de la surface isolée, de la fiche applicable, du bâtiment, de la zone climatique, de l&apos;usage des locaux et de la valorisation CEE disponible au moment de l&apos;engagement. Lorsque l&apos;opération est éligible, la prime CEE peut être directement déduite du devis et de la facture. Dans certains cas, elle peut couvrir jusqu&apos;à <strong>100 % du montant HT des travaux</strong>. ECOPRORENOVE vous présente toujours une proposition claire avant engagement, avec le financement mobilisable et le reste à charge éventuel.</>) },
+                { q: "Faut-il engager le dossier CEE avant le début des travaux ?", a: "Oui, c'est indispensable. Le dossier CEE doit être étudié et engagé avant le démarrage des travaux, avec une chronologie administrative stricte. Un chantier commencé trop tôt peut rendre l'opération non recevable. C'est pour éviter ce type d'erreur qu'ECOPRORENOVE sécurise le dossier avant le lancement du chantier." },
+                { q: "Combien de temps dure un chantier d'isolation des planchers bas ?", a: "La durée dépend de la surface, de l'accessibilité, de la technique retenue, de la hauteur disponible, des réseaux présents et des contraintes du site. Le flocage permet généralement de traiter rapidement de grandes surfaces, notamment en parking ou sous-sol. Les panneaux peuvent demander plus de préparation lorsque les découpes, fixations ou finitions sont importantes. Un planning prévisionnel est défini après la visite technique." },
               ]}
             />
           </div>
@@ -611,11 +590,11 @@ export default function IsolationPlanchersBasPage() {
           <div className="cta-final__inner fade-in">
             <p style={{ fontSize: ".72rem", fontWeight: 800, letterSpacing: ".12em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", marginBottom: 16 }}>Passez à l&apos;action</p>
             <h2 className="cta-final__title">
-              Sous votre dalle, l&apos;air froid<br />
-              s&apos;installe <em>en ce moment même.</em>
+              Votre confort se joue<br />
+              <em>aussi sous la dalle.</em>
             </h2>
             <p className="cta-final__subtitle">
-              Parlons de votre projet. Nous évaluons l&apos;accessibilité du dessous, la technique adaptée, le potentiel d&apos;économies et la prime CEE mobilisable — sans engagement.
+              Faites vérifier l&apos;accessibilité de votre plancher bas, la technique adaptée et la prime CEE mobilisable pour votre bâtiment.
             </p>
             <div className="cta-final__actions">
               <a href="#contact" className="btn btn--primary btn--lg">

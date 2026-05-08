@@ -6,7 +6,7 @@ type LogoProps = {
   className?: string;
 };
 
-const NAV = { src: "/images/logo-ecoprorenove-nav.webp", ratio: 532 / 133 };
+const NAV = { src: "/images/logo-ecoprorenove-final.png", ratio: 800 / 130 };
 const FOOTER = { src: "/images/logo-ecoprorenove-white.webp", ratio: 800 / 250 };
 
 export default function Logo({

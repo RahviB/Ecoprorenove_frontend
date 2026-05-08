@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <Link href="/" className="navbar__logo">
-              <Logo size={38} variant="footer" />
+              <Logo size={56} variant="footer" />
             </Link>
             <p className="footer__tagline">
               Rénovation énergétique pour les bâtiments tertiaires, résidentiels et

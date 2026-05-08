@@ -42,3 +42,7 @@ next-env.d.ts
 
 # Client source docs (PDFs, HTML mockups) — referenced for content only, not deployed
 /uploaded/
+
+# Local agent scaffolding / editor workspace
+.superpowers/
+*.code-workspace
