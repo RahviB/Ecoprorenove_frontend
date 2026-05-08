@@ -18,39 +18,40 @@ export const metadata: Metadata = {
 
 const operations: Array<[string, string]> = [
   [
-    "Décret tertiaire & trajectoire réglementaire",
-    "Bâtiments de plus de 1 000 m² : -40% de consommation d'ici 2030, -50% d'ici 2040, -60% d'ici 2050. Nous structurons un programme de travaux cohérent avec la trajectoire et déclarable sur OPERAT.",
+    "Décret tertiaire & trajectoire énergétique",
+    "Pour les bâtiments tertiaires concernés, nous vous aidons à structurer une trajectoire cohérente avec les objectifs réglementaires : réduction des consommations, choix des actions prioritaires et suivi des données à déclarer.",
   ],
   [
     "Isolation de l'enveloppe",
-    "Combles, toitures-terrasses, rampants, façades par bardage. Réduction directe des besoins de chauffage et de climatisation — particulièrement en bureaux et établissements à forte occupation.",
+    "Toitures, combles, rampants, planchers bas, façades ou bardage : nous traitons les postes qui influencent directement le confort thermique et les besoins en climatisation ou chauffage.",
   ],
   [
-    "Traitement & qualité d'air",
-    "Extracteurs, ventilation contrôlée, déstratificateurs en grands volumes (commerces, halls, salles de sport). Confort des occupants et réduction des consommations de chauffage.",
+    "Ventilation & qualité d'air",
+    "Extracteurs, VMC, destratification ou solutions d'aéraulique : nous améliorons le renouvellement d'air, le confort des occupants et l'équilibre thermique des grands volumes.",
   ],
   [
-    "Pilotage technique du bâtiment",
-    "Régulation, GTB, accompagnement stratégique pour cadrer les arbitrages techniques et financiers en lien avec votre direction immobilière ou vos services généraux.",
+    "Pilotage énergétique du bâtiment",
+    "Nous vous accompagnons dans les choix techniques : régulation, suivi des consommations, priorisation des travaux et arbitrage entre performance, budget et financement.",
   ],
   [
-    "Continuité d'exploitation",
-    "Phasage des chantiers, interventions hors heures d'ouverture, coordination avec les exploitants. L'activité du bâtiment ne s'arrête pas — les travaux s'adaptent.",
+    "Travaux sans interruption d'activité",
+    "Les interventions sont phasées selon vos contraintes : horaires d'ouverture, zones occupées, sécurité, accès, exploitation du site et continuité de service.",
   ],
   [
-    "Dossier CEE adapté à la gouvernance",
-    "SCI, foncière, exploitant, locataire, copropriété de bureaux : nous identifions le bon porteur de dossier et sécurisons la chronologie administrative selon votre structure.",
+    "Dossier CEE & aides mobilisables",
+    "Nous vérifions l'éligibilité, la chronologie, les pièces nécessaires et le bon porteur du dossier : propriétaire, exploitant, SCI, collectivité, bailleur ou locataire selon les cas.",
   ],
 ];
 
 const solutions: Array<[string, string, string]> = [
-  ["Isolation des combles", "/isolation-combles", "Solution rapide en immobilier tertiaire à toiture-terrasse ou combles perdus."],
-  ["Isolation toiture & rampants", "/isolation-toiture-rampants", "Traitement de l'enveloppe haute pour bâtiments tertiaires existants."],
-  ["Bardage", "/bardage", "Habillage thermique des façades — esthétique et performance."],
-  ["Déstratificateur d'air", "/destratificateur-air", "Homogénéisation thermique en grands volumes (commerces, halls, ateliers)."],
-  ["Extracteur d'air", "/extracteur-air", "Renouvellement d'air et qualité d'ambiance pour locaux occupés."],
-  ["Accompagnement stratégique", "/accompagnement-strategique", "Cadrage du programme, arbitrages techniques, pilotage de bout en bout."],
-  ["Prime CEE", "/prime-cee", "Mobilisation des Certificats d'Économies d'Énergie pour vos travaux tertiaires."],
+  ["Isolation toiture - thermoréflectif", "/isolation-toiture-rampants", "Réduire les apports de chaleur et améliorer le confort sous toiture."],
+  ["Isolation des combles", "/isolation-combles", "Limiter les déperditions ou les surchauffes selon la configuration du bâtiment."],
+  ["Isolation des planchers bas", "/isolation-planchers-bas", "Réduire les pertes par le sol et améliorer le confort des locaux situés au-dessus de zones froides ou non chauffées."],
+  ["Bardage & façade ventilée", "/bardage", "Améliorer l'esthétique, protéger la façade et renforcer la performance thermique."],
+  ["Destratification d'air", "/destratificateur-air", "Homogénéiser la température dans les grands volumes."],
+  ["Extraction d'air", "/extracteur-air", "Évacuer l'air chaud ou vicié et améliorer le confort des occupants."],
+  ["Accompagnement stratégique", "/accompagnement-strategique", "Cadrer les priorités, les aides mobilisables, le phasage et la cohérence globale du programme."],
+  ["Prime CEE", "/prime-cee", "Mobiliser les Certificats d'Économies d'Énergie lorsque l'opération est éligible."],
 ];
 
 export default function TertiairePage() {
@@ -76,15 +77,15 @@ export default function TertiairePage() {
               <h1 className="hero__title">
                 Rénovation énergétique des bâtiments
                 <br />
-                <em>tertiaires</em> — sans interrompre votre activité.
+                <em>tertiaires</em>
               </h1>
 
               <p className="hero__subtitle">
-                Bureaux, commerces, établissements de santé, enseignement, hôtellerie —
-                ECOPRORENOVE accompagne les maîtres d&apos;ouvrage tertiaires dans la
-                trajectoire du décret tertiaire (-40&nbsp;% d&apos;ici 2030), avec un
-                dossier CEE adapté à votre gouvernance et un phasage qui préserve la
-                continuité d&apos;exploitation.
+                Bureaux, commerces, établissements de santé, écoles, hôtels ou
+                bâtiments mixtes : ECOPRORENOVE accompagne les maîtres d&apos;ouvrage
+                tertiaires dans leurs projets d&apos;efficacité énergétique, en tenant
+                compte des objectifs du décret tertiaire, des aides CEE mobilisables
+                et des contraintes d&apos;exploitation du site.
               </p>
 
               <div className="hero__actions">
@@ -93,13 +94,7 @@ export default function TertiairePage() {
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
-                  Étudier mon programme tertiaire
-                </a>
-                <a href="tel:+33619798391" className="btn btn--secondary">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  +33 6 19 79 83 91
+                  Étudier mon projet
                 </a>
               </div>
             </div>
@@ -146,8 +141,8 @@ export default function TertiairePage() {
           <header className="secteur-section__header fade-in">
             <p className="section-label">Solutions adaptées</p>
             <h2 className="section-title">
-              Les <em>services ECOPRORENOVE</em><br />
-              mobilisables pour le tertiaire.
+              Nos <em>solutions</em><br />
+              pour les bâtiments tertiaires.
             </h2>
             <div className="divider divider--center"></div>
           </header>
@@ -173,14 +168,14 @@ export default function TertiairePage() {
       <section className="cta-final" id="contact">
         <div className="container">
           <div className="cta-final__inner fade-in">
-            <p className="section-label section-label--white">Parlons de votre parc tertiaire</p>
             <h2 className="cta-final__title">
-              Un patrimoine tertiaire,<br />
-              <em>une trajectoire claire.</em>
+              Vous avez un bâtiment tertiaire<br />
+              <em>à améliorer ?</em>
             </h2>
             <p className="cta-final__subtitle">
-              Décret tertiaire, dossier CEE, phasage des travaux : nous cadrons votre
-              programme de bout en bout. Sans engagement.
+              Décrivez-nous votre bâtiment, vos contraintes et vos objectifs. Nous
+              vous indiquerons les solutions pertinentes et les aides mobilisables,
+              sans engagement.
             </p>
 
             <div className="form-card form-card--secteur fade-in delay-2">
@@ -235,20 +230,11 @@ export default function TertiairePage() {
                   <div className="form-group form-group--full">
                     <button type="submit" className="btn btn--primary btn--lg form-submit">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                      Étudier mon programme
+                      Étudier mon projet
                     </button>
                   </div>
                 </div>
               </ContactForm>
-            </div>
-
-            <div className="cta-final__actions">
-              <a href="tel:+33619798391" className="btn btn--secondary btn--lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                Ou nous appeler directement
-              </a>
             </div>
           </div>
         </div>

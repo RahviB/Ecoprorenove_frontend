@@ -21,13 +21,13 @@ type Finish = {
 };
 
 const FINISHES: Finish[] = [
-  { ref: "afromasia",        name: "Afromasia",       profile: "emboitement", family: "Bois exotique foncé",            brut: false, idx: "01" },
+  { ref: "afromasia",        name: "Afromasia",       profile: "superpose",   family: "Bois exotique foncé",            brut: false, idx: "01" },
   { ref: "beech",            name: "Beech",           profile: "emboitement", family: "Bois clair chaud",               brut: false, idx: "02" },
   { ref: "brut-emboitement", name: "Brut à peindre",  profile: "emboitement", family: "Finition neutre à personnaliser", brut: true,  idx: "03" },
   { ref: "brut-superpose",   name: "Brut à peindre",  profile: "superpose",   family: "Finition neutre à personnaliser", brut: true,  idx: "04" },
-  { ref: "light-yellow",     name: "Light Yellow",    profile: "emboitement", family: "Ton crème lumineux",             brut: false, idx: "05" },
-  { ref: "modern-grey",      name: "Modern Grey",     profile: "emboitement", family: "Ton gris moderne",               brut: false, idx: "06" },
-  { ref: "wallnut",          name: "Wallnut",         profile: "emboitement", family: "Bois noyer chaleureux",          brut: false, idx: "07" },
+  { ref: "light-yellow",     name: "Light Yellow",    profile: "superpose",   family: "Ton crème lumineux",             brut: false, idx: "05" },
+  { ref: "modern-grey",      name: "Modern Grey",     profile: "superpose",   family: "Ton gris moderne",               brut: false, idx: "06" },
+  { ref: "wallnut",          name: "Wallnut",         profile: "superpose",   family: "Bois noyer chaleureux",          brut: false, idx: "07" },
 ];
 
 function profileLabel(p: Profile) {
@@ -146,8 +146,8 @@ export default function BardageClient() {
             <div className="hero__content fade-in">
               <h1 className="hero__title hero__title--t1">
                 <span className="hero__title-eyebrow">★ Premium — Fibre-ciment — 7 finitions</span>
-                <span className="hero__title-anchor">L&apos;élégance durable</span>
-                <span className="hero__title-italic">d&apos;une façade qui traverse les décennies.</span>
+                <span className="hero__title-anchor">Habillez ou rénovez</span>
+                <span className="hero__title-italic">votre façade.</span>
               </h1>
 
               <p className="hero__stat-line">
@@ -155,9 +155,10 @@ export default function BardageClient() {
               </p>
 
               <p className="hero__subtitle">
-                Isolation par l&apos;extérieur, rendu haut de gamme, durabilité exceptionnelle. Sept
-                finitions au choix — du bois exotique au gris moderne — visualisables en temps réel
-                sur notre maison témoin.
+                Maison neuve, façade vieillissante ou bâtiment à moderniser : le bardage
+                fibre-ciment transforme l&apos;apparence de votre façade tout en la protégeant
+                durablement. Ecoprorenove vous accompagne de l&apos;étude technique au choix des
+                finitions, jusqu&apos;à la pose complète.
               </p>
 
               <div className="hero__actions">
@@ -174,7 +175,7 @@ export default function BardageClient() {
               <div className="hero__highlights">
                 <div>
                   <div className="hero__highlight-num">
-                    <CountUp end={50} suffix=" ans+" duration={1100} />
+                    <CountUp end={30} suffix=" ans+" duration={1100} />
                   </div>
                   <div className="hero__highlight-lbl">Durée de vie de la plaque fibre-ciment*</div>
                 </div>
@@ -236,7 +237,7 @@ export default function BardageClient() {
         <div className="container">
           <div className="hero-bandeau__inner">
             {[
-              "Durée de vie 50 ans+",
+              "Durée de vie 30 ans+",
               "7 finitions · 2 profils de pose",
               "Isolation par l'extérieur — RGE",
             ].map((t) => (
@@ -537,9 +538,9 @@ export default function BardageClient() {
             <div className="fade-in">
               <p className="section-label">Pourquoi le fibre-ciment</p>
               <h2 className="section-title">
-                Un matériau <em>d&apos;exception</em>
+                Un matériau <em>premium</em>
                 <br />
-                qui justifie son prix.
+                pensé pour durer.
               </h2>
               <div className="divider"></div>
             </div>
@@ -562,7 +563,7 @@ export default function BardageClient() {
               </h3>
               <p className="why-fc-card__text">
                 Les plaques fibre-ciment présentent une durée de vie estimée{" "}
-                <strong>au-delà de 50 ans*</strong> — sans dégradation visible du matériau, sans
+                <strong>au-delà de 30 ans*</strong> — sans dégradation visible du matériau, sans
                 pourrissement, sans déformation.
               </p>
             </div>
@@ -574,11 +575,13 @@ export default function BardageClient() {
                 <path d="M12 7V22" />
               </svg>
               <h3 className="why-fc-card__title">
-                Résistance totale<br />aux éléments
+                Haute résistance<br />aux conditions extérieures
               </h3>
               <p className="why-fc-card__text">
-                Matériau <strong>incombustible, imputrescible, insensible aux insectes</strong>.
-                Tenue mécanique et esthétique en conditions extrêmes — pluie, UV, embruns, gel.
+                <strong>Imputrescible, insensible aux insectes</strong>
+                {" "}et conçu pour résister aux UV, à l&apos;humidité, aux embruns et aux
+                variations climatiques, le fibre-ciment offre une tenue remarquable dans le
+                temps.
               </p>
             </div>
 
@@ -635,9 +638,9 @@ export default function BardageClient() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Le choix du profil conditionne à la fois la méthode de pose et le rendu final — ombres
-              portées, rythme visuel, perception de la hauteur. Les deux profils sont éligibles aux
-              mêmes finitions coloris.
+              Le choix du profil conditionne à la fois la méthode de pose et le rendu final —
+              ombres portées, rythme visuel, perception de la hauteur. Chaque profil dispose de
+              ses propres finitions coloris.
             </p>
           </div>
 
@@ -648,7 +651,7 @@ export default function BardageClient() {
                   <p className="profile-card__num">Profil 01</p>
                   <h3 className="profile-card__title">Emboîtement</h3>
                 </div>
-                <span className="profile-card__tag-count">6 finitions</span>
+                <span className="profile-card__tag-count">2 finitions</span>
               </div>
               <div className="profile-card__schema">
                 <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -689,7 +692,7 @@ export default function BardageClient() {
                   </li>
                   <li>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
-                    Disponible en Afromasia, Beech, Brut, Light Yellow, Modern Grey, Wallnut
+                    Disponible en Beech et Brut à peindre
                   </li>
                 </ul>
               </div>
@@ -701,7 +704,7 @@ export default function BardageClient() {
                   <p className="profile-card__num">Profil 02</p>
                   <h3 className="profile-card__title">Superposé</h3>
                 </div>
-                <span className="profile-card__tag-count">1 finition</span>
+                <span className="profile-card__tag-count">5 finitions</span>
               </div>
               <div className="profile-card__schema">
                 <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -749,7 +752,7 @@ export default function BardageClient() {
                   </li>
                   <li>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
-                    Actuellement disponible en Brut à peindre — à personnaliser
+                    Disponible en Afromasia, Light Yellow, Modern Grey, Wallnut et Brut à peindre
                   </li>
                 </ul>
               </div>
@@ -773,11 +776,12 @@ export default function BardageClient() {
 
           <div className="method__steps">
             {[
-              { n: "01", t: "Audit façade", p: "Relevé dimensionnel, diagnostic du support existant, contraintes réglementaires (urbanisme, ABF le cas échéant)." },
-              { n: "02", t: "Choix finition & profil", p: "Finalisation du coloris sur échantillon physique, validation du profil de pose, calepinage." },
-              { n: "03", t: "Dossier MaPrimeRénov'", p: "Montage du dossier MaPrimeRénov', validation d'éligibilité, respect de la chronologie réglementaire (dépôt avant travaux)." },
-              { n: "04", t: "Pose RGE", p: "Mise en œuvre par équipes qualifiées — ossature, isolant, lames fibre-ciment, finitions périphériques." },
-              { n: "05", t: "Réception & clôture", p: "Contrôle qualité, documents réglementaires, finalisation et versement du dossier MaPrimeRénov'." },
+              { n: "01", t: "Audit façade", p: "Relevé dimensionnel, diagnostic du support existant, contraintes d'accès, points singuliers et vérification des règles d'urbanisme si nécessaire." },
+              { n: "02", t: "Choix des finitions", p: "Sélection du coloris, du profil de pose, du rendu souhaité et validation des échantillons pour projeter le résultat final." },
+              { n: "03", t: "Chiffrage & proposition", p: "Nous établissons une proposition détaillée selon la surface, les finitions choisies, la complexité de pose, les accès chantier et les options retenues." },
+              { n: "04", t: "Dossier d'aide éventuel", p: "Si votre projet est éligible, nous étudions les aides mobilisables et montons le dossier en respectant la chronologie administrative avant le démarrage des travaux." },
+              { n: "05", t: "Mise en œuvre technique", p: "Pose de l'ossature, de l'isolant si prévu, des lames fibre-ciment et des finitions périphériques selon les règles de l'art." },
+              { n: "06", t: "Réception & finitions", p: "Contrôle du rendu final, vérification des détails, nettoyage de fin de chantier et remise des documents de clôture." },
             ].map((s, i) => (
               <div key={s.n} className={`method-step fade-in delay-${i + 1}`}>
                 <div className="method-step__num">{s.n}</div>
@@ -795,8 +799,8 @@ export default function BardageClient() {
           <div className="sectors__header fade-in">
             <p className="section-label">Pour quels bâtiments</p>
             <h2 className="section-title">
-              Une solution <em>transverse</em> —<br />
-              de la maison au tertiaire.
+              Une façade <em>valorisée</em>,<br />
+              quel que soit votre bâtiment.
             </h2>
             <div className="divider divider--center"></div>
           </div>
@@ -809,15 +813,17 @@ export default function BardageClient() {
                 <line x1="9" y1="12" x2="9" y2="12.01" /><line x1="15" y1="12" x2="15" y2="12.01" />
                 <line x1="9" y1="16" x2="9" y2="16.01" /><line x1="15" y1="16" x2="15" y2="16.01" />
               </svg>
-              <h3 className="sector-pill__title">Tertiaire</h3>
+              <h3 className="sector-pill__title">Tertiaire &amp; collectivités</h3>
               <p className="sector-pill__text">
-                Requalification architecturale d&apos;un siège, mise aux normes décret tertiaire,
-                habillage premium d&apos;un bâtiment d&apos;accueil.
+                Bureaux, commerces, hôtels, bâtiments publics, établissements d&apos;accueil ou
+                équipements collectifs : le bardage permet de moderniser l&apos;image du site,
+                protéger la façade et renforcer la qualité perçue du bâtiment.
               </p>
               <div className="sector-pill__tags">
                 <span className="tag">Bureaux</span>
-                <span className="tag">Hôtellerie</span>
                 <span className="tag">Commerces</span>
+                <span className="tag">Hôtellerie</span>
+                <span className="tag">Collectivités</span>
               </div>
             </div>
 
@@ -828,12 +834,14 @@ export default function BardageClient() {
               </svg>
               <h3 className="sector-pill__title">Résidentiel</h3>
               <p className="sector-pill__text">
-                Maison individuelle, copropriété, projet bailleur. Revalorisation patrimoniale +
-                performance thermique, en un seul geste.
+                Maison individuelle, villa, copropriété ou projet bailleur : une solution idéale
+                pour rénover une façade vieillissante, habiller une façade neuve ou donner une
+                finition haut de gamme au bâtiment.
               </p>
               <div className="sector-pill__tags">
                 <span className="tag">Maison</span>
-                <span className="tag">Copropriétés</span>
+                <span className="tag">Villa</span>
+                <span className="tag">Copropriété</span>
                 <span className="tag">Bailleurs</span>
               </div>
             </div>
@@ -845,15 +853,16 @@ export default function BardageClient() {
                 <line x1="7" y1="20" x2="7" y2="15" />
                 <line x1="17" y1="20" x2="17" y2="17" />
               </svg>
-              <h3 className="sector-pill__title">Agricole</h3>
+              <h3 className="sector-pill__title">Agricole &amp; bâtiments techniques</h3>
               <p className="sector-pill__text">
-                Bâtiments d&apos;élevage, serres, locaux techniques. Tenue face à l&apos;humidité, aux
-                embruns, aux variations thermiques extrêmes.
+                Hangars, locaux techniques, bâtiments d&apos;exploitation ou zones exposées : une
+                solution robuste pour protéger l&apos;enveloppe, améliorer l&apos;aspect extérieur
+                et résister aux conditions climatiques exigeantes.
               </p>
               <div className="sector-pill__tags">
-                <span className="tag">Élevage</span>
-                <span className="tag">Serres</span>
                 <span className="tag">Hangars</span>
+                <span className="tag">Locaux techniques</span>
+                <span className="tag">Exploitation</span>
               </div>
             </div>
           </div>
@@ -878,39 +887,66 @@ export default function BardageClient() {
                   q: "Quelle différence entre emboîtement et superposé ?",
                   a: (
                     <>
-                      L&apos;<strong>emboîtement</strong> dissimule la jointure entre les lames — on
-                      obtient une façade aux lignes régulières, au rendu contemporain et lisse. Le{" "}
-                      <strong>superposé</strong>, lui, fait volontairement chevaucher les lames —
-                      chaque bande projette une ombre horizontale qui donne relief et texture à la
-                      façade. Le choix est surtout esthétique ; les performances techniques
-                      (durabilité, étanchéité, tenue au feu) sont équivalentes.
+                      <p>
+                        L&apos;<strong>emboîtement</strong> offre une façade aux lignes plus
+                        régulières, avec une jonction discrète entre les lames. Le rendu est
+                        contemporain, sobre et homogène.
+                      </p>
+                      <p>
+                        Le <strong>superposé</strong> crée un effet de relief plus marqué, avec
+                        des lames qui se chevauchent visuellement. Il apporte davantage
+                        d&apos;ombre, de texture et de caractère à la façade.
+                      </p>
+                      <p>
+                        Le choix est principalement esthétique : les deux profils permettent
+                        d&apos;obtenir une façade durable et qualitative, sous réserve d&apos;une
+                        mise en œuvre adaptée.
+                      </p>
                     </>
                   ),
                 },
                 {
-                  q: "Combien de temps dure un bardage fibre-ciment ?",
+                  q: "Quelle est la durée de vie d'un bardage fibre-ciment ?",
                   a: (
                     <>
-                      La durée de vie estimée du matériau est{" "}
-                      <strong>supérieure à 50 ans</strong>, selon les données fournisseur et les
-                      retours d&apos;expérience sur ce type de plaque. Cela implique un entretien
-                      courant léger (nettoyage périodique selon exposition) mais aucune opération de
-                      rénovation lourde comparable à un bardage bois (lasure tous les 5-10 ans,
-                      remplacement de lames pourries, etc.).
+                      <p>
+                        Le fibre-ciment est conçu pour offrir une excellente tenue dans le temps,
+                        y compris dans des environnements exigeants comme La Réunion.
+                      </p>
+                      <p>
+                        Avec un produit adapté, une pose conforme et des fixations bien choisies,
+                        le client peut être tranquille pour <strong>30 ans et plus</strong>, avec
+                        un entretien courant limité.
+                      </p>
+                      <p>
+                        Sa durabilité dépend toutefois de la qualité du matériau, de
+                        l&apos;exposition, de la ventilation de la façade, des fixations utilisées
+                        et du respect des préconisations de pose. Contrairement au bois, il ne
+                        nécessite pas de lasure régulière ni de traitement lourd contre les
+                        insectes ou le pourrissement.
+                      </p>
                     </>
                   ),
                 },
                 {
-                  q: "La finition Brut à peindre — quelles peintures sont compatibles ?",
+                  q: "La finition Brut à peindre : quelles peintures sont compatibles ?",
                   a: (
                     <>
-                      Seules les{" "}
-                      <strong>peintures microporeuses formulées pour bardage fibre-ciment</strong>{" "}
-                      sont adaptées. Elles laissent respirer la plaque — indispensable pour la tenue
-                      dans le temps — tout en offrant une protection UV stable. Nous pouvons soit
-                      vous recommander une référence pour que vous réalisiez la pose peinture
-                      vous-même, soit prendre en charge l&apos;intégralité de la prestation
-                      (fourniture + application) dans la teinte de votre choix.
+                      <p>
+                        La finition brut à peindre permet de personnaliser la façade avec la
+                        teinte de votre choix.
+                      </p>
+                      <p>
+                        Il faut utiliser une peinture adaptée au bardage fibre-ciment, compatible
+                        avec les préconisations du fabricant, idéalement{" "}
+                        <strong>microporeuse</strong> pour préserver la bonne tenue du support
+                        dans le temps.
+                      </p>
+                      <p>
+                        Ecoprorenove peut soit vous orienter vers une solution adaptée, soit
+                        intégrer la fourniture et l&apos;application de la peinture dans la
+                        prestation.
+                      </p>
                     </>
                   ),
                 },
@@ -918,28 +954,56 @@ export default function BardageClient() {
                   q: "Le bardage fibre-ciment est-il éligible à MaPrimeRénov' ?",
                   a: (
                     <>
-                      Oui — le bardage fibre-ciment posé en{" "}
-                      <strong>isolation par l&apos;extérieur (ITE)</strong> est éligible à{" "}
-                      <strong>MaPrimeRénov&apos; jusqu&apos;à 75€/m²</strong>*. À noter : il
-                      n&apos;entre <strong>pas</strong> dans le champ des Certificats
-                      d&apos;Économies d&apos;Énergie (CEE). L&apos;éligibilité MaPrimeRénov&apos;
-                      dépend de la résistance thermique de l&apos;isolant, de la qualification RGE
-                      du poseur, et du respect de la chronologie réglementaire —{" "}
-                      <strong>dossier ouvert avant le début des travaux</strong>. Nous cadrons ces
-                      points en amont.
+                      <p>
+                        Oui, à La Réunion, le bardage ventilé peut être éligible à
+                        MaPrimeRénov&apos; selon le type de logement, le profil du ménage, les
+                        critères techniques du projet et la chronologie du dossier.
+                      </p>
+                      <p>
+                        L&apos;aide n&apos;est jamais automatique : elle dépend de votre situation
+                        et de la solution retenue. Ecoprorenove vérifie les conditions
+                        d&apos;éligibilité avant travaux, vous présente clairement les aides
+                        mobilisables et prend en charge le montage administratif du dossier de
+                        subvention.
+                      </p>
                     </>
                   ),
                 },
                 {
-                  q: "Peut-on poser du bardage fibre-ciment en bord de mer / à La Réunion ?",
+                  q: "Peut-on poser du bardage fibre-ciment en bord de mer ou à La Réunion ?",
                   a: (
                     <>
-                      Oui — c&apos;est même l&apos;un de ses principaux avantages. La plaque
-                      fibre-ciment résiste aux{" "}
-                      <strong>embruns salins, au rayonnement UV intense et aux variations hygrométriques</strong>.
-                      Nous intervenons couramment à La Réunion, où ces contraintes sont
-                      quotidiennes, avec des fixations et une mise en œuvre adaptées aux
-                      environnements tropicaux et littoraux.
+                      <p>
+                        Oui, c&apos;est justement l&apos;un des intérêts du fibre-ciment : il
+                        offre une bonne résistance à l&apos;humidité, aux variations climatiques
+                        et aux environnements exposés.
+                      </p>
+                      <p>
+                        En bord de mer ou à La Réunion, la mise en œuvre doit toutefois être
+                        adaptée : choix des fixations, ventilation de la façade, traitement des
+                        points singuliers et respect des préconisations fabricant.
+                      </p>
+                      <p>
+                        C&apos;est cette combinaison — bon matériau, bonnes fixations, bonne pose
+                        — qui permet d&apos;obtenir une façade durable.
+                      </p>
+                    </>
+                  ),
+                },
+                {
+                  q: "Est-ce une alternative à un simple ravalement de façade ?",
+                  a: (
+                    <>
+                      <p>
+                        Oui. Le bardage fibre-ciment permet de transformer l&apos;apparence
+                        d&apos;une façade tout en apportant une protection durable au bâtiment.
+                      </p>
+                      <p>
+                        Contrairement à un ravalement classique, il crée une nouvelle peau
+                        extérieure, avec un rendu architectural plus marqué, des finitions
+                        personnalisables et la possibilité d&apos;intégrer une isolation par
+                        l&apos;extérieur selon le projet.
+                      </p>
                     </>
                   ),
                 },

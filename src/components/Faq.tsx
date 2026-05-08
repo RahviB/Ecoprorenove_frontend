@@ -41,7 +41,7 @@ export default function Faq({ items }: { items: FaqEntry[] }) {
               </div>
             </button>
             <div className="faq-item__a">
-              <p>{item.a}</p>
+              <div className="faq-item__a-body">{item.a}</div>
             </div>
           </div>
         );

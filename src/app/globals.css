@@ -1115,10 +1115,12 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   transition: max-height .35s cubic-bezier(.4,0,.2,1);
 }
 .faq-item.open .faq-item__a { max-height: 600px; }
-.faq-item__a p {
+.faq-item__a-body {
   padding: 0 26px 24px;
   font-size: .93rem; color: var(--gray); line-height: 1.7;
 }
+.faq-item__a-body p { margin: 0; }
+.faq-item__a-body p + p { margin-top: 12px; }
 
 /* =============================================
    09 · CTA FINAL

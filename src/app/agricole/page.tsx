@@ -19,37 +19,36 @@ export const metadata: Metadata = {
 const operations: Array<[string, string]> = [
   [
     "Bâtiments d’élevage",
-    "Stabulations, porcheries, poulaillers : isolation sous toiture pour stabiliser l’ambiance, maîtriser l’hygrométrie et améliorer le confort thermique du bétail. Impact direct sur la productivité et la santé animale.",
+    "Isolation, coolroofing, ventilation, extraction d’air ou récupération de chaleur : nous recherchons les solutions adaptées pour améliorer l’ambiance intérieure, limiter les surchauffes et mieux maîtriser l’humidité.",
   ],
   [
     "Hangars agricoles",
-    "Stockage matériel, fourrage, céréales : isolation lourde et ventilation adaptées aux contraintes structurelles des charpentes existantes — bois, métal, fermettes industrielles.",
+    "Stockage de matériel, fourrage, céréales ou marchandises : nous étudions les solutions d’isolation, de ventilation ou de protection thermique compatibles avec la structure existante.",
   ],
   [
     "Serres & cultures abritées",
-    "Maîtrise des consommations de chauffage et déstratification de l’air dans les volumes vitrés ou bâchés, sans compromettre la luminosité ou la conduite culturale.",
+    "Nous analysons les besoins liés à la température, à l’hygrométrie et au renouvellement d’air afin d’identifier les solutions adaptées : déshumidification, ventilation, récupération de chaleur ou pilotage climatique selon le projet. À noter : la fiche AGRI-TH-119 correspond à un système de déshumidification avec air extérieur, avec ventilation forcée et pilotage climatique.",
   ],
   [
-    "Fiches CEE spécifiques",
-    "BAT-EN (bâtiments tertiaires et agricoles) et IND-UT (industriel et utilités) : nous identifions la bonne fiche selon la nature de votre bâtiment et de l’opération, et structurons un dossier conforme.",
+    "Fiches CEE adaptées au bâtiment",
+    "Selon l’usage réel du site, l’opération peut relever de fiches agricoles, tertiaires ou industrielles. Nous vérifions la bonne classification du bâtiment et les conditions de la fiche avant toute proposition.",
   ],
   [
-    "Hygrométrie & ambiance",
-    "Le bien-être animal et la conservation des récoltes dépendent autant de l’humidité que de la température. Extracteurs, déstratificateurs et ventilation adaptés au contexte agricole.",
+    "Hygrométrie & ambiance intérieure",
+    "Température, humidité, renouvellement d’air et évacuation de l’air chaud sont des paramètres essentiels en élevage, en stockage ou en cultures abritées. Nous proposons une approche adaptée à chaque usage.",
   ],
   [
-    "Coordination chantier en exploitation",
-    "Périodes creuses, accès cour de ferme, contraintes sanitaires en élevage : nous calons le chantier sur votre calendrier d’exploitation, pas l’inverse.",
+    "Chantier adapté à votre exploitation",
+    "Nous planifions les interventions selon vos contraintes : accès, périodes creuses, présence d’animaux, zones de stockage, règles sanitaires et continuité d’activité.",
   ],
 ];
 
 const solutions: Array<[string, string, string]> = [
-  ["Isolation toiture & rampants", "/isolation-toiture-rampants", "Isolation lourde sous toiture pour bâtiments d'élevage et hangars."],
-  ["Bardage", "/bardage", "Habillage thermique des façades de bâtiments agricoles."],
-  ["Extracteur d'air", "/extracteur-air", "Renouvellement d'air et hygrométrie maîtrisée pour le bétail."],
-  ["VMC double flux agricole", "/vmc-double-flux", "Récupération de chaleur sur l'air extrait — fiche CEE AGR-TH-119."],
-  ["Accompagnement stratégique", "/accompagnement-strategique", "Cadrage du programme et arbitrages selon votre contexte d'exploitation."],
-  ["Prime CEE", "/prime-cee", "Mobilisation des fiches BAT-EN et IND-UT pour le secteur agricole."],
+  ["Isolation toiture - thermoreflectif", "/isolation-toiture-rampants", "Limiter les surchauffes sous toiture et améliorer le confort thermique des bâtiments agricoles."],
+  ["Bardage", "/bardage", "Protéger les façades, améliorer l’aspect du bâtiment et renforcer le confort thermique selon la configuration."],
+  ["Extracteur d'air", "/extracteur-air", "Évacuer l’air chaud ou humide et améliorer le renouvellement d’air dans les bâtiments d’élevage, hangars ou zones de stockage."],
+  ["VMC Double flux", "/vmc-double-flux", "Solution adaptée à certaines serres pour piloter l’hygrométrie, la ventilation et le climat intérieur selon les conditions de la fiche CEE."],
+  ["Prime CEE", "/prime-cee", "Identifier les fiches applicables selon votre besoin de travaux et sécuriser le dossier avant engagement, selon le bâtiment, l’usage et l’opération envisagée."],
 ];
 
 export default function AgricolePage() {
@@ -73,17 +72,16 @@ export default function AgricolePage() {
               </div>
 
               <h1 className="hero__title">
-                Rénover un bâtiment <em>agricole,</em>
+                Améliorer le confort thermique
                 <br />
-                avec les bonnes fiches CEE.
+                des bâtiments <em>agricoles.</em>
               </h1>
 
               <p className="hero__subtitle">
-                Bâtiments d&apos;élevage, hangars de stockage, serres : ECOPRORENOVE
-                identifie les fiches CEE applicables (BAT-EN, IND-UT, AGR-TH-119) et
-                structure des opérations qui tiennent compte du confort animal, de
-                l&apos;hygrométrie et des contraintes d&apos;exploitation. Pose RGE et
-                coordination chantier sur votre calendrier.
+                Élevage, culture, production ou stockage : ECOPRORENOVE étudie votre
+                besoin, identifie les solutions énergétiques adaptées et vérifie les
+                aides CEE mobilisables selon l&apos;usage réel du site et les
+                contraintes de votre exploitation.
               </p>
 
               <div className="hero__actions">
@@ -92,13 +90,7 @@ export default function AgricolePage() {
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
-                  Étudier mon bâtiment agricole
-                </a>
-                <a href="tel:+33619798391" className="btn btn--secondary">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  +33 6 19 79 83 91
+                  Étudier mon projet
                 </a>
               </div>
             </div>
@@ -117,9 +109,10 @@ export default function AgricolePage() {
             </h2>
             <div className="divider divider--center"></div>
             <p className="section-intro section-intro--center">
-              Un poulailler, un hangar à céréales et une serre maraîchère ne s&apos;isolent
-              pas de la même façon. Nous adaptons l&apos;opération — et le dossier CEE —
-              au type de bâtiment et à son usage réel.
+              Chaque exploitation a ses propres contraintes : type de bâtiment, usage
+              réel, ventilation, éclairage, humidité, température, accès, sécurité
+              sanitaire et périodes d&apos;activité. Nous adaptons les solutions et le
+              montage du dossier selon le bâtiment concerné.
             </p>
           </header>
 
@@ -145,8 +138,8 @@ export default function AgricolePage() {
           <header className="secteur-section__header fade-in">
             <p className="section-label">Solutions adaptées</p>
             <h2 className="section-title">
-              Les <em>services ECOPRORENOVE</em><br />
-              mobilisables en agricole.
+              Nos <em>solutions</em><br />
+              pour les bâtiments agricoles.
             </h2>
             <div className="divider divider--center"></div>
           </header>
@@ -174,12 +167,13 @@ export default function AgricolePage() {
           <div className="cta-final__inner fade-in">
             <p className="section-label section-label--white">Parlons de votre exploitation</p>
             <h2 className="cta-final__title">
-              Un bâtiment agricole,<br />
-              <em>une fiche CEE adaptée.</em>
+              Un bâtiment agricole<br />
+              <em>à améliorer ?</em>
             </h2>
             <p className="cta-final__subtitle">
-              BAT-EN, IND-UT, AGR-TH-119, isolation lourde, ambiance bétail : nous
-              identifions le bon montage pour votre exploitation. Sans engagement.
+              Décrivez-nous votre exploitation, le type de bâtiment et vos contraintes.
+              Nous vérifions les solutions techniques adaptées et les aides CEE
+              éventuellement mobilisables, sans engagement.
             </p>
 
             <div className="form-card form-card--secteur fade-in delay-2">
