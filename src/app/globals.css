@@ -2068,7 +2068,7 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
 .method { padding: 110px 0; background: var(--white); }
 .method__header { text-align: center; margin-bottom: 64px; }
 .method__steps {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
   background: var(--gray-mid);
   border-radius: var(--radius-lg);
   overflow: hidden;

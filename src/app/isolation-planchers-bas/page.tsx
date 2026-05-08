@@ -126,8 +126,8 @@ export default function IsolationPlanchersBasPage() {
               <p className="loss-schema__title">Répartition des déperditions thermiques</p>
               <div className="loss-building">
                 <div className="loss-roof">
-                  <span className="loss-roof__label">Toiture</span>
-                  <span className="loss-roof__pct">25 – 30 %</span>
+                  <span className="loss-roof__label">Plancher bas</span>
+                  <span className="loss-roof__pct">7 – 10 %</span>
                 </div>
                 <div className="loss-arrows">
                   <span className="loss-arrow" style={{ transform: "rotate(180deg)" }}>↑</span>
@@ -406,7 +406,7 @@ export default function IsolationPlanchersBasPage() {
               <p className="section-label" style={{ color: "rgba(255,255,255,.55)" }}>Financement CEE</p>
               <h2 className="section-title section-title--white">
                 Vos planchers bas<br />
-                <em style={{ color: "#a8e296" }}>en partie financés</em><br />
+                <em style={{ color: "#a8e296" }}>jusqu&apos;à 100% financés</em><br />
                 par les CEE
               </h2>
               <div className="divider divider--white"></div>
