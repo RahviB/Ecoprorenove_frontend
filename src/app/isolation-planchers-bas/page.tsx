@@ -40,7 +40,7 @@ export default function IsolationPlanchersBasPage() {
           <div className="hero__inner">
             <div className="hero__content fade-in">
               <h1 className="hero__title hero__title--t1">
-                <span className="hero__title-eyebrow">Tertiaire &amp; résidentiel — CEE BAR-EN-103 et BAT-EN-103</span>
+                <span className="hero__title-eyebrow">Tertiaire &amp; résidentiel</span>
                 <span className="hero__title-anchor">Isolez les planchers bas</span>
                 <span className="hero__title-italic">stoppez les ponts thermiques par le sol.</span>
               </h1>
@@ -54,7 +54,7 @@ export default function IsolationPlanchersBasPage() {
 
               <div className="hero__actions">
                 <a href="#contact" className="btn btn--primary btn--lg">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                   Obtenir une étude gratuite
                 </a>
                 <a href="#modes" className="btn btn--secondary">Voir les deux techniques</a>
@@ -110,7 +110,7 @@ export default function IsolationPlanchersBasPage() {
               "Pose RGE certifiée",
             ].map((t) => (
               <div key={t} className="hero-bandeau__item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
                 {t}
               </div>
             ))}
@@ -164,7 +164,7 @@ export default function IsolationPlanchersBasPage() {
               <h2 className="section-title">
                 Vide sanitaire, parking, sous-sol&nbsp;:<br />
                 <em>votre plancher devient une zone<br />
-                d&apos;échange thermique.</em>
+                  d&apos;échange thermique.</em>
               </h2>
               <div className="divider"></div>
               <p className="section-intro">
@@ -180,7 +180,7 @@ export default function IsolationPlanchersBasPage() {
               <div className="problem__list">
                 <div className="problem-item">
                   <div className="problem-item__icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                   </div>
                   <div>
                     <p className="problem-item__title">Pertes thermiques sous-estimées</p>
@@ -190,7 +190,7 @@ export default function IsolationPlanchersBasPage() {
 
                 <div className="problem-item">
                   <div className="problem-item__icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17.66 8L12 2.35 6.34 8A8 8 0 1 0 17.66 8z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17.66 8L12 2.35 6.34 8A8 8 0 1 0 17.66 8z" /></svg>
                   </div>
                   <div>
                     <p className="problem-item__title">Meilleur confort au quotidien</p>
@@ -200,7 +200,7 @@ export default function IsolationPlanchersBasPage() {
 
                 <div className="problem-item">
                   <div className="problem-item__icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
                   </div>
                   <div>
                     <p className="problem-item__title">Performance énergétique améliorée</p>
@@ -235,8 +235,8 @@ export default function IsolationPlanchersBasPage() {
               <div className="mode-card__header">
                 <div className="mode-card__icon">
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 2v3M12 19v3M22 12h-3M5 12H2M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12M19.07 19.07l-2.12-2.12M7.05 7.05L4.93 4.93"/>
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 2v3M12 19v3M22 12h-3M5 12H2M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12M19.07 19.07l-2.12-2.12M7.05 7.05L4.93 4.93" />
                   </svg>
                 </div>
                 <div>
@@ -255,7 +255,7 @@ export default function IsolationPlanchersBasPage() {
                   ["Compatible avec les contraintes du site", "Le produit est choisi selon le support, l'humidité, les exigences feu, l'usage du local et la performance thermique recherchée."],
                 ].map(([title, desc]) => (
                   <div key={title} className="mode-feat">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#49a739" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
                     <div><strong>{title}</strong><span>{desc}</span></div>
                   </div>
                 ))}
@@ -271,11 +271,11 @@ export default function IsolationPlanchersBasPage() {
               <div className="mode-card__header">
                 <div className="mode-card__icon">
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="2" y="7" width="20" height="10" rx="2"/>
-                    <line x1="6" y1="7" x2="6" y2="17"/>
-                    <line x1="10" y1="7" x2="10" y2="17"/>
-                    <line x1="14" y1="7" x2="14" y2="17"/>
-                    <line x1="18" y1="7" x2="18" y2="17"/>
+                    <rect x="2" y="7" width="20" height="10" rx="2" />
+                    <line x1="6" y1="7" x2="6" y2="17" />
+                    <line x1="10" y1="7" x2="10" y2="17" />
+                    <line x1="14" y1="7" x2="14" y2="17" />
+                    <line x1="18" y1="7" x2="18" y2="17" />
                   </svg>
                 </div>
                 <div>
@@ -294,7 +294,7 @@ export default function IsolationPlanchersBasPage() {
                   ["Adapté aux zones simples", "Les panneaux sont pertinents lorsque la dalle est plane, avec peu d'obstacles et peu de réseaux à contourner."],
                 ].map(([title, desc]) => (
                   <div key={title} className="mode-feat">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
                     <div><strong>{title}</strong><span>{desc}</span></div>
                   </div>
                 ))}
@@ -337,9 +337,9 @@ export default function IsolationPlanchersBasPage() {
               <div key={b.title} className={`benefit-card fade-in delay-${(i % 3) + 1}`}>
                 <div className="benefit-card__icon">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <line x1="12" y1="20" x2="12" y2="10"/>
-                    <line x1="18" y1="20" x2="18" y2="4"/>
-                    <line x1="6" y1="20" x2="6" y2="16"/>
+                    <line x1="12" y1="20" x2="12" y2="10" />
+                    <line x1="18" y1="20" x2="18" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="16" />
                   </svg>
                 </div>
                 <div className="benefit-card__value">{b.value}</div>
@@ -381,9 +381,9 @@ export default function IsolationPlanchersBasPage() {
               <div key={name} className={`building-card fade-in delay-${(i % 4) + 1}`}>
                 <div className="building-card__icon">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <line x1="3" y1="9" x2="21" y2="9"/>
-                    <line x1="9" y1="21" x2="9" y2="9"/>
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <line x1="3" y1="9" x2="21" y2="9" />
+                    <line x1="9" y1="21" x2="9" y2="9" />
                   </svg>
                 </div>
                 <h3 className="building-card__name">{name}</h3>
@@ -417,7 +417,7 @@ export default function IsolationPlanchersBasPage() {
               </p>
               <div className="cee-block__cta-wrap">
                 <a href="#contact" className="btn btn--primary btn--lg">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                   Vérifier mon éligibilité
                 </a>
               </div>
@@ -490,7 +490,7 @@ export default function IsolationPlanchersBasPage() {
 
           <div className="method__cta-wrap fade-in">
             <a href="#contact" className="btn btn--primary btn--lg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
               Lancer l&apos;étude de mon projet
             </a>
           </div>
@@ -522,8 +522,8 @@ export default function IsolationPlanchersBasPage() {
               <div key={t} className={`why-us-card fade-in delay-${i + 1}`}>
                 <div className="why-us-card__icon">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    <polyline points="9 12 11 14 15 10"/>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <polyline points="9 12 11 14 15 10" />
                   </svg>
                 </div>
                 <h3 className="why-us-card__title">{t}</h3>
@@ -598,18 +598,18 @@ export default function IsolationPlanchersBasPage() {
             </p>
             <div className="cta-final__actions">
               <a href="#contact" className="btn btn--primary btn--lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                 Demander une étude gratuite
               </a>
               <a href="tel:+33619798391" className="btn btn--secondary btn--lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                 Nous appeler
               </a>
             </div>
             <div className="cta-final__reassurance">
               {["Étude sans engagement", "Éligibilité CEE vérifiée", "Réponse sous 48h ouvrées"].map((t) => (
                 <div key={t} className="cta-final__reassurance-item">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
                   {t}
                 </div>
               ))}
@@ -643,19 +643,19 @@ function ContactSection() {
             <div className="contact-info__items">
               <div className="contact-info__item">
                 <div className="contact-info__item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.63-.63a2 2 0 0 1 2.11-.45c.9.386 1.86.647 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                 </div>
                 <span>+33 6 19 79 83 91</span>
               </div>
               <div className="contact-info__item">
                 <div className="contact-info__item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
                 </div>
                 <span>contact@ecoprorenove.fr</span>
               </div>
               <div className="contact-info__item">
                 <div className="contact-info__item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#357a28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                 </div>
                 <span>Réponse sous 48h ouvrées</span>
               </div>
@@ -730,7 +730,7 @@ function ContactSection() {
                 </div>
                 <div className="form-group form-group--full">
                   <button type="submit" className="btn btn--primary btn--lg form-submit">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                     Envoyer ma demande d&apos;étude
                   </button>
                 </div>
