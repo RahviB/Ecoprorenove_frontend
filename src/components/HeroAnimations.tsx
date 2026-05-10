@@ -1,41 +1,56 @@
 "use client";
 
 import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
+// GSAP (~110 KB with ScrollTrigger) is loaded async after hydration so it
+// doesn't bloat the initial homepage chunk. Hero parallax is decorative —
+// degrading gracefully if the import fails is acceptable.
 export default function HeroAnimations() {
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
 
-    const ctx = gsap.context(() => {
-      const layers = [
-        { selector: ".hero__content", yPercent: -10 },
-        { selector: ".hero__photo-frame", yPercent: -5 },
-        { selector: ".hero__stat-card", yPercent: -55 },
-        { selector: ".hero__badge-top", yPercent: -45 },
-      ];
+    let cleanup: (() => void) | null = null;
+    let cancelled = false;
 
-      layers.forEach(({ selector, yPercent }) => {
-        const el = document.querySelector(selector);
-        if (!el) return;
-        gsap.to(selector, {
-          yPercent,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: 0.6,
-          },
+    (async () => {
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger"),
+      ]);
+      if (cancelled) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const ctx = gsap.context(() => {
+        const layers = [
+          { selector: ".hero__content", yPercent: -10 },
+          { selector: ".hero__photo-frame", yPercent: -5 },
+          { selector: ".hero__stat-card", yPercent: -55 },
+          { selector: ".hero__badge-top", yPercent: -45 },
+        ];
+
+        layers.forEach(({ selector, yPercent }) => {
+          const el = document.querySelector(selector);
+          if (!el) return;
+          gsap.to(selector, {
+            yPercent,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".hero",
+              start: "top top",
+              end: "bottom top",
+              scrub: 0.6,
+            },
+          });
         });
       });
-    });
+      cleanup = () => ctx.revert();
+    })();
 
-    return () => ctx.revert();
+    return () => {
+      cancelled = true;
+      cleanup?.();
+    };
   }, []);
 
   return null;

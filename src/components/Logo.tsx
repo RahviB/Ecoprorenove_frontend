@@ -4,15 +4,17 @@ type LogoProps = {
   size?: number;
   variant?: "navbar" | "footer";
   className?: string;
+  priority?: boolean;
 };
 
-const NAV = { src: "/images/logo-ecoprorenove-final.png", ratio: 800 / 130 };
+const NAV = { src: "/images/logo-ecoprorenove-final.webp", ratio: 800 / 130 };
 const FOOTER = { src: "/images/logo-ecoprorenove-white.webp", ratio: 800 / 250 };
 
 export default function Logo({
   size = 42,
   variant = "navbar",
   className,
+  priority = false,
 }: LogoProps) {
   const { src, ratio } = variant === "footer" ? FOOTER : NAV;
   const width = Math.round(size * ratio);
@@ -23,7 +25,7 @@ export default function Logo({
       alt="ECOPRORENOVE — expert de la transition énergétique"
       width={width}
       height={size}
-      priority
+      priority={priority}
       className={`logo ${className ?? ""}`}
     />
   );

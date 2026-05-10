@@ -29,7 +29,9 @@ export default function ScrollEffects() {
       document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
     }
 
-    // Re-observe new fade-ins after route changes
+    // Re-observe new fade-ins after route changes — scoped to <main> to avoid
+    // firing on unrelated body mutations (Navbar/Footer state changes).
+    const mainEl = document.getElementById("main") ?? document.body;
     const mo = new MutationObserver(() => {
       const targets = document.querySelectorAll(".fade-in:not(.visible)");
       if (reduced) {
@@ -38,7 +40,7 @@ export default function ScrollEffects() {
         targets.forEach((el) => observer.observe(el));
       }
     });
-    mo.observe(document.body, { childList: true, subtree: true });
+    mo.observe(mainEl, { childList: true, subtree: true });
 
     // Navbar shadow on scroll
     const navbar = document.getElementById("navbar");

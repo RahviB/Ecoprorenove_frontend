@@ -282,18 +282,16 @@ export default function BardageClient() {
             {/* STAGE */}
             <div className="stage fade-in">
               <div className="stage__img-wrap">
-                {FINISHES.map((f) => (
-                  <Image
-                    key={f.ref}
-                    className={`stage__img${f.ref === effectiveActive.ref ? " active" : ""}`}
-                    src={`/images/bardage/maison-${f.ref}.webp`}
-                    alt={`Maison témoin habillée en bardage ${f.name}`}
-                    fill
-                    sizes="(min-width: 1100px) 60vw, 100vw"
-                    priority={f.ref === "modern-grey"}
-                    style={{ objectFit: "cover" }}
-                  />
-                ))}
+                <Image
+                  key={effectiveActive.ref}
+                  className="stage__img active"
+                  src={`/images/bardage/maison-${effectiveActive.ref}.webp`}
+                  alt={`Maison témoin habillée en bardage ${effectiveActive.name}`}
+                  fill
+                  sizes="(min-width: 1100px) 60vw, 100vw"
+                  priority
+                  style={{ objectFit: "cover" }}
+                />
 
                 <div className={`stage__loader${swapping ? " is-swapping" : ""}`} aria-live="polite">
                   <span className="stage__loader-dot"></span>
