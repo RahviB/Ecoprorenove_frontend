@@ -1091,7 +1091,7 @@ Expected: push succeeds. Coolify build runs in ~2-3 minutes. Visit `https://stag
 - [ ] **Step 6: End-to-end form smoke test on staging**
 
 Once Coolify finishes deploying, submit the form on `https://stag.ecoprorenove.fr/courtage-energie` with test data. Confirm:
-- Email lands at `rahvi.bichon@gmail.com`
+- Email lands at `contact@ecoprorenove.fr`
 - Subject contains `[Contact ECOPRORENOVE — Courtage énergie (gaz / électricité)]`
 - Body shows the new fields with their FIELD_LABEL labels: "Type de contrat" and "Échéance du contrat actuel"
 
