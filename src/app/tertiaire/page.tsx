@@ -4,7 +4,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Tertiaire — bureaux, commerces, santé, enseignement, hôtellerie",
+  title: "Tertiaire — décret tertiaire & dossier CEE",
   description:
     "Rénovation énergétique tertiaire : décret tertiaire (−40 % d'ici 2030), continuité d'exploitation, dossier CEE structuré. Métropole et La Réunion.",
   alternates: { canonical: "/tertiaire" },

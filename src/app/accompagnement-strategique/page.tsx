@@ -8,7 +8,7 @@ import ScrollNav from "@/components/ScrollNav";
 export const metadata: Metadata = {
   title: "Accompagnement stratégique — ECOPRORENOVE",
   description:
-    "ECOPRORENOVE accompagne les professionnels sur leurs obligations réglementaires (BACS, décret tertiaire), l'optimisation énergétique de leurs bâtiments, et le courtage en énergie (gaz, électricité). Une offre globale pour piloter votre stratégie énergétique.",
+    "Direction énergie externalisée — diagnostic, BACS et décret tertiaire, optimisation, courtage gaz & électricité. Pilotez votre stratégie énergétique avec un interlocuteur unique.",
   alternates: { canonical: "/accompagnement-strategique" },
   openGraph: {
     url: "/accompagnement-strategique",

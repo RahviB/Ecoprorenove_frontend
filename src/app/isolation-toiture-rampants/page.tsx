@@ -8,7 +8,7 @@ import ScrollNav from "@/components/ScrollNav";
 import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
-  title: "Isolation toiture sous rampants — barrière thermo-réfléchissante (BAT-EN-106)",
+  title: "Isolation toiture sous rampants — fiche CEE BAT-EN-106",
   description:
     "Barrière thermo-réfléchissante haute performance sous toiture métallique. Jusqu'à −6 °C ressentis, charge de climatisation réduite. Fiche CEE BAT-EN-106 (DOM).",
   alternates: { canonical: "/isolation-toiture-rampants" },

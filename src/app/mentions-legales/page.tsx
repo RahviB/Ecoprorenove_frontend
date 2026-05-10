@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function MentionsLegalesPage() {
   return (
     <article className="page-legal">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Mentions légales", url: "/mentions-legales" },
+        ]}
+      />
       <div className="container">
         <header className="page-legal__header">
           <p className="section-label">Informations légales</p>
@@ -20,7 +27,7 @@ export default function MentionsLegalesPage() {
             Conformément aux dispositions des articles 6-III et 19 de la loi n°&nbsp;2004-575 du
             21&nbsp;juin 2004 pour la Confiance dans l&apos;économie numérique, dite L.C.E.N.,
             les présentes mentions légales sont portées à la connaissance des utilisateurs et
-            visiteurs du site <strong>www.ecoprorenove.fr</strong>.
+            visiteurs du site <strong>ecoprorenove.fr</strong>.
           </p>
         </header>
 
@@ -115,7 +122,7 @@ export default function MentionsLegalesPage() {
         <section className="page-legal__section">
           <h2>5. Propriété intellectuelle</h2>
           <p>
-            L&apos;ensemble des éléments composant le site www.ecoprorenove.fr (textes,
+            L&apos;ensemble des éléments composant le site ecoprorenove.fr (textes,
             illustrations, photographies, logos, marques, mises en page, graphismes,
             structure, base de données) sont protégés par la législation française et
             internationale relative au droit d&apos;auteur et à la propriété intellectuelle.

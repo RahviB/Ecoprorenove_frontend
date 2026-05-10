@@ -4,7 +4,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Agricole — bâtiments d'élevage, serres, hangars (CEE BAT-EN, IND-UT)",
+  title: "Agricole — élevage, serres, hangars · fiches CEE",
   description:
     "Rénovation énergétique agricole : isolation sous toiture, ambiance et hygrométrie pour bétail et serres, fiches CEE BAT-EN et IND-UT. Métropole et La Réunion.",
   alternates: { canonical: "/agricole" },

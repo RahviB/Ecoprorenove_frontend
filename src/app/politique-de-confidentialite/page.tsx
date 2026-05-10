@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function PolitiqueDeConfidentialitePage() {
   return (
     <article className="page-legal">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Politique de confidentialité", url: "/politique-de-confidentialite" },
+        ]}
+      />
       <div className="container">
         <header className="page-legal__header">
           <p className="section-label">Protection des données — RGPD</p>
@@ -20,7 +27,7 @@ export default function PolitiqueDeConfidentialitePage() {
             EB CONSEILS – Ecoprorenove (« ECOPRORENOVE ») accorde une importance
             particulière à la protection des données personnelles que vous nous confiez. La
             présente politique décrit les traitements mis en œuvre sur le site
-            <strong> www.ecoprorenove.fr</strong> et les droits dont vous disposez en
+            <strong> ecoprorenove.fr</strong> et les droits dont vous disposez en
             application du Règlement (UE) 2016/679 (RGPD) et de la loi n°&nbsp;78-17 du 6
             janvier 1978 modifiée (Informatique et Libertés).
           </p>
@@ -174,7 +181,7 @@ export default function PolitiqueDeConfidentialitePage() {
         <section className="page-legal__section">
           <h2>9. Cookies</h2>
           <p>
-            Le site www.ecoprorenove.fr <strong>ne dépose aucun cookie tiers de mesure
+            Le site ecoprorenove.fr <strong>ne dépose aucun cookie tiers de mesure
             d&apos;audience ou de publicité</strong>. Seuls des cookies strictement
             nécessaires au fonctionnement du site (mémorisation de session technique)
             peuvent être utilisés ; ils sont exemptés de consentement conformément à la

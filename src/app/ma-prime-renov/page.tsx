@@ -7,7 +7,7 @@ import ScrollNav from "@/components/ScrollNav";
 import RelatedSolutions from "@/components/RelatedSolutions";
 
 export const metadata: Metadata = {
-  title: "MaPrimeRénov' — l'aide de l'État pour la rénovation énergétique",
+  title: "MaPrimeRénov' — l'aide de l'État pour la rénovation",
   description:
     "MaPrimeRénov' expliquée : trois parcours (geste, ampleur, copropriété), plafonds de ressources, travaux éligibles. Cumul avec Prêt à taux 0 et aides locales. Accompagnement de bout en bout.",
   alternates: { canonical: "/ma-prime-renov" },
