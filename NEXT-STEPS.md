@@ -42,7 +42,7 @@ npm run build    # 23 routes, must stay clean
 - Both committed in `9da66b7` for traceability — first time spec/plan docs land in-repo. Pattern can be reused for future feature work.
 
 ### Form-source count is now 9 (was 8)
-The `/courtage-energie` form is the 9th source. End-to-end staging smoke test on this form is the only outstanding verification — submit a test, confirm email arrives in `rahvi.bichon@gmail.com` with subject prefix `[Contact ECOPRORENOVE — Courtage énergie (gaz / électricité)]` and body fields labelled "Type de contrat" + "Échéance du contrat actuel".
+The `/courtage-energie` form is the 9th source. End-to-end staging smoke test on this form is the only outstanding verification — submit a test, confirm email arrives in `contact@ecoprorenove.fr` with subject prefix `[Contact ECOPRORENOVE — Courtage énergie (gaz / électricité)]` and body fields labelled "Type de contrat" + "Échéance du contrat actuel".
 
 ### Commits (session 13)
 - `9da66b7` Add /courtage-energie spec + implementation plan
@@ -135,7 +135,7 @@ The `/courtage-energie` form is the 9th source. End-to-end staging smoke test on
 - `src/app/not-found.tsx` — branded 404 with serif-italic headline ("Cette page s'est échappée par la toiture.") and a helpful link grid covering every Solution + Subvention page.
 
 ### Setup intake teardown doc — corrected stale paragraph
-- `docs/launch/setup-teardown.md` now reflects that Resend is **wired and live** (sends to `rahvi.bichon@gmail.com`, requires `RESEND_API_KEY` env var on Coolify). Previously claimed Resend was "planned but not wired".
+- `docs/launch/setup-teardown.md` now reflects that Resend is **wired and live** (sends to `contact@ecoprorenove.fr`, requires `RESEND_API_KEY` env var on Coolify). Previously claimed Resend was "planned but not wired".
 
 ---
 
@@ -235,7 +235,7 @@ All use the `.hero__img--placeholder` class (search for that to locate). Drop th
 ✅ Done 2026-04-29: `/isolation-toiture-rampants` (real photo, Airflex install in agricultural building).
 
 ### 2. Test the 9 form sources end-to-end on staging
-After Coolify rebuilds, submit one form on each: `/`, `/prime-cee`, `/ma-prime-renov`, `/vmc-double-flux`, `/bardage`, `/courtage-energie`, `/tertiaire`, `/residentiel`, `/agricole`, plus the original 5 service pages already tested. Confirm emails land in `rahvi.bichon@gmail.com` with the right SOURCE_LABEL. The `/courtage-energie` form is the new one — confirm subject contains `[Contact ECOPRORENOVE — Courtage énergie (gaz / électricité)]` and body shows "Type de contrat" + "Échéance du contrat actuel" labels.
+After Coolify rebuilds, submit one form on each: `/`, `/prime-cee`, `/ma-prime-renov`, `/vmc-double-flux`, `/bardage`, `/courtage-energie`, `/tertiaire`, `/residentiel`, `/agricole`, plus the original 5 service pages already tested. Confirm emails land in `contact@ecoprorenove.fr` with the right SOURCE_LABEL. The `/courtage-energie` form is the new one — confirm subject contains `[Contact ECOPRORENOVE — Courtage énergie (gaz / électricité)]` and body shows "Type de contrat" + "Échéance du contrat actuel" labels.
 
 ---
 
@@ -310,7 +310,7 @@ ecoprorenove-web/
 
 If client provides:
 - Hero photos for the 6 placeholder pages → trivial swap, ~10 min total
-- Missing legal info (RCS / RGE cert / médiateur / assurance zone) → fill `/mentions-legales` strings (single file). May already be in the `/setup` intake submission Emmanuel sent — check `rahvi.bichon@gmail.com` for "[Intake ECOPRORENOVE]" email.
+- Missing legal info (RCS / RGE cert / médiateur / assurance zone) → fill `/mentions-legales` strings (single file). May already be in the `/setup` intake submission Emmanuel sent — check `contact@ecoprorenove.fr` for "[Intake ECOPRORENOVE]" email.
 
 If pushing toward launch:
 1. End-to-end form smoke test on staging (8 form sources)

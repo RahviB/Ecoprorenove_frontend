@@ -3,7 +3,7 @@
 import { Resend } from "resend";
 
 const RESEND_FROM = "ECOPRORENOVE <contact@ecoprorenove.fr>";
-const RESEND_TO = process.env.RESEND_TO ?? "rahvi.bichon@gmail.com";
+const RESEND_TO = process.env.RESEND_TO ?? "contact@ecoprorenove.fr";
 
 export type IntakeState = {
   ok: boolean;

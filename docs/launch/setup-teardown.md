@@ -28,7 +28,7 @@ public email).
 ## Where the submission lands
 
 The server action (`src/app/setup/actions.ts`) sends a formatted text email via
-**Resend** to `rahvi.bichon@gmail.com` (sender: `contact@ecoprorenove.fr`). It also
+**Resend** to `contact@ecoprorenove.fr` (sender: `contact@ecoprorenove.fr`). It also
 mirrors the same block to `console.log` so the Coolify "Logs" tab keeps a backup copy.
 
 Required env var on Coolify: `RESEND_API_KEY`. If it's missing, the action falls back
