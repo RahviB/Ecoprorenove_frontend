@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="container container--wide">
           <div className="navbar__inner">
             <Link href="/" className="navbar__logo" aria-label="ECOPRORENOVE — accueil">
-              <Logo size={53} variant="navbar" />
+              <Logo size={46} variant="navbar" />
             </Link>
 
             <div className="navbar__nav">
