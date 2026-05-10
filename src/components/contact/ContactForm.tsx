@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { submitContact, type ContactState } from "@/lib/contact-action";
 
 const INITIAL_STATE: ContactState = { ok: null, message: "" };
@@ -13,6 +13,11 @@ export default function ContactForm({
   children: React.ReactNode;
 }) {
   const [state, action, pending] = useActionState(submitContact, INITIAL_STATE);
+  const [mountTs, setMountTs] = useState(0);
+
+  useEffect(() => {
+    setMountTs(Date.now());
+  }, []);
 
   if (state.ok) {
     return (
@@ -30,6 +35,14 @@ export default function ContactForm({
   return (
     <form action={action} noValidate aria-busy={pending || undefined}>
       <input type="hidden" name="_source" value={source} />
+      <input type="hidden" name="_ts" value={mountTs} />
+      {/* Honeypot — humans never see this field; bots fill every input. */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+        <label>
+          Ne pas remplir
+          <input type="text" name="_hp" tabIndex={-1} autoComplete="off" defaultValue="" />
+        </label>
+      </div>
       {state.ok === false && state.message && (
         <div className="form-alert" role="alert">
           {state.message}

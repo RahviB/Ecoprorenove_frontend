@@ -3,7 +3,7 @@
 import { Resend } from "resend";
 
 const RESEND_FROM = "ECOPRORENOVE <contact@ecoprorenove.fr>";
-const RESEND_TO = "rahvi.bichon@gmail.com";
+const RESEND_TO = process.env.RESEND_TO ?? "rahvi.bichon@gmail.com";
 
 export type IntakeState = {
   ok: boolean;
@@ -151,7 +151,9 @@ export async function submitIntake(
 
   const block = lines.join("\n");
 
-  console.log(block);
+  if (process.env.NODE_ENV !== "production") {
+    console.log(block);
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {

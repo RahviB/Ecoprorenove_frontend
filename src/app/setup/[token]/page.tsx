@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import IntakeForm from "@/components/setup/IntakeForm";
 
-const EXPECTED_TOKEN = "e9p3mr7q2x4n8t5v";
+// Token is read from env at runtime — never hardcoded in source. If unset,
+// the route is unreachable.
+const EXPECTED_TOKEN = process.env.SETUP_TOKEN;
 
 export const metadata: Metadata = {
   title: "Préparer la mise en ligne · ECOPRORENOVE",
@@ -18,7 +20,7 @@ export default async function SetupPage({
   params: Promise<{ token: string }>;
 }) {
   const { token } = await params;
-  if (token !== EXPECTED_TOKEN) notFound();
+  if (!EXPECTED_TOKEN || token !== EXPECTED_TOKEN) notFound();
 
   return (
     <section className="setup-page">

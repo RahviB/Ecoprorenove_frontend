@@ -1,22 +1,33 @@
 import type { NextConfig } from "next";
 
+// Marketing site, no third-party scripts. JSON-LD requires inline <script>,
+// next/font + Next runtime emit inline <style>. 'unsafe-inline' is the
+// pragmatic compromise without a nonce middleware.
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self' data:",
+  "connect-src 'self'",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+  "upgrade-insecure-requests",
+].join("; ");
+
 const securityHeaders = [
-  // Prevent the page from being framed by other origins (clickjacking).
+  { key: "Content-Security-Policy", value: csp },
   { key: "X-Frame-Options", value: "DENY" },
-  // Prevent MIME-type sniffing.
   { key: "X-Content-Type-Options", value: "nosniff" },
-  // Strict referrer policy.
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  // No legacy XSS auditor (modern browsers ignore this; CSP is the answer).
   { key: "X-XSS-Protection", value: "0" },
-  // Lock down powerful APIs we don't use.
   {
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
   },
-  // Cross-origin protections.
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-  // HSTS — only meaningful when served over HTTPS in production.
   {
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",

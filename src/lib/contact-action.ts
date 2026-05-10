@@ -3,12 +3,15 @@
 import { Resend } from "resend";
 
 const RESEND_FROM = "ECOPRORENOVE <contact@ecoprorenove.fr>";
-const RESEND_TO = "rahvi.bichon@gmail.com";
+const RESEND_TO = process.env.RESEND_TO ?? "rahvi.bichon@gmail.com";
 
 export type ContactState = {
   ok: boolean | null;
   message: string;
 };
+
+// Spam guard — minimum dwell time on the form before submission is accepted.
+const MIN_DWELL_MS = 1500;
 
 const SOURCE_LABEL: Record<string, string> = {
   "home": "Page d'accueil",
@@ -53,8 +56,29 @@ export async function submitContact(
   _prev: ContactState,
   data: FormData,
 ): Promise<ContactState> {
-  const source = String(data.get("_source") || "contact");
-  const sourceLabel = SOURCE_LABEL[source] || source;
+  // Honeypot — silently swallow bot submissions that filled the hidden field.
+  // Return a fake success so bots can't probe for the trap.
+  if (String(data.get("_hp") || "").trim() !== "") {
+    return {
+      ok: true,
+      message: "Merci ! Votre demande a bien été envoyée — nous revenons vers vous sous 48h ouvrées.",
+    };
+  }
+
+  // Time-trap — reject submissions that arrive faster than a human can fill.
+  const ts = Number(data.get("_ts") || 0);
+  if (ts > 0 && Date.now() - ts < MIN_DWELL_MS) {
+    return {
+      ok: true,
+      message: "Merci ! Votre demande a bien été envoyée — nous revenons vers vous sous 48h ouvrées.",
+    };
+  }
+
+  const rawSource = String(data.get("_source") || "contact");
+  // Whitelist source — falls back to "contact" so we don't echo arbitrary
+  // bot-supplied strings into email subjects or logs.
+  const source = rawSource in SOURCE_LABEL ? rawSource : "contact";
+  const sourceLabel = SOURCE_LABEL[source] ?? "Contact";
 
   const f = (k: string) => String(data.get(k) || "").trim();
 
@@ -82,7 +106,7 @@ export async function submitContact(
   }
 
   // Build body — pull every entry except technical/empty ones
-  const skip = new Set(["_source", "rgpd", "$ACTION_ID", ""]);
+  const skip = new Set(["_source", "_hp", "_ts", "rgpd", "$ACTION_ID", ""]);
   const lines: string[] = [];
   const seen = new Set<string>();
   for (const [key, value] of data.entries()) {
@@ -108,7 +132,9 @@ export async function submitContact(
     "",
   ].join("\n");
 
-  console.log(body);
+  if (process.env.NODE_ENV !== "production") {
+    console.log(body);
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
