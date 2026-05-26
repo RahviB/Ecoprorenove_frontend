@@ -686,6 +686,14 @@ function ContactSection() {
                   <input className="form-input" type="email" id="t-email" name="email" placeholder="votre@email.fr" required />
                 </div>
                 <div className="form-group">
+                  <label className="form-label" htmlFor="t-decisionnaire">Êtes-vous décisionnaire du bâtiment ? *</label>
+                  <select className="form-select" id="t-decisionnaire" name="decisionnaire" defaultValue="" required>
+                    <option value="" disabled>Sélectionnez</option>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non</option>
+                  </select>
+                </div>
+                <div className="form-group">
                   <label className="form-label" htmlFor="t-batiment">Type de bâtiment</label>
                   <select className="form-select" id="t-batiment" name="type_batiment" defaultValue="">
                     <option value="" disabled>Sélectionnez</option>
@@ -711,9 +719,50 @@ function ContactSection() {
                     <option value="nsp">Je ne sais pas</option>
                   </select>
                 </div>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="t-acces">La toiture est-elle accessible depuis l&apos;intérieur ? *</label>
+                  <select className="form-select" id="t-acces" name="acces_toiture" defaultValue="" required>
+                    <option value="" disabled>Sélectionnez</option>
+                    <option value="Oui">Oui</option>
+                    <option value="Non — faux plafond">Non, il y a un faux plafond</option>
+                    <option value="Je ne sais pas">Je ne sais pas</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="t-ferme">Le bâtiment est-il fermé sur les côtés ? *</label>
+                  <select className="form-select" id="t-ferme" name="batiment_ferme" defaultValue="" required>
+                    <option value="" disabled>Sélectionnez</option>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non</option>
+                    <option value="Partiellement">Partiellement</option>
+                  </select>
+                </div>
                 <div className="form-group form-group--full">
-                  <label className="form-label" htmlFor="t-surface">Surface approximative (m²)</label>
-                  <input className="form-input" type="text" id="t-surface" name="surface" placeholder="Ex. 1 200 m²" />
+                  <label className="form-label" htmlFor="t-surface">Surface approximative *</label>
+                  <select className="form-select" id="t-surface" name="surface" defaultValue="" required>
+                    <option value="" disabled>Sélectionnez</option>
+                    <option value="Moins de 150 m²">Moins de 150 m²</option>
+                    <option value="150 à 250 m²">150 à 250 m²</option>
+                    <option value="250 à 500 m²">250 à 500 m²</option>
+                    <option value="Plus de 500 m²">Plus de 500 m²</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="t-deja-isole">Votre bâtiment est-il déjà isolé sous toiture ? *</label>
+                  <select className="form-select" id="t-deja-isole" name="deja_isole" defaultValue="" required>
+                    <option value="" disabled>Sélectionnez</option>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non</option>
+                    <option value="Je ne sais pas">Je ne sais pas</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="t-demande">Avez-vous déjà fait une demande auprès d&apos;ECOPRORENOVE ? *</label>
+                  <select className="form-select" id="t-demande" name="demande_anterieure" defaultValue="" required>
+                    <option value="" disabled>Sélectionnez</option>
+                    <option value="Oui">Oui</option>
+                    <option value="Non">Non</option>
+                  </select>
                 </div>
                 <div className="form-group form-group--full">
                   <label className="form-label" htmlFor="t-message">Décrivez votre projet ou votre besoin</label>

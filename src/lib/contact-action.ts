@@ -41,12 +41,18 @@ const FIELD_LABEL: Record<string, string> = {
   type_combles: "Type de combles",
   type_plancher: "Configuration du plancher bas",
   type_couverture: "Type de couverture",
+  type_toiture: "Type de toiture",
   type_contrat: "Type de contrat",
   echeance: "Échéance du contrat actuel",
   finition: "Finition bardage",
   profil: "Profil de pose",
   surface: "Surface (m²)",
   hauteur: "Hauteur sous toiture",
+  decisionnaire: "Décisionnaire du bâtiment",
+  acces_toiture: "Toiture accessible depuis l'intérieur",
+  batiment_ferme: "Bâtiment fermé sur les côtés",
+  deja_isole: "Bâtiment déjà isolé sous toiture",
+  demande_anterieure: "Demande antérieure auprès d'ECOPRORENOVE",
   message: "Message / projet",
 };
 
