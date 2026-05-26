@@ -1,15 +1,17 @@
 import type { NextConfig } from "next";
 
-// Marketing site, no third-party scripts. JSON-LD requires inline <script>,
-// next/font + Next runtime emit inline <style>. 'unsafe-inline' is the
-// pragmatic compromise without a nonce middleware.
+// CSP — allows Google Tag Manager / Analytics, Meta Pixel, Google Ads
+// (loaded only after consent). JSON-LD requires inline <script>; next/font +
+// Next runtime emit inline <style>. 'unsafe-inline' is the pragmatic
+// compromise without a nonce middleware.
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://www.googletagmanager.com https://connect.facebook.net https://www.googleadservices.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://www.google.com https://www.google.fr https://www.facebook.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://*.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://www.facebook.com https://connect.facebook.net",
+  "frame-src https://www.googletagmanager.com https://td.doubleclick.net",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
