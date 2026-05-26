@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import ManageCookiesButton from "./ManageCookiesButton";
 
 export default function Footer() {
   return (
@@ -85,6 +86,7 @@ export default function Footer() {
           <div className="footer__legal">
             <Link href="/mentions-legales">Mentions légales</Link>
             <Link href="/politique-de-confidentialite">Politique de confidentialité</Link>
+            <ManageCookiesButton />
           </div>
         </div>
       </div>

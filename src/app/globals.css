@@ -628,9 +628,127 @@ section[id], [id^="cee"], [id^="modes"], [id^="methode"],
   padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1);
   font-size: .82rem; color: rgba(255,255,255,.6);
 }
-.footer__legal { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer__legal { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
 .footer__legal a { color: rgba(255,255,255,.5); }
 .footer__legal a:hover { color: #fff; }
+.footer__manage-cookies {
+  background: transparent; border: 0; padding: 0; cursor: pointer;
+  font: inherit; color: rgba(255,255,255,.5); text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,.25); text-underline-offset: 3px;
+}
+.footer__manage-cookies:hover { color: #fff; text-decoration-color: rgba(255,255,255,.5); }
+
+/* =============================================
+   Cookie consent banner
+   ============================================= */
+.cookie-banner {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 9000;
+  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.18), 0 2px 8px rgba(0,0,0,.06);
+  max-width: 920px; margin: 0 auto;
+  animation: cookieBannerIn .28s cubic-bezier(.16,1,.3,1);
+}
+@keyframes cookieBannerIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.cookie-banner__inner {
+  display: flex; flex-direction: column; gap: 16px; padding: 22px 24px;
+}
+.cookie-banner__title {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1rem; font-weight: 700; margin: 0 0 6px; color: #0f1a14;
+  letter-spacing: -.01em;
+}
+.cookie-banner__text p {
+  margin: 0; font-size: .92rem; line-height: 1.55; color: #3a4640;
+}
+.cookie-banner__text a {
+  color: var(--green, #49a739); text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-banner__actions {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;
+}
+.cookie-banner__btn {
+  font: inherit; font-weight: 600; font-size: .9rem;
+  padding: 10px 18px; border-radius: 999px; border: 1px solid transparent;
+  cursor: pointer; transition: background .15s, border-color .15s, color .15s;
+  min-width: 120px;
+}
+.cookie-banner__btn--primary {
+  background: var(--green, #49a739); color: #fff; border-color: var(--green, #49a739);
+}
+.cookie-banner__btn--primary:hover { background: #3d8e30; border-color: #3d8e30; }
+.cookie-banner__btn--secondary {
+  background: #f3f4f3; color: #0f1a14; border-color: #e2e5e3;
+}
+.cookie-banner__btn--secondary:hover { background: #e9ebea; border-color: #d4d8d6; }
+.cookie-banner__btn--ghost {
+  background: transparent; color: #3a4640; border-color: transparent;
+  min-width: 0; padding: 10px 14px;
+}
+.cookie-banner__btn--ghost:hover { background: #f3f4f3; }
+.cookie-banner__btn:focus-visible {
+  outline: 2px solid var(--green, #49a739); outline-offset: 2px;
+}
+.cookie-banner__categories {
+  list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column;
+  gap: 14px;
+}
+.cookie-banner__categories > li {
+  border-top: 1px solid rgba(0,0,0,.06); padding-top: 14px;
+}
+.cookie-banner__categories > li:first-child { border-top: 0; padding-top: 0; }
+.cookie-banner__categories p {
+  margin: 4px 0 0; font-size: .85rem; color: #5a6661; line-height: 1.5;
+}
+.cookie-banner__category-head {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.cookie-banner__category-name {
+  font-weight: 600; color: #0f1a14; font-size: .92rem;
+}
+.cookie-banner__category-always {
+  font-size: .78rem; color: #5a6661; font-style: italic;
+}
+.cookie-banner__switch {
+  position: relative; display: inline-block; width: 40px; height: 22px; flex-shrink: 0;
+}
+.cookie-banner__switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+.cookie-banner__switch-track {
+  position: absolute; inset: 0; background: #cfd4d2; border-radius: 999px;
+  transition: background .18s;
+}
+.cookie-banner__switch-track::before {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px;
+  background: #fff; border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  transition: transform .18s;
+}
+.cookie-banner__switch input:checked + .cookie-banner__switch-track {
+  background: var(--green, #49a739);
+}
+.cookie-banner__switch input:checked + .cookie-banner__switch-track::before {
+  transform: translateX(18px);
+}
+.cookie-banner__switch input:focus-visible + .cookie-banner__switch-track {
+  outline: 2px solid var(--green, #49a739); outline-offset: 2px;
+}
+@media (min-width: 720px) {
+  .cookie-banner__inner {
+    flex-direction: row; align-items: center; gap: 24px; padding: 22px 28px;
+  }
+  .cookie-banner__text { flex: 1; }
+  .cookie-banner__actions { flex-shrink: 0; }
+  .cookie-banner:has(.cookie-banner__categories) .cookie-banner__inner {
+    flex-direction: column; align-items: stretch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner { animation: none; }
+  .cookie-banner__switch-track,
+  .cookie-banner__switch-track::before { transition: none; }
+}
 
 /* =============================================
    01 · HERO (HOME)

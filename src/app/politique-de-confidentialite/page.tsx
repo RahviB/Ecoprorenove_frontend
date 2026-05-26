@@ -179,18 +179,71 @@ export default function PolitiqueDeConfidentialitePage() {
         </section>
 
         <section className="page-legal__section">
-          <h2>9. Cookies</h2>
+          <h2>9. Cookies et traceurs</h2>
           <p>
-            Le site ecoprorenove.fr <strong>ne dépose aucun cookie tiers de mesure
-            d&apos;audience ou de publicité</strong>. Seuls des cookies strictement
-            nécessaires au fonctionnement du site (mémorisation de session technique)
-            peuvent être utilisés ; ils sont exemptés de consentement conformément à la
-            recommandation de la CNIL.
+            Le site ecoprorenove.fr utilise des cookies et traceurs répartis en trois
+            catégories. Lors de votre première visite, un bandeau vous permet
+            d&apos;accepter, de refuser ou de personnaliser votre choix. Vous pouvez
+            modifier vos préférences à tout moment via le lien
+            <strong> « Gérer mes cookies »</strong> en pied de page.
           </p>
+          <h3>9.1 Cookies strictement nécessaires (sans consentement)</h3>
           <p>
-            Si à l&apos;avenir un outil de mesure d&apos;audience ou un service tiers
-            nécessitant un cookie était ajouté, un bandeau de consentement conforme serait
-            déployé.
+            Indispensables au fonctionnement du site et à la mémorisation de votre choix
+            de consentement. Conformément à la recommandation de la CNIL, ils sont
+            exemptés de consentement.
+          </p>
+          <ul>
+            <li>
+              <strong>ecopro_consent_v1</strong> — mémorisation de vos préférences
+              cookies. Conservation&nbsp;: 13&nbsp;mois. Stocké en <em>localStorage</em>,
+              dans votre navigateur uniquement.
+            </li>
+          </ul>
+          <h3>9.2 Mesure d&apos;audience (consentement requis)</h3>
+          <p>
+            Si vous l&apos;acceptez, nous déposons des cookies via{" "}
+            <strong>Google Tag Manager</strong> (conteneur GTM-KM9MH2FG) pour collecter
+            des statistiques de visite anonymisées (pages consultées, source de trafic,
+            durée de session). Ces données nous permettent d&apos;améliorer le site.
+          </p>
+          <ul>
+            <li>
+              Émetteur&nbsp;: Google Ireland Ltd — Gordon House, Barrow Street, Dublin 4.
+            </li>
+            <li>
+              Durée de conservation des cookies&nbsp;: jusqu&apos;à 13&nbsp;mois.
+            </li>
+            <li>
+              Finalité&nbsp;: mesure d&apos;audience, amélioration de l&apos;expérience
+              utilisateur.
+            </li>
+          </ul>
+          <h3>9.3 Marketing et publicité (consentement requis)</h3>
+          <p>
+            Si vous l&apos;acceptez, nous déposons des cookies de mesure
+            d&apos;efficacité de nos campagnes publicitaires (Google Ads, Meta — Facebook
+            et Instagram). Aucune donnée n&apos;est cédée à des tiers à des fins
+            commerciales.
+          </p>
+          <ul>
+            <li>
+              Émetteurs&nbsp;: Google Ireland Ltd&nbsp;; Meta Platforms Ireland Ltd —
+              Merrion Road, Dublin 4.
+            </li>
+            <li>
+              Durée de conservation des cookies&nbsp;: jusqu&apos;à 13&nbsp;mois.
+            </li>
+            <li>
+              Finalité&nbsp;: mesure de la performance de nos publicités et reciblage
+              publicitaire.
+            </li>
+          </ul>
+          <p>
+            Vous pouvez retirer votre consentement à tout moment via le bouton
+            <strong> « Gérer mes cookies »</strong> en pied de page. Le retrait du
+            consentement n&apos;affecte pas la licéité des traitements effectués
+            antérieurement.
           </p>
         </section>
 
@@ -205,7 +258,7 @@ export default function PolitiqueDeConfidentialitePage() {
         </section>
 
         <p className="page-legal__updated">
-          Dernière mise à jour&nbsp;: 28&nbsp;avril&nbsp;2026. Voir aussi nos{" "}
+          Dernière mise à jour&nbsp;: 26&nbsp;mai&nbsp;2026. Voir aussi nos{" "}
           <Link href="/mentions-legales">mentions légales</Link>.
         </p>
       </div>

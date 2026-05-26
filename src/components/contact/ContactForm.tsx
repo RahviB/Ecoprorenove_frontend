@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useState } from "react";
 import { submitContact, type ContactState } from "@/lib/contact-action";
+import { trackFormSubmit } from "@/lib/analytics";
 
 const INITIAL_STATE: ContactState = { ok: null, message: "" };
 
@@ -18,6 +19,12 @@ export default function ContactForm({
   useEffect(() => {
     setMountTs(Date.now());
   }, []);
+
+  useEffect(() => {
+    if (state.ok === true) {
+      trackFormSubmit(source);
+    }
+  }, [state.ok, source]);
 
   if (state.ok) {
     return (

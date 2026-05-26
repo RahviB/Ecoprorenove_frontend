@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 import ScrollEffects from "@/components/ScrollEffects";
 import BackToTop from "@/components/BackToTop";
 import MobileCtaBar from "@/components/MobileCtaBar";
+import ConsentProvider from "@/components/ConsentProvider";
+import CookieBanner from "@/components/CookieBanner";
+import GoogleTagManager from "@/components/GoogleTagManager";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -83,17 +86,21 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${montserrat.variable}`} data-scroll-behavior="smooth">
       <body>
-        <a href="#main" className="skip-link">
-          Aller au contenu
-        </a>
-        <Navbar />
-        <ViewTransition>
-          <main id="main">{children}</main>
-        </ViewTransition>
-        <Footer />
-        <BackToTop />
-        <MobileCtaBar />
-        <ScrollEffects />
+        <ConsentProvider>
+          <a href="#main" className="skip-link">
+            Aller au contenu
+          </a>
+          <Navbar />
+          <ViewTransition>
+            <main id="main">{children}</main>
+          </ViewTransition>
+          <Footer />
+          <BackToTop />
+          <MobileCtaBar />
+          <ScrollEffects />
+          <CookieBanner />
+          <GoogleTagManager />
+        </ConsentProvider>
       </body>
     </html>
   );
