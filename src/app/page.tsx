@@ -6,7 +6,30 @@ import CountUp from "@/components/CountUp";
 import Faq from "@/components/Faq";
 import HeroAnimations from "@/components/HeroAnimations";
 import SolutionsTabs from "@/components/SolutionsTabs";
-import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/JsonLd";
+import { OrganizationJsonLd, WebSiteJsonLd, FaqJsonLd } from "@/components/JsonLd";
+
+const HOME_FAQ = [
+  {
+    q: "Qu'est-ce qui différencie ECOPRORENOVE d'une entreprise de travaux classique ?",
+    a: "Nous structurons un projet complet : cadrage technique, montage administratif, mobilisation des financements, coordination des entreprises et suivi jusqu'à la clôture.",
+  },
+  {
+    q: "Mon bâtiment est-il éligible aux CEE ou à MaPrimeRénov' ?",
+    a: "L'éligibilité dépend du type de bâtiment, de son usage, des travaux envisagés et de la chronologie du dossier. MaPrimeRénov' concerne principalement le résidentiel ; les CEE peuvent concerner le résidentiel, le tertiaire, l'agricole, l'industrie ou certaines activités spécifiques selon les opérations.",
+  },
+  {
+    q: "À quel moment faut-il nous contacter ?",
+    a: "Le plus tôt possible, idéalement avant toute signature de devis ou démarrage des travaux. Pour certains dispositifs, notamment les CEE, la chronologie est essentielle pour sécuriser la recevabilité du dossier.",
+  },
+  {
+    q: "Le financement CEE couvre-t-il l'intégralité des travaux ?",
+    a: "Cela dépend de l'opération, du bâtiment, de la surface traitée et de la valorisation disponible. Certaines opérations CEE peuvent être financées à 100 %, tandis que d'autres nécessitent un reste à charge. Dans tous les cas, nous vous présentons une proposition claire avant engagement.",
+  },
+  {
+    q: "Intervenez-vous uniquement en Métropole ?",
+    a: "Non, nous intervenons en Métropole et à l'île de la Réunion, avec des équipes locales selon les projets et les dispositifs mobilisables.",
+  },
+];
 
 function W({ children, d }: { children: React.ReactNode; d: number }) {
   return (
@@ -173,6 +196,7 @@ export default function HomePage() {
     <div className="page-home-v3">
       <OrganizationJsonLd />
       <WebSiteJsonLd />
+      <FaqJsonLd items={HOME_FAQ} />
       <HeroAnimations />
 
       {/* =================  1. HERO+ (numbers as inline chips) ================= */}
