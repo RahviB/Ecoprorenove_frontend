@@ -48,6 +48,7 @@ const solutions: Array<[string, string, string]> = [
   ["Isolation des combles", "/isolation-combles", "Limiter les déperditions ou les surchauffes selon la configuration du bâtiment."],
   ["Isolation des planchers bas", "/isolation-planchers-bas", "Réduire les pertes par le sol et améliorer le confort des locaux situés au-dessus de zones froides ou non chauffées."],
   ["Bardage & façade ventilée", "/bardage", "Améliorer l'esthétique, protéger la façade et renforcer la performance thermique."],
+  ["Pompe à chaleur air/eau", "/pompe-a-chaleur-tertiaire", "Remplacer une chaudière fioul ou gaz, avec un volume de CEE multiplié par 3 grâce au Coup de pouce."],
   ["Destratification d'air", "/destratificateur-air", "Homogénéiser la température dans les grands volumes."],
   ["Extraction d'air", "/extracteur-air", "Évacuer l'air chaud ou vicié et améliorer le confort des occupants."],
   ["Accompagnement stratégique", "/accompagnement-strategique", "Cadrer les priorités, les aides mobilisables, le phasage et la cohérence globale du programme."],

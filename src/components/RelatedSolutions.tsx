@@ -1,6 +1,12 @@
 import Link from "next/link";
 
-type Related = { slug: string; title: string; lead: string; group: "solution" | "subvention" };
+type Related = { slug: string; title: string; lead: string; group: "solution" | "subvention" | "secteur" };
+
+const GROUP_LABEL: Record<Related["group"], string> = {
+  solution: "Solution",
+  subvention: "Subvention",
+  secteur: "Secteur",
+};
 
 const CATALOG: Record<string, Related> = {
   "isolation-toiture-rampants": {
@@ -39,6 +45,12 @@ const CATALOG: Record<string, Related> = {
     lead: "Tornado Windmaster® — évacuation passive, 0 W consommation.",
     group: "solution",
   },
+  "pompe-a-chaleur-tertiaire": {
+    slug: "pompe-a-chaleur-tertiaire",
+    title: "Pompe à chaleur air/eau tertiaire",
+    lead: "Remplacer une chaudière fioul ou gaz. BAT-TH-163, Coup de pouce ×3.",
+    group: "solution",
+  },
   "accompagnement-strategique": {
     slug: "accompagnement-strategique",
     title: "Accompagnement stratégique",
@@ -63,6 +75,12 @@ const CATALOG: Record<string, Related> = {
     lead: "Aide de l'État pour la rénovation. 3 parcours, cumul possible.",
     group: "subvention",
   },
+  tertiaire: {
+    slug: "tertiaire",
+    title: "Bâtiments tertiaires",
+    lead: "Bureaux, commerces, santé, enseignement, hôtellerie : nos leviers pour un parc tertiaire performant.",
+    group: "secteur",
+  },
 };
 
 export default function RelatedSolutions({ items }: { items: string[] }) {
@@ -84,9 +102,7 @@ export default function RelatedSolutions({ items }: { items: string[] }) {
               href={`/${c.slug}`}
               className={`related-card related-card--${c.group}`}
             >
-              <span className="related-card__group">
-                {c.group === "subvention" ? "Subvention" : "Solution"}
-              </span>
+              <span className="related-card__group">{GROUP_LABEL[c.group]}</span>
               <h3 className="related-card__title">{c.title}</h3>
               <p className="related-card__lead">{c.lead}</p>
               <span className="related-card__cta" aria-hidden="true">

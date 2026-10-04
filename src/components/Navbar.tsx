@@ -198,6 +198,17 @@ export default function Navbar() {
                   <div className="megamenu__section">
                     <div className="megamenu__section-title">Gestion énergétique &amp; aéraulique</div>
                     <div className="megamenu__grid">
+                      <Link href="/pompe-a-chaleur-tertiaire" className="mm-link" role="menuitem">
+                        <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <rect x="2" y="5" width="20" height="14" rx="2" />
+                          <circle cx="9" cy="12" r="4" />
+                          <circle cx="9" cy="12" r="1" />
+                          <line x1="16" y1="9" x2="19" y2="9" />
+                          <line x1="16" y1="12" x2="19" y2="12" />
+                          <line x1="16" y1="15" x2="19" y2="15" />
+                        </svg>
+                        Pompe à chaleur air/eau
+                      </Link>
                       <Link href="/destratificateur-air" className="mm-link" role="menuitem">
                         <svg className="mm-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <circle cx="12" cy="12" r="3" />
@@ -347,6 +358,7 @@ export default function Navbar() {
             <Link href="/isolation-combles" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Isolation combles</Link>
             <Link href="/isolation-planchers-bas" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Isolation planchers bas</Link>
             <Link href="/bardage" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Bardage</Link>
+            <Link href="/pompe-a-chaleur-tertiaire" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Pompe à chaleur air/eau</Link>
             <Link href="/destratificateur-air" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Destratificateur d&apos;air</Link>
             <Link href="/extracteur-air" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Extracteur d&apos;air</Link>
             <Link href="/courtage-energie" className="mobile-drawer__link" onClick={() => setDrawerOpen(false)}>Courtage en énergie</Link>

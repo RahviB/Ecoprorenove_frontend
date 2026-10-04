@@ -52,6 +52,7 @@ export default function Footer() {
               <li><Link href="/isolation-combles">Isolation combles</Link></li>
               <li><Link href="/isolation-planchers-bas">Isolation planchers bas</Link></li>
               <li><Link href="/bardage">Bardage</Link></li>
+              <li><Link href="/pompe-a-chaleur-tertiaire">Pompe à chaleur air/eau</Link></li>
               <li><Link href="/destratificateur-air">Destratificateur d&apos;air</Link></li>
               <li><Link href="/extracteur-air">Extracteur d&apos;air</Link></li>
               <li><Link href="/courtage-energie">Courtage en énergie</Link></li>

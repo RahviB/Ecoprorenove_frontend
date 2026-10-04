@@ -115,6 +115,22 @@ const SOLUTIONS = [
     ),
   },
   {
+    href: "/pompe-a-chaleur-tertiaire",
+    title: "Pompe à chaleur air/eau",
+    desc: "Remplacer une chaudière fioul ou gaz — fiche BAT-TH-163, Coup de pouce ×3.",
+    sectors: ["tertiaire"] as const,
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <circle cx="9" cy="12" r="4" />
+        <circle cx="9" cy="12" r="1" />
+        <line x1="16" y1="9" x2="19" y2="9" />
+        <line x1="16" y1="12" x2="19" y2="12" />
+        <line x1="16" y1="15" x2="19" y2="15" />
+      </svg>
+    ),
+  },
+  {
     href: "/destratificateur-air",
     title: "Destratificateur d'air",
     desc: "Redistribuer la chaleur en hauteur pour réduire les consommations de chauffage.",
@@ -316,7 +332,7 @@ export default function HomePage() {
             <div className="fade-in">
               <p className="section-label">Solutions par secteur</p>
               <h2 className="section-title">
-                Trois secteurs, <em>huit opérations</em> ciblées
+                Trois secteurs, <em>neuf opérations</em> ciblées
               </h2>
               <div className="divider"></div>
             </div>

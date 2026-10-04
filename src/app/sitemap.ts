@@ -10,6 +10,7 @@ const routes = [
   "isolation-toiture-rampants",
   "destratificateur-air",
   "extracteur-air",
+  "pompe-a-chaleur-tertiaire",
   "prime-cee",
   "ma-prime-renov",
   "accompagnement-strategique",
